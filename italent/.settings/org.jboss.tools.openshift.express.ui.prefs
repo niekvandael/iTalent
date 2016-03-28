@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+org.jboss.tools.openshift.ApplicationId=56f4a8ad89f5cf2a80000171
+org.jboss.tools.openshift.ApplicationName=italent
+org.jboss.tools.openshift.Connection=https\://jesse.vranken%40outlook.com@openshift.redhat.com
+org.jboss.tools.openshift.DeployFolder=webapps
+org.jboss.tools.openshift.Domain=itproject
+org.jboss.tools.openshift.RemoteName=origin
