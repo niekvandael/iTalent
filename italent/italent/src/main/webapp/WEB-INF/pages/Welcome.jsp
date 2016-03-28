@@ -7,6 +7,6 @@
 <title>Hello PXL!</title>
 </head>
 <body>
-<h1>Product setup test!!!</h1>
+<h1>Initial setup</h1>
 </body>
 </html>
