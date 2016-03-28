@@ -8,7 +8,7 @@ public class TestUserController {
   public void loginTest() {
     // MyClass is tested
 	  UserController tester = new UserController();
-
+	  
     // assert statements
     assertEquals(tester.login(), true);
   }
