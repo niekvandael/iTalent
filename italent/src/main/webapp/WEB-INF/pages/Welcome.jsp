@@ -7,6 +7,6 @@
 <title>Hello PXL!</title>
 </head>
 <body>
-<center><h1>Well, looks like we are up & running  </h1></center>
+<center><h1>Well, looks like we are up & running </h1></center>
 </body>
 </html>
