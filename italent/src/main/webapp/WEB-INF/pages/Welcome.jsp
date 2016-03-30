@@ -7,6 +7,6 @@
 <title>Hello PXL!</title>
 </head>
 <body>
-<center><h1>test1</h1></center>
+<center><h1>test2</h1></center>
 </body>
 </html>
