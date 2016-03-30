@@ -10,6 +10,6 @@ public class TestUserController {
 	  UserController tester = new UserController();
 	  
     // assert statements
-    assertEquals(tester.login(), true);
+    assertEquals(tester.login(), false);
   }
 } 
