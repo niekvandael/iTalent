@@ -14,4 +14,4 @@
 <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
 
 
-<link rel="stylesheet" href="<c:url value="/resources/css/italent.css" />">
+<link rel="stylesheet" href='<c:url value="/resources/css/italent.css" />'>
