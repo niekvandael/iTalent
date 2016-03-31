@@ -11,7 +11,7 @@
 			<div class="row">
 				<div class="col-xs-5"></div>        
 	          	<div class="col-xs-2">
-					<h1>It works !!</h1>
+					<h1>It works !!!</h1>
 				</div>
 				<div class="col-xs-5"></div> 
 			</div>
