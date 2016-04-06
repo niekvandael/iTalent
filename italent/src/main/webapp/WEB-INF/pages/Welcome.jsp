@@ -14,6 +14,8 @@
 	          	<div class="col-xs-2">
 					<h1>It just works!!!</h1>
 					<h2>Team 1: 4 the win!-</h2>
+					<h3>Vies bom!</h3>
+					<h4>Echt, eh!!</h4>
 				</div>
 				<div class="col-xs-5"></div> 
 			</div>
