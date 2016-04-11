@@ -2,4 +2,5 @@
 2.Discussions toevoegen, verplicht? extra?
 3.Klassediagram laten bekijken door projectbegeleider
 4. Role-users, meerdere rollen per user
-
+5. Projecten volgen?
+6. Subscriber opsplitsen in docentSubsribers & studentSubscribers?
