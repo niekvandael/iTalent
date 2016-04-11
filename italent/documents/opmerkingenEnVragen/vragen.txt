@@ -4,3 +4,4 @@
 4. Role-users, meerdere rollen per user
 5. Projecten volgen?
 6. Subscriber opsplitsen in docentSubsribers & studentSubscribers?
+7. Gaan we werken met een doelenlijst? Doelen die compleet zijn kunnen afgevinkt worden bvb.
