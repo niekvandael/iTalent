@@ -1,0 +1,5 @@
+1.Category en pictures verschil in werking  meerdere categories per project, meerdere pictures
+2.Discussions toevoegen, verplicht? extra?
+3.Klassediagram laten bekijken door projectbegeleider
+4. Role-users, meerdere rollen per user
+
