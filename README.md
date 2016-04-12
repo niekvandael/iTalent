@@ -8,7 +8,7 @@ Studenten van verschillende departementen van hogeschool PXL moeten een verplich
 
 Uiteraard is niet de bedoeling dat ieder idee zomaar gelanceerd kan worden. Hiervoor is toestemming nodig van begeleidende docenten. Docenten kunnen projecten goedkeuren, monitoren en eventueel (gedeeltelijk) ondersteunen. 
 
-Voor gebruik van deze applicatie moet men eerst inloggen en daardoor is deze alleen toegankelijk voor studenten van de Hogeschool PXL.
+Voor gebruik van deze applicatie moet men eerst inloggen en daardoor is deze alleen toegankelijk voor studenten en docenten van de Hogeschool PXL.
 
 
 ## I-Talent platform technisch
