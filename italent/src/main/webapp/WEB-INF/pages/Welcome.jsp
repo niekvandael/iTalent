@@ -13,13 +13,7 @@
 				<div class="col-xs-2"></div>        
 	          	<div class="col-xs-8" style="text-align:center">
 	          	<img style="width: 200px" src="https://www.pxl.be/Assets/website/pxl_algemeen/afbeeldingen/grotere_versie/1314_logo_pxl_bol.png"/>
-					<h1>It just works! :)</h1>
-					<h2>Team 1: 4 the win! :-)</h2>
-					<h3>Vies bom! :)</h3>
-					<h4>De meest creatieve tekst van heel het project</h4>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/Yg4Lxi2j18w" frameborder="0" allowfullscreen></iframe>
-					
-					
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/Yg4Lxi2j18w" frameborder="0" allowfullscreen></iframe>
 				</div>
 				<div class="col-xs-2"></div> 
 			</div>
