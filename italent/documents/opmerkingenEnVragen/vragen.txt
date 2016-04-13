@@ -1,7 +1,21 @@
-1.Category en pictures verschil in werking  meerdere categories per project, meerdere pictures
-2.Discussions toevoegen, verplicht? extra?
-3.Klassediagram laten bekijken door projectbegeleider
-4. Role-users, meerdere rollen per user
-5. Projecten volgen?
-6. Subscriber opsplitsen in docentSubsribers & studentSubscribers?
-7. Gaan we werken met een doelenlijst? Doelen die compleet zijn kunnen afgevinkt worden bvb.
+1. Category en pictures verschil in werking  meerdere categories per project, meerdere pictures. Ja
+2. Discussions toevoegen, verplicht? extra? optioneel-> tim
+3. Klassediagram laten bekijken door projectbegeleider. sam
+4. Role-users, meerdere rollen per user -> appart
+5. Projecten volgen? -> tim/ 
+6. Subscriber opsplitsen in docentSubsribers & studentSubscribers? Tim
+7. Gaan we werken met een doelenlijst? Doelen die compleet zijn kunnen afgevinkt worden bvb. Ok!
+8. docenten deels verifieren? kunnen verifieren, hoeven zelfs niet gepledged te worden door docent -> Tim
+9. status van projecten. Hoe wil een docent dit kunnen zien. pending changes optioneel
+10. hoe zit het met settings? optioneel
+11. favorites -optioneel
+12. kunnen studenten bewerkingen doen nadat hun projecten zijn geverifieerd. tim
+13. docenten kunnen enkel verifieren wanneer ze gepledged zijn. 
+14. administrator moet misschien veel meer kunnen? opgelost admin deleten
+15. likes; hoe werken we hier mee? json builder; domein<-> klassediagram sam
+16. verificatie; kan een half gebacked project worden geverifieerd? ja
+17. kan een student zich voor meerdere projecten subscriben? ja
+18. moeten studenten hun uren meegeven? ja ook tim vragen
+19. kan italententity proffesioneel? vraag voor sam
+
+wanneer mogen we coden?
