@@ -13,7 +13,13 @@
 				<div class="col-xs-2"></div>        
 	          	<div class="col-xs-8" style="text-align:center">
 	          	<img style="width: 200px" src="https://www.pxl.be/Assets/website/pxl_algemeen/afbeeldingen/grotere_versie/1314_logo_pxl_bol.png"/>
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/Yg4Lxi2j18w" frameborder="0" allowfullscreen> </iframe>
+				</div>
+				<div class="col-xs-2"></div> 
+			</div>
+			<div class="row">
+				<div class="col-xs-2"></div>        
+	          	<div class="col-xs-8" style="text-align:center">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/PhvjQmqxxL8" frameborder="0" allowfullscreen> </iframe>
 				</div>
 				<div class="col-xs-2"></div> 
 			</div>
