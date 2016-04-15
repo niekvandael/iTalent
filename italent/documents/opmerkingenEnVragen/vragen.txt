@@ -11,7 +11,7 @@ Openstaand
 Beantwoord
 ----------
 1. Category en pictures verschil in werking  meerdere categories per project, meerdere pictures. Ja
-4. Role-users, meerdere rollen per user -> appart
+4. Role-users, meerdere rollen per user -> apart
 7. Gaan we werken met een doelenlijst? Doelen die compleet zijn kunnen afgevinkt worden bvb. Ok!
 8. docenten deels verifieren? kunnen verifieren, hoeven zelfs niet gepledged te worden door docent -> Ja
 13. docenten kunnen enkel verifieren wanneer ze gepledged zijn. -> 1e pledge door docent = verifieren 
