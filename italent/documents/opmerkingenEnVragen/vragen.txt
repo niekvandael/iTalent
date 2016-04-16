@@ -7,6 +7,9 @@ Openstaand
 ** 12. kunnen studenten bewerkingen doen nadat hun projecten zijn geverifieerd. -> neen, docenten wel
 ** 19. kan italententity (overerving, interface, ...)? vraag voor sam 
 ** 18. moeten studenten hun uren meegeven? ja ook tim vragen
+** DFD's: processen van zoeken > filteren > opvragen volgen elkaar op, de data flow is niet het ophalen van alle projecten, daarna filteren en daarna zoeken maar slechts 1 SQL die alles combineert.
+   -->Is de voorstelling op die manier in orde?
+   
 
 Beantwoord
 ----------
