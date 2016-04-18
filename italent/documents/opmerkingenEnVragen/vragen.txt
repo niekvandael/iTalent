@@ -27,3 +27,7 @@ Teamvragen technisch
 --------------------
 15. likes; hoe werken we hier mee? json builder; domein<-> klassediagram sam --> alle likes in het begin ophalen?
 angular en spring security laten samenwerken adhv rollen
+
+Vragen voor het team
+--------------------
+1. ERD verband tussen user <-> subscriber
