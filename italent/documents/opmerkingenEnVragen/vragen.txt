@@ -1,8 +1,8 @@
 Openstaand
 ----------
-** 2. Discussions toevoegen, verplicht? extra? optioneel-> tim				
+				
 3. Klassediagram laten bekijken door projectbegeleider. sam
-** 5. Projecten volgen? -> tim
+
 6. Subscriber opsplitsen in docentSubsribers & studentSubscribers? Tim
 ** 12. kunnen studenten bewerkingen doen nadat hun projecten zijn geverifieerd. -> neen, docenten wel
 ** 19. kan italententity (overerving, interface, ...)? vraag voor sam 
@@ -22,7 +22,10 @@ Beantwoord
 16. verificatie; kan een half gebacked project worden geverifieerd? ja
 17. kan een student zich voor meerdere projecten subscriben? ja
 Wanneer mogen we beginnen te coderen? -> wacht tot de analyse finaal is
-
+ 2. Discussions toevoegen, verplicht? extra? optioneel -> tim -> optioneel
+** 5. Projecten volgen? -> tim -> optioneel 
+i18n: ENG + NL -> VERPLICHT
+seminaries beschikbaar voor ALLE studenten (bijvoorbeeld max 20 studenten) - > verplicht 
 Teamvragen technisch
 --------------------
 15. likes; hoe werken we hier mee? json builder; domein<-> klassediagram sam --> alle likes in het begin ophalen?

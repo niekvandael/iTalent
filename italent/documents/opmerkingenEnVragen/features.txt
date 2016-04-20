@@ -1,0 +1,13 @@
+NIET: Gaat het programma mails kunnen versturen?
+NIET: Werken we met notificaties?
+NIET: discussions?
+NIET: favorites?
+NIET: bedrijven kunnen ook ideen toevoegen
+NIET: 10. hoe zit het met settings? optioneel (bijvoorbeeld: bepaalde sorteringen blijven behouden in een cookie, database,...)
+NIET: 11. favorites -optioneel
+
+
+WEL: social media?
+WEL: goals?
+WEL: i18n : verschillende talen
+WEL: studenten kunnen zich voor een bepaald aantal uren inschrijven op een project (bvb. slechts half time)
