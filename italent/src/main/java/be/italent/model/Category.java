@@ -11,6 +11,7 @@ public class Category extends ITalentEntity{
 	@GeneratedValue
 	private long id;
 	
+	
 	@Size(max=200)
 	private String description;
 
@@ -30,8 +31,6 @@ public class Category extends ITalentEntity{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
 
 	@Override
 	public int hashCode() {
@@ -60,6 +59,4 @@ public class Category extends ITalentEntity{
 			return false;
 		return true;
 	}
-
-	
 }
