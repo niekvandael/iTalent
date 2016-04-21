@@ -1,11 +1,9 @@
 package be.italent.services.category;
 
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Map;
-
-import javax.annotation.PostConstruct;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
@@ -13,17 +11,18 @@ import be.italent.model.Category;
 
 @Repository
 public class CategoryDaoMemImpl implements CategoryDao {
-	private Map<Integer, Category> categories;
-
-	@PostConstruct
-	public void init(){
-	}
+	
+	@PersistenceContext
+	private EntityManager em;
 	
 	public synchronized List<Category> getCategories() {
+		
+		TypedQuery<Category> query = em.createQuery("select c from Category as m order by m.created desc", Category.class);
+	    return query.getResultList();
 		//
 		// TODO: Read this from database
 		//
-		List<Category> result = new ArrayList<Category>();
+		/*List<Category> result = new ArrayList<Category>();
 		
 		Category cat1 = new Category();
 		cat1.setId(1);
@@ -42,7 +41,7 @@ public class CategoryDaoMemImpl implements CategoryDao {
 		result.add(cat1);
 		result.add(cat2);
 		
-		return result;
+		return result;*/
 	}
 
 }
