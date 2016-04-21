@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Category {
+public class Category extends ITalentEntity{
 	@Id
 	@GeneratedValue
 	private long id;
@@ -14,6 +14,7 @@ public class Category {
 	@Size(max=200)
 	private String description;
 
+	
 	public long getId() {
 		return id;
 	}
@@ -29,6 +30,8 @@ public class Category {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	
 
 	@Override
 	public int hashCode() {
