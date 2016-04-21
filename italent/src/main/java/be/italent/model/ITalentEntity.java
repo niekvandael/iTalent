@@ -5,11 +5,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 public abstract class ITalentEntity {
-	private char status;
+	protected char status;
 	@Size(max=55)
-	private String lastUpdatedBy;
+	protected String lastUpdatedBy;
 	@Temporal(TemporalType.TIMESTAMP)
-	private String lastUpdateTimestamp;
+	protected String lastUpdateTimestamp;
 	public char getStatus() {
 		return status;
 	}
