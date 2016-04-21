@@ -52,6 +52,7 @@
         <maven.compiler.target>1.7</maven.compiler.target>
         <!-- jvm.version toegevoegd -->
         <jvm.version>1.7</jvm.version>
+        <tomcat.version>7.0.52</tomcat.version>
     </properties>
 
 
@@ -183,6 +184,11 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
         </dependency>
 
         <dependency>
