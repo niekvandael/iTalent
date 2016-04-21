@@ -1,4 +1,4 @@
-package be.pxl.italent.services.category;
+package be.italent.services.category;
 
 import java.util.List;
 

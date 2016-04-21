@@ -1,4 +1,4 @@
-package be.pxl.italent.services.category;
+package be.italent.services.category;
 
 import java.util.ArrayList;
 
@@ -18,9 +18,9 @@ public class CategoryRestService {
 	@RequestMapping(method = RequestMethod.GET, produces="application/json")
 	public ArrayList<Category> getCategories(){
 		ArrayList<Category> c = (ArrayList<Category>) dao.getCategories();
-		if(c == null){
+		/*if(c == null){
 			throw new CategoryNotFoundException("No Categories found");
-		}
+		}*/
 		return c;
 	}
 }
