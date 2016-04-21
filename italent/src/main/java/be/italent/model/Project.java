@@ -1,12 +1,11 @@
 package be.italent.model;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.Size;
-
 import be.italent.abstracts.AbstractITalentEntity;
 
 @Entity
@@ -22,6 +21,9 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	
 	@Size(max=100)
 	private String omschrijving;
+	
+	@OneToOne
+	private Category category;
 
 	public long getId() {
 		return id;
@@ -45,6 +47,14 @@ public class Project extends AbstractITalentEntity implements Serializable {
 
 	public void setOmschrijving(String omschrijving) {
 		this.omschrijving = omschrijving;
+	}
+	
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 	@Override
