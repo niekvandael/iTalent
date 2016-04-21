@@ -1,0 +1,17 @@
+{
+  "name": "resources",
+  "authors": [
+    "Niek Vandael <nvd@asist.be>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
