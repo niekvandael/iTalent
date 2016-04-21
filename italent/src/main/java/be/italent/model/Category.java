@@ -7,10 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
-import be.italent.interfaces.ITalentEntity;
+import be.italent.abstracts.AbstractITalentEntity;
 
 @Entity
-public class Category extends ITalentEntity implements Serializable{
+public class Category extends AbstractITalentEntity implements Serializable{
 	
 	/**
 	 * 

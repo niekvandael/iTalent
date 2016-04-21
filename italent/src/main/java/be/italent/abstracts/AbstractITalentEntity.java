@@ -1,4 +1,4 @@
-package be.italent.interfaces;
+package be.italent.abstracts;
 
 import java.io.Serializable;
 import java.util.Calendar;
@@ -9,7 +9,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
 
 @MappedSuperclass
-public abstract class ITalentEntity implements Serializable{
+public abstract class AbstractITalentEntity implements Serializable{
 	@Temporal(TemporalType.TIMESTAMP)
 	private Calendar lastUpdate;
 
