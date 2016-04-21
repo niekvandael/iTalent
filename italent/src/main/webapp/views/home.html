@@ -1,9 +1,10 @@
 </header>
 
-<div>
-	<ol>
+<h1>Alle categorietjes:</h1>
+<div class="jumbotron">
+	<ul>
 		<li ng-repeat="category in homeCtrl.categories">
-			{{ people.firstName }} 
+			{{ category.description }} 
 		</li>
-	</ol>
+	</ul>
 </div>

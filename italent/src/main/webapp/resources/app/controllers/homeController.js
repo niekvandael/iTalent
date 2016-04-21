@@ -9,6 +9,8 @@
 	
 	// 3. Implementatie v/d controller
 	function homeController($scope, categoryFactory){
+		var vm = this;
+		
 		categoryFactory.getCategories()
 		.success(function(categories){
 			vm.categories = categories;
