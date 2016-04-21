@@ -19,6 +19,7 @@ public abstract class ITalentEntity {
 	@GeneratedValue
 	protected long id;
 	
+	
 	protected char status;
 	@Size(max=55)
 	protected String lastUpdatedBy;
