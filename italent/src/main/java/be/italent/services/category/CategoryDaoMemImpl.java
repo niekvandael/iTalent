@@ -17,7 +17,7 @@ public class CategoryDaoMemImpl implements CategoryDao {
 	
 	public synchronized List<Category> getCategories() {
 		
-		TypedQuery<Category> query = em.createQuery("select c from Category as c order by c.description desc", Category.class);
+		TypedQuery<Category> query = em.createQuery("select c from Category as c order by c.description", Category.class);
 	    return query.getResultList();
 		//
 		// TODO: Read this from database
