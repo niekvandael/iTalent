@@ -8,6 +8,10 @@ import javax.persistence.Id;
 
 @Entity
 public class Movie implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2075313962607761537L;
 	@Id
 	@GeneratedValue
 	private long id;

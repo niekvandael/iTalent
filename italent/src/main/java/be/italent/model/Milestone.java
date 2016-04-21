@@ -8,6 +8,10 @@ import javax.persistence.Id;
 
 @Entity
 public class Milestone implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4572147731049218685L;
 	@Id
 	@GeneratedValue
 	private long id;

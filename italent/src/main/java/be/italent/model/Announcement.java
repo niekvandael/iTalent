@@ -8,6 +8,10 @@ import javax.persistence.Id;
 
 @Entity
 public class Announcement implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2877165021984304481L;
 	@Id
 	@GeneratedValue
 	private long id;

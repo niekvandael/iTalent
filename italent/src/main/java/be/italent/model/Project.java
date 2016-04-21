@@ -9,6 +9,11 @@ import javax.validation.constraints.Size;
 
 @Entity
 public class Project implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6933862050829577662L;
+
 	@Id
 	@GeneratedValue
 	private long id;

@@ -7,8 +7,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
+import be.italent.interfaces.ITalentEntity;
+
 @Entity
-public class Department implements Serializable {
+public class Department extends ITalentEntity  implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 735392819929104051L;
+
 	@Id
 	@GeneratedValue
 	private long id;

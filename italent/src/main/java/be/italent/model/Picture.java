@@ -8,6 +8,10 @@ import javax.persistence.Id;
 
 @Entity
 public class Picture implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3510424704524592845L;
 	@Id
 	@GeneratedValue
 	private long id;
