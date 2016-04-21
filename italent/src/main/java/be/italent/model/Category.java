@@ -11,12 +11,7 @@ import be.italent.abstracts.AbstractITalentEntity;
 
 @Entity
 public class Category extends AbstractITalentEntity implements Serializable{
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 8415387598073185560L;
-
 
 	@Id
 	@GeneratedValue

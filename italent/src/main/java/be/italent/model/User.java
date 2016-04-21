@@ -5,7 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -23,8 +23,11 @@ public class User implements Serializable{
 	@Size(min=2, max=55)
 	private String lastname;
 	
-	@ManyToOne
+	@OneToOne
 	private Role role;
+	
+	@OneToOne
+	private Department department;
 	
 	@NotNull
 	@Size(min=2, max=55)
@@ -66,6 +69,14 @@ public class User implements Serializable{
 	public void setRole(Role role) {
 		this.role = role;
 	}
+	
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 
 	public String getUsername() {
 		return username;
@@ -75,11 +86,9 @@ public class User implements Serializable{
 		this.username = username;
 	}
 
-
 	public String getPassword() {
 		return password;
 	}
-
 
 	public void setPassword(String password) {
 		this.password = password;
@@ -89,6 +98,7 @@ public class User implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((department == null) ? 0 : department.hashCode());
 		result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
 		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
@@ -107,6 +117,11 @@ public class User implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
+		if (department == null) {
+			if (other.department != null)
+				return false;
+		} else if (!department.equals(other.department))
+			return false;
 		if (firstname == null) {
 			if (other.firstname != null)
 				return false;

@@ -1,19 +1,19 @@
 package be.italent.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Size;
 
 import be.italent.abstracts.AbstractITalentEntity;
 
 @Entity
 public class Department extends AbstractITalentEntity implements Serializable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 735392819929104051L;
 
 	@Id
@@ -22,6 +22,9 @@ public class Department extends AbstractITalentEntity implements Serializable {
 	
 	@Size(max=55)
 	private String name;
+	
+	@OneToMany(mappedBy="department")
+	private List<User> users = new ArrayList<User>();
 
 	public long getId() {
 		return id;

@@ -10,9 +10,6 @@ import be.italent.abstracts.AbstractITalentEntity;
 
 @Entity
 public class Movie extends AbstractITalentEntity implements Serializable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 2075313962607761537L;
 	@Id
 	@GeneratedValue

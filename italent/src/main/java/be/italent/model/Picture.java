@@ -10,9 +10,6 @@ import be.italent.abstracts.AbstractITalentEntity;
 
 @Entity
 public class Picture extends AbstractITalentEntity implements Serializable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -3510424704524592845L;
 	@Id
 	@GeneratedValue
