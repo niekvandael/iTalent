@@ -6,8 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import be.italent.interfaces.ITalentEntity;
+
 @Entity
-public class Like implements Serializable {
+public class Like extends ITalentEntity implements Serializable {
 	/**
 	 * 
 	 */

@@ -6,8 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import be.italent.interfaces.ITalentEntity;
+
 @Entity
-public class Milestone implements Serializable {
+public class Milestone extends ITalentEntity implements Serializable {
 	/**
 	 * 
 	 */

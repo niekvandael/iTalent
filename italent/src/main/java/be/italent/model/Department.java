@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 import be.italent.interfaces.ITalentEntity;
 
 @Entity
-public class Department extends ITalentEntity  implements Serializable {
+public class Department extends ITalentEntity implements Serializable {
 	/**
 	 * 
 	 */

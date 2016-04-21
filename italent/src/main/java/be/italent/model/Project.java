@@ -7,8 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
+import be.italent.interfaces.ITalentEntity;
+
 @Entity
-public class Project implements Serializable {
+public class Project extends ITalentEntity implements Serializable {
 	/**
 	 * 
 	 */
