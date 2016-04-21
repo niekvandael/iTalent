@@ -1,0 +1,75 @@
+### Jazz Ignore 0
+# Ignored files and folders will not be committed, but may be modified during 
+# accept or update.  
+# - Ignore properties should contain a space separated list of filename patterns.  
+# - Each pattern is case sensitive and surrounded by braces ('{' and '}').  
+# - "*" matches zero or more characters.  
+# - "?" matches a single character.  
+# - The pattern list may be split across lines by ending the line with a 
+#     backslash and starting the next line with a tab.  
+# - Patterns in core.ignore prevent matching resources in the same 
+#     directory from being committed.  
+# - Patterns in core.ignore.recursive matching resources in the current 
+#     directory and all subdirectories from being committed.  
+# - The default value of core.ignore.recursive is *.class 
+# - The default value for core.ignore is bin 
+# 
+# To ignore shell scripts and hidden files in this subtree: 
+#     e.g: core.ignore.recursive = {*.sh} {\.*} 
+# 
+# To ignore resources named 'bin' in the current directory (but allow 
+#  them in any sub directorybelow): 
+#     e.g: core.ignore = {bin} 
+# 
+# NOTE: modifying ignore files will not change the ignore status of 
+#     Eclipse derived resources.
+
+core.ignore.recursive= 
+
+core.ignore= \
+	{Maven__antlr_antlr_2_7_7.xml} \
+	{Maven__aopalliance_aopalliance_1_0.xml} \
+	{Maven__com_fasterxml_classmate_1_0_0.xml} \
+	{Maven__com_fasterxml_jackson_core_jackson_annotations_2_4_0.xml} \
+	{Maven__com_fasterxml_jackson_core_jackson_core_2_4_1.xml} \
+	{Maven__com_fasterxml_jackson_core_jackson_databind_2_4_1_1.xml} \
+	{Maven__commons_dbcp_commons_dbcp_1_4.xml} \
+	{Maven__commons_fileupload_commons_fileupload_1_2_2.xml} \
+	{Maven__commons_io_commons_io_1_3_2.xml} \
+	{Maven__commons_logging_commons_logging_1_2.xml} \
+	{Maven__commons_pool_commons_pool_1_5_4.xml} \
+	{Maven__dom4j_dom4j_1_6_1.xml} \
+	{Maven__javax_javaee_api_6_0.xml} \
+	{Maven__javax_servlet_javax_servlet_api_3_0_1.xml} \
+	{Maven__javax_servlet_jstl_1_2.xml} \
+	{Maven__javax_validation_validation_api_1_1_0_Final.xml} \
+	{Maven__junit_junit_4_12.xml} \
+	{Maven__mysql_mysql_connector_java_5_1_25.xml} \
+	{Maven__org_apache_commons_commons_lang3_3_3_2.xml} \
+	{Maven__org_aspectj_aspectjweaver_1_8_0.xml} \
+	{Maven__org_hamcrest_hamcrest_core_1_3.xml} \
+	{Maven__org_hibernate_common_hibernate_commons_annotations_4_0_2_Final.xml} \
+	{Maven__org_hibernate_hibernate_core_4_2_13_Final.xml} \
+	{Maven__org_hibernate_hibernate_entitymanager_4_2_13_Final.xml} \
+	{Maven__org_hibernate_hibernate_validator_5_0_3_Final.xml} \
+	{Maven__org_hibernate_javax_persistence_hibernate_jpa_2_0_api_1_0_1_Final.xml} \
+	{Maven__org_javassist_javassist_3_18_1_GA.xml} \
+	{Maven__org_jboss_logging_jboss_logging_3_1_0_GA.xml} \
+	{Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_1_spec_1_0_1_Final.xml} \
+	{Maven__org_postgresql_postgresql_9_2_1003_jdbc4.xml} \
+	{Maven__org_springframework_security_spring_security_acl_3_1_3_RELEASE.xml} \
+	{Maven__org_springframework_security_spring_security_config_4_0_0_M1.xml} \
+	{Maven__org_springframework_security_spring_security_core_3_1_3_RELEASE.xml} \
+	{Maven__org_springframework_security_spring_security_taglibs_3_1_3_RELEASE.xml} \
+	{Maven__org_springframework_security_spring_security_web_4_0_0_M1.xml} \
+	{Maven__org_springframework_spring_aop_4_0_2_RELEASE.xml} \
+	{Maven__org_springframework_spring_beans_4_0_2_RELEASE.xml} \
+	{Maven__org_springframework_spring_context_4_0_2_RELEASE.xml} \
+	{Maven__org_springframework_spring_core_4_0_2_RELEASE.xml} \
+	{Maven__org_springframework_spring_expression_4_0_2_RELEASE.xml} \
+	{Maven__org_springframework_spring_jdbc_4_0_2_RELEASE.xml} \
+	{Maven__org_springframework_spring_orm_4_0_2_RELEASE.xml} \
+	{Maven__org_springframework_spring_test_4_0_2_RELEASE.xml} \
+	{Maven__org_springframework_spring_tx_4_0_2_RELEASE.xml} \
+	{Maven__org_springframework_spring_web_4_0_2_RELEASE.xml} \
+	{Maven__org_springframework_spring_webmvc_4_0_2_RELEASE.xml} 

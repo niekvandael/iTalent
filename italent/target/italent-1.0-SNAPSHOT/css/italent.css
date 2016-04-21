@@ -1,0 +1,15 @@
+.topMargin {
+    padding-top: 50px;
+}
+
+.panel-primary {
+    border-color: black !important;
+}
+
+.panel-heading {
+    background-color: black !important;
+}
+
+.btn-primary {
+    background-color: black !important;
+}
