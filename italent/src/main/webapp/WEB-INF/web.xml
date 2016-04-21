@@ -17,12 +17,16 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value></param-value>
 		</init-param>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/rest.xml</param-value>
+		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>SpringDispatcherServlet</servlet-name>
-		<url-pattern>*.htm</url-pattern>
+		<url-pattern>/ws/*</url-pattern>
 	</servlet-mapping>
 
 	<listener>
