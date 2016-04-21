@@ -1,12 +1,14 @@
 package be.italent.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Department {
+public class Department implements Serializable {
 	@Id
 	@GeneratedValue
 	private long id;

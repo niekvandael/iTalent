@@ -1,5 +1,6 @@
 package be.italent.model;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 import javax.persistence.Entity;
@@ -12,7 +13,7 @@ import javax.validation.constraints.Size;
 import be.italent.interfaces.ITalentEntity;
 
 @Entity
-public class Category implements ITalentEntity{
+public class Category extends ITalentEntity implements Serializable{
 	
 	@Id
 	@GeneratedValue

@@ -1,11 +1,13 @@
 package be.italent.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Announcement {
+public class Announcement implements Serializable {
 	@Id
 	@GeneratedValue
 	private long id;
