@@ -4,15 +4,12 @@ import javax.validation.constraints.Size;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-@Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS) //slightly more normalized 
 public abstract class ITalentEntity {
 	@Id

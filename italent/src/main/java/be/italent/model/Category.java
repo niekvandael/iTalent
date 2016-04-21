@@ -1,9 +1,8 @@
 package be.italent.model;
 
-import javax.persistence.Entity;
 import javax.validation.constraints.Size;
 
-@Entity
+
 public class Category extends ITalentEntity{
 	
 	
