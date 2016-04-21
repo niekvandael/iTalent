@@ -6,7 +6,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE) //Least normalisation strategy  (jesse testing)
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS) //slightly more normalized 
 public abstract class ITalentEntity {
 	protected char status;
 	@Size(max=55)
