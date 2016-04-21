@@ -6,6 +6,9 @@ angular.module('iTalentApp')
 
         $scope.homeTest = 'Test page home';
         
-        $scope.projects = projectService.list();
-       
+        projectService.list().then(
+    		function(projects){
+    			$scope.projects = projects;
+    		}
+        )
     }]);

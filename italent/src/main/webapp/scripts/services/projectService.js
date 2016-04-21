@@ -3,7 +3,7 @@
  */
 
 angular.module('iTalentApp')
-    .factory('projectService', ['$resource', '$q', function ($resource, $q) {
+    .factory('projectService', ['$resource', '$q', '$http', function ($resource, $q, $http) {
 
         return {
             get: function (id) {
@@ -22,7 +22,7 @@ angular.module('iTalentApp')
             list: function () {
                 var deferred = $q.defer();
 
-                var resource = $resource("......../projects", {}, {list: {method: "GET"}});
+                var resource = $resource("http://italent-itproject.rhcloud.com/ws/categories", {}, {list: {method: "GET", isArray: true}});
 
                 resource.list(function (projectList) {
                     deferred.resolve(projectList);
