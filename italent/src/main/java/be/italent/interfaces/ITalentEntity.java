@@ -3,13 +3,12 @@ package be.italent.interfaces;
 import java.io.Serializable;
 import java.util.Calendar;
 
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
 
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@MappedSuperclass
 public abstract class ITalentEntity implements Serializable{
 	@Temporal(TemporalType.TIMESTAMP)
 	private Calendar lastUpdate;
