@@ -39,6 +39,9 @@ public class CategoryDaoMemImpl implements CategoryDao {
 		cat2.setLastUpdatedBy("NIEK");
 		cat2.setStatus("A");
 		
+		result.add(cat1);
+		result.add(cat2);
+		
 		return result;
 	}
 
