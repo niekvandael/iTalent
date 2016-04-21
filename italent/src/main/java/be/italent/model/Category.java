@@ -1,10 +1,16 @@
 package be.italent.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
-
-public class Category extends ITalentEntity{
+@Entity
+public class Category{
 	
+	@Id
+	@GeneratedValue
+	private long id;
 	
 	
 	@Size(max=200)
