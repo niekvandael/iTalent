@@ -2,21 +2,21 @@ package be.italent.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.Size;
+import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
 
-@Entity
-public class Department extends AbstractITalentEntity implements Serializable {
-	private static final long serialVersionUID = 735392819929104051L;
+@MappedSuperclass
+public class AbstractSubscriber extends AbstractITalentEntity implements Serializable {
+	private static final long serialVersionUID = 8880123919043305925L;
 
 	@Id
 	@GeneratedValue
 	private long id;
 	
-	@Size(max=55)
-	private String name;
+	@ManyToOne
+	private Project project;
 
 	public long getId() {
 		return id;
@@ -26,13 +26,12 @@ public class Department extends AbstractITalentEntity implements Serializable {
 		this.id = id;
 	}
 
-	
-	public String getName() {
-		return name;
+	public Project getProject() {
+		return project;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setProject(Project project) {
+		this.project = project;
 	}
 
 	@Override
@@ -40,7 +39,7 @@ public class Department extends AbstractITalentEntity implements Serializable {
 		final int prime = 31;
 		int result = super.hashCode();
 		result = prime * result + (int) (id ^ (id >>> 32));
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((project == null) ? 0 : project.hashCode());
 		return result;
 	}
 
@@ -52,13 +51,13 @@ public class Department extends AbstractITalentEntity implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Department other = (Department) obj;
+		AbstractSubscriber other = (AbstractSubscriber) obj;
 		if (id != other.id)
 			return false;
-		if (name == null) {
-			if (other.name != null)
+		if (project == null) {
+			if (other.project != null)
 				return false;
-		} else if (!name.equals(other.name))
+		} else if (!project.equals(other.project))
 			return false;
 		return true;
 	}

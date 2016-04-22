@@ -9,8 +9,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import be.italent.abstracts.AbstractITalentEntity;
-
 @Entity
 @Table(name="_Like")
 public class Like extends AbstractITalentEntity implements Serializable {

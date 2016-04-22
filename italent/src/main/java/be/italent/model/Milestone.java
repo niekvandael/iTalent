@@ -5,8 +5,7 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
-import be.italent.abstracts.AbstractITalentEntity;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Milestone extends AbstractITalentEntity implements Serializable {
@@ -14,6 +13,11 @@ public class Milestone extends AbstractITalentEntity implements Serializable {
 	@Id
 	@GeneratedValue
 	private long id;
+	
+	private boolean done;
+	
+	@ManyToOne
+	private Project project;
 
 	public long getId() {
 		return id;
@@ -23,11 +27,29 @@ public class Milestone extends AbstractITalentEntity implements Serializable {
 		this.id = id;
 	}
 
+	public boolean isDone() {
+		return done;
+	}
+
+	public void setDone(boolean done) {
+		this.done = done;
+	}
+
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int result = 1;
+		int result = super.hashCode();
+		result = prime * result + (done ? 1231 : 1237);
 		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((project == null) ? 0 : project.hashCode());
 		return result;
 	}
 
@@ -35,16 +57,20 @@ public class Milestone extends AbstractITalentEntity implements Serializable {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
+		if (!super.equals(obj))
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
 		Milestone other = (Milestone) obj;
+		if (done != other.done)
+			return false;
 		if (id != other.id)
+			return false;
+		if (project == null) {
+			if (other.project != null)
+				return false;
+		} else if (!project.equals(other.project))
 			return false;
 		return true;
 	}
-	
-	
-
 }

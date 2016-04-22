@@ -8,8 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
-import be.italent.abstracts.AbstractITalentEntity;
-
 @Entity
 public class Announcement extends AbstractITalentEntity implements Serializable {
 	private static final long serialVersionUID = -2877165021984304481L;

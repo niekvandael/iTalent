@@ -1,4 +1,4 @@
-package be.italent.abstracts;
+package be.italent.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
