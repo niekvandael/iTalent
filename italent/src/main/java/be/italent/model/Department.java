@@ -1,13 +1,10 @@
 package be.italent.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.Size;
 
 import be.italent.abstracts.AbstractITalentEntity;
@@ -22,9 +19,6 @@ public class Department extends AbstractITalentEntity implements Serializable {
 	
 	@Size(max=55)
 	private String name;
-	
-	@OneToMany(mappedBy="department")
-	private List<User> users = new ArrayList<User>();
 
 	public long getId() {
 		return id;
@@ -49,7 +43,6 @@ public class Department extends AbstractITalentEntity implements Serializable {
 		int result = super.hashCode();
 		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((users == null) ? 0 : users.hashCode());
 		return result;
 	}
 
@@ -68,11 +61,6 @@ public class Department extends AbstractITalentEntity implements Serializable {
 			if (other.name != null)
 				return false;
 		} else if (!name.equals(other.name))
-			return false;
-		if (users == null) {
-			if (other.users != null)
-				return false;
-		} else if (!users.equals(other.users))
 			return false;
 		return true;
 	}
