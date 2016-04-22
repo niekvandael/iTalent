@@ -29,8 +29,11 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@OneToOne
 	private Category category;
 	
-	@OneToMany
+	@OneToMany(mappedBy="project")
 	private List<Announcement> announcements = new ArrayList<Announcement>();
+	
+	@OneToMany(mappedBy="project")
+	private List<Like> likes = new ArrayList<Like>();
 
 	public long getId() {
 		return id;
@@ -71,6 +74,14 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	public void setAnnouncements(List<Announcement> announcements) {
 		this.announcements = announcements;
 	}
+	
+	public List<Like> getLikes() {
+		return likes;
+	}
+
+	public void setLikes(List<Like> likes) {
+		this.likes = likes;
+	}
 
 	@Override
 	public int hashCode() {
@@ -79,6 +90,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		result = prime * result + ((announcements == null) ? 0 : announcements.hashCode());
 		result = prime * result + ((category == null) ? 0 : category.hashCode());
 		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((likes == null) ? 0 : likes.hashCode());
 		result = prime * result + ((omschrijving == null) ? 0 : omschrijving.hashCode());
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
@@ -104,6 +116,11 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		} else if (!category.equals(other.category))
 			return false;
 		if (id != other.id)
+			return false;
+		if (likes == null) {
+			if (other.likes != null)
+				return false;
+		} else if (!likes.equals(other.likes))
 			return false;
 		if (omschrijving == null) {
 			if (other.omschrijving != null)

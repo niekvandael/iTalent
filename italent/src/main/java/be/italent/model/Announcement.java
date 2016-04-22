@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 
 import be.italent.abstracts.AbstractITalentEntity;
 
@@ -16,8 +17,12 @@ public class Announcement extends AbstractITalentEntity implements Serializable 
 	@GeneratedValue
 	private long id;
 	
+	
 	@Lob
 	private String text;
+	
+	@ManyToOne
+	private Project project;
 
 	public long getId() {
 		return id;
@@ -35,11 +40,20 @@ public class Announcement extends AbstractITalentEntity implements Serializable 
 		this.text = text;
 	}
 
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
 		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((project == null) ? 0 : project.hashCode());
 		result = prime * result + ((text == null) ? 0 : text.hashCode());
 		return result;
 	}
@@ -54,6 +68,11 @@ public class Announcement extends AbstractITalentEntity implements Serializable 
 			return false;
 		Announcement other = (Announcement) obj;
 		if (id != other.id)
+			return false;
+		if (project == null) {
+			if (other.project != null)
+				return false;
+		} else if (!project.equals(other.project))
 			return false;
 		if (text == null) {
 			if (other.text != null)

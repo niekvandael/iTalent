@@ -20,9 +20,6 @@ public class Category extends AbstractITalentEntity implements Serializable{
 	@Size(max=200)
 	private String description;
 	
-	/*@OneToMany(mappedBy="category")
-	private List<Project> projects = new ArrayList<Project>();*/
-	
 	public long getId() {
 		return id;
 	}
@@ -65,15 +62,5 @@ public class Category extends AbstractITalentEntity implements Serializable{
 		if (id != other.id)
 			return false;
 		return true;
-	}
-
-	/*public List<Project> getProjects() {
-		return projects;
-	}
-
-	public void setProjects(List<Project> projects) {
-		this.projects = projects;
-	}*/
-	
-	
+	}	
 }
