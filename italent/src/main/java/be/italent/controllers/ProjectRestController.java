@@ -19,9 +19,10 @@ public class ProjectRestController {
 
 	@RequestMapping(method = RequestMethod.GET, produces="application/json")
 	public ArrayList<Project> getProjects(){
-		ArrayList<Project> c = (ArrayList<Project>) projectService.getAllProjects();
-
-		return c;
+		System.out.println("GET");
+		ArrayList<Project> project = (ArrayList<Project>) projectService.getAllProjects();
+		
+		return project;
 	}
 
 	@RequestMapping(value = " /description/{description}", method = RequestMethod.GET, produces="application/json")
