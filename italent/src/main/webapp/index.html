@@ -21,16 +21,11 @@
                 <a class="navbar-brand">iTalent PXL</a>
             </div>
 
-            <div ng-if="loggedIn" class="collapse navbar-collapse navbarCollapse" ng-controller="loginController">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" ng-click="logout()">Logout {{user.displayName}}</a></li>
-                </ul>
-            </div>
-
-            <div ng-if="!loggedIn" class="collapse navbar-collapse navbarCollapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#/login">Login</a></li>
-                </ul>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul ng-controller="loginController" class="nav navbar-nav navbar-right">
+					<li ng-if="loggedIn"><a href="#" ng-click="logout()">Logout {{user.displayName}}</a></li>
+					<li ng-if="!loggedIn"><a href="#/login">Login</a></li>
+				</ul>
             </div>
         </div>
 
