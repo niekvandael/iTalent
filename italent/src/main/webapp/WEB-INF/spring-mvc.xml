@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
-	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:security="http://www.springframework.org/schema/security"
-	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+	   xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:security="http://www.springframework.org/schema/security"
+	   xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	   xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/security  http://www.springframework.org/schema/security/spring-security.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 	<context:component-scan base-package="be.italent"></context:component-scan>
+
+	<jpa:repositories base-package="be.italent.repo" entity-manager-factory-ref="emf"/>
+
 	<mvc:annotation-driven />
 	<!-- 	datasource -->
 	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource">
@@ -16,12 +22,16 @@
 		<property name="url" value="jdbc:mysql://${env.OPENSHIFT_MYSQL_DB_HOST}:${env.OPENSHIFT_MYSQL_DB_PORT}/${env.OPENSHIFT_APP_NAME}" />
 		<property name="username" value="$OPENSHIFT_MYSQL_DB_USERNAME" />
 		<property name="password" value="$OPENSHIFT_MYSQL_DB_PASSWORD" />-->
-		
+
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://127.8.154.2:3306/italent" />
 		<property name="username" value="adminkgnI5Nk" />
 		<property name="password" value="HiGAW1BJfshb" />
-		
+
+		<!--<property name="driverClassName" value="com.mysql.jdbc.Driver" />-->
+		<!--<property name="url" value="jdbc:mysql://db4free.net:3306/italentnvd" />-->
+		<!--<property name="username" value="niekvandael" />-->
+		<!--<property name="password" value="asist4u" />		-->
 		
 		<!-- <property name="auth" value="Container" />
 		<property name="type" value="javax.sql.DataSource" />
