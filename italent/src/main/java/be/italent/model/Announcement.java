@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Announcement extends AbstractITalentEntity implements Serializable {
 	private static final long serialVersionUID = -2877165021984304481L;
@@ -15,10 +17,10 @@ public class Announcement extends AbstractITalentEntity implements Serializable 
 	@GeneratedValue
 	private long id;
 	
-	
 	@Lob
 	private String text;
 	
+	@JsonManagedReference
 	@ManyToOne
 	private Project project;
 

@@ -13,6 +13,8 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Picture extends AbstractITalentEntity implements Serializable {
 	private static final long serialVersionUID = -3510424704524592845L;
@@ -28,6 +30,7 @@ public class Picture extends AbstractITalentEntity implements Serializable {
 	@Size(max=500)
 	private String description;
 	
+	@JsonManagedReference
 	@ManyToOne
 	private Project project;
 

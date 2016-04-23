@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Milestone extends AbstractITalentEntity implements Serializable {
 	private static final long serialVersionUID = 4572147731049218685L;
@@ -16,6 +18,7 @@ public class Milestone extends AbstractITalentEntity implements Serializable {
 	
 	private boolean done;
 	
+	@JsonManagedReference
 	@ManyToOne
 	private Project project;
 

@@ -10,9 +10,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.validation.constraints.Size;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 public class Project extends AbstractITalentEntity implements Serializable {
@@ -52,27 +54,35 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	
 	private boolean isPublic;
 	
+	@JsonBackReference
 	@OneToMany(mappedBy="project")
 	private List<Announcement> announcements = new ArrayList<Announcement>();
 	
+	@JsonBackReference
 	@OneToMany(mappedBy="project")
 	private List<Like> likes = new ArrayList<Like>();
 	
+	@JsonBackReference
 	@OneToMany(mappedBy="project")
 	private List<Milestone> milestones = new ArrayList<Milestone>();
 
+	@JsonBackReference
 	@OneToMany(mappedBy="project")
 	private List<Movie> movies = new ArrayList<Movie>();
 	
+	@JsonBackReference
 	@OneToMany(mappedBy="project")
 	private List<Picture> pictures = new ArrayList<Picture>();
 	
+	@JsonBackReference
 	@OneToMany(mappedBy="project")
 	private List<WantedSubscriber> wantedSubscribers = new ArrayList<WantedSubscriber>();
 	
+	@JsonBackReference
 	@OneToMany(mappedBy="project")
 	private List<SubscriberStudent> subscribersStudent = new ArrayList<SubscriberStudent>();
 	
+	@JsonBackReference
 	@OneToMany(mappedBy="project")
 	private List<SubscriberDocent> subscribersDocent = new ArrayList<SubscriberDocent>();
 	

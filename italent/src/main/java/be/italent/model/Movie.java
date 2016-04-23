@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Movie extends AbstractITalentEntity implements Serializable {
 	private static final long serialVersionUID = 2075313962607761537L;
@@ -21,6 +23,7 @@ public class Movie extends AbstractITalentEntity implements Serializable {
 	@Size(max=500)
 	private String description;
 	
+	@JsonManagedReference
 	@ManyToOne
 	private Project project;
 

@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @MappedSuperclass
 public class AbstractSubscriber extends AbstractITalentEntity implements Serializable {
 	private static final long serialVersionUID = 8880123919043305925L;
@@ -15,6 +17,7 @@ public class AbstractSubscriber extends AbstractITalentEntity implements Seriali
 	@GeneratedValue
 	private long id;
 	
+	@JsonManagedReference
 	@ManyToOne
 	private Project project;
 
