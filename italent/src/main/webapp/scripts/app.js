@@ -28,6 +28,9 @@
                     templateUrl: 'views/myProjects.html',
                     controller: 'myProjectsController'
                 })
+                .when('/about', {
+                    templateUrl: 'views/about.html'
+                })
                 .otherwise({
                     redirectTo: '/home'
                 })
