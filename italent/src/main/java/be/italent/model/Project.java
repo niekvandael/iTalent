@@ -88,4 +88,164 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@JsonBackReference
 	@OneToMany(mappedBy="project")
 	private List<SubscriberDocent> subscribersDocent = new ArrayList<SubscriberDocent>();
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getShortDescription() {
+		return shortDescription;
+	}
+
+	public void setShortDescription(String shortDescription) {
+		this.shortDescription = shortDescription;
+	}
+
+	public Date getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Date getBeginDate() {
+		return beginDate;
+	}
+
+	public void setBeginDate(Date beginDate) {
+		this.beginDate = beginDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public int getProjectStatus() {
+		return projectStatus;
+	}
+
+	public void setProjectStatus(int projectStatus) {
+		this.projectStatus = projectStatus;
+	}
+
+	public boolean isVerified() {
+		return isVerified;
+	}
+
+	public void setVerified(boolean isVerified) {
+		this.isVerified = isVerified;
+	}
+
+	public boolean isPublic() {
+		return isPublic;
+	}
+
+	public void setPublic(boolean isPublic) {
+		this.isPublic = isPublic;
+	}
+
+	public List<Announcement> getAnnouncements() {
+		return announcements;
+	}
+
+	public void setAnnouncements(List<Announcement> announcements) {
+		this.announcements = announcements;
+	}
+
+	public List<Like> getLikes() {
+		return likes;
+	}
+
+	public void setLikes(List<Like> likes) {
+		this.likes = likes;
+	}
+
+	public List<Milestone> getMilestones() {
+		return milestones;
+	}
+
+	public void setMilestones(List<Milestone> milestones) {
+		this.milestones = milestones;
+	}
+
+	public List<Movie> getMovies() {
+		return movies;
+	}
+
+	public void setMovies(List<Movie> movies) {
+		this.movies = movies;
+	}
+
+	public List<Picture> getPictures() {
+		return pictures;
+	}
+
+	public void setPictures(List<Picture> pictures) {
+		this.pictures = pictures;
+	}
+
+	public List<WantedSubscriber> getWantedSubscribers() {
+		return wantedSubscribers;
+	}
+
+	public void setWantedSubscribers(List<WantedSubscriber> wantedSubscribers) {
+		this.wantedSubscribers = wantedSubscribers;
+	}
+
+	public List<SubscriberStudent> getSubscribersStudent() {
+		return subscribersStudent;
+	}
+
+	public void setSubscribersStudent(List<SubscriberStudent> subscribersStudent) {
+		this.subscribersStudent = subscribersStudent;
+	}
+
+	public List<SubscriberDocent> getSubscribersDocent() {
+		return subscribersDocent;
+	}
+
+	public void setSubscribersDocent(List<SubscriberDocent> subscribersDocent) {
+		this.subscribersDocent = subscribersDocent;
+	}
 }

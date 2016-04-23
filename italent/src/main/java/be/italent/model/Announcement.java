@@ -25,4 +25,28 @@ public class Announcement extends AbstractITalentEntity implements Serializable 
 	@JsonManagedReference
 	@ManyToOne
 	private Project project;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
 }

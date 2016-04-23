@@ -27,4 +27,28 @@ public class Like extends AbstractITalentEntity implements Serializable {
 	@JsonManagedReference
 	@ManyToOne
 	private Project project;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
 }

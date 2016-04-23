@@ -22,4 +22,20 @@ public class AbstractSubscriber extends AbstractITalentEntity implements Seriali
 	@JsonManagedReference
 	@ManyToOne
 	private Project project;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
 }

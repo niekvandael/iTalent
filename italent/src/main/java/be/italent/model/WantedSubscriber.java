@@ -16,4 +16,20 @@ public class WantedSubscriber extends AbstractSubscriber implements Serializable
 	
 	@OneToOne
 	private Department department;
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 }

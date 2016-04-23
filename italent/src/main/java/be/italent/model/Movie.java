@@ -28,4 +28,36 @@ public class Movie extends AbstractITalentEntity implements Serializable {
 	@JsonManagedReference
 	@ManyToOne
 	private Project project;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getYouTubeId() {
+		return youTubeId;
+	}
+
+	public void setYouTubeId(String youTubeId) {
+		this.youTubeId = youTubeId;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
 }

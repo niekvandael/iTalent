@@ -23,4 +23,28 @@ public class Milestone extends AbstractITalentEntity implements Serializable {
 	@JsonManagedReference
 	@ManyToOne
 	private Project project;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public boolean isDone() {
+		return done;
+	}
+
+	public void setDone(boolean done) {
+		this.done = done;
+	}
+
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
 }
