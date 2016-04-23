@@ -14,18 +14,23 @@
 <body ng-app="iTalentApp" class="ng-cloak">
 
 <div>
-    <div class="navbar navbar-default">
+    <div class="navbar navbar-default" ng-controller="headerController">
         <div class="container-fluid">
 
             <div class="navbar-header">
                 <a class="navbar-brand">iTalent PXL</a>
             </div>
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul ng-controller="loginController" class="nav navbar-nav navbar-right">
-					<li ng-if="loggedIn"><a href="#" ng-click="logout()">Logout {{user.displayName}}</a></li>
-					<li ng-if="!loggedIn"><a href="#/login">Login</a></li>
-				</ul>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{ active: isActive('/home')}"><a href="#/home">Projecten</a></li>
+                    <li ng-if="loggedIn" ng-class="{ active: isActive('/myProjects')}"><a href="#/myProjects">Mijn projecten</a></li>
+                    <li ng-class="{ active: isActive('/about')}"><a href="#/about">About</a></li>
+                </ul>
+                <ul ng-controller="loginController" class="nav navbar-nav navbar-right">
+                    <li ng-if="loggedIn"><a href="#" ng-click="logout()">Logout {{user.displayName}}</a></li>
+                    <li ng-if="!loggedIn"><a href="#/login">Login</a></li>
+                </ul>
             </div>
         </div>
 
@@ -48,6 +53,7 @@
 <script src="scripts/constants/appConstants.js"></script>
 <script src="scripts/services/userService.js"></script>
 <script src="scripts/services/projectService.js"></script>
+<script src="scripts/controllers/headerController.js"></script>
 <script src="scripts/controllers/loginController.js"></script>
 <script src="scripts/controllers/homeController.js"></script>
 <script src="scripts/controllers/detailController.js"></script>
