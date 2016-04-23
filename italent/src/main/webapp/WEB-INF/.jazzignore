@@ -26,4 +26,5 @@
 
 core.ignore.recursive= 
 
-core.ignore= 
+core.ignore= \
+	{spring-mvc.xml} 
