@@ -24,6 +24,10 @@
                     templateUrl: 'views/login.html',
                     controller: 'loginController'
                 })
+                .when('/myProjects', {
+                    templateUrl: 'views/myProjects.html',
+                    controller: 'myProjectsController'
+                })
                 .otherwise({
                     redirectTo: '/home'
                 })
