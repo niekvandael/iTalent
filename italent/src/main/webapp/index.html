@@ -23,13 +23,13 @@
 
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li ng-class="{ active: isActive('/home')}"><a href="#/home">Projecten</a></li>
-                    <li ng-if="loggedIn" ng-class="{ active: isActive('/myProjects')}"><a href="#/myProjects">Mijn projecten</a></li>
-                    <li ng-class="{ active: isActive('/about')}"><a href="#/about">About</a></li>
+                    <li ng-class="{ active: isActive('/home')}"><a href="#/home">{{"views.index.projects" | translate}}</a></li>
+                    <li ng-if="loggedIn" ng-class="{ active: isActive('/myProjects')}"><a href="#/myProjects">{{"views.index.myProjects" | translate}}</a></li>
+                    <li ng-class="{ active: isActive('/about')}"><a href="#/about">{{"views.index.about" | translate}}</a></li>
                 </ul>
                 <ul ng-controller="loginController" class="nav navbar-nav navbar-right">
-                    <li ng-if="loggedIn"><a href="#" ng-click="logout()">Logout {{user.displayName}}</a></li>
-                    <li ng-if="!loggedIn"><a href="#/login">Login</a></li>
+                    <li ng-if="loggedIn"><a href="#" ng-click="logout()">{{"views.index.logout" | translate}} {{user.displayName}}</a></li>
+                    <li ng-if="!loggedIn"><a href="#/login">{{"views.index.login" | translate}}</a></li>
                 </ul>
             </div>
         </div>
