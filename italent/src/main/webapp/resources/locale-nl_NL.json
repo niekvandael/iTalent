@@ -4,6 +4,8 @@
   "views.index.about": "Over",
   "views.index.login": "Inloggen",
   "views.index.logout": "Uitloggen",
+  "views.login.username": "Gebruikersnaam",
+  "views.login.password": "Wachtwoord",
   "views.about.title": "Over iTalent PXL project",
   "views.about.madeBy": "Gemaakt door: ",
   "directives.language-select.Language": "Taal"

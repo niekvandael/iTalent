@@ -3,7 +3,7 @@
     <div class="col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h1><span class="glyphicon glyphicon-user"></span> PXL i-Talent Login</h1>
+                <h1><span class="glyphicon glyphicon-user"></span> PXL i-Talent {{"views.index.login" | translate}}</h1>
             </div>
             <ul class="list-group">
                 <li class="list-group-item">
@@ -14,7 +14,7 @@
                                 <input class="form-control"
                                        type="text"
                                        name="userName"
-                                       placeholder="Username"
+                                       placeholder="{{'views.login.username' | translate}}"
                                        ng-model="login.userName"
                                        ng-required="true">
                             </div>
@@ -23,14 +23,14 @@
                                 <input class="form-control"
                                        type="password"
                                        name="password"
-                                       placeholder="Password"
+                                       placeholder="{{'views.login.password' | translate}}"
                                        ng-model="login.password"
                                        ng-required="true">
                             </div>
                             <div class="form-group form-group-lg">
                                 <button type="submit"
                                         class="btn btn-primary btn-block btn-lg"
-                                        ng-disabled="!login.userName || !login.password || loading">Login</button>
+                                        ng-disabled="!login.userName || !login.password || loading">{{"views.index.login" | translate}}</button>
                             </div>
                             <label><input type="checkbox" ng-model="login.remember" ng-disabled="!login.userName || !login.password">&nbspRemember me</label>
                         </form>
