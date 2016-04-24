@@ -1,0 +1,10 @@
+{
+  "views.index.projects": "Projects",
+  "views.index.myProjects": "My projects",
+  "views.index.about": "About",
+  "views.index.login": "Login",
+  "views.index.logout": "Logout",
+  "views.about.title": "About iTalent PXL project",
+  "views.about.madeBy": "Made by: ",
+  "directives.language-select.Language": "Language"
+}
