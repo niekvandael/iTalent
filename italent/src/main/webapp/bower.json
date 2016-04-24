@@ -20,6 +20,11 @@
     "angular-route": "1.5.5",
     "bootstrap": "3.3.6",
     "jquery": "2.2.3",
-    "underscore": "1.8.3"
+    "underscore": "1.8.3",
+    "angular-translate": "2.11.0",
+    "angular-translate-loader-static-files": "2.11.0",
+    "angular-translate-handler-log": "2.11.0",
+    "angular-dynamic-locale": "0.1.32",
+    "angular-i18n": "1.5.5"
   }
 }
