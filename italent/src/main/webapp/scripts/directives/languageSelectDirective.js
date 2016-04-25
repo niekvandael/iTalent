@@ -12,7 +12,6 @@ angular.module('iTalentApp')
         template: ''+
         '<div class="language-select" ng-if="visible">'+
         '<label>'+
-        '{{"directives.language-select.Language" | translate}}:'+
         '<select class="form-control" ng-model="currentLocaleDisplayName"'+
         'ng-options="localesDisplayName for localesDisplayName in localesDisplayNames"'+
         'ng-change="changeLanguage(currentLocaleDisplayName)">'+
