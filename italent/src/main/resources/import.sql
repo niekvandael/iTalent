@@ -1,6 +1,11 @@
 --
 -- Import script when "hibernate.hbm2ddl.auto" is set to "create"
 --
+delete from Department;
+delete from Category;
+delete from Role;
+delete from User;
+delete from Project;
 
 -- Departments
 insert into Department (id, lastUpdate, lastUpdatedBy, status, name) values(null, '2016-01-01', 'Team 1', 'A', 'IT');
