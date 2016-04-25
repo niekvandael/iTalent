@@ -4,6 +4,7 @@
 
 -- Departments
 insert into Department (id, lastUpdate, lastUpdatedBy, status, name) values(null, '2016-01-01', 'Team 1', 'A', 'IT');
+insert into Department (id, lastUpdate, lastUpdatedBy, status, name) values(null, '2016-01-01', 'Team 1', 'A', 'MARKETING');
 
 -- Categories
 insert into Category (id, lastUpdate, lastUpdatedBy, status, description) values(null, '2016-01-01', 'Team 1', 'Active', 'Food');
