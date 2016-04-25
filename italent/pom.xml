@@ -50,7 +50,7 @@
 	      <dependency>
 	        <groupId>org.springframework</groupId>
 	        <artifactId>spring-framework-bom</artifactId>
-	        <version>4.0.2.RELEASE</version>
+	        <version>4.2.5.RELEASE</version>
 	        <type>pom</type>
 	        <scope>import</scope>
 	      </dependency>
@@ -123,7 +123,7 @@
 		<dependency>
 	        <groupId>org.springframework.security</groupId>
 	        <artifactId>spring-security-taglibs</artifactId>
-	        <version>3.1.3.RELEASE</version>
+	        <version>4.0.4.RELEASE</version>
 	        <exclusions>
 	            <exclusion>
 	                <artifactId>spring-aop</artifactId>
@@ -143,38 +143,16 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.8.0</version>
 		</dependency>
-		
-		<!-- <dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.15</version>
-			<scope>compile</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>com.sun.jmx</groupId>
-					<artifactId>jmxri</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.sun.jdmk</groupId>
-					<artifactId>jmxtools</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>javax.jms</groupId>
-					<artifactId>jms</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency> -->
-		
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
-			<version>4.0.0.M1</version>
+			<version>4.0.4.RELEASE</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
-			<version>4.0.0.M1</version>
+			<version>4.0.4.RELEASE</version>
 		</dependency>
 
 		<dependency>
