@@ -11,17 +11,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/projects")
+//@RequestMapping("/projects")
 public class ProjectRestController {
 
 	@Autowired
 	private ProjectService projectService;
 
-	@RequestMapping(method = RequestMethod.GET, produces="application/json")
+	@RequestMapping(value = "/projects", method = RequestMethod.GET, produces="application/json")
 	public ArrayList<Project> getProjects(){
 		System.out.println("GET");
-		ArrayList<Project> project = (ArrayList<Project>) projectService.getAllProjects();
-		
+		ArrayList<Project> projects = (ArrayList<Project>) projectService.getAllProjects();
+		return projects;
+	}
+	
+	@RequestMapping(value = "/project/{id}", method = RequestMethod.GET, produces="application/json")
+	public Project getProject(@PathVariable("id") final int id){
+		System.out.println("GET PROJECT" + id);
+		Project project = (Project) projectService.getProjectById(id);		
 		return project;
 	}
 

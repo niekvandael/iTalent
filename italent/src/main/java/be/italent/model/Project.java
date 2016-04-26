@@ -27,7 +27,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private int id;
 	
 	@Size(min=2, max=100)
 	private String title;
@@ -92,11 +92,11 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@OneToMany(mappedBy="project")
 	private List<SubscriberDocent> subscribersDocent = new ArrayList<SubscriberDocent>();
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

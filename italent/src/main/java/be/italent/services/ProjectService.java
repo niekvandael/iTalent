@@ -1,23 +1,12 @@
 package be.italent.services;
 
-import be.italent.model.Project;
-import be.italent.repo.ProjectRepo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 
-@Service
-public class ProjectService {
+import be.italent.model.Project;
 
-    @Autowired
-    private ProjectRepo projectRepo;
+public interface ProjectService {
 
-    public List<Project> getAllProjects() {
-        return projectRepo.findAll();
-    }
-
-    public List<Project> getAllByDescription(String description) {
-        return projectRepo.findAllByDescription(description);
-    }
+	public List<Project> getAllProjects();
+	public Project getProjectById(int id);
+	public List<Project> getAllByDescription(String description);
 }
