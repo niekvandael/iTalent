@@ -6,6 +6,10 @@
   "views.index.logout": "Logout",
   "views.login.username": "Username",
   "views.login.password": "Password",
+  "views.home.shortDescription": "Short description",
+  "views.home.createdBy": "Created by:",
+  "views.home.startDate": "Start date:",
+  "views.home.details": "Show details",
   "views.about.title": "About iTalent PXL project",
   "views.about.madeBy": "Made by: ",
   "directives.language-select.Language": "Language"

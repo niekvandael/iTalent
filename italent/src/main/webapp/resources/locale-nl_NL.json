@@ -6,6 +6,10 @@
   "views.index.logout": "Uitloggen",
   "views.login.username": "Gebruikersnaam",
   "views.login.password": "Wachtwoord",
+  "views.home.shortDescription": "Korte omschrijving",
+  "views.home.createdBy": "Aangemaakt door:",
+  "views.home.startDate": "Start datum:",
+  "views.home.details": "Bekijk details",
   "views.about.title": "Over iTalent PXL project",
   "views.about.madeBy": "Gemaakt door: ",
   "directives.language-select.Language": "Taal"

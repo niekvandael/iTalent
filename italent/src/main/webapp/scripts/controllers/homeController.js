@@ -10,4 +10,18 @@ angular.module('iTalentApp')
             console.log('Error getting projects: ' + err)
         });
         
+        $scope.likeClicked = function (project) {
+            if (!project.numberOfLikes) {
+                project.numberOfLikes = 0;
+            }
+            if (project.liked) {
+                project.numberOfLikes--;
+            } else {
+                project.numberOfLikes++;
+            }
+            project.liked = !project.liked;
+
+            //TODO Save likes in database
+        };
+        
     }]);
