@@ -16,7 +16,7 @@
                     templateUrl: 'views/home.html',
                     controller: 'homeController'
                 })
-                .when('/detail/:id', {
+                .when('/projects/:id', {
                     templateUrl: 'views/detail.html',
                     controller: 'detailController'
                 })
