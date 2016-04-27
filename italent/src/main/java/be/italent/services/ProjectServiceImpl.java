@@ -18,7 +18,7 @@ public class ProjectServiceImpl implements ProjectService{
     }
     
     public Project getProjectById(int id){
-    	return projectRepo.getOne(id);
+        	return projectRepo.findOne(id);			
     }
     
     public List<Project> getAllByDescription(String description) {
