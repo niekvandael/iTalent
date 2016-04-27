@@ -2,7 +2,7 @@
  * Created by arjen on 05/04/16.
  */
 angular.module('iTalentApp')
-    .controller('homeController', ['$scope', '$rootScope', 'projectService', function ($scope, $rootScope, projectService) {
+    .controller('homeController', ['$scope', '$rootScope', '$location', 'projectService', function ($scope, $rootScope, $location, projectService) {
 
         projectService.list().then(function (projects) {
             $scope.projects = projects;
@@ -22,6 +22,10 @@ angular.module('iTalentApp')
             project.liked = !project.liked;
 
             //TODO Save likes in database
+        };
+        
+        $scope.showDetails = function(id) {
+            $location.path('/projects/' + id);
         };
         
     }]);
