@@ -6,6 +6,8 @@ delete from Category;
 delete from Role;
 delete from User;
 delete from Project;
+delete from Likes;
+
 
 -- Departments
 insert into Department (id, lastUpdate, lastUpdatedBy, status, name) values(null, '2016-01-01', 'Team 1', 'A', 'IT');
@@ -24,3 +26,6 @@ insert into User (id, firstname, lastname, password, username, department_id, ro
 insert into Project (id, lastUpdate, lastUpdatedBy, status, beginDate, creationDate, description, endDate, isPublic, isVerified, projectStatus, shortDescription, title, category_id, user_id) values(null, '2016-04-23', 'Niek', 'A', '2016-05-01', '2016-04-23', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,', '2016-06-01', false, false, 1, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m', 1, 1);
 insert into Project (id, lastUpdate, lastUpdatedBy, status, beginDate, creationDate, description, endDate, isPublic, isVerified, projectStatus, shortDescription, title, category_id, user_id) values(null, '2016-04-23', 'Niek', 'A', '2016-05-01', '2016-04-23', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,', '2016-06-01', false, false, 1, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m', 1, 1);
 insert into Project (id, lastUpdate, lastUpdatedBy, status, beginDate, creationDate, description, endDate, isPublic, isVerified, projectStatus, shortDescription, title, category_id, user_id) values(null, '2016-04-23', 'Niek', 'A', '2016-05-01', '2016-04-23', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,', '2016-06-01', false, false, 1, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m', 1, 1);
+
+-- Likes
+insert into Likes(user_id, project_id, status, lastUpdatedBy, lastUpdate, id) values(1,1,'A','Niek', '2016-01-01', 1);
