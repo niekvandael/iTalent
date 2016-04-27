@@ -17,7 +17,7 @@ public class Announcement extends AbstractITalentEntity implements Serializable 
 	private static final long serialVersionUID = -2877165021984304481L;
 	@Id
 	@GeneratedValue
-	private long id;
+	private int id;
 	
 	@Lob
 	private String text;
@@ -26,11 +26,11 @@ public class Announcement extends AbstractITalentEntity implements Serializable 
 	@ManyToOne
 	private Project project;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -49,4 +49,6 @@ public class Announcement extends AbstractITalentEntity implements Serializable 
 	public void setProject(Project project) {
 		this.project = project;
 	}
+	
+	
 }

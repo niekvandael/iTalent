@@ -22,7 +22,7 @@ public class Picture extends AbstractITalentEntity implements Serializable {
 	
 	@Id
 	@GeneratedValue
-	private long id;
+	private int id;
 	
 	@Lob @Basic(fetch = FetchType.LAZY)
 	@Column(length=100000)
@@ -35,12 +35,20 @@ public class Picture extends AbstractITalentEntity implements Serializable {
 	@ManyToOne
 	private Project project;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
+	}
+
+	public byte[] getBytes() {
+		return bytes;
+	}
+
+	public void setBytes(byte[] bytes) {
+		this.bytes = bytes;
 	}
 
 	public String getDescription() {
@@ -58,4 +66,6 @@ public class Picture extends AbstractITalentEntity implements Serializable {
 	public void setProject(Project project) {
 		this.project = project;
 	}
+	
+	
 }

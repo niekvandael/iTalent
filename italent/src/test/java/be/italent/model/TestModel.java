@@ -11,7 +11,7 @@ public class TestModel {
 	  public void testModel() {
 		
 		Category categrory = new Category();
-		categrory.setDescription("HEALTH");
+		//categrory.setDescription("HEALTH");
 		  
 	    // assert statements
 	    assertEquals(true, true);

@@ -11,11 +11,12 @@ import javax.persistence.Entity;
 public class SubscriberDocent extends Subscriber implements Serializable {
 	private static final long serialVersionUID = 426095264135386703L;
 	private int backingPct;
-	
 	public int getBackingPct() {
 		return backingPct;
 	}
 	public void setBackingPct(int backingPct) {
 		this.backingPct = backingPct;
 	}
+	
+	
 }

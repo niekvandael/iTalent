@@ -251,4 +251,6 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	public void setSubscribersDocent(List<SubscriberDocent> subscribersDocent) {
 		this.subscribersDocent = subscribersDocent;
 	}
+	
+	
 }

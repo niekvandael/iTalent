@@ -17,17 +17,17 @@ public class AbstractSubscriber extends AbstractITalentEntity implements Seriali
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private int id;
 	
 	@JsonManagedReference
 	@ManyToOne
 	private Project project;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -38,4 +38,6 @@ public class AbstractSubscriber extends AbstractITalentEntity implements Seriali
 	public void setProject(Project project) {
 		this.project = project;
 	}
+	
+	
 }

@@ -19,7 +19,7 @@ public class Like extends AbstractITalentEntity implements Serializable {
 	private static final long serialVersionUID = -2109302458723083487L;
 	@Id
 	@GeneratedValue
-	private long id;
+	private int id;
 	
 	@OneToOne
 	private User user;
@@ -28,11 +28,11 @@ public class Like extends AbstractITalentEntity implements Serializable {
 	@ManyToOne
 	private Project project;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -51,4 +51,6 @@ public class Like extends AbstractITalentEntity implements Serializable {
 	public void setProject(Project project) {
 		this.project = project;
 	}
+	
+	
 }

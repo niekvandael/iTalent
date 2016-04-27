@@ -21,7 +21,7 @@ public class Role implements Serializable{
 	
 	@Id
 	@GeneratedValue
-	private long id;
+	private int id;
 	
 	@Size(max=20)
 	private String name;
@@ -30,11 +30,11 @@ public class Role implements Serializable{
 	@OneToMany(mappedBy="role")
 	private List<User> users = new ArrayList<User>();
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -53,4 +53,6 @@ public class Role implements Serializable{
 	public void setUsers(List<User> users) {
 		this.users = users;
 	}
+	
+	
 }

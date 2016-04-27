@@ -20,7 +20,7 @@ public class User implements Serializable{
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private int id;
 	
 	@Size(min=2, max=55)
 	private String firstname;
@@ -44,11 +44,11 @@ public class User implements Serializable{
 	@Size(min=8, max=80)
 	private String password;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -99,4 +99,6 @@ public class User implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	
 }

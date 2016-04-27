@@ -16,16 +16,16 @@ public class Department extends AbstractITalentEntity implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private int id;
 	
 	@Size(max=55)
 	private String name;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -36,4 +36,6 @@ public class Department extends AbstractITalentEntity implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	
 }

@@ -17,7 +17,7 @@ public class Movie extends AbstractITalentEntity implements Serializable {
 	private static final long serialVersionUID = 2075313962607761537L;
 	@Id
 	@GeneratedValue
-	private long id;
+	private int id;
 	
 	@Size(max=40)
 	private String youTubeId;
@@ -29,11 +29,11 @@ public class Movie extends AbstractITalentEntity implements Serializable {
 	@ManyToOne
 	private Project project;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -60,4 +60,6 @@ public class Movie extends AbstractITalentEntity implements Serializable {
 	public void setProject(Project project) {
 		this.project = project;
 	}
+	
+	
 }
