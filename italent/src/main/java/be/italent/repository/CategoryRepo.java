@@ -1,4 +1,4 @@
-package be.italent.repo;
+package be.italent.repository;
 
 import be.italent.model.Category;
 import org.springframework.data.jpa.repository.JpaRepository;

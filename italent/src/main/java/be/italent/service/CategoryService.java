@@ -1,7 +1,7 @@
-package be.italent.services;
+package be.italent.service;
 
 import be.italent.model.Category;
-import be.italent.repo.CategoryRepo;
+import be.italent.repository.CategoryRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

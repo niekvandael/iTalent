@@ -1,9 +1,9 @@
-package be.italent.controllers;
+package be.italent.web.controller;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import be.italent.model.Project;
-import be.italent.services.ProjectService;
+import be.italent.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,22 +18,19 @@ public class ProjectRestController {
 	private ProjectService projectService;
 
 	@RequestMapping(method = RequestMethod.GET, produces="application/json")
-	public ArrayList<Project> getProjects(){
+	public List<Project> getProjects(){
 		System.out.println("GET");
-		ArrayList<Project> projects = (ArrayList<Project>) projectService.getAllProjects();
-		return projects;
+		return projectService.getAllProjects();
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces="application/json")
 	public Project getProject(@PathVariable("id") final int id){
 		System.out.println("GET PROJECT" + id);
-		
-		Project project = (Project) projectService.getProjectById(id);
-		return project;
+		return projectService.getProjectById(id);
 	}
 
 	@RequestMapping(value = "/description/{description}", method = RequestMethod.GET, produces="application/json")
-	public ArrayList<Project> getProjectsByDescription(@PathVariable("description") final String description) {
-		return (ArrayList<Project>) projectService.getAllByDescription(description);
+	public List<Project> getProjectsByDescription(@PathVariable("description") final String description) {
+		return projectService.getAllByDescription(description);
 	}
 }

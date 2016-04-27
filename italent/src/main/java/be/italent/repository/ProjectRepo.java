@@ -1,4 +1,4 @@
-package be.italent.repo;
+package be.italent.repository;
 
 import be.italent.model.Project;
 import org.springframework.data.jpa.repository.JpaRepository;

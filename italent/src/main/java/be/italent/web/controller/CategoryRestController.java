@@ -1,9 +1,9 @@
-package be.italent.controllers;
+package be.italent.web.controller;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import be.italent.model.Category;
-import be.italent.services.CategoryService;
+import be.italent.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,9 +17,7 @@ public class CategoryRestController {
     private CategoryService categoryService;
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public ArrayList<Category> getCategories() {
-        ArrayList<Category> c = (ArrayList<Category>) categoryService.getAllCategories();
-
-        return c;
+    public List<Category> getCategories() {
+        return categoryService.getAllCategories();
     }
 }

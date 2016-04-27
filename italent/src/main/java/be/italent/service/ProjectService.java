@@ -1,4 +1,4 @@
-package be.italent.services;
+package be.italent.service;
 
 import java.util.List;
 

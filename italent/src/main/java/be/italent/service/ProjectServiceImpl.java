@@ -1,7 +1,7 @@
-package be.italent.services;
+package be.italent.service;
 
 import be.italent.model.Project;
-import be.italent.repo.ProjectRepo;
+import be.italent.repository.ProjectRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
