@@ -2,14 +2,14 @@ server.port: 8080
 
 security.user.password: 1234
 
-spring.datasource.url: jdbc:mysql://localhost:3308/springer
-spring.datasource.username: root
-spring.datasource.password:
-spring.datasource.driver-class-name: com.mysql.jdbc.Driver
+# spring.datasource.url: jdbc:mysql://localhost:3308/springer
+# spring.datasource.username: root
+# spring.datasource.password:
+# spring.datasource.driver-class-name: com.mysql.jdbc.Driver
 
-#spring.datasource.url: jdbc:mysql://127.8.154.2-itproject.rhcloud.com:3306/italent
-#spring.datasource.username: adminkgnI5Nk
-#spring.datasource.password: HiGAW1BJfshb
-#spring.datasource.driver-class-name: com.mysql.jdbc.Driver
+spring.datasource.url: jdbc:mysql://127.8.154.2-itproject.rhcloud.com:3306/italent
+spring.datasource.username: adminkgnI5Nk
+spring.datasource.password: HiGAW1BJfshb
+spring.datasource.driver-class-name: com.mysql.jdbc.Driver
 
 spring.jpa.hibernate.ddl-auto: create-drop
