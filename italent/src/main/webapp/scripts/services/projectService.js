@@ -9,7 +9,7 @@ angular.module('iTalentApp')
             get: function (id) {
                 var deferred = $q.defer();
 
-                var resource = $resource("......./projects" + "/:id", {id: "@_id"});
+                var resource = $resource(GLOBALS.baseURL + "projects/:id", {id: "@_id"});
 
                 resource.get({id: id}, function (project) {
                     deferred.resolve(project);

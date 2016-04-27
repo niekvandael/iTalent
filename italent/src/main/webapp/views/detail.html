@@ -1,1 +1,28 @@
 {{projectDetail}}
+
+<div class="container">
+    <div class="project-block-title">{{ project.title }}</div>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="project-block-media img-responsive"></div>
+        </div>
+        <div class="col-md-7">
+            <div class="project-block-label">{{"views.home.shortDescription" | translate}}</div>
+            <div class="project-block-short-description">{{ project.shortDescription }}</div>
+
+            <div class="project-block-label col-xs-4">{{"views.home.createdBy" | translate}}</div>
+            <div class="project-block-text col-xs-8">{{project.user.firstname + ' ' + project.user.lastname}}</div>
+
+            <div class="project-block-label col-xs-4">{{"views.home.startDate" | translate}}</div>
+            <div class="project-block-text col-xs-8">{{project.beginDate | date}}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row col-xs-offset-2">
+            <div ng-if="project.liked" class="project-button glyphicon glyphicon-star col-xs-1" ng-click="likeClicked(project)"></div>
+            <div ng-if="!project.liked" class="project-button glyphicon glyphicon-star-empty col-xs-1" ng-click="likeClicked(project)"></div>
+            <div ng-if="project.numberOfLikes" class="likes-number col-xs-2">{{project.numberOfLikes}}</div>
+            <div ng-if="!project.numberOfLikes" class="likes-number col-xs-2">0</div>
+        </div>
+    </div>
+</div>
