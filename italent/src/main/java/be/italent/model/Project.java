@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -37,27 +38,34 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	private String description;
 	
 	@Size(max=200)
+	@Column(name="short_description")
 	private String shortDescription;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="creation_date")
     private Date creationDate;
 	
 	@OneToOne
 	private User user;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="begin_date")
     private Date beginDate;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="end_date")
     private Date endDate;
 	
 	@OneToOne
 	private Category category;
 	
+	@Column(name="project_status")
 	private int projectStatus;
 	
+	@Column(name="is_verified")
 	private boolean isVerified;
 	
+	@Column(name="is_public")
 	private boolean isPublic;
 	
 	@JsonBackReference

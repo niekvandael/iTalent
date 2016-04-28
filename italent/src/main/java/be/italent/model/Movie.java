@@ -2,6 +2,7 @@ package be.italent.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,6 +21,7 @@ public class Movie extends AbstractITalentEntity implements Serializable {
 	private int id;
 	
 	@Size(max=40)
+	@Column(name="youtube_id")
 	private String youTubeId;
 	
 	@Size(max=500)

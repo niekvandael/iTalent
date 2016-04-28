@@ -5,6 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.Calendar;
 
+import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -16,9 +17,11 @@ public abstract class AbstractITalentEntity implements Serializable{
 	private static final long serialVersionUID = 1446086446762595302L;
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="last_update")
 	private Calendar lastUpdate;
 
 	@Size(max = 50)
+	@Column(name="last_updated_by")
 	private String lastUpdatedBy;
 
 	@Size(max = 20)
