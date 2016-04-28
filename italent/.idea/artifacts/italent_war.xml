@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="italent:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="italent-1.0.war">
-      <element id="artifact" artifact-name="italent:war exploded" />
-    </root>
-  </artifact>
-</component>
