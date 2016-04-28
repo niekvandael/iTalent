@@ -28,4 +28,6 @@ core.ignore.recursive= \
 	{*.class} 
 
 core.ignore= \
-	{bin} 
+	{.idea} \
+	{bin} \
+	{target} 
