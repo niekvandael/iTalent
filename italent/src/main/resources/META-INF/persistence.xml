@@ -8,7 +8,7 @@
       <properties>
          <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
          <property name="javax.persistence.jdbc.url"
-            value="jdbc:mysql://127.8.154.2-itproject.rhcloud.com:3306/italent" />
+            value="jdbc:mysql://127.8.154.2:3306/italent" />
          <property name="javax.persistence.jdbc.user" value="adminkgnI5Nk" />
          <property name="javax.persistence.jdbc.password" value="HiGAW1BJfshb" />
           
