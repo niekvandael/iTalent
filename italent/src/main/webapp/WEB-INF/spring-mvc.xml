@@ -13,7 +13,7 @@
 		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 	<context:component-scan base-package="be.italent"></context:component-scan>
 
-	<jpa:repositories base-package="be.italent.repo" entity-manager-factory-ref="emf"/>
+	<jpa:repositories base-package="be.italent.repository" entity-manager-factory-ref="emf"/>
 
 	<mvc:annotation-driven />
 	<!-- 	datasource -->
@@ -27,6 +27,11 @@
 		<property name="url" value="jdbc:mysql://127.8.154.2:3306/italent" />
 		<property name="username" value="adminkgnI5Nk" />
 		<property name="password" value="HiGAW1BJfshb" />
+		
+		<!-- <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/italent" />
+		<property name="username" value="root" />
+		<property name="password" value="123Root123" /> -->
 		
 		<!--<property name="driverClassName" value="com.mysql.jdbc.Driver" />-->
 		<!--<property name="url" value="jdbc:mysql://db4free.net:3306/italentnvd" />-->
@@ -79,13 +84,13 @@
         <property name="maxUploadSize" value="10000000" />
  
     </bean>
-	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+	<!--<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<property name="exceptionMappings">
 			<props>
 				<prop key="java.lang.Exception">Error</prop>
 			</props>
 		</property>
-	</bean>
+	</bean> !-->
 	<mvc:interceptors>
 		<bean id="localeChangeInterceptor"
 			class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
