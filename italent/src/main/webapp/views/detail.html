@@ -22,7 +22,7 @@
             <div ng-if="project.liked" class="project-button glyphicon glyphicon-star col-xs-1" ng-click="likeClicked(project)"></div>
             <div ng-if="!project.liked" class="project-button glyphicon glyphicon-star-empty col-xs-1" ng-click="likeClicked(project)"></div>
             <div ng-if="project.numberOfLikes" class="likes-number col-xs-2">{{project.numberOfLikes}}</div>
-            <div ng-if="!project.numberOfLikes" class="likes-number col-xs-2">0</div>
+            <div ng-if="!project.numberOfLikes" class="likes-number col-xs-2">{{project.likes.length}}</div>
         </div>
     </div>
 </div>
