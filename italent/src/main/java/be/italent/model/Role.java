@@ -1,7 +1,5 @@
 package be.italent.model;
 
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import lombok.Data;
 
 @Data
 @Entity
@@ -26,7 +26,7 @@ public class Role implements Serializable{
 	@Size(max=20)
 	private String name;
 	
-	@JsonManagedReference
+	@JsonBackReference
 	@OneToMany(mappedBy="role")
 	private List<User> users = new ArrayList<User>();
 

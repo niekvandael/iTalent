@@ -1,8 +1,7 @@
 package be.italent.model;
 
-import lombok.Data;
-
 import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +10,9 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import lombok.Data;
 
 @Data
 @Entity
@@ -28,7 +29,7 @@ public class User implements Serializable{
 	@Size(min=2, max=55)
 	private String lastname;
 	
-	@JsonBackReference
+	@JsonManagedReference
 	@OneToOne
 	private Role role;
 	

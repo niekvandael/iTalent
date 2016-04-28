@@ -8,7 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.Data;
 
 @Data
@@ -22,7 +23,7 @@ public class Announcement extends AbstractITalentEntity implements Serializable 
 	@Lob
 	private String text;
 	
-	@JsonManagedReference
+	@JsonBackReference
 	@ManyToOne
 	private Project project;
 

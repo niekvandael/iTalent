@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
@@ -16,7 +18,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Data;
 
@@ -68,36 +70,36 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@Column(name="is_public")
 	private boolean isPublic;
 	
-	@JsonBackReference
-	@OneToMany(mappedBy="project")
+	@JsonManagedReference
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Announcement> announcements = new ArrayList<Announcement>();
 	
-	@JsonBackReference
-	@OneToMany(mappedBy="project")
+	@JsonManagedReference
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Like> likes = new ArrayList<Like>();
 	
-	@JsonBackReference
-	@OneToMany(mappedBy="project")
+	@JsonManagedReference
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Milestone> milestones = new ArrayList<Milestone>();
 
-	@JsonBackReference
-	@OneToMany(mappedBy="project")
+	@JsonManagedReference
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Movie> movies = new ArrayList<Movie>();
 	
-	@JsonBackReference
-	@OneToMany(mappedBy="project")
+	@JsonManagedReference
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Picture> pictures = new ArrayList<Picture>();
 	
-	@JsonBackReference
-	@OneToMany(mappedBy="project")
+	@JsonManagedReference
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<WantedSubscriber> wantedSubscribers = new ArrayList<WantedSubscriber>();
 	
-	@JsonBackReference
-	@OneToMany(mappedBy="project")
+	@JsonManagedReference
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<SubscriberStudent> subscribersStudent = new ArrayList<SubscriberStudent>();
 	
-	@JsonBackReference
-	@OneToMany(mappedBy="project")
+	@JsonManagedReference
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<SubscriberDocent> subscribersDocent = new ArrayList<SubscriberDocent>();
 
 	public int getId() {

@@ -7,7 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.Data;
 
 @Data
@@ -20,7 +21,7 @@ public class Milestone extends AbstractITalentEntity implements Serializable {
 	
 	private boolean done;
 	
-	@JsonManagedReference
+	@JsonBackReference
 	@ManyToOne
 	private Project project;
 

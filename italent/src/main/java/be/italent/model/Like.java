@@ -9,7 +9,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.Data;
 
 @Data
@@ -24,7 +25,7 @@ public class Like extends AbstractITalentEntity implements Serializable {
 	@OneToOne
 	private User user;
 	
-	@JsonManagedReference
+	@JsonBackReference
 	@ManyToOne
 	private Project project;
 
