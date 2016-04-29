@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -102,6 +103,28 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<SubscriberDocent> subscribersDocent = new ArrayList<SubscriberDocent>();
 
+	@Transient
+	private int numberOfLikes;
+	//Don't delete this getter
+	public int getNumberOfLikes(){
+		return likes.size();
+	}
+	
+	@Transient
+	private boolean isBacked;
+	//Don't delete this getter
+	//TODO TEST
+	public boolean isBacked() {
+		int total = 0;
+		for(SubscriberDocent s : subscribersDocent){
+			total += s.getBackingPct();
+		}
+		if (total > 99)
+			return true;
+		else
+			return false;
+	}
+	
 	public int getId() {
 		return id;
 	}
