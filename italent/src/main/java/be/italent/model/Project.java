@@ -20,6 +20,7 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import be.italent.security.ITalentAuth;
 import lombok.Data;
 
 @Data
@@ -289,7 +290,14 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	}
 	
 	public boolean isLiked() {
-		return liked;
+		this.liked = false;
+		for (Like l : this.getLikes()) {
+			if(l.getUser().getId() == ITalentAuth.getAuthenticatedUser().getId()){
+				this.setLiked(true);
+				break;
+			}
+		}
+		return this.liked;
 	}
 
 	public void setLiked(boolean liked) {
