@@ -26,5 +26,4 @@
 
 core.ignore.recursive= 
 
-core.ignore= \
-	{application.yml} 
+core.ignore= 
