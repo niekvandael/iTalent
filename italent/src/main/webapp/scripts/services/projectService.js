@@ -34,9 +34,9 @@ angular.module('iTalentApp')
             saveOrUpdate: function (project) {
                 project = angular.copy(project);
                 var deferred = $q.defer();
-                var resource = $resource("......../project" + "/:id", {id: "@_id"}, {update: {method: "PUT"}});
+                var resource = $resource(GLOBALS.baseURL + "projects/" + "/:id", {id: "@_id"}, {update: {method: "PUT"}});
 
-                if (angular.isDefined(project._id)) {
+                if (angular.isDefined(project.id)) {
                     resource.update(project, function (updatedProject) {
                         deferred.resolve(updatedProject);
                     }, function (err) {
