@@ -37,9 +37,10 @@ import java.util.List;
 @Repository
 public interface ProjectRepo extends JpaRepository<Project, Integer> {
     List<Project> findAllByIsPublic(boolean isPublic);
-    //List<Project> findBacked(boolean isBacked);
     
-    //Dennie, moet dit zo? Dit kan dus niet met userId?...
+    List<Project> findAllByIsBacked(boolean isBacked);
+    
     @Query("select p from Project p where p.user = :user")
     List<Project> findUserProjects(@Param("user") final User user);
+    // of: List<Project> findAllByUser(User user);
 }

@@ -3,6 +3,7 @@ package be.italent.web.controller;
 import java.util.List;
 
 import be.italent.model.Project;
+import be.italent.model.User;
 import be.italent.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,21 +18,29 @@ public class ProjectRestController {
 	@Autowired
 	private ProjectService projectService;
 
-	@RequestMapping(method = RequestMethod.GET, produces="application/json")
+	@RequestMapping(value = "/public", method = RequestMethod.GET, produces="application/json")
+	public List<Project> getPublicProjects(){
+		return projectService.getPublicProjects();
+	}
+	
+	@RequestMapping(value = "/docent", method = RequestMethod.GET, produces="application/json")
 	public List<Project> getProjects(){
-		System.out.println("GET proj's");
 		return projectService.getAllProjects();
 	}
 	
-	@RequestMapping(value = "/public", method = RequestMethod.GET, produces="application/json")
-	public List<Project> getPublicProjects(){
-		System.out.println("GET public proj's");
-		return projectService.getPublicProjects();
+	@RequestMapping(value = "/student", method = RequestMethod.GET, produces="application/json")
+	public List<Project> getBackedProjects(){
+		return projectService.getBackedProjects();
+	}
+	
+	@RequestMapping(value = "/user", method = RequestMethod.GET, produces="application/json")
+	public List<Project> getUserProjects(){
+		User user = new User(); //TODO Get current user
+		return projectService.getAllUserProjects(user);
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces="application/json")
 	public Project getProject(@PathVariable("id") final int id){
-		System.out.println("GET PROJECT" + id);
 		return projectService.getProjectById(id);
 	}
 

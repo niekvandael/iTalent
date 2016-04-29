@@ -110,7 +110,8 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		return likes.size();
 	}
 	
-	@Transient
+	//@Transient
+	@Column(name="is_backed")
 	private boolean isBacked;
 	//Don't delete this getter
 	//TODO TEST

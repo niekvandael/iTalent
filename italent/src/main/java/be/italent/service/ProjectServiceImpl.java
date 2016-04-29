@@ -20,9 +20,9 @@ public class ProjectServiceImpl implements ProjectService{
     }
     
     //Student
-    /*public List<Project> getBackedProjects() {
+    public List<Project> getBackedProjects() {
         return projectRepo.findAllByIsBacked(true);
-    }*/
+    }
     
     //Docent
     public List<Project> getAllProjects() {
