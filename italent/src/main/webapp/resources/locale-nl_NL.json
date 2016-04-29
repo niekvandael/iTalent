@@ -12,5 +12,14 @@
   "views.home.details": "Bekijk details",
   "views.about.title": "Over iTalent PXL project",
   "views.about.madeBy": "Gemaakt door: ",
+  "views.myProjects.newProject": "Nieuw project",
+  "views.newProject.pageTitle": "Maak een nieuw project",
+  "views.newProject.title": "Titel",
+  "views.newProject.description": "Omschrijving",
+  "views.newProject.shortDescription": "Korte omschrijving",
+  "views.newProject.startDate": "Begin datum",
+  "views.newProject.endDate": "Eind datum",
+  "views.newProject.cancel": "Annuleer",
+  "views.newProject.save": "Opslaan",
   "directives.language-select.Language": "Taal"
 }

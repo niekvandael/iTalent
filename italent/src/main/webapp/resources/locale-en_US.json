@@ -12,5 +12,14 @@
   "views.home.details": "Show details",
   "views.about.title": "About iTalent PXL project",
   "views.about.madeBy": "Made by: ",
+  "views.myProjects.newProject": "New project",
+  "views.newProject.pageTitle": "Make a new project",
+  "views.newProject.title": "Title",
+  "views.newProject.description": "Description",
+  "views.newProject.shortDescription": "Short description",
+  "views.newProject.startDate": "Start date",
+  "views.newProject.endDate": "End date",
+  "views.newProject.cancel": "Cancel",
+  "views.newProject.save": "Save",
   "directives.language-select.Language": "Language"
 }
