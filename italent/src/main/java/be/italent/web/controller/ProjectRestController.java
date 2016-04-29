@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import be.italent.model.Like;
 import be.italent.model.Project;
-import be.italent.model.User;
 import be.italent.security.ITalentAuth;
 import be.italent.service.ProjectService;
 
@@ -29,23 +28,22 @@ public class ProjectRestController {
 	
 	@RequestMapping(value = "/docent", method = RequestMethod.GET, produces="application/json")
 	public List<Project> getProjects(){
-		return projectService.getAllProjects();
+		return setProjectsAreLiked(projectService.getAllProjects());
 	}
 	
 	@RequestMapping(value = "/student", method = RequestMethod.GET, produces="application/json")
 	public List<Project> getBackedProjects(){
-		return projectService.getBackedProjects();
+		return setProjectsAreLiked((projectService.getBackedProjects()));
 	}
 	
 	@RequestMapping(value = "/user", method = RequestMethod.GET, produces="application/json")
 	public List<Project> getUserProjects(){
-		User user = new User(); //TODO Get current user
-		return projectService.getAllUserProjects(user);
+		return projectService.getAllUserProjects(ITalentAuth.getAuthenticatedUser());
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces="application/json")
 	public Project getProject(@PathVariable("id") final int id){
-		return projectService.getProjectById(id);
+		return setProjectIsLiked((projectService.getProjectById(id)));
 	}
 
 	private List<Project> setProjectsAreLiked(List<Project> projects){

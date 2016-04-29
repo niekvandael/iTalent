@@ -2,7 +2,7 @@
  * Created by arjen on 05/04/16.
  */
 angular.module('iTalentApp')
-    .controller('detailController', ['$scope', '$routeParams', 'projectService', function ($scope, $routeParams, projectService) {
+    .controller('detailController', ['$scope', '$routeParams', 'projectService', 'likeService', function ($scope, $routeParams, projectService, likeService) {
 
         var projectId = $routeParams.id;
 
@@ -13,17 +13,16 @@ angular.module('iTalentApp')
         });
 
         $scope.likeClicked = function (project) {
-            if (!project.numberOfLikes) {
-                project.numberOfLikes = 0;
-            }
-            if (project.liked) {
-                project.numberOfLikes--;
-            } else {
-                project.numberOfLikes++;
-            }
-            project.liked = !project.liked;
-
-            //TODO Save likes in database
+        	   if (!project.numberOfLikes) {
+                   project.numberOfLikes = 0;
+               }
+               if (project.liked) {
+                   project.numberOfLikes--;
+               } else {
+                   project.numberOfLikes++;
+               }
+               project.liked = !project.liked;
+               likeService.saveOrUpdate(project.id);
         };
         
     }]);

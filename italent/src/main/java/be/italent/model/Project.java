@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -75,35 +74,35 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	private boolean isPublic;
 	
 	@JsonManagedReference
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<Announcement> announcements = new ArrayList<Announcement>();
 	
 	@JsonManagedReference
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<Like> likes = new ArrayList<Like>();
 	
 	@JsonManagedReference
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<Milestone> milestones = new ArrayList<Milestone>();
 
 	@JsonManagedReference
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<Movie> movies = new ArrayList<Movie>();
 	
 	@JsonManagedReference
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<Picture> pictures = new ArrayList<Picture>();
 	
 	@JsonManagedReference
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<WantedSubscriber> wantedSubscribers = new ArrayList<WantedSubscriber>();
 	
 	@JsonManagedReference
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<SubscriberStudent> subscribersStudent = new ArrayList<SubscriberStudent>();
 	
 	@JsonManagedReference
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<SubscriberDocent> subscribersDocent = new ArrayList<SubscriberDocent>();
 
 	@Transient
