@@ -1,0 +1,27 @@
+configuration:
+  status: WARN
+
+  appenders:
+    file:
+      name: FILE
+      filename: /tmp/app.log
+      append: true
+      patternlayout:
+        pattern: "%date{ISO8601} %level %thread %logger{2}:%method :: %message%throwable%n"
+    console:
+      name: CONSOLE
+      target: STD_OUT
+      patternlayout:
+        pattern: "%date{ISO8601} %level %thread %logger{2}:%method :: %message%throwable%n"
+
+  loggers:
+    root:
+      level: ERROR
+      appenderref:
+        ref: FILE
+    logger:
+      name: be.italent
+      level: WARN
+      additivity: false
+      appenderref:
+        ref: FILE
