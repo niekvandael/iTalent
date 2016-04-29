@@ -28,6 +28,10 @@
                     templateUrl: 'views/myProjects.html',
                     controller: 'myProjectsController'
                 })
+                .when('/newProject', {
+                    templateUrl: 'views/newProject.html',
+                    controller: 'newProjectController'
+                })
                 .when('/about', {
                     templateUrl: 'views/about.html'
                 })
