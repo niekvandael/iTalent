@@ -23,14 +23,20 @@ public class ProjectRestController {
 		return projectService.getAllProjects();
 	}
 	
+	@RequestMapping(value = "/public", method = RequestMethod.GET, produces="application/json")
+	public List<Project> getPublicProjects(){
+		System.out.println("GET public proj's");
+		return projectService.getPublicProjects();
+	}
+	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces="application/json")
 	public Project getProject(@PathVariable("id") final int id){
 		System.out.println("GET PROJECT" + id);
 		return projectService.getProjectById(id);
 	}
 
-	@RequestMapping(value = "/description/{description}", method = RequestMethod.GET, produces="application/json")
+	/*@RequestMapping(value = "/description/{description}", method = RequestMethod.GET, produces="application/json")
 	public List<Project> getProjectsByDescription(@PathVariable("description") final String description) {
 		return projectService.getAllByDescription(description);
-	}
+	}*/
 }

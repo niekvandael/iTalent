@@ -21,7 +21,7 @@ angular.module('iTalentApp')
             },
             list: function () {
                 var deferred = $q.defer();
-                var resource = $resource(GLOBALS.baseURL + "projects", {}, {list: {method: "GET", isArray: true}});
+                var resource = $resource(GLOBALS.baseURL + "projects/public", {}, {list: {method: "GET", isArray: true}});
 
                 resource.list(function (projectList) {
                     deferred.resolve(projectList);
