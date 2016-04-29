@@ -2,8 +2,10 @@ package be.italent.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -30,7 +32,7 @@ public class User implements Serializable{
 	private String lastname;
 	
 	@JsonManagedReference
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Role role;
 	
 	@OneToOne

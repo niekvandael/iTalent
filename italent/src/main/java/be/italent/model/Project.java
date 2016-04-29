@@ -28,6 +28,9 @@ import lombok.Data;
 public class Project extends AbstractITalentEntity implements Serializable {
 
 	private static final long serialVersionUID = 6933862050829577662L;
+	
+	@Transient
+	private boolean liked;
 
 	@Id
 	@GeneratedValue
@@ -286,5 +289,11 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		this.subscribersDocent = subscribersDocent;
 	}
 	
-	
+	public boolean isLiked() {
+		return liked;
+	}
+
+	public void setLiked(boolean liked) {
+		this.liked = liked;
+	}
 }

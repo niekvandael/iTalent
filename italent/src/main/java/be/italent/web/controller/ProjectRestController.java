@@ -2,14 +2,17 @@ package be.italent.web.controller;
 
 import java.util.List;
 
-import be.italent.model.Project;
-import be.italent.model.User;
-import be.italent.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import be.italent.model.Like;
+import be.italent.model.Project;
+import be.italent.model.User;
+import be.italent.security.ITalentAuth;
+import be.italent.service.ProjectService;
 
 @RestController
 @RequestMapping("/projects")
@@ -20,7 +23,8 @@ public class ProjectRestController {
 
 	@RequestMapping(value = "/public", method = RequestMethod.GET, produces="application/json")
 	public List<Project> getPublicProjects(){
-		return projectService.getPublicProjects();
+
+		return setProjectsAreLiked(projectService.getPublicProjects());
 	}
 	
 	@RequestMapping(value = "/docent", method = RequestMethod.GET, produces="application/json")
@@ -44,6 +48,23 @@ public class ProjectRestController {
 		return projectService.getProjectById(id);
 	}
 
+	private List<Project> setProjectsAreLiked(List<Project> projects){
+		for (Project project : projects) {
+			project = setProjectIsLiked(project);
+		}
+		return projects;
+	}
+	
+	private Project setProjectIsLiked(Project project){
+		for (Like l : project.getLikes()) {
+			if(l.getUser().getId() == ITalentAuth.getAuthenticatedUser().getId()){
+				project.setLiked(true);
+				break;
+			}
+		}
+		return project;
+	}
+	
 	/*@RequestMapping(value = "/description/{description}", method = RequestMethod.GET, produces="application/json")
 	public List<Project> getProjectsByDescription(@PathVariable("description") final String description) {
 		return projectService.getAllByDescription(description);
