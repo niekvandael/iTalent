@@ -101,7 +101,7 @@
 	<bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
 		<constructor-arg name="strength" value="14" />
     </bean>
-	
+<!-- 
 	<security:authentication-manager>
 		<security:authentication-provider>
 			<security:password-encoder ref="encoder" />
@@ -111,7 +111,9 @@
 				authorities-by-username-query="select username, role from UserRole where binary username=?" />
 		</security:authentication-provider>
 	</security:authentication-manager>
-
+ -->
+ 
+<!-- 
 	<security:global-method-security secured-annotations="enabled" />
 
 	<security:http auto-config="true">
@@ -119,6 +121,7 @@
 		<security:form-login login-page="/login.htm" always-use-default-target="true" 
                authentication-failure-url="/login.htm?login_error=true"
                default-target-url="/postLogin.htm"/>
+ -->               
         <!--<security:intercept-url pattern="/account.htm" access="ROLE_Member" requires-channel="https"/>      
         
         <security:intercept-url pattern="/sudo.htm" access="ROLE_Sudo" requires-channel="https"/>
@@ -129,7 +132,7 @@
 		<!-- <security:session-management session-fixation-protection="migrateSession" session-authentication-error-url="/login.jsp?authFailed=true"> 
             <security:concurrency-control max-sessions="5" error-if-maximum-exceeded="true" expired-url="/login.html" session-registry-alias="sessionRegistry"/>
         </security:session-management> -->
-        
+ <!--       
 	</security:http>
-	
+	-->
 </beans>
