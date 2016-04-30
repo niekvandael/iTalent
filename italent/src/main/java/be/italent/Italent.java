@@ -1,6 +1,24 @@
 package be.italent;
 
-import java.util.Locale;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
+
+@SpringBootApplication
+public class Italent extends SpringBootServletInitializer {
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(Italent.class);
+    }
+
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(Italent.class, args);
+    }
+}
+
+/*import java.util.Locale;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -45,4 +63,4 @@ public class Italent extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(localeChangeInterceptor());
     }
-}
+}*/
