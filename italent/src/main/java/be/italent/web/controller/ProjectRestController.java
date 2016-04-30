@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -43,6 +44,17 @@ public class ProjectRestController {
 	public Project getProject(@PathVariable("id") final int id){
 		return (projectService.getProjectById(id));
 	}
+	
+	@RequestMapping(value = "/save", method = RequestMethod.POST, produces="application/json")
+	public Project saveProject(@RequestBody Project project){
+		return projectService.saveProject(project);
+	}
+	
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.POST, produces="application/json")
+	public void deleteProject(@PathVariable("id") final int id){
+		projectService.deleteProject(id);
+	}
+	
 	/*@RequestMapping(value = "/description/{description}", method = RequestMethod.GET, produces="application/json")
 	public List<Project> getProjectsByDescription(@PathVariable("description") final String description) {
 		return projectService.getAllByDescription(description);

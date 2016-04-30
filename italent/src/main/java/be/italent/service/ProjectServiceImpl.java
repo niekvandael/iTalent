@@ -3,6 +3,8 @@ package be.italent.service;
 import be.italent.model.Project;
 import be.italent.model.User;
 import be.italent.repository.ProjectRepo;
+import be.italent.security.ITalentAuth;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +37,15 @@ public class ProjectServiceImpl implements ProjectService{
     }
     
     public Project getProjectById(int id){
-        	return projectRepo.findOne(id);			
+        return projectRepo.findOne(id);			
+    }
+    
+    public Project saveProject(Project project){
+    	project.setUser(ITalentAuth.getAuthenticatedUser());
+    	return projectRepo.save(project);	
+    }
+    
+    public void deleteProject(int id){
+    	projectRepo.delete(id);
     }
 }
