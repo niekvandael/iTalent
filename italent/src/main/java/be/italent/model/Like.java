@@ -15,7 +15,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="Likes")
+@Table(name="likes")
 public class Like extends AbstractITalentEntity implements Serializable {
 	private static final long serialVersionUID = -2109302458723083487L;
 	@Id

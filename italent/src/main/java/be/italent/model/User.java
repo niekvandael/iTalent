@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -18,6 +19,7 @@ import lombok.Data;
 
 @Data
 @Entity
+@Table(name="users")
 public class User implements Serializable{
 	private static final long serialVersionUID = 2013292116325497059L;
 
