@@ -14,9 +14,6 @@
 <body ng-app="iTalentApp" class="ng-cloak">
 
 <div class="page-header">
-    <div class="col-md-2 col-md-offset-10" ng-translate-language-select></div>
-    <br>
-    <br>
     <div class="navbar navbar-default" ng-controller="headerController">
         <div class="container-fluid">
 
@@ -37,6 +34,7 @@
                     <li ng-class="{ active: isActive('/about')}"><a href="#/about">{{"views.index.about" | translate}}</a></li>
                 </ul>
                 <ul ng-controller="loginController" class="nav navbar-nav navbar-right">
+                	<li><div ng-translate-language-select></div></li>
                     <li ng-if="loggedIn"><a href="#" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> {{"views.index.logout" | translate}} {{user.displayName}}</a></li>
                     <li ng-if="!loggedIn"><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> {{"views.index.login" | translate}}</a></li>
                 </ul>

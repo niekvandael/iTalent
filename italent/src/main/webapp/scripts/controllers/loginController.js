@@ -9,9 +9,16 @@ angular.module('iTalentApp')
             /* Do authentication check */
 
             /* When success, do this */
-            $rootScope.user.displayName = $scope.login.userName;
+        	var userName = $scope.login.userName;
+        	var docentOrNot = userName.substring(userName.length-7, userName.length+1);
+        	
+            $rootScope.user.displayName = userName;
             $rootScope.loggedIn = true;
-            location.href = "#/home";
+            
+            if (docentOrNot == "@pxl.be")
+            	location.href = "#/docent";
+            else
+            	location.href = "#/student";
 
             /* When failed, do this */
 
