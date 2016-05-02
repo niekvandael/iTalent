@@ -55,7 +55,7 @@ angular.module('iTalentApp')
 
                 return deferred.promise;
             },
-            listStudent: function () {
+            listUser: function () {
                 var deferred = $q.defer();
                 var resource = $resource(GLOBALS.baseURL + "projects/user", {}, {list: {method: "GET", isArray: true}});
 
@@ -67,6 +67,7 @@ angular.module('iTalentApp')
 
                 return deferred.promise;
             },
+            
             saveOrUpdate: function (project) {
                 project = angular.copy(project);
                 var deferred = $q.defer();
