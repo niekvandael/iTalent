@@ -18,8 +18,6 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import be.italent.security.ITalentAuth;
 import lombok.Data;
 
@@ -74,35 +72,35 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@Column(name="is_public")
 	private boolean isPublic;
 	
-	@JsonManagedReference
+	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<Announcement> announcements = new ArrayList<Announcement>();
 	
-	@JsonManagedReference
+	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<Like> likes = new ArrayList<Like>();
 	
-	@JsonManagedReference
+	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<Milestone> milestones = new ArrayList<Milestone>();
 
-	@JsonManagedReference
+	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<Movie> movies = new ArrayList<Movie>();
 	
-	@JsonManagedReference
+	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<Picture> pictures = new ArrayList<Picture>();
 	
-	@JsonManagedReference
+	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<WantedSubscriber> wantedSubscribers = new ArrayList<WantedSubscriber>();
 	
-	@JsonManagedReference
+	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<SubscriberStudent> subscribersStudent = new ArrayList<SubscriberStudent>();
 	
-	@JsonManagedReference
+	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
 	private List<SubscriberDocent> subscribersDocent = new ArrayList<SubscriberDocent>();
 

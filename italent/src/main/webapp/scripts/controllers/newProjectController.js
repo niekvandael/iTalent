@@ -4,7 +4,7 @@
 angular.module('iTalentApp')
     .controller('newProjectController', ['$scope', '$location', 'projectService', function ($scope, $location, projectService) {
 
-        $scope.project = {};
+        $scope.project = {'user': null};
 
         $scope.save = function() {
             projectService.saveOrUpdate($scope.project).then(function() {

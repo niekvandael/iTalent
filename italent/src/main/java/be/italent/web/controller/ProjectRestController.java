@@ -47,6 +47,7 @@ public class ProjectRestController {
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST, produces="application/json")
 	public Project saveProject(@RequestBody Project project){
+		project.setUser(ITalentAuth.getAuthenticatedUser());
 		return projectService.saveProject(project);
 	}
 	

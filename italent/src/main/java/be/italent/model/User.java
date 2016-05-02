@@ -13,8 +13,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import lombok.Data;
 
 @Data
@@ -33,7 +31,6 @@ public class User implements Serializable{
 	@Size(min=2, max=55)
 	private String lastname;
 	
-	@JsonManagedReference
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Role role;
 	

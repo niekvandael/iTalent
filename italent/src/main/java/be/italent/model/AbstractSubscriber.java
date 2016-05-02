@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -20,7 +20,7 @@ public class AbstractSubscriber extends AbstractITalentEntity implements Seriali
 	@GeneratedValue
 	private int id;
 	
-	@JsonBackReference
+	@JsonIgnore
 	@ManyToOne
 	private Project project;
 

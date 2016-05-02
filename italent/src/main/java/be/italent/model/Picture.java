@@ -12,7 +12,7 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -32,7 +32,7 @@ public class Picture extends AbstractITalentEntity implements Serializable {
 	@Size(max=500)
 	private String description;
 	
-	@JsonBackReference
+	@JsonIgnore
 	@ManyToOne
 	private Project project;
 

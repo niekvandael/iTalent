@@ -20,9 +20,4 @@ public class LikeRestController {
 		return likeService.toggleLike(projectId);
 	}
 	
-	@RequestMapping( method = RequestMethod.GET, produces="application/json")
-	public boolean sayHello(){
-		return true;
-	}
-	
 }
