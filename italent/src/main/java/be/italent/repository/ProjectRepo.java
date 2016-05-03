@@ -43,4 +43,7 @@ public interface ProjectRepo extends JpaRepository<Project, Integer> {
     @Query("select p from Project p where p.user = :user")
     List<Project> findUserProjects(@Param("user") final User user);
     // of: List<Project> findAllByUser(User user);
+    
+    @Query("select p from Project p join p.likes l where l.user = :user") //TODO query
+    List<Project> findLikedProjects(@Param("user") final User user);
 }
