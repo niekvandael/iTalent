@@ -2,7 +2,7 @@
  * Created by arjen on 05/04/16.
  */
 (function () {
-    angular.module('iTalentApp', ['ngRoute', 'ngResource', 'pascalprecht.translate', 'tmh.dynamicLocale', 'ngCookies'])
+    angular.module('iTalentApp', ['ngRoute', 'ngResource', 'pascalprecht.translate', 'tmh.dynamicLocale', 'ngCookies', 'ngAnimate', 'ui.bootstrap'])
         .run(function ($rootScope) {
             $rootScope.user = {
                 base64: '',
