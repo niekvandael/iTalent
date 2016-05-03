@@ -19,19 +19,9 @@
                     <label class="required">{{'views.newProject.shortDescription' | translate}}</label>
                     <textarea required ng-model="project.shortDescription" class="form-control" rows="5" placeholder="{{'views.newProject.shortDescription' | translate}}" maxlength="200"></textarea>
                 </div>
-
-                <div class="form-group">
-                    <label class="required">{{'views.newProject.startDate' | translate}}</label>
-                    <input required type="date" ng-model="project.beginDate" class="form-control" placeholder="{{'views.newProject.startDate' | translate}}" />
-                </div>
-
-                <div class="form-group">
-                    <label class="required">{{'views.newProject.endDate' | translate}}</label>
-                    <input required type="date" ng-model="project.endDate" class="form-control" placeholder="{{'views.newProject.endDate' | translate}}" />
-                </div>
-
+               
                 <button type="submit" class="btn btn-warning" ng-click="cancel()">{{'views.newProject.cancel' | translate}}</button>
-                <button type="submit" class="btn btn-primary" ng-click="save()" ng-disabled="registrationForm.project.$invalid">{{'views.newProject.save' | translate}}</button>
+                <button type="submit" class="btn btn-primary" ng-click="save()" ng-disabled="registrationForm.$invalid">{{'views.newProject.save' | translate}}</button>
             </div>
         </div>
     </form>
