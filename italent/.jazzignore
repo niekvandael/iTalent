@@ -30,4 +30,5 @@ core.ignore.recursive= \
 core.ignore= \
 	{.idea} \
 	{bin} \
+	{italent.iml} \
 	{target} 
