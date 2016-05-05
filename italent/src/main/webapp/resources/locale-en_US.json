@@ -10,6 +10,8 @@
   "views.home.createdBy": "Created by:",
   "views.home.startDate": "Start date:",
   "views.home.details": "Show details",
+  "views.home.hours": "Hours",
+  "views.home.subscribe": "Subscribe",
   "views.about.title": "About iTalent PXL project",
   "views.about.madeBy": "Made by: ",
   "views.myProjects.newProject": "New project",

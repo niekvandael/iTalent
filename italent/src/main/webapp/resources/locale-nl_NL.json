@@ -11,6 +11,8 @@
   "views.home.startDate": "Start datum:",
   "views.home.details": "Bekijk details",
   "views.about.title": "Over iTalent PXL project",
+  "views.home.hours": "Uren",
+  "views.home.subscribe": "Inschrijven",
   "views.about.madeBy": "Gemaakt door: ",
   "views.myProjects.newProject": "Nieuw project",
   "views.myProjects.myProjects": "Mijn projecten",

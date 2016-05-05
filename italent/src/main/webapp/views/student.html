@@ -25,6 +25,22 @@
                 <button type="button" class="btn btn-warning btn-warning-detail col-xs-4 col-md-2 col-xs-offset-1 col-md-offset-2"
                         ng-click="showDetails(project.id)">{{"views.home.details" | translate}}
                 </button>
+                
+                <form name="subscribeForm" role="form">
+			        <div class="row">
+			            <div class="col-md-9">
+			            	<!-- TODO pass project id to backend -->
+			            	<input type="number" ng-model="subscriberStudent.project.id" ng-value="project.id" />
+			                <div class="form-group">
+			                	
+			                    <label class="required">{{'views.home.hours' | translate}}</label>
+			                    <input required type="number" ng-model="subscriberStudent.hours" class="form-control" min="1" max="160" />
+			                </div>
+			                <button type="submit" class="btn btn-warning btn-warning-detail" ng-click="save(project.id)" ng-disabled="registrationForm.$invalid">{{'views.home.subscribe' | translate}}</button>
+			            </div>
+			        </div>
+			    </form>
+                
             </div>
         </div>
     </div>

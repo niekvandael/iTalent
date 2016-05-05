@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import be.italent.model.SubscriberStudent;
 import be.italent.security.ITalentAuth;
 import be.italent.service.SubscriberStudentService;
@@ -19,8 +18,9 @@ public class SubscriberStudentRestController {
 	private SubscriberStudentService subscriberStudentService;
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST, produces="application/json")
-	public SubscriberStudent saveProject(@RequestBody SubscriberStudent subscriberStudent){
+	public SubscriberStudent save(@RequestBody SubscriberStudent subscriberStudent){
 		subscriberStudent.setUser(ITalentAuth.getAuthenticatedUser());
+		
 		return subscriberStudentService.save(subscriberStudent);
 	}
 	
