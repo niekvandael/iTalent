@@ -15,6 +15,12 @@ angular.module('iTalentApp')
             console.log('Error getting projects: ' + err)
         });
     	
+    	projectService.listMySubscribed().then(function (projects) {
+            $scope.mySubscribedProjects = projects;
+        }, function (err) {
+            console.log('Error getting mySubscribed projects: ' + err)
+        });
+    	
     	projectService.listMyLiked().then(function (projects) {
             $scope.myLikedProjects = projects;
         }, function (err) {
