@@ -14,6 +14,12 @@ angular.module('iTalentApp')
         }, function (err) {
             console.log('Error getting projects: ' + err)
         });
+    	
+    	projectService.listMyLiked().then(function (projects) {
+            $scope.myLikedProjects = projects;
+        }, function (err) {
+            console.log('Error getting myliked projects: ' + err)
+        });
        
         $scope.newProject = function() {
             $location.path('/newProject');
