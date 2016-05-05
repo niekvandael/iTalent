@@ -4,6 +4,20 @@
 
 angular.module('iTalentApp')
     .factory('subscriberStudentService', ['$resource', '$q', '$http', 'GLOBALS', function ($resource, $q, $http, GLOBALS) {
+        return {
+            save: function (id) {
+            	   return $http({
+            	        url: GLOBALS.baseURL + 'subscriberStudent/save',
+            	        method: "POST",
+            	        data: id
+            	    })
+            }
+        }
+    }]);
+
+
+/*angular.module('iTalentApp')
+    .factory('subscriberStudentService', ['$resource', '$q', '$http', 'GLOBALS', function ($resource, $q, $http, GLOBALS) {
 
         return {
             save: function (subscriberStudent) {
@@ -22,7 +36,7 @@ angular.module('iTalentApp')
                 }
                 else {*/
                     
-                	resource.save(subscriberStudent, function (savedSubscriberStudent) {
+                	/*resource.save(subscriberStudent, function (savedSubscriberStudent) {
                         deferred.resolve(savedSubscriberStudent);
                     }, function (err) {
                         deferred.reject(err);
@@ -32,4 +46,4 @@ angular.module('iTalentApp')
                 return deferred.promise;
             }
         }
-    }]);
+    }]);*/

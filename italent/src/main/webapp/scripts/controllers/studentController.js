@@ -2,7 +2,7 @@ angular.module('iTalentApp')
     .controller('studentController', ['$scope', '$rootScope', '$location', 'subscriberStudentService', 'projectService', 'likeService', 
                                       function ($scope, $rootScope, $location, subscriberStudentService, projectService, likeService) {
 
-    	$scope.subscriberStudent = {'user': null};
+    	$scope.subscriberStudent = {'user': null, 'project': null};
     	
         projectService.listStudent().then(function (projects) {
             $scope.projects = projects;
@@ -28,7 +28,7 @@ angular.module('iTalentApp')
         };
         
         $scope.save = function(id) {
-            subscriberStudentService.save($scope.subscriberStudent, id).then(function() {
+            subscriberStudentService.save(id).then(function() {
                 $location.path('/student');
             }, function(err) {
                 console.log('Error saving subscriber.')

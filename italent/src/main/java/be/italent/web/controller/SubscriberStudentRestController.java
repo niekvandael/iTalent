@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import be.italent.model.Project;
 import be.italent.model.SubscriberStudent;
 import be.italent.security.ITalentAuth;
 import be.italent.service.SubscriberStudentService;
@@ -18,8 +20,17 @@ public class SubscriberStudentRestController {
 	private SubscriberStudentService subscriberStudentService;
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST, produces="application/json")
-	public SubscriberStudent save(@RequestBody SubscriberStudent subscriberStudent){
+	public SubscriberStudent save(@RequestBody int id){
+		
+		SubscriberStudent subscriberStudent = new SubscriberStudent();
 		subscriberStudent.setUser(ITalentAuth.getAuthenticatedUser());
+		
+		//TODO
+		//subscriberStudent.setHours(hours);
+		//TODO getproject(id) maybe?
+		Project project = new Project();
+		project.setId(id);
+		subscriberStudent.setProject(project);
 		
 		return subscriberStudentService.save(subscriberStudent);
 	}
