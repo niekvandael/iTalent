@@ -45,6 +45,16 @@ public class ProjectRestController {
 		return projectService.getMyLikedProjects(ITalentAuth.getAuthenticatedUser());
 	}
 	
+	@RequestMapping(value = "/mySubscribed", method = RequestMethod.GET, produces="application/json")
+	public List<Project> getMySubscribedProjects(){
+		return projectService.getMySubscribedProjects(ITalentAuth.getAuthenticatedUser());
+	}
+	
+	@RequestMapping(value = "/myBacked", method = RequestMethod.GET, produces="application/json")
+	public List<Project> getMyBackedProjects(){
+		return projectService.getMyBackedProjects(ITalentAuth.getAuthenticatedUser());
+	}
+	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces="application/json")
 	public Project getProject(@PathVariable("id") final int id){
 		return (projectService.getProjectById(id));

@@ -37,7 +37,15 @@ public class ProjectServiceImpl implements ProjectService{
     }
     
     public List<Project> getMyLikedProjects(User user){
-    	return projectRepo.findLikedProjects(user);
+    	return projectRepo.findMyLikedProjects(user);
+    }
+    
+    public List<Project> getMySubscribedProjects(User user){
+    	return projectRepo.findMySubscribedProjects(user);
+    }
+    
+    public List<Project> getMyBackedProjects(User user){
+    	return projectRepo.findMyBackedProjects(user);
     }
     
     public Project getProjectById(int id){
