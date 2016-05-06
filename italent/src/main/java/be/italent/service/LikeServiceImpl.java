@@ -34,11 +34,11 @@ public class LikeServiceImpl implements LikeService{
 		Like existingLike = likeRepo.getLikeByProject(l.getProject(), l.getUser());
 		
 		if(existingLike == null){
-			// Already likes: unlike
+			// Not likes yet: like
 			likeRepo.save(l);
 			return true;
 		} else{
-			// Not likes yet: like
+			// Already likes: unlike
 			likeRepo.delete(existingLike);
 			return false;
 		}
