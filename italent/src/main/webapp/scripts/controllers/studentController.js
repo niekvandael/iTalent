@@ -27,8 +27,8 @@ angular.module('iTalentApp')
             $location.path('/projects/' + id);
         };
         
-        $scope.save = function(id) {
-            subscriberStudentService.save(id).then(function() {
+        $scope.save = function(id, hours) {
+            subscriberStudentService.save(id, hours).then(function() {
                 $location.path('/student');
             }, function(err) {
                 console.log('Error saving subscriber.')
