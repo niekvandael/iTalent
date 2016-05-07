@@ -1,6 +1,7 @@
 {
   "views.index.projects": "Projects",
   "views.index.myProjects": "My projects",
+  "views.index.categories": "Categories",
   "views.index.about": "About",
   "views.index.login": "Login",
   "views.index.logout": "Logout",
@@ -12,6 +13,8 @@
   "views.home.details": "Show details",
   "views.home.hours": "Hours",
   "views.home.subscribe": "Subscribe",
+  "views.home.add": "Add",
+  "views.home.delete": "Delete",
   "views.about.title": "About iTalent PXL project",
   "views.about.madeBy": "Made by: ",
   "views.myProjects.newProject": "New project",

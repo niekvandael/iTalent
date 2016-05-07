@@ -23,6 +23,11 @@ insert into department (last_update, last_updated_by, status, name) values('2016
 -- Categories
 insert into category (last_update, last_updated_by, status, description) values('2016-01-01', 'Team1', 'A', 'Big Data');
 insert into category (last_update, last_updated_by, status, description) values('2016-01-01', 'Team1', 'A', 'Tutoring');
+insert into category (last_update, last_updated_by, status, description) values('2016-01-01', 'Team1', 'A', 'Health');
+insert into category (last_update, last_updated_by, status, description) values('2016-01-01', 'Team1', 'A', 'IT');
+insert into category (last_update, last_updated_by, status, description) values('2016-01-01', 'Team1', 'A', 'Media');
+insert into category (last_update, last_updated_by, status, description) values('2016-01-01', 'Team1', 'A', 'Technology');
+insert into category (last_update, last_updated_by, status, description) values('2016-01-01', 'Team1', 'A', 'Financial');
 
 -- Roles
 insert into role (name) values('Docent');
@@ -46,3 +51,4 @@ insert into project (last_update, last_updated_by, status, begin_date, end_date,
 insert into likes(last_update, last_updated_by, status, user_id, project_id) values('2016-01-01', 'Team1', 'A', 1, 1);
 insert into likes(last_update, last_updated_by, status, user_id, project_id) values('2016-01-01', 'Team1', 'A', 1, 2);
 insert into likes(last_update, last_updated_by, status, user_id, project_id) values('2016-01-01', 'Team1', 'A', 2, 1);
+

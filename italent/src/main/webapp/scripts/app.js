@@ -43,6 +43,10 @@
                 .when('/about', {
                     templateUrl: 'views/about.html'
                 })
+                .when('/category', {
+                        templateUrl: 'views/category.html',
+                        controller: 'categoryController'
+                })
                 .otherwise({
                     redirectTo: '/home'
                 })

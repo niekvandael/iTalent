@@ -1,19 +1,11 @@
 package be.italent.service;
 
-import be.italent.model.Category;
-import be.italent.repository.CategoryRepo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 
-@Service
-public class CategoryService {
+import be.italent.model.Category;
 
-    @Autowired
-    private CategoryRepo categoryRepo;
-
-    public List<Category> getAllCategories() {
-        return categoryRepo.findAll();
-    }
+public interface CategoryService {
+    public List<Category> getAllCategories();
+    public Category createCategory(Category category);
+    public boolean deleteCategory(int id);
 }

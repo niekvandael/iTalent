@@ -1,6 +1,7 @@
 {
   "views.index.projects": "Projecten",
   "views.index.myProjects": "Mijn projecten",
+  "views.index.categories": "Categorieën",
   "views.index.about": "Over",
   "views.index.login": "Inloggen",
   "views.index.logout": "Uitloggen",
@@ -13,6 +14,8 @@
   "views.about.title": "Over iTalent PXL project",
   "views.home.hours": "Uren",
   "views.home.subscribe": "Inschrijven",
+  "views.home.add": "Toevoegen",
+  "views.home.delete": "Verwijderen",
   "views.about.madeBy": "Gemaakt door: ",
   "views.myProjects.newProject": "Nieuw project",
   "views.myProjects.myProjects": "Mijn projecten",

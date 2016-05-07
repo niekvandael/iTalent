@@ -1,0 +1,16 @@
+<div>
+	<table>
+		<tr ng-repeat="category in categories">
+		    <td class="col-md-8">{{ category.description }} </td>
+		    <td><button type="submit" class="btn btn-danger" ng-click="deleteCategory(category.id)">{{'views.home.delete' | translate}}</button></td>
+		</tr>
+	</table>
+</div>
+
+<div class="jumbotron">
+	<div class="project-block-title">Add new category</div>
+	<input required type="text" ng-model="newCategory.description" class="form-control" min="1" max="160" />
+	<button type="submit" class="btn btn-warning btn-warning-detail" ng-click="addCategory()" ng-disabled="registrationForm.$invalid">{{'views.home.add' | translate}}</button>
+</div>
+
+<div class="project-block-title">{{ message }}</div>
