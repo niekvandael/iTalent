@@ -1,5 +1,40 @@
 package be.italent.security;
 
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+@Configuration
+@Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        // @formatter:off
+ /*       http
+                .httpBasic().disable()
+                .csrf().disable()
+                .authorizeRequests()
+                .anyRequest().permitAll();
+*/        
+        // Disable CSRF explicitly
+        http.authorizeRequests().antMatchers("/**").permitAll().and().csrf().disable();
+
+        // @formatter:on
+    }
+}
+
+
+
+
+
+
+
+
+/*package be.italent.security;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Configuration;
@@ -29,7 +64,7 @@ import java.io.IOException;
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    @Autowired
+    /*@Autowired
     private UserDetailsService userDetailsService;
 
     @Autowired
@@ -56,7 +91,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //        http.authorizeRequests().antMatchers("/**").permitAll().and().csrf().disable();
 //
 //        // @formatter:on
-    }
+    /*}
 
     private Filter csrfHeaderFilter() {
         return new OncePerRequestFilter() {
@@ -86,4 +121,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         repository.setHeaderName("X-XSRF-TOKEN");
         return repository;
     }
-}
+}*/
