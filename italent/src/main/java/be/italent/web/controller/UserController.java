@@ -3,12 +3,20 @@ package be.italent.web.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
+
 @RestController
 public class UserController {
-	
-	@RequestMapping("/login")
-	public boolean login(){
-		return true;
+
+	@RequestMapping("/user")
+	public Principal user(Principal user) {
+		return user;
 	}
-	
+
+
+//	@RequestMapping("/login")
+//	public boolean login(){
+//		return true;
+//	}
+//
 }

@@ -29,6 +29,7 @@ insert into role (name) values('Docent');
 insert into role (name) values('Student');
 
 -- Users
+insert into users (firstname, lastname, username, password, department_id, role_id) values('De', 'Nie', 'dennie', 'pwpwpw', 4, 2);
 insert into users (firstname, lastname, username, password, department_id, role_id) values('Arjen', 'Schuurman', 'arjen.schuurman@student.pxl.be', 'pxlpxl', 4, 2);
 insert into users (firstname, lastname, username, password, department_id, role_id) values('Bart', 'Hunerbein', 'bart.hunerbein@student.pxl.be', 'pxlpxl', 4, 2);
 insert into users (firstname, lastname, username, password, department_id, role_id) values('Dennie', 'Grondelaers', 'dennie.grondelaers@student.pxl.be', 'pxlpxl', 4, 2);

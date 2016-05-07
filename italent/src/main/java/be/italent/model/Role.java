@@ -4,17 +4,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Data
+@ToString(exclude = "users")
 @Entity
 public class Role implements Serializable{
 	private static final long serialVersionUID = -6207223955990641498L;
@@ -25,9 +24,9 @@ public class Role implements Serializable{
 	
 	@Size(max=20)
 	private String name;
-	
+
 	@JsonIgnore
-	@OneToMany(mappedBy="role")
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="role")
 	private List<User> users = new ArrayList<User>();
 
 	public int getId() {

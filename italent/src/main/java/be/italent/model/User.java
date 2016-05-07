@@ -2,14 +2,7 @@ package be.italent.model;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -30,11 +23,11 @@ public class User implements Serializable{
 	
 	@Size(min=2, max=55)
 	private String lastname;
-	
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Role role;
-	
-	@OneToOne
+
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Department department;
 	
 	@NotNull
