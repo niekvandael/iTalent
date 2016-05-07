@@ -29,5 +29,6 @@
   "views.newProject.endDate": "Eind datum",
   "views.newProject.cancel": "Annuleer",
   "views.newProject.save": "Opslaan",
+  "views.category.addNewCategory" : "Categorie toevoegen",
   "directives.language-select.Language": "Taal"
 }

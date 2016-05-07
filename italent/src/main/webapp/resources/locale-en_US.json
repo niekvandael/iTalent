@@ -29,5 +29,6 @@
   "views.newProject.endDate": "End date",
   "views.newProject.cancel": "Cancel",
   "views.newProject.save": "Save",
-  "directives.language-select.Language": "Language"
+  "directives.language-select.Language": "Language",
+  "views.category.addNewCategory" : "Add new category",
 }
