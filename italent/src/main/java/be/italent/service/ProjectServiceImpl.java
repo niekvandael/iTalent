@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import be.italent.model.Movie;
+import be.italent.model.Picture;
 import be.italent.model.Project;
 import be.italent.model.User;
 import be.italent.repository.ProjectRepo;
@@ -53,13 +54,24 @@ public class ProjectServiceImpl implements ProjectService{
     }
     
     public Project saveProject(Project project){
-    	for (Movie movie : project.getMovies()){
-    		movie.setProject(project);
-    	}
+    	setChildData(project);
     	return projectRepo.save(project);	
     }
     
     public void deleteProject(int id){
     	projectRepo.delete(id);
+    }
+
+    
+    private Project setChildData(Project project){
+    	for (Movie movie : project.getMovies()){
+    		movie.setProject(project);
+    	}
+    	
+    	for (Picture picture : project.getPictures()){
+    		picture.setProject(project);
+    	}
+    	
+    	return project;
     }
 }

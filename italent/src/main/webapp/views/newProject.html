@@ -22,14 +22,21 @@
                
                 <div class="form-group">
                     <label>{{'views.newProject.movies' | translate}}</label>
-
-	               	<div ng-repeat="movies in project.movies track by $index">
+	               	<div ng-repeat="movie in project.movies track by $index">
 	               		https://www.youtube.com/watch?v=
 	               		<input type="text" id="project_movie_{{ $index }}" class="form-control" placeholder="youtube-id" minlength="2" maxlength="100" />
 	               	</div>
-	               	
-                <button class="btn btn-primary" ng-click="addMovie()">{{'views.newProject.addMovie' | translate}}</button>
+                	<button class="btn btn-primary" ng-click="addMovie()">{{'views.newProject.addMovie' | translate}}</button>
                 </div>
+                
+                <div class="form-group">
+                    <label>{{'views.newProject.pictures' | translate}}</label>
+	               	<div ng-repeat="picture in project.pictures track by $index">
+						<input type="file" id="project_picture_{{ $index }}" accept="image/*" ng-model="dummy" index="{{ $index }}" onchange="angular.element(this).scope().convertImage(this)" />
+	               	</div>
+                	<button class="btn btn-primary" ng-click="addPicture()">{{'views.newProject.addPicture' | translate}}</button>
+                </div>
+                
 
                 <button type="submit" class="btn btn-warning" ng-click="cancel()">{{'views.newProject.cancel' | translate}}</button>
                 <button type="submit" class="btn btn-primary" ng-click="save()" >{{'views.newProject.save' | translate}}</button>

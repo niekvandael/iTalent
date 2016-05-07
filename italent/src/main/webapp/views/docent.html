@@ -1,10 +1,12 @@
-<div class="container">
+<div class="container" ng-cloak>
     <div class="project-block" ng-repeat="project in projects">
         <div class="project-block-title">{{ project.title }}</div>
         <div class="row">
             <div class="col-md-5">
-                <div class="project-block-media img-responsive"></div>
+                <div class="project-block-media img-responsive" ng-if="project.pictures[0].bytes == undefined"></div>
+                <img class="project-block-media img-responsive" ng-src="data:image/png;base64, {{ project.pictures[0].bytes }}" ng-if="project.pictures[0].bytes !== undefined" style="margin-left: auto;margin-right: auto"/>
             </div>
+            
             <div class="col-md-7">
                 <div class="project-block-label">{{"views.home.shortDescription" | translate}}</div>
                 <div class="project-block-short-description">{{ project.shortDescription }}</div>

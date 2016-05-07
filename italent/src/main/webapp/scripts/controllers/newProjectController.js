@@ -4,11 +4,14 @@
 angular.module('iTalentApp')
     .controller('newProjectController', ['$scope', '$location', 'projectService', function ($scope, $location, projectService) {
 
-        $scope.project = {'user': null, 'movies' : []};
+        $scope.project = {'user': null, 'movies' : [], 'pictures' : []};
         $scope.maxLengthOfMovies = 5;
+        $scope.maxLengthOfPictures = 10;
+        $scope.picturesConverted = true;
         
         $scope.save = function() {
         	$scope.storeMovies();
+        	
             projectService.saveOrUpdate($scope.project).then(function() {
                 $location.path('/myProjects');
             }, function(err) {
@@ -26,6 +29,25 @@ angular.module('iTalentApp')
 			}
         };
         
+        $scope.convertImage = function(element, i) {
+            $scope.$apply(function(scope) {
+            	
+            	$scope.picturesConverted = false;
+            	
+            	var reader  = new FileReader();
+    	        (function (i) {
+                	reader.addEventListener("load", function () {
+                		var index = parseInt(element.getAttribute("index"));
+                		$scope.project.pictures[index].bytes = reader.result.split(",")[1];
+                		$scope.picturesConverted = true;		
+    				}, false);
+    		         })(i);
+    			
+    			reader.readAsDataURL(element.files[0]);
+            });
+       };
+        
+        
         $scope.cancel = function() {
             $location.path('/myProjects');
         };
@@ -34,8 +56,17 @@ angular.module('iTalentApp')
         	if($scope.project.movies.length == this.maxLengthOfMovies){
         		return;
         	}
-            $scope.project.movies.push({'youTubeId':'', description:''})
+            $scope.project.movies.push({'youTubeId':'', description:''});
+        }
+        
+        $scope.addPicture = function(){
+        	if($scope.project.pictures.length == this.maxLengthOfPictures){
+        		return;
+        	}
+            $scope.project.pictures.push({});
         }
         
         $scope.addMovie();
+        $scope.addPicture();
+        
     }]);

@@ -30,6 +30,8 @@
   "views.newProject.cancel": "Cancel",
   "views.newProject.save": "Save",
   "views.newProject.movies": "Youtube movies",
+  "views.newProject.pictures": "Pictures",
+  "views.newProject.addPicture": "Add picture",
   "views.newProject.addMovie": "Add movie",
   "views.category.addNewCategory" : "Add new category",
   "directives.language-select.Language": "Language"

@@ -2,13 +2,9 @@ package be.italent.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
 
@@ -25,9 +21,15 @@ public class Picture extends AbstractITalentEntity implements Serializable {
 	@GeneratedValue
 	private int id;
 	
-	@Lob @Basic(fetch = FetchType.LAZY)
-	@Column(length=100000)
-	private byte[] bytes;
+	/* 
+	 * TESTING PURPOSES: TO ALLOW IMPORT.SQL INSERING PICTURES TO TEST
+	 * @Lob @Basic(fetch = FetchType.LAZY)
+	 * @Column(length=100000)
+	 * private String bytes; // private byte[] bytes;
+	 * END: TESTING PURPOSES: TO ALLOW IMPORT.SQL INSERING PICTURES TO TEST
+	 */
+	@Size(max=10000)
+	private String bytes;
 	
 	@Size(max=500)
 	private String description;
@@ -44,11 +46,11 @@ public class Picture extends AbstractITalentEntity implements Serializable {
 		this.id = id;
 	}
 
-	public byte[] getBytes() {
+	public String getBytes() {
 		return bytes;
 	}
 
-	public void setBytes(byte[] bytes) {
+	public void setBytes(String bytes) {
 		this.bytes = bytes;
 	}
 

@@ -30,6 +30,8 @@
   "views.newProject.cancel": "Annuleer",
   "views.newProject.save": "Opslaan",
   "views.newProject.movies": "Youtube video's",
+  "views.newProject.pictures": "Fotos",
+  "views.newProject.addPicture": "Foto toevoegen",
   "views.newProject.addMovie": "Video toevoegen",
   "views.category.addNewCategory" : "Categorie toevoegen",
   "directives.language-select.Language": "Taal"
