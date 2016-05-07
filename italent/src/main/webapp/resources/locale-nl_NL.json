@@ -29,6 +29,8 @@
   "views.newProject.endDate": "Eind datum",
   "views.newProject.cancel": "Annuleer",
   "views.newProject.save": "Opslaan",
+  "views.newProject.movies": "Youtube video's",
+  "views.newProject.addMovie": "Video toevoegen",
   "views.category.addNewCategory" : "Categorie toevoegen",
   "directives.language-select.Language": "Taal"
 }

@@ -1,13 +1,14 @@
 package be.italent.service;
 
-import be.italent.model.Project;
-import be.italent.model.User;
-import be.italent.repository.ProjectRepo;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import be.italent.model.Movie;
+import be.italent.model.Project;
+import be.italent.model.User;
+import be.italent.repository.ProjectRepo;
 
 @Service
 public class ProjectServiceImpl implements ProjectService{
@@ -52,6 +53,9 @@ public class ProjectServiceImpl implements ProjectService{
     }
     
     public Project saveProject(Project project){
+    	for (Movie movie : project.getMovies()){
+    		movie.setProject(project);
+    	}
     	return projectRepo.save(project);	
     }
     

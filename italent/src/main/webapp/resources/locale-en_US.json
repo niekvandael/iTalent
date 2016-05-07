@@ -29,6 +29,8 @@
   "views.newProject.endDate": "End date",
   "views.newProject.cancel": "Cancel",
   "views.newProject.save": "Save",
-  "directives.language-select.Language": "Language",
+  "views.newProject.movies": "Youtube movies",
+  "views.newProject.addMovie": "Add movie",
   "views.category.addNewCategory" : "Add new category",
+  "directives.language-select.Language": "Language"
 }

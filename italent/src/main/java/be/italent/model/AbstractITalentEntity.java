@@ -11,6 +11,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
 
+import be.italent.security.ITalentAuth;
+
 @Data
 @MappedSuperclass
 public abstract class AbstractITalentEntity implements Serializable{
@@ -28,6 +30,7 @@ public abstract class AbstractITalentEntity implements Serializable{
 	private String status;
 
 	public Calendar getLastUpdate() {
+		this.lastUpdate = Calendar.getInstance();
 		return lastUpdate;
 	}
 
@@ -36,6 +39,9 @@ public abstract class AbstractITalentEntity implements Serializable{
 	}
 
 	public String getLastUpdatedBy() {
+		if(lastUpdatedBy == null){
+			this.lastUpdatedBy = ITalentAuth.getAuthenticatedUser().getFirstname() + " " + ITalentAuth.getAuthenticatedUser().getLastname(); 
+		}
 		return lastUpdatedBy;
 	}
 
@@ -44,6 +50,10 @@ public abstract class AbstractITalentEntity implements Serializable{
 	}
 
 	public String getStatus() {
+		if(this.status == null){
+			this.status = "A";
+		}
+		
 		return status;
 	}
 
