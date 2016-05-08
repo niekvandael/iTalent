@@ -2,12 +2,21 @@
  * Created by arjen on 05/04/16.
  */
 angular.module('iTalentApp')
-    .controller('newProjectController', ['$scope', '$location', 'projectService', function ($scope, $location, projectService) {
+    .controller('newProjectController', ['$scope', '$location', '$routeParams', 'projectService', function ($scope, $location, $routeParams, projectService) {
 
+        var projectId = $routeParams.id;
         $scope.project = {'user': null, 'movies' : [], 'pictures' : []};
         $scope.maxLengthOfMovies = 5;
         $scope.maxLengthOfPictures = 10;
         $scope.picturesConverted = true;
+        
+        if (projectId) {
+            projectService.get(projectId).then(function (project) {
+                $scope.project = project;
+            }, function (err) {
+                console.log('Error getting project: ' + err)
+            });
+        }
         
         $scope.save = function() {
         	$scope.storeMovies();
@@ -47,7 +56,6 @@ angular.module('iTalentApp')
             });
        };
         
-        
         $scope.cancel = function() {
             $location.path('/myProjects');
         };
@@ -57,14 +65,14 @@ angular.module('iTalentApp')
         		return;
         	}
             $scope.project.movies.push({'youTubeId':'', description:''});
-        }
+        };
         
         $scope.addPicture = function(){
         	if($scope.project.pictures.length == this.maxLengthOfPictures){
         		return;
         	}
             $scope.project.pictures.push({});
-        }
+        };
         
         $scope.addMovie();
         $scope.addPicture();
