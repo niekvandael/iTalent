@@ -23,13 +23,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="row col-xs-offset-2">
+            <div class="row col-xs-offset-1">
                 <div ng-if="project.liked" class="project-button glyphicon glyphicon-star col-xs-1" ng-click="likeClicked(project)"></div>
                 <div ng-if="!project.liked" class="project-button glyphicon glyphicon-star-empty col-xs-1" ng-click="likeClicked(project)"></div>
                 <div ng-if="project.numberOfLikes" class="likes-number col-xs-2">{{project.numberOfLikes}}</div>
                 <div ng-if="!project.numberOfLikes" class="likes-number col-xs-2">0</div>
-                <button type="button" class="btn btn-warning btn-warning-detail col-xs-4 col-md-2 col-xs-offset-1 col-md-offset-2"
+                <button type="button" class="btn btn-warning btn-warning-detail col-xs-2 col-md-2 col-xs-offset-1"
                         ng-click="showDetails(project.id)">{{"views.home.details" | translate}}
+                </button>
+                <button type="button" class="btn btn-danger btn-danger-detail col-xs-2 col-md-2 col-xs-offset-1"
+                        ng-click="editProject(project.id)">{{"views.home.edit" | translate}}
                 </button>
             </div>
         </div>

@@ -15,6 +15,7 @@
   "views.home.hours": "Uren",
   "views.home.subscribe": "Inschrijven",
   "views.home.add": "Toevoegen",
+  "views.home.edit": "Aanpassen",
   "views.home.delete": "Verwijderen",
   "views.about.madeBy": "Gemaakt door: ",
   "views.myProjects.newProject": "Nieuw project",

@@ -14,6 +14,7 @@
   "views.home.hours": "Hours",
   "views.home.subscribe": "Subscribe",
   "views.home.add": "Add",
+  "views.home.edit": "Edit",
   "views.home.delete": "Delete",
   "views.about.title": "About iTalent PXL project",
   "views.about.madeBy": "Made by: ",
