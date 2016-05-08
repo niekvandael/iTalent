@@ -66,6 +66,12 @@ public class ProjectRestController {
 		return projectService.saveProject(project);
 	}
 	
+	@RequestMapping(value = "/save/{id}", method = RequestMethod.PUT, produces="application/json")
+	public Project updateProject(@PathVariable("id") final int id, @RequestBody Project project){
+		project.setUser(ITalentAuth.getAuthenticatedUser());
+		return projectService.saveProject(project);
+	}
+	
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.POST, produces="application/json")
 	public void deleteProject(@PathVariable("id") final int id){
 		projectService.deleteProject(id);
