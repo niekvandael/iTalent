@@ -31,6 +31,10 @@ angular.module('iTalentApp')
             $location.path('/newProject');
         };
         
+        $scope.editProject = function(id) {
+            $location.path('/editProject/' + id);
+        };
+
         $scope.showDetails = function(id) {
             $location.path('/projects/' + id);
         };

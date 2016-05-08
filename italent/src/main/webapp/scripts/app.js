@@ -40,6 +40,10 @@
                     templateUrl: 'views/newProject.html',
                     controller: 'newProjectController'
                 })
+                .when('/editProject/:id', {
+                    templateUrl: 'views/newProject.html',
+                    controller: 'newProjectController'
+                })
                 .when('/about', {
                     templateUrl: 'views/about.html'
                 })
