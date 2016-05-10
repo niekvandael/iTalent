@@ -2,7 +2,10 @@ package be.italent.web.controller;
 
 import java.util.List;
 
+import be.italent.web.resource.assembler.ProjectResourceAssembler;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +22,12 @@ public class ProjectRestController {
 
 	@Autowired
 	private ProjectService projectService;
+
+	private ProjectResourceAssembler projectResourceAssembler;
+
+	public ProjectRestController() {
+		this.projectResourceAssembler = new ProjectResourceAssembler();
+	}
 
 	@RequestMapping(value = "/public", method = RequestMethod.GET, produces="application/json")
 	public List<Project> getPublicProjects(){
@@ -81,4 +90,16 @@ public class ProjectRestController {
 	public List<Project> getProjectsByDescription(@PathVariable("description") final String description) {
 		return projectService.getAllByDescription(description);
 	}*/
+
+	@RequestMapping(value = "/example/{id}", method = RequestMethod.GET)
+	public ResponseEntity getAfterSalesFileWithNettoById(
+			@PathVariable("id") final Integer id) {
+		Project project =  projectService.getProjectById(id);
+
+		if (project != null) {
+			return new ResponseEntity<>(projectResourceAssembler.toResource(project), HttpStatus.OK);
+		} else {
+			return new ResponseEntity(HttpStatus.NOT_FOUND);
+		}
+	}
 }

@@ -93,6 +93,15 @@
             <artifactId>spring-boot-starter-log4j</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-hateoas</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+        </dependency>
+
         <!--Database-->
         <dependency>
             <groupId>mysql</groupId>
@@ -106,7 +115,14 @@
             <version>1.16.8</version>
         </dependency>
 
-		<dependency>
+        <!--mapper-->
+        <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer</artifactId>
+            <version>5.5.1</version>
+        </dependency>
+
+        <dependency>
 		    <groupId>commons-dbcp</groupId>
 		    <artifactId>commons-dbcp</artifactId>
 		    </dependency>
