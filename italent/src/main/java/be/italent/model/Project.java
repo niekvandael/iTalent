@@ -55,6 +55,10 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	
 	private int duration;
 	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="start_date")
+    private Date startDate;
+	
 	@OneToOne
 	private Category category;
 	
@@ -160,6 +164,24 @@ public class Project extends AbstractITalentEntity implements Serializable {
 
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
+	}
+
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+	
+	
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
 	}
 
 	public User getUser() {
