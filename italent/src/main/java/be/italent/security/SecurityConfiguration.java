@@ -1,4 +1,4 @@
-package be.italent.security;
+/*package be.italent.security;
 
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Configuration;
@@ -20,11 +20,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anyRequest().permitAll();
 */        
         // Disable CSRF explicitly
-        http.authorizeRequests().antMatchers("/**").permitAll().and().csrf().disable();
+        /*http.authorizeRequests().antMatchers("/**").permitAll().and().csrf().disable();
 
         // @formatter:on
     }
-}
+}*/
 
 
 
@@ -33,7 +33,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
 
-/*package be.italent.security;
+package be.italent.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
@@ -42,6 +42,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.csrf.CsrfFilter;
@@ -64,12 +65,22 @@ import java.io.IOException;
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    /*@Autowired
+    @Autowired
     private UserDetailsService userDetailsService;
 
     @Autowired
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService);
+    }
+    
+    @Override
+    public void configure(WebSecurity web){
+        web.ignoring()
+        .antMatchers("/scripts/**/*.{js,html}")
+        .antMatchers("/views/*.html")
+        .antMatchers("/projects/public")
+        .antMatchers("/bower_components/**")
+        .antMatchers("/resources/*.json");
     }
 
     @Override
@@ -91,7 +102,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //        http.authorizeRequests().antMatchers("/**").permitAll().and().csrf().disable();
 //
 //        // @formatter:on
-    /*}
+    }
 
     private Filter csrfHeaderFilter() {
         return new OncePerRequestFilter() {
@@ -121,4 +132,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         repository.setHeaderName("X-XSRF-TOKEN");
         return repository;
     }
-}*/
+}
