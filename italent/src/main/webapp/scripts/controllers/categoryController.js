@@ -3,40 +3,39 @@
  */
 angular.module('iTalentApp')
     .controller('categoryController', ['$scope', '$routeParams', 'categoryService', function ($scope, $routeParams, categoryService) {
-    	
-    	$scope.newCategory = {};
 
-    	$scope.getCategories = function(){
-        	categoryService.list().then(function (categories) {
+        $scope.newCategory = {};
+
+        $scope.addCategory = function () {
+            categoryService.save($scope.newCategory).then(function () {
+                getCategories();
+                $scope.message = "Category has been created!";
+                $scope.newCategory.description = "";
+            }, function (err) {
+                $scope.message = "Category addition failed...";
+                console.log('Error saving category: ' + err)
+            })
+        };
+
+        $scope.deleteCategory = function (categoryId) {
+            categoryService.deleteItem(categoryId).then(function (success) {
+                if (!success.data) {
+                    $scope.message = "Cannot delete item: some projects are depending on this category";
+                } else {
+                    getCategories();
+                    $scope.message = "Deletion successfull";
+                }
+            });
+        };
+
+        function getCategories() {
+            categoryService.list().then(function (categories) {
                 $scope.categories = categories;
             }, function (err) {
-                console.log('Error getting project: ' + err)
-            });    		
-    	}
-        $scope.addCategory = function () {
-        	categoryService.saveOrUpdate(this.newCategory).then(function (success) {
-        		if(success.id == 0){
-        			$scope.message = "Category addition failed...";
-        		} else {
-        			$scope.getCategories();
-        			$scope.message = "Category has been created!";
-        			$scope.newCategory.description = "";
-        		}
+                console.log('Error getting categories: ' + err)
             });
-        };
-     
-        $scope.deleteCategory = function (categoryId) {
-        	categoryService.deleteItem(categoryId).then(function (success) {
-        		if(!success.data){
-        			$scope.message = "Cannot delete item: some projects are depending on this category";
-        		} else {
-        			$scope.getCategories();
-        			$scope.message = "Deletion successfull";
-        		}
-            });
-        };
+        }
 
-    	
-    	$scope.getCategories();
-    	
+        getCategories();
+
     }]);

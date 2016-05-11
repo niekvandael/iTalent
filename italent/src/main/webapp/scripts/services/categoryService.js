@@ -31,38 +31,25 @@ angular.module('iTalentApp')
 
                 return deferred.promise;
             },
-           
-            
-            saveOrUpdate: function (category) {
-            	category = angular.copy(category);
-                var deferred = $q.defer();
 
-                var resource = $resource(GLOBALS.baseURL + "categories", {}, {update: {method: "PUT"}});
+            save: function (category) {
+                var deferred = $q.defer();
+                var resource = $resource(GLOBALS.baseURL + "categories");
+
+                resource.save(category, function (savedCategory) {
+                    deferred.resolve(savedCategory);
+                }, function (err) {
+                    deferred.reject(err);
+                });
                 
-                if (angular.isDefined(category.id)) {
-                    resource.update(category, function (updatedCategory) {
-                        deferred.resolve(updatedCategory);
-                    }, function (err) {
-                        deferred.reject(err);
-                    });
-                }
-                else {
-                    resource.save(category, function (savedCategory) {
-                        deferred.resolve(savedCategory);
-                    }, function (err) {
-                        deferred.reject(err);
-                    });
-                }
                 return deferred.promise;
             },
-            
+
             deleteItem: function (categoryId) {
-              	   return $http({
-              	        url: GLOBALS.baseURL + 'categories/delete/' + categoryId,
-              	        method: "DELETE"
-              	    })
-                
-                return deferred.promise;
+                return $http({
+                    url: GLOBALS.baseURL + 'categories/delete/' + categoryId,
+                    method: "DELETE"
+                });
             }
         }
     }]);
