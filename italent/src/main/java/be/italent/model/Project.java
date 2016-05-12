@@ -25,7 +25,6 @@ import lombok.Data;
 @Data
 @Entity
 public class Project extends AbstractITalentEntity implements Serializable {
-
 	private static final long serialVersionUID = 6933862050829577662L;
 	
 	@Transient
