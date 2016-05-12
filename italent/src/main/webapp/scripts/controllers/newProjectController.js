@@ -31,8 +31,9 @@ angular.module('iTalentApp')
         $scope.storeMovies = function(){
         	for (var i = 0; i < $scope.maxLengthOfMovies; i++) {
 				var element = document.getElementById("project_movie_" + i);
-				if(element == null){
+				if(element == null || element.value.length < 11){
 					break;
+					
 				}
 				$scope.project.movies[i].youTubeId = element.value;
 			}
@@ -64,7 +65,7 @@ angular.module('iTalentApp')
         	if($scope.project.movies.length == this.maxLengthOfMovies){
         		return;
         	}
-            $scope.project.movies.push({'youTubeId':'', description:''});
+            $scope.project.movies.push({'youTubeId':'', 'description':''});
         };
         
         $scope.addPicture = function(){
@@ -73,8 +74,4 @@ angular.module('iTalentApp')
         	}
             $scope.project.pictures.push({});
         };
-        
-        $scope.addMovie();
-        $scope.addPicture();
-        
     }]);

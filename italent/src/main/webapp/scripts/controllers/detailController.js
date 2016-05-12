@@ -24,5 +24,4 @@ angular.module('iTalentApp')
                project.liked = !project.liked;
                likeService.saveOrUpdate(project.id);
         };
-        
     }]);

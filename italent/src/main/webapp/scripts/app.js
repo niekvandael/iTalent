@@ -10,6 +10,11 @@
             };
             $rootScope.showNavBar = '';
         })
+        .filter('youtubeEmbedUrl', function ($sce) {
+		    return function(videoId) {
+		      return $sce.trustAsResourceUrl('https://www.youtube.com/embed/' + videoId);
+		    };
+		})
         .config(function ($routeProvider) {
             $routeProvider
                 .when('/home', {
