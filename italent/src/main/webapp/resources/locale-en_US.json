@@ -38,5 +38,7 @@
   "views.newProject.milestones": "Milestones",
   "views.newProject.addMilestone": "Add milestone",
   "views.category.addNewCategory" : "Add new category",
+  "views.newProject.wantedSubscribers" : "Wanted subscribers",
+  "views.newProject.addWantedSubscriber" : "Add wanted subscriber",
   "directives.language-select.Language": "Language"
 }

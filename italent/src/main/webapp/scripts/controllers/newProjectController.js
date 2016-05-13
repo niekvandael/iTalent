@@ -2,14 +2,16 @@
  * Created by arjen on 05/04/16.
  */
 angular.module('iTalentApp')
-    .controller('newProjectController', ['$scope', '$location', '$routeParams', 'projectService', function ($scope, $location, $routeParams, projectService) {
+    .controller('newProjectController', ['$scope', '$location', '$routeParams', 'projectService', 'departmentService', function ($scope, $location, $routeParams, projectService, departmentService) {
 
         var projectId = $routeParams.id;
-        $scope.project = {'user': null, 'movies' : [], 'pictures' : [], 'milestones': []};
-        
+        $scope.project = {'user': null, 'movies' : [], 'pictures' : [], 'milestones': [], 'wantedSubscribers': []};
+        $scope.departments = [];
+       
         $scope.maxLengthOfMovies = 5;
         $scope.maxLengthOfPictures = 10;
         $scope.maxLengthOfMilestones = 10;
+        $scope.maxLengthOfWantedSubscribers = 10;
         
         $scope.picturesConverted = true;
         
@@ -25,11 +27,20 @@ angular.module('iTalentApp')
         	$scope.storeMovies();
         	$scope.storePictures();
         	$scope.storeMilestones();
+        	$scope.storeWantedSubscribers();
         	
             projectService.saveOrUpdate($scope.project).then(function() {
                 $location.path('/myProjects');
             }, function(err) {
                 console.log('Error saving project.')
+            })
+        };
+        
+        $scope.getDepartments = function() {
+            departmentService.list().then(function(departments) {
+            	$scope.departments = departments;
+            }, function(err) {
+                console.log('Error getting departments')
             })
         };
         
@@ -73,6 +84,19 @@ angular.module('iTalentApp')
 				$scope.project.milestones[i].description = element.value;
 			}
         };
+        $scope.storeWantedSubscribers = function(){
+        	for (var i = 0; i < $scope.maxLengthOfMilestones; i++) {
+				var departmentInput = document.getElementById("project_wantedSubscriber_department_" + i);
+				var numberInput = document.getElementById("project_wantedSubscriber_number_" + i);
+				
+				if(departmentInput == null || numberInput == null){
+					break;
+				}
+				
+				$scope.project.wantedSubscribers[i].number = numberInput.value;
+				$scope.project.wantedSubscribers[i].department.id = departmentInput.value;
+			}
+        };
         $scope.convertImage = function(element, i) {
             $scope.$apply(function(scope) {
             	
@@ -102,6 +126,13 @@ angular.module('iTalentApp')
             $scope.project.movies.push({'youTubeId':'', 'description':''});
         };
         
+        $scope.addWantedSubscriber = function(){
+        	if($scope.project.wantedSubscribers.length == this.maxLengthOfWantedSubscribers){
+        		return;
+        	}
+            $scope.project.wantedSubscribers.push({'department':{id:0}, 'number':0});
+        }
+        
         $scope.addPicture = function(){
         	if($scope.project.pictures.length == this.maxLengthOfPictures){
         		return;
@@ -115,4 +146,6 @@ angular.module('iTalentApp')
         	}
             $scope.project.milestones.push({'description':''});
         };
+        
+        $scope.getDepartments();
     }]);
