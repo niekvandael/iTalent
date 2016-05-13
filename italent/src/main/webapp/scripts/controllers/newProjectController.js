@@ -27,6 +27,14 @@ angular.module('iTalentApp')
                 console.log('Error saving project.')
             })
         };
+        
+        $scope.deleteProject = function() {   
+            projectService.deleteProject(projectId).then(function() {
+                $location.path('/myProjects');
+            }, function(err) {
+                console.log('Error deleting project.')
+            })
+        };
 
         $scope.storeMovies = function(){
         	for (var i = 0; i < $scope.maxLengthOfMovies; i++) {

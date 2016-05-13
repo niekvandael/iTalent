@@ -22,7 +22,7 @@
                 
                 <div class="form-group">
                     <label class="required">{{'views.newProject.public' | translate}}</label>
-                    <input type="checkbox" required ng-model="project.public" ng-checked="project.public" class="form-control"></input>
+                    <input type="checkbox" ng-model="project.public" ng-checked="project.public" class="form-control"></input>
                 </div>
                
                 <div class="form-group">
@@ -45,6 +45,7 @@
 
                 <button type="submit" class="btn btn-warning" ng-click="cancel()">{{'views.newProject.cancel' | translate}}</button>
                 <button type="submit" class="btn btn-primary" ng-click="save()" >{{'views.newProject.save' | translate}}</button>
+                <button ng-if="!project.partiallyBacked && project.id>0" type="button" class="btn btn-danger" ng-click="deleteProject()">{{"views.home.delete" | translate}}</button>
             </div>
         </div>
     </form>
