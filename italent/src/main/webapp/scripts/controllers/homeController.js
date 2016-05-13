@@ -4,7 +4,7 @@
 angular.module('iTalentApp')
     .controller('homeController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService', function ($scope, $rootScope, $location, projectService, likeService) {
 
-        projectService.listPublic().then(function (projects) {
+        projectService.listHome().then(function (projects) {
             $scope.projects = projects;
         }, function (err) {
             console.log('Error getting projects: ' + err)

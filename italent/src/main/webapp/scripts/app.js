@@ -21,14 +21,6 @@
                     templateUrl: 'views/home.html',
                     controller: 'homeController'
                 })
-                .when('/docent', {
-                    templateUrl: 'views/docent.html',
-                    controller: 'docentController'
-                })
-                .when('/student', {
-                    templateUrl: 'views/student.html',
-                    controller: 'studentController'
-                })
                 .when('/projects/:id', {
                     templateUrl: 'views/detail.html',
                     controller: 'detailController'

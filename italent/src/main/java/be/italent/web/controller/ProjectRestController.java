@@ -1,5 +1,6 @@
 package be.italent.web.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import be.italent.web.resource.assembler.ProjectResourceAssembler;
@@ -29,16 +30,28 @@ public class ProjectRestController {
 		this.projectResourceAssembler = new ProjectResourceAssembler();
 	}
 
-	@RequestMapping(value = "/public", method = RequestMethod.GET, produces="application/json")
-	public List<Project> getPublicProjects(){
+	@RequestMapping(value = "/listHome", method = RequestMethod.GET, produces="application/json")
+	public List<Project> getHomeProjects(Principal principal){
+		if (principal != null) {
+			System.out.println(principal.getName());
+		}
+		else  {
+			System.out.println("Empty principal");
+		}
 		return projectService.getPublicProjects();
+		//TODO send docent list if user has role docent
+		//return projectService.getAllProjects();
+		//TODO send student list if user has role student
+		//return projectService.getBackedProjects());
 	}
 	
+	//TODO remove when security works
 	@RequestMapping(value = "/docent", method = RequestMethod.GET, produces="application/json")
 	public List<Project> getProjects(){
 		return projectService.getAllProjects();
 	}
 	
+	//TODO remove when security works
 	@RequestMapping(value = "/student", method = RequestMethod.GET, produces="application/json")
 	public List<Project> getBackedProjects(){
 		return (projectService.getBackedProjects());

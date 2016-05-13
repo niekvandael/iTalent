@@ -19,33 +19,9 @@ angular.module('iTalentApp')
 
                 return deferred.promise;
             },
-            listPublic: function () {
+            listHome: function () {
                 var deferred = $q.defer();
-                var resource = $resource(GLOBALS.baseURL + "projects/public", {}, {list: {method: "GET", isArray: true}});
-
-                resource.list(function (projectList) {
-                    deferred.resolve(projectList);
-                }, function (err) {
-                    deferred.reject(err);
-                });
-
-                return deferred.promise;
-            },
-            listDocent: function () {
-                var deferred = $q.defer();
-                var resource = $resource(GLOBALS.baseURL + "projects/docent", {}, {list: {method: "GET", isArray: true}});
-
-                resource.list(function (projectList) {
-                    deferred.resolve(projectList);
-                }, function (err) {
-                    deferred.reject(err);
-                });
-
-                return deferred.promise;
-            },
-            listStudent: function () {
-                var deferred = $q.defer();
-                var resource = $resource(GLOBALS.baseURL + "projects/student", {}, {list: {method: "GET", isArray: true}});
+                var resource = $resource(GLOBALS.baseURL + "projects/listHome", {}, {list: {method: "GET", isArray: true}});
 
                 resource.list(function (projectList) {
                     deferred.resolve(projectList);
