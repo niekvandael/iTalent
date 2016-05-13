@@ -25,6 +25,8 @@ public class Milestone extends AbstractITalentEntity implements Serializable {
 	@ManyToOne
 	private Project project;
 
+	private String description;
+	
 	public int getId() {
 		return id;
 	}
@@ -47,5 +49,13 @@ public class Milestone extends AbstractITalentEntity implements Serializable {
 
 	public void setProject(Project project) {
 		this.project = project;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

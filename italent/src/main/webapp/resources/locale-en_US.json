@@ -35,6 +35,8 @@
   "views.newProject.addPicture": "Add picture",
   "views.newProject.addMovie": "Add movie",
   "views.newProject.public": "Public?",
+  "views.newProject.milestones": "Milestones",
+  "views.newProject.addMilestone": "Add milestone",
   "views.category.addNewCategory" : "Add new category",
   "directives.language-select.Language": "Language"
 }

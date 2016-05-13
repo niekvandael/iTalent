@@ -71,15 +71,15 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	private boolean isPublic;
 	
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Announcement> announcements = new ArrayList<Announcement>();
 	
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Like> likes = new ArrayList<Like>();
 	
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Milestone> milestones = new ArrayList<Milestone>();
 
 	
@@ -91,15 +91,15 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	private List<Picture> pictures = new ArrayList<Picture>();
 	
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<WantedSubscriber> wantedSubscribers = new ArrayList<WantedSubscriber>();
 	
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<SubscriberStudent> subscribersStudent = new ArrayList<SubscriberStudent>();
 	
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<SubscriberDocent> subscribersDocent = new ArrayList<SubscriberDocent>();
 
 	@Transient

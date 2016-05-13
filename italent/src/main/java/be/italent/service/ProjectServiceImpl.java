@@ -5,10 +5,16 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import be.italent.model.Announcement;
+import be.italent.model.Like;
+import be.italent.model.Milestone;
 import be.italent.model.Movie;
 import be.italent.model.Picture;
 import be.italent.model.Project;
+import be.italent.model.SubscriberDocent;
+import be.italent.model.SubscriberStudent;
 import be.italent.model.User;
+import be.italent.model.WantedSubscriber;
 import be.italent.repository.ProjectRepo;
 
 @Service
@@ -66,12 +72,29 @@ public class ProjectServiceImpl implements ProjectService{
 
     
     private Project setChildData(Project project){
+    	for(Announcement announcement : project.getAnnouncements()){
+    		announcement.setProject(project);
+    	}
+    	for(Like like : project.getLikes()){
+    		like.setProject(project);
+    	}
+    	for(Milestone milestone : project.getMilestones()){
+    		milestone.setProject(project);
+    	}
     	for (Movie movie : project.getMovies()){
     		movie.setProject(project);
     	}
-    	
     	for (Picture picture : project.getPictures()){
     		picture.setProject(project);
+    	}
+    	for(WantedSubscriber wantedSubscriber : project.getWantedSubscribers()){
+    		wantedSubscriber.setProject(project);
+    	}
+    	for(SubscriberStudent subscriberStudent : project.getSubscribersStudent()){
+    		subscriberStudent.setProject(project);
+    	}
+    	for(SubscriberDocent subscriberDocent : project.getSubscribersDocent()){
+    		subscriberDocent.setProject(project);
     	}
     	
     	return project;

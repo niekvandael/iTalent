@@ -5,9 +5,12 @@ angular.module('iTalentApp')
     .controller('newProjectController', ['$scope', '$location', '$routeParams', 'projectService', function ($scope, $location, $routeParams, projectService) {
 
         var projectId = $routeParams.id;
-        $scope.project = {'user': null, 'movies' : [], 'pictures' : []};
+        $scope.project = {'user': null, 'movies' : [], 'pictures' : [], 'milestones': []};
+        
         $scope.maxLengthOfMovies = 5;
         $scope.maxLengthOfPictures = 10;
+        $scope.maxLengthOfMilestones = 10;
+        
         $scope.picturesConverted = true;
         
         if (projectId) {
@@ -21,6 +24,7 @@ angular.module('iTalentApp')
         $scope.save = function() {
         	$scope.storeMovies();
         	$scope.storePictures();
+        	$scope.storeMilestones();
         	
             projectService.saveOrUpdate($scope.project).then(function() {
                 $location.path('/myProjects');
@@ -59,6 +63,16 @@ angular.module('iTalentApp')
 				$scope.project.pictures[i].description = element_descr.value;
 			}
         };
+        $scope.storeMilestones = function(){
+        	for (var i = 0; i < $scope.maxLengthOfMilestones; i++) {
+				var element = document.getElementById("project_milestone_" + i);
+				if(element == null){
+					break;
+				}
+				
+				$scope.project.milestones[i].description = element.value;
+			}
+        };
         $scope.convertImage = function(element, i) {
             $scope.$apply(function(scope) {
             	
@@ -92,6 +106,13 @@ angular.module('iTalentApp')
         	if($scope.project.pictures.length == this.maxLengthOfPictures){
         		return;
         	}
-            $scope.project.pictures.push({});
+            $scope.project.pictures.push({'bytes':'', 'description':''});
+        };
+        
+        $scope.addMilestone = function(){
+        	if($scope.project.milestones.length == this.maxLengthOfMilestones){
+        		return;
+        	}
+            $scope.project.milestones.push({'description':''});
         };
     }]);
