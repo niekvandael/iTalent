@@ -63,6 +63,4 @@ public class Movie extends AbstractITalentEntity implements Serializable {
 	public void setProject(Project project) {
 		this.project = project;
 	}
-	
-	
 }

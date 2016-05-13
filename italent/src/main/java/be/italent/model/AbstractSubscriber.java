@@ -40,6 +40,4 @@ public class AbstractSubscriber extends AbstractITalentEntity implements Seriali
 	public void setProject(Project project) {
 		this.project = project;
 	}
-	
-	
 }

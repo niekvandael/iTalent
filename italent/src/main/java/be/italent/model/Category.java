@@ -36,6 +36,4 @@ public class Category extends AbstractITalentEntity implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
 }

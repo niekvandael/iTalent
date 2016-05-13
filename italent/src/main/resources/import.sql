@@ -34,13 +34,16 @@ insert into role (name) values('Docent');
 insert into role (name) values('Student');
 
 -- Users
-insert into users (firstname, lastname, username, password, department_id, role_id) values('De', 'Nie', 'dennie', 'pwpwpw', 4, 2);
-insert into users (firstname, lastname, username, password, department_id, role_id) values('Arjen', 'Schuurman', 'arjen.schuurman@student.pxl.be', 'pxlpxl', 4, 2);
-insert into users (firstname, lastname, username, password, department_id, role_id) values('Bart', 'Hunerbein', 'bart.hunerbein@student.pxl.be', 'pxlpxl', 4, 2);
-insert into users (firstname, lastname, username, password, department_id, role_id) values('Dennie', 'Grondelaers', 'dennie.grondelaers@student.pxl.be', 'pxlpxl', 4, 2);
-insert into users (firstname, lastname, username, password, department_id, role_id) values('Jesse', 'Vranken', 'jesse.vranken@student.pxl.be', 'pxlpxl', 4, 2);
-insert into users (firstname, lastname, username, password, department_id, role_id) values('Niek', 'Vandael', 'niek.vandael@student.pxl.be', 'pxlpxl', 4, 2);
-insert into users (firstname, lastname, username, password, department_id, role_id) values('Tim', 'Dupont', 'tim.dupont@pxl.be', 'pxlpxl', 4, 1);
+insert into users (firstname, lastname, email, username, password, department_id, role_id) values('Arjen', 'Schuurman', 'arjen.schuurman@student.pxl.be', 'arjen', 'pxlpxl', 4, 2);
+insert into users (firstname, lastname, email, username, password, department_id, role_id) values('Bart', 'Hunerbein', 'bart.hunerbein@student.pxl.be', 'bart', 'pxlpxl', 4, 2);
+insert into users (firstname, lastname, email, username, password, department_id, role_id) values('Dennie', 'Grondelaers', 'dennie.grondelaers@student.pxl.be', 'dennie', 'pxlpxl', 4, 2);
+insert into users (firstname, lastname, email, username, password, department_id, role_id) values('Jesse', 'Vranken', 'jesse.vranken@student.pxl.be', 'jesse', 'pxlpxl', 4, 2);
+insert into users (firstname, lastname, email, username, password, department_id, role_id) values('Niek', 'Vandael', 'niek.vandael@student.pxl.be', 'niek', 'pxlpxl', 4, 2);
+insert into users (firstname, lastname, email, username, password, department_id, role_id) values('Kim', 'Sleurs', 'kim.sleurs@pxl.be', 'kim', 'pxlpxl', 4, 1);
+insert into users (firstname, lastname, email, username, password, department_id, role_id) values('Kris', 'Hermans', 'kris.hermans@pxl.be', 'kris', 'pxlpxl', 4, 1);
+insert into users (firstname, lastname, email, username, password, department_id, role_id) values('Nathalie', 'Fuchs', 'nathalie.fuchs@pxl.be', 'nathalie', 'pxlpxl', 4, 1);
+insert into users (firstname, lastname, email, username, password, department_id, role_id) values('Sam', 'Agten', 'sam.agten@pxl.be', 'sam', 'pxlpxl', 4, 1);
+insert into users (firstname, lastname, email, username, password, department_id, role_id) values('Tim', 'Dupont', 'tim.dupont@pxl.be', 'tim', 'pxlpxl', 4, 1);
 
 -- Projects
 insert into project (last_update, last_updated_by, status, duration, creation_date, is_public, is_backed, is_verified, project_status, description, short_description, title, category_id, user_id) values('2016-04-23', 'Team1', 'A', '1000', '2016-06-01', true, true, true, 1, 'Big Data wordt wel eens de olie van de 21e eeuw genoemd, maar om uit te groeien tot nieuwe rijke datasjeiks moeten we net als bij olie raffineren. We moeten Big Data omzetten in iets kostbaars. Jackie Janssen neemt ons mee in deze nieuwe, wondere wereld van Big Data', 'Big Data wordt wel eens de olie van de 21e eeuw genoemd, maar om uit te groeien tot nieuwe rijke datasjeiks moeten we net als bij olie raffineren. We moeten Big Data omzetten in iets kostbaars.', 'IT@Breakfast - 18 mei: voor alle 2de jaars - Topic: Big Data', 1, 1);

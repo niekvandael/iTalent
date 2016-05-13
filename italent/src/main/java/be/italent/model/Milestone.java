@@ -48,6 +48,4 @@ public class Milestone extends AbstractITalentEntity implements Serializable {
 	public void setProject(Project project) {
 		this.project = project;
 	}
-	
-	
 }

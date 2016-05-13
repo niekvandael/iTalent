@@ -21,6 +21,4 @@ public class SubscriberDocent extends Subscriber implements Serializable {
 	public void setBackingPct(int backingPct) {
 		this.backingPct = backingPct;
 	}
-	
-	
 }

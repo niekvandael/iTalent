@@ -69,6 +69,4 @@ public class Picture extends AbstractITalentEntity implements Serializable {
 	public void setProject(Project project) {
 		this.project = project;
 	}
-	
-	
 }

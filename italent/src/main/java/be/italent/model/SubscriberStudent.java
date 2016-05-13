@@ -19,6 +19,4 @@ public class SubscriberStudent extends Subscriber implements Serializable {
 	public void setHours(int hours) {
 		this.hours = hours;
 	}
-	
-	
 }

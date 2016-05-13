@@ -36,6 +36,4 @@ public class Department extends AbstractITalentEntity implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
 }

@@ -32,6 +32,4 @@ public class WantedSubscriber extends AbstractSubscriber implements Serializable
 	public void setDepartment(Department department) {
 		this.department = department;
 	}
-	
-	
 }

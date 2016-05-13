@@ -119,10 +119,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		for(SubscriberDocent s : subscribersDocent){
 			total += s.getBackingPct();
 		}
-		if (total > 99)
-			return true;
-		else
-			return false;
+		return total > 99;
 	}
 	
 	public int getId() {
@@ -172,8 +169,6 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	public void setDuration(int duration) {
 		this.duration = duration;
 	}
-	
-	
 
 	public Date getStartDate() {
 		return startDate;
