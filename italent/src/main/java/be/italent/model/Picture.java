@@ -28,7 +28,7 @@ public class Picture extends AbstractITalentEntity implements Serializable {
 	 * private String bytes; // private byte[] bytes;
 	 * END: TESTING PURPOSES: TO ALLOW IMPORT.SQL INSERING PICTURES TO TEST
 	 */
-	@Size(max=10000)
+	@Size(max=10000000)
 	private String bytes;
 	
 	@Size(max=500)
