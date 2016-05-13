@@ -79,7 +79,8 @@ public class ProjectRestController {
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces="application/json")
 	public Project getProject(@PathVariable("id") final int id){
-		return (projectService.getProjectById(id));
+		return projectService.getProjectById(id);
+	
 	}
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST, produces="application/json")

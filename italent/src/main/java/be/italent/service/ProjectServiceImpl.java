@@ -50,7 +50,9 @@ public class ProjectServiceImpl implements ProjectService{
     }
     
     public Project getProjectById(int id){
-        return projectRepo.findOne(id);			
+    	//TODO Testing workaround for multiplication problem
+        //return projectRepo.findOne(id);		
+    	return projectRepo.findAllById(id).get(0);
     }
     
     public Project saveProject(Project project){
