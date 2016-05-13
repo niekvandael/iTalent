@@ -17,7 +17,13 @@ import be.italent.security.ITalentAuth;
 @MappedSuperclass
 public abstract class AbstractITalentEntity implements Serializable{
 	private static final long serialVersionUID = 1446086446762595302L;
-
+	
+	public AbstractITalentEntity() {
+		this.setStatus(this.getStatus());
+		this.setLastUpdate(this.getLastUpdate());
+		this.setLastUpdatedBy(this.getLastUpdatedBy());
+	}
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="last_update")
 	private Calendar lastUpdate;
