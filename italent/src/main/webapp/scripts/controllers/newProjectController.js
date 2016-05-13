@@ -20,6 +20,7 @@ angular.module('iTalentApp')
         
         $scope.save = function() {
         	$scope.storeMovies();
+        	$scope.storePictures();
         	
             projectService.saveOrUpdate($scope.project).then(function() {
                 $location.path('/myProjects');
@@ -39,14 +40,25 @@ angular.module('iTalentApp')
         $scope.storeMovies = function(){
         	for (var i = 0; i < $scope.maxLengthOfMovies; i++) {
 				var element = document.getElementById("project_movie_" + i);
-				if(element == null || element.value.length < 11){
+				var element_descr = document.getElementById("project_movie_descr_" + i);
+				if(element_descr == null){
 					break;
-					
 				}
+
 				$scope.project.movies[i].youTubeId = element.value;
+				$scope.project.movies[i].description = element_descr.value;
 			}
         };
-        
+        $scope.storePictures = function(){
+        	for (var i = 0; i < $scope.maxLengthOfPictures; i++) {
+				var element_descr = document.getElementById("project_picture_descr_" + i);
+				if(element_descr == null){
+					break;
+				}
+				
+				$scope.project.pictures[i].description = element_descr.value;
+			}
+        };
         $scope.convertImage = function(element, i) {
             $scope.$apply(function(scope) {
             	

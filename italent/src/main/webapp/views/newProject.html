@@ -30,6 +30,7 @@
 	               	<div ng-repeat="movie in project.movies track by $index">
 	               		https://www.youtube.com/watch?v=
 	               		<input type="text" id="project_movie_{{ $index }}" class="form-control" placeholder="youtube-id" minlength="11" maxlength="11" />
+	               		<input type="text" id="project_movie_descr_{{ $index }}" class="form-control" placeholder="description" minlength="2" maxlength="500" />
 	               	</div>
                 	<button class="btn btn-primary" ng-click="addMovie()">{{'views.newProject.addMovie' | translate}}</button>
                 </div>
@@ -38,6 +39,7 @@
                     <label>{{'views.newProject.pictures' | translate}}</label>
 	               	<div ng-repeat="picture in project.pictures track by $index">
 						<input type="file" id="project_picture_{{ $index }}" accept="image/*" ng-model="dummy" index="{{ $index }}" onchange="angular.element(this).scope().convertImage(this)" />
+	               		<input type="text" id="project_picture_descr_{{ $index }}" class="form-control" placeholder="description" minlength="2" maxlength="500" />
 	               	</div>
                 	<button class="btn btn-primary" ng-click="addPicture()">{{'views.newProject.addPicture' | translate}}</button>
                 </div>
