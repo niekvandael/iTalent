@@ -44,6 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         .antMatchers("/scripts/**/*.{js,html}")
         .antMatchers("/views/*.html")
         .antMatchers("/projects/listHome")
+        .antMatchers("/projects/{id}")
         .antMatchers("/bower_components/**")
         .antMatchers("/resources/*.json");
     }
