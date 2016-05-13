@@ -34,6 +34,7 @@
   "views.newProject.pictures": "Fotos",
   "views.newProject.addPicture": "Foto toevoegen",
   "views.newProject.addMovie": "Video toevoegen",
+  "views.newProject.public": "Publiek?",
   "views.category.addNewCategory" : "Categorie toevoegen",
   "directives.language-select.Language": "Taal"
 }
