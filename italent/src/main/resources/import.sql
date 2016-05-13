@@ -7,6 +7,9 @@ delete from role;
 delete from users;
 delete from project;
 delete from likes;
+delete from picture;
+delete from movie;
+delete from domain;
 
 
 -- Departments
@@ -66,3 +69,10 @@ insert into movie(last_update, last_updated_by, status, project_id, description,
 insert into movie(last_update, last_updated_by, status, project_id, description, youtube_id) values('2016-01-01', 'Team1', 'A', 1, 'Jonas Blue - Fast Car ft. Dakota', '5yXQJBU8A28');
 
 insert into movie(last_update, last_updated_by, status, project_id, description, youtube_id) values('2016-01-01', 'Team1', 'A', 2, 'Alan Walker - Faded', '60ItHLz5WEA');
+
+-- Domains
+insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Internationalisering', 15, 80);
+insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Seminaries', 30, 80);
+insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Levenslang leren en/of onderzoek en dienstverlening en/of ondernemerschap', 40, 80);
+insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Wetenschapspopularisering', 0, 40);
+insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Studentenparticipatie @ PXL', 0, 20);
