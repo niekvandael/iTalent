@@ -104,6 +104,15 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<SubscriberDocent> subscribersDocent = new ArrayList<SubscriberDocent>();
+	
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<Prezi> prezis = new ArrayList<Prezi>();
+	
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<OnlineFile> onlineFiles = new ArrayList<OnlineFile>();
+	
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<Comment> Comments = new ArrayList<Comment>();
 
 	@Transient
 	private int numberOfLikes;
@@ -303,6 +312,30 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		this.subscribersDocent = subscribersDocent;
 	}
 	
+	public List<Prezi> getPrezis() {
+		return prezis;
+	}
+
+	public void setPrezis(List<Prezi> prezis) {
+		this.prezis = prezis;
+	}
+
+	public List<OnlineFile> getOnlineFiles() {
+		return onlineFiles;
+	}
+
+	public void setOnlineFiles(List<OnlineFile> onlineFiles) {
+		this.onlineFiles = onlineFiles;
+	}
+
+	public List<Comment> getComments() {
+		return Comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		Comments = comments;
+	}
+
 	public boolean isLiked() {
 		this.liked = false;
 		for (Like l : this.getLikes()) {
