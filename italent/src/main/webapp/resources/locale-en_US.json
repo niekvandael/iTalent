@@ -46,5 +46,6 @@
   "views.category.addNewCategory" : "Add new category",
   "views.newProject.wantedSubscribers" : "Wanted subscribers",
   "views.newProject.addWantedSubscriber" : "Add wanted subscriber",
-  "directives.language-select.Language": "Language"
+  "directives.language-select.Language": "Language",
+  "views.searchProjects.title": "Zoeken"
 }

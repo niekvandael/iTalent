@@ -46,5 +46,6 @@
   "views.category.addNewCategory" : "Categorie toevoegen",
   "views.newProject.wantedSubscribers" : "Categorie teamleden",
   "views.newProject.addWantedSubscriber" : "Add wanted subscriber",
-  "directives.language-select.Language": "Taal"
+  "directives.language-select.Language": "Taal",
+  "views.searchProjects.title": "Zoeken"
 }
