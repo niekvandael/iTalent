@@ -43,8 +43,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         web.ignoring()
         .antMatchers("/scripts/**/*.{js,html}")
         .antMatchers("/views/*.html")
-        .antMatchers("/projects/listHome")
-        .antMatchers("/projects/{id}")
         .antMatchers("/bower_components/**")
         .antMatchers("/resources/*.json");
     }
@@ -54,7 +52,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.httpBasic()
                     .and()
                 .authorizeRequests()
-                .antMatchers("/user", "/index.html", "/").permitAll().anyRequest()
+                .antMatchers("/user", "/index.html", "/", "/projects/listHome", "/projects/{id}").permitAll().anyRequest()
                 .authenticated()
                     .and()
                 .csrf().csrfTokenRepository(csrfTokenRepository())

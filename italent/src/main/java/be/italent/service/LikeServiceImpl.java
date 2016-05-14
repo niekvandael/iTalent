@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 import be.italent.model.Like;
 import be.italent.model.Project;
+import be.italent.model.User;
 import be.italent.repository.LikeRepo;
-import be.italent.security.ITalentAuth;
 
 @Service
 public class LikeServiceImpl implements LikeService{
@@ -15,12 +15,12 @@ public class LikeServiceImpl implements LikeService{
     private LikeRepo likeRepo;
 
 	@Override
-	public boolean toggleLike(int projectId) {
+	public boolean toggleLike(int projectId, User user) {
 		//
 		// Create like object
 		//
 		Like l = new Like();
-		l.setUser(ITalentAuth.getAuthenticatedUser());
+		l.setUser(user);
 
 		Project p = new Project();
 		p.setId(projectId);

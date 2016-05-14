@@ -18,8 +18,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.Size;
-
-import be.italent.security.ITalentAuth;
 import lombok.Data;
 
 @Data
@@ -339,7 +337,9 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	public boolean isLiked() {
 		this.liked = false;
 		for (Like l : this.getLikes()) {
-			if(l.getUser().getId() == ITalentAuth.getAuthenticatedUser().getId()){
+			//TODO
+			//if(l.getUser().getId() == ITalentAuth.getAuthenticatedUser().getId()){
+			if(l.getUser().getId() == 1){
 				this.setLiked(true);
 				break;
 			}

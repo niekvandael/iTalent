@@ -7,6 +7,8 @@ import be.italent.web.resource.assembler.ProjectResourceAssembler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import be.italent.model.Project;
-import be.italent.security.ITalentAuth;
 import be.italent.service.ProjectService;
+import be.italent.service.UserService;
 
 @RestController
 @RequestMapping("/projects")
@@ -23,6 +25,9 @@ public class ProjectRestController {
 
 	@Autowired
 	private ProjectService projectService;
+	
+	@Autowired
+	private UserService userService;
 
 	private ProjectResourceAssembler projectResourceAssembler;
 
@@ -31,50 +36,33 @@ public class ProjectRestController {
 	}
 
 	@RequestMapping(value = "/listHome", method = RequestMethod.GET, produces="application/json")
-	public List<Project> getHomeProjects(Principal principal){
-		if (principal != null) {
-			System.out.println(principal.getName());
-		}
-		else  {
-			System.out.println("Empty principal");
-		}
-		return projectService.getPublicProjects();
-		//TODO send docent list if user has role docent
-		//return projectService.getAllProjects();
-		//TODO send student list if user has role student
-		//return projectService.getBackedProjects());
-	}
-	
-	//TODO remove when security works
-	@RequestMapping(value = "/docent", method = RequestMethod.GET, produces="application/json")
-	public List<Project> getProjects(){
-		return projectService.getAllProjects();
-	}
-	
-	//TODO remove when security works
-	@RequestMapping(value = "/student", method = RequestMethod.GET, produces="application/json")
-	public List<Project> getBackedProjects(){
-		return (projectService.getBackedProjects());
+	public List<Project> getHomeProjects(Authentication auth){
+		if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Student")))
+			return (projectService.getBackedProjects());
+		else if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Docent")))
+			return projectService.getAllProjects();
+		else
+			return projectService.getPublicProjects();
 	}
 	
 	@RequestMapping(value = "/user", method = RequestMethod.GET, produces="application/json")
-	public List<Project> getUserProjects(){
-		return projectService.getAllUserProjects(ITalentAuth.getAuthenticatedUser());
+	public List<Project> getUserProjects(Principal principal){
+		return projectService.getAllUserProjects(userService.getUserByUsername(principal.getName()));
 	}
 	
 	@RequestMapping(value = "/myLiked", method = RequestMethod.GET, produces="application/json")
-	public List<Project> getMyLikedProjects(){
-		return projectService.getMyLikedProjects(ITalentAuth.getAuthenticatedUser());
+	public List<Project> getMyLikedProjects(Principal principal){
+		return projectService.getMyLikedProjects(userService.getUserByUsername(principal.getName()));
 	}
 	
 	@RequestMapping(value = "/mySubscribed", method = RequestMethod.GET, produces="application/json")
-	public List<Project> getMySubscribedProjects(){
-		return projectService.getMySubscribedProjects(ITalentAuth.getAuthenticatedUser());
+	public List<Project> getMySubscribedProjects(Principal principal){
+		return projectService.getMySubscribedProjects(userService.getUserByUsername(principal.getName()));
 	}
 	
 	@RequestMapping(value = "/myBacked", method = RequestMethod.GET, produces="application/json")
-	public List<Project> getMyBackedProjects(){
-		return projectService.getMyBackedProjects(ITalentAuth.getAuthenticatedUser());
+	public List<Project> getMyBackedProjects(Principal principal){
+		return projectService.getMyBackedProjects(userService.getUserByUsername(principal.getName()));
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces="application/json")
@@ -84,14 +72,14 @@ public class ProjectRestController {
 	}
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST, produces="application/json")
-	public Project saveProject(@RequestBody Project project){
-		project.setUser(ITalentAuth.getAuthenticatedUser());
+	public Project saveProject(@RequestBody Project project, Principal principal){
+		project.setUser(userService.getUserByUsername(principal.getName()));
 		return projectService.saveProject(project);
 	}
 	
 	@RequestMapping(value = "/save/{id}", method = RequestMethod.PUT, produces="application/json")
-	public Project updateProject(@PathVariable("id") final int id, @RequestBody Project project){
-		project.setUser(ITalentAuth.getAuthenticatedUser());
+	public Project updateProject(@PathVariable("id") final int id, @RequestBody Project project, Principal principal){
+		project.setUser(userService.getUserByUsername(principal.getName()));
 		return projectService.saveProject(project);
 	}
 	

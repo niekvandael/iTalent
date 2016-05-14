@@ -1,5 +1,7 @@
 package be.italent.web.controller;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import be.italent.model.Project;
 import be.italent.model.SubscriberStudent;
-import be.italent.security.ITalentAuth;
 import be.italent.service.SubscriberStudentService;
+import be.italent.service.UserService;
 
 @RestController
 @RequestMapping("/subscriberStudent")
@@ -18,11 +20,14 @@ public class SubscriberStudentRestController {
 	@Autowired
 	private SubscriberStudentService subscriberStudentService;
 	
+	@Autowired
+	private UserService userService;
+	
 	@RequestMapping(value = "/save/{id}/{hours}", method = RequestMethod.POST, produces="application/json")
-	public SubscriberStudent save(@PathVariable("id") final int id, @PathVariable("hours") final int hours){
+	public SubscriberStudent save(@PathVariable("id") final int id, @PathVariable("hours") final int hours, Principal principal){
 	
 		SubscriberStudent subscriberStudent = new SubscriberStudent();
-		subscriberStudent.setUser(ITalentAuth.getAuthenticatedUser());
+		subscriberStudent.setUser(userService.getUserByUsername(principal.getName()));
 		subscriberStudent.setHours(hours);
 		//TODO getproject(id) maybe?
 		Project project = new Project();
