@@ -61,6 +61,9 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@OneToOne
 	private Category category;
 	
+	@OneToOne
+	private Domain domain;
+	
 	@Column(name="project_status")
 	private int projectStatus;
 	
@@ -202,6 +205,14 @@ public class Project extends AbstractITalentEntity implements Serializable {
 
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+	
+	public Domain getDomain() {
+		return domain;
+	}
+
+	public void setDomain(Domain domain) {
+		this.domain = domain;
 	}
 
 	public int getProjectStatus() {
