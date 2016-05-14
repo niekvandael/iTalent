@@ -129,6 +129,8 @@ angular.module('iTalentApp')
 			}
         };
         $scope.convertImage = function(element, i) {
+        	
+        	
             $scope.$apply(function(scope) {
             	
             	$scope.picturesConverted = false;
@@ -137,15 +139,52 @@ angular.module('iTalentApp')
     	        (function (i) {
                 	reader.addEventListener("load", function () {
                 		var index = parseInt(element.getAttribute("index"));
-                		$scope.project.pictures[index].bytes = reader.result.split(",")[1];
-                		$scope.picturesConverted = true;		
+                		var resizedImage = $scope.resizeImage(reader.result, index);
     				}, false);
     		         })(i);
-    			
-    			reader.readAsDataURL(element.files[0]);
+
+    	        reader.readAsDataURL(element.files[0]);
             });
        };
-        
+       
+       $scope.resizeImage = function(imageBase64, index){
+    	   var image = new Image;
+    	   
+    	   image.onload = function(){
+    		   $scope.resizeOnImageLoad(imageBase64, index)
+    	   };
+    	   image.src = imageBase64;
+       };
+       
+       $scope.resizeOnImageLoad = function(image, index){
+    	   var width = 800;
+    	  
+    	   // create an off-screen canvas
+    	    var canvas = document.createElement('canvas');
+    	   
+    	    var ctx = canvas.getContext('2d');
+
+    	    // draw source image into the off-screen canvas:
+    	    var imgObj = new Image();
+    	    imgObj.src = image;
+    	    
+    	    var height = imgObj.height / (imgObj.width / width); 
+    	    
+    	    // set its dimension to target size
+    	    canvas.width = width;
+    	    canvas.height = height;
+    	    
+    	    ctx.drawImage(imgObj, 0, 0, width, height);
+
+    	    // encode image to data-uri with base64 version of compressed image
+    	    var smallerImage = canvas.toDataURL('image/jpeg', 1);
+    	    imgObj.src = smallerImage;
+    	    ctx.drawImage(imgObj, 0, 0, width, height);
+    	    
+    		$scope.project.pictures[index].bytes = smallerImage.split(",")[1];
+    		$scope.picturesConverted = true;		
+       }
+       
         $scope.cancel = function() {
             $location.path('/myProjects');
         };
