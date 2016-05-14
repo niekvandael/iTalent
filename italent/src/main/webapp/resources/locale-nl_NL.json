@@ -19,6 +19,7 @@
   "views.home.add": "Toevoegen",
   "views.home.edit": "Aanpassen",
   "views.home.delete": "Verwijderen",
+  "views.home.search": "Zoeken",
   "views.about.madeBy": "Gemaakt door: ",
   "views.myProjects.newProject": "Nieuw project",
   "views.myProjects.myProjects": "Mijn projecten",

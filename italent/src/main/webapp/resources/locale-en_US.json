@@ -18,6 +18,7 @@
   "views.home.add": "Add",
   "views.home.edit": "Edit",
   "views.home.delete": "Delete",
+  "views.home.search": "Search",
   "views.about.title": "About iTalent PXL project",
   "views.about.madeBy": "Made by: ",
   "views.myProjects.newProject": "New project",
