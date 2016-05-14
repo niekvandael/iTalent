@@ -2,7 +2,6 @@ package be.italent.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,14 +18,12 @@ public class SubscriberDocentRestController {
 	@Autowired
 	private SubscriberDocentService subscriberDocentService;
 	
-	@RequestMapping(value = "/save", method = RequestMethod.POST, produces="application/json")
-	public SubscriberDocent save(@RequestBody int id){
-		
+	@RequestMapping(value = "/save/{id}/{percentage}", method = RequestMethod.POST, produces="application/json")
+	public SubscriberDocent save(@PathVariable("id") final int id, @PathVariable("percentage") final int percentage){
+		System.out.println("test");
 		SubscriberDocent subscriberDocent = new SubscriberDocent();
 		subscriberDocent.setUser(ITalentAuth.getAuthenticatedUser());
-		
-		//TODO
-		//subscriberStudent.setHours(hours);
+		subscriberDocent.setBackingPct(percentage);
 		//TODO getproject(id) maybe?
 		Project project = new Project();
 		project.setId(id);

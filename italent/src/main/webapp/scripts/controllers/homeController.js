@@ -2,7 +2,7 @@
  * Created by arjen on 05/04/16.
  */
 angular.module('iTalentApp')
-    .controller('homeController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService', 'subscriberStudentService', function ($scope, $rootScope, $location, projectService, likeService, subscriberStudentService) {
+    .controller('homeController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService', 'subscriberStudentService', 'subscriberDocentService', function ($scope, $rootScope, $location, projectService, likeService, subscriberStudentService, subscriberDocentService) {
     	
         projectService.listHome().then(function (projects) {
             $scope.projects = projects;
@@ -31,7 +31,15 @@ angular.module('iTalentApp')
             subscriberStudentService.save(id, hours).then(function() {
                 $location.path('/home');
             }, function(err) {
-                console.log('Error saving subscriber.')
+                console.log('Error saving subscriberStudent.')
+            })
+        };
+        
+        $scope.saveSubscriberDocent = function(id, percentage) {
+            subscriberDocentService.save(id, percentage).then(function() {
+                $location.path('/home');
+            }, function(err) {
+                console.log('Error saving subscriberDocent.')
             })
         };
         
