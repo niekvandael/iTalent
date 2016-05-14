@@ -22,7 +22,7 @@ public class Prezi extends AbstractITalentEntity implements Serializable {
 	@GeneratedValue
 	private int id;
 	
-	@Size(max=40)
+	@Size(max=100)
 	@Column(name="prezi_id")
 	private String preziId;
 	

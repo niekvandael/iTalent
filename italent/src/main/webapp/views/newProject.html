@@ -60,6 +60,16 @@
 	               	</div>
                 	<button class="btn btn-primary" ng-click="addWantedSubscriber()">{{'views.newProject.addWantedSubscriber' | translate}}</button>
                 </div>
+                
+                <div class="form-group">
+                    <label>{{'views.newProject.prezis' | translate}}</label>
+	               	<div ng-repeat="prezi in project.prezis track by $index">
+	               		https://www.prezi.com/
+	               		<input type="text" id="project_prezi_{{ $index }}" class="form-control" placeholder="prezi-id" minlength="5" maxlength="100" />
+	               		<input  type="text" id="project_prezi_descr_{{ $index }}" class="form-control" placeholder="description" minlength="2" maxlength="500" />
+	               	</div>
+                	<button type="button" class="btn btn-primary" ng-click="addPrezi()">{{'views.newProject.addPrezi' | translate}}</button>
+                </div>
                      
                 <button type="submit" class="btn btn-warning" ng-click="cancel()">{{'views.newProject.cancel' | translate}}</button>
                 <button type="submit" class="btn btn-primary" ng-click="save()" >{{'views.newProject.save' | translate}}</button>

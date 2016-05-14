@@ -5,13 +5,14 @@ angular.module('iTalentApp')
     .controller('newProjectController', ['$scope', '$location', '$routeParams', 'projectService', 'departmentService', function ($scope, $location, $routeParams, projectService, departmentService) {
 
         var projectId = $routeParams.id;
-        $scope.project = {'user': null, 'movies' : [], 'pictures' : [], 'milestones': [], 'wantedSubscribers': []};
+        $scope.project = {'user': null, 'movies' : [], 'pictures' : [], 'milestones': [], 'wantedSubscribers': [], 'prezis': []};
         $scope.departments = [];
        
         $scope.maxLengthOfMovies = 5;
         $scope.maxLengthOfPictures = 10;
         $scope.maxLengthOfMilestones = 10;
         $scope.maxLengthOfWantedSubscribers = 10;
+        $scope.maxLengthOfPrezis = 10;
         
         $scope.picturesConverted = true;
         
@@ -28,6 +29,7 @@ angular.module('iTalentApp')
         	$scope.storePictures();
         	$scope.storeMilestones();
         	$scope.storeWantedSubscribers();
+        	$scope.storePrezis();
         	
             projectService.saveOrUpdate($scope.project).then(function() {
                 $location.path('/myProjects');
@@ -64,6 +66,20 @@ angular.module('iTalentApp')
 				$scope.project.movies[i].description = element_descr.value;
 			}
         };
+        
+        $scope.storePrezis = function(){
+        	for (var i = 0; i < $scope.maxLengthOfPrezis; i++) {
+				var element = document.getElementById("project_prezi_" + i);
+				var element_descr = document.getElementById("project_prezi_descr_" + i);
+				if(element_descr == null){
+					break;
+				}
+
+				$scope.project.prezis[i].preziId = element.value;
+				$scope.project.prezis[i].description = element_descr.value;
+			}
+        };
+        
         $scope.storePictures = function(){
         	for (var i = 0; i < $scope.maxLengthOfPictures; i++) {
 				var element_descr = document.getElementById("project_picture_descr_" + i);
@@ -124,6 +140,13 @@ angular.module('iTalentApp')
         		return;
         	}
             $scope.project.movies.push({'youTubeId':'', 'description':''});
+        };
+        
+        $scope.addPrezi = function(){
+        	if($scope.project.prezis.length == this.maxLengthOfPrezis){
+        		return;
+        	}
+            $scope.project.prezis.push({'preziId':'', 'description':''});
         };
         
         $scope.addWantedSubscriber = function(){

@@ -39,6 +39,8 @@
   "views.newProject.public": "Public?",
   "views.newProject.milestones": "Milestones",
   "views.newProject.addMilestone": "Add milestone",
+  "views.newProject.prezis": "Prezis",
+  "views.newProject.addPrezi": "Add prezi",
   "views.category.addNewCategory" : "Add new category",
   "views.newProject.wantedSubscribers" : "Wanted subscribers",
   "views.newProject.addWantedSubscriber" : "Add wanted subscriber",
