@@ -5,7 +5,7 @@ angular.module('iTalentApp')
     .controller('newProjectController', ['$scope', '$location', '$routeParams', 'projectService', 'departmentService', function ($scope, $location, $routeParams, projectService, departmentService) {
 
         var projectId = $routeParams.id;
-        $scope.project = {'user': null, 'movies' : [], 'pictures' : [], 'milestones': [], 'wantedSubscribers': [], 'prezis': []};
+        $scope.project = {'user': null, 'movies' : [], 'pictures' : [], 'milestones': [], 'wantedSubscribers': [], 'prezis': [], 'onlineFiles': []};
         $scope.departments = [];
        
         $scope.maxLengthOfMovies = 5;
@@ -13,6 +13,7 @@ angular.module('iTalentApp')
         $scope.maxLengthOfMilestones = 10;
         $scope.maxLengthOfWantedSubscribers = 10;
         $scope.maxLengthOfPrezis = 10;
+        $scope.maxLengthOfOnlineFiles = 10;
         
         $scope.picturesConverted = true;
         
@@ -30,6 +31,7 @@ angular.module('iTalentApp')
         	$scope.storeMilestones();
         	$scope.storeWantedSubscribers();
         	$scope.storePrezis();
+        	$scope.storeOnlineFiles();
         	
             projectService.saveOrUpdate($scope.project).then(function() {
                 $location.path('/myProjects');
@@ -77,6 +79,19 @@ angular.module('iTalentApp')
 
 				$scope.project.prezis[i].preziId = element.value;
 				$scope.project.prezis[i].description = element_descr.value;
+			}
+        };
+        
+        $scope.storeOnlineFiles = function(){
+        	for (var i = 0; i < $scope.maxLengthOfOnlineFiles; i++) {
+				var element = document.getElementById("project_onlineFile_" + i);
+				var element_descr = document.getElementById("project_onlineFile_descr_" + i);
+				if(element_descr == null){
+					break;
+				}
+
+				$scope.project.onlineFiles[i].url = element.value;
+				$scope.project.onlineFiles[i].description = element_descr.value;
 			}
         };
         
@@ -147,6 +162,13 @@ angular.module('iTalentApp')
         		return;
         	}
             $scope.project.prezis.push({'preziId':'', 'description':''});
+        };
+        
+        $scope.addOnlineFile = function(){
+        	if($scope.project.onlineFiles.length == this.maxLengthOfOnlineFiles){
+        		return;
+        	}
+            $scope.project.onlineFiles.push({'url':'', 'description':''});
         };
         
         $scope.addWantedSubscriber = function(){

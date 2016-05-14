@@ -70,6 +70,16 @@
 	               	</div>
                 	<button type="button" class="btn btn-primary" ng-click="addPrezi()">{{'views.newProject.addPrezi' | translate}}</button>
                 </div>
+                
+                <div class="form-group">
+                    <label>{{'views.newProject.onlineFiles' | translate}}</label>
+	               	<div ng-repeat="onlineFile in project.onlineFiles track by $index">
+	               		URL:
+	               		<input type="text" id="project_onlineFile_{{ $index }}" class="form-control" placeholder="url" minlength="5" maxlength="100" />
+	               		<input  type="text" id="project_onlineFile_descr_{{ $index }}" class="form-control" placeholder="description" minlength="2" maxlength="500" />
+	               	</div>
+                	<button type="button" class="btn btn-primary" ng-click="addOnlineFile()">{{'views.newProject.addOnlineFile' | translate}}</button>
+                </div>
                      
                 <button type="submit" class="btn btn-warning" ng-click="cancel()">{{'views.newProject.cancel' | translate}}</button>
                 <button type="submit" class="btn btn-primary" ng-click="save()" >{{'views.newProject.save' | translate}}</button>

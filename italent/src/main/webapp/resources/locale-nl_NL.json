@@ -41,6 +41,8 @@
   "views.newProject.addMilestone": "Milestone toevoegen",
   "views.newProject.prezis": "Prezis",
   "views.newProject.addPrezi": "Prezi toevoegen",
+  "views.newProject.onlineFiles": "Online bestanden",
+  "views.newProject.addOnlineFile": "Online bestand toevoegen",
   "views.category.addNewCategory" : "Categorie toevoegen",
   "views.newProject.wantedSubscribers" : "Categorie teamleden",
   "views.newProject.addWantedSubscriber" : "Add wanted subscriber",
