@@ -2,8 +2,8 @@
  * Created by arjen on 05/04/16.
  */
 angular.module('iTalentApp')
-    .controller('homeController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService', function ($scope, $rootScope, $location, projectService, likeService) {
-
+    .controller('homeController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService', 'subscriberStudentService', function ($scope, $rootScope, $location, projectService, likeService, subscriberStudentService) {
+    	
         projectService.listHome().then(function (projects) {
             $scope.projects = projects;
         }, function (err) {
@@ -25,6 +25,14 @@ angular.module('iTalentApp')
         
         $scope.showDetails = function(id) {
             $location.path('/projects/' + id);
+        };
+        
+        $scope.saveSubscriberStudent = function(id, hours) {
+            subscriberStudentService.save(id, hours).then(function() {
+                $location.path('/home');
+            }, function(err) {
+                console.log('Error saving subscriber.')
+            })
         };
         
     }]);
