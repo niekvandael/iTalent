@@ -2,12 +2,13 @@
  * Created by arjen on 05/04/16.
  */
 angular.module('iTalentApp')
-    .controller('newProjectController', ['$scope', '$location', '$routeParams', 'projectService', 'departmentService', function ($scope, $location, $routeParams, projectService, departmentService) {
+    .controller('newProjectController', ['$scope', '$location', '$routeParams', 'projectService', 'departmentService', 'categoryService', function ($scope, $location, $routeParams, projectService, departmentService, categoryService) {
 
         var projectId = $routeParams.id;
         $scope.project = {'user': null, 'movies' : [], 'pictures' : [], 'milestones': [], 'wantedSubscribers': [], 'prezis': [], 'onlineFiles': []};
         $scope.departments = [];
-       
+        $scope.categories = [];
+        
         $scope.maxLengthOfMovies = 5;
         $scope.maxLengthOfPictures = 10;
         $scope.maxLengthOfMilestones = 10;
@@ -47,6 +48,15 @@ angular.module('iTalentApp')
                 console.log('Error getting departments')
             })
         };
+
+        $scope.getCategories= function() {
+            categoryService.list().then(function(categories) {
+            	$scope.categories = categories;
+            }, function(err) {
+                console.log('Error getting departments')
+            })
+        };
+
         
         $scope.deleteProject = function() {   
             projectService.deleteProject(projectId).then(function() {
@@ -230,4 +240,5 @@ angular.module('iTalentApp')
         };
         
         $scope.getDepartments();
+        $scope.getCategories();
     }]);

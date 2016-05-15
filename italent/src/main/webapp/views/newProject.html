@@ -24,6 +24,13 @@
                     <label class="required">{{'views.newProject.public' | translate}}</label>
                     <input type="checkbox" ng-model="project.public" ng-checked="project.public" class="form-control"></input>
                 </div>
+                <div class="form-group">
+                    <label class="required">{{'views.newProject.category' | translate}}</label>
+	               	<select class="form-control" ng-options="category as category.description for category in categories track by category.id" ng-model="project.category"></select>
+                </div>
+               
+               
+               
                
                 <div class="form-group">
                     <label>{{'views.newProject.movies' | translate}}</label>
