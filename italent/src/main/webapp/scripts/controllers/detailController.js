@@ -9,19 +9,25 @@ angular.module('iTalentApp')
         projectService.get(projectId).then(function (project) {
             $scope.project = project;
         }, function (err) {
-            console.log('Error getting project: ' + err)
+            console.log('Error getting project:');
+            console.log(err);
         });
 
         $scope.likeClicked = function (project) {
-        	   if (!project.numberOfLikes) {
-                   project.numberOfLikes = 0;
-               }
-               if (project.liked) {
-                   project.numberOfLikes--;
-               } else {
-                   project.numberOfLikes++;
-               }
-               project.liked = !project.liked;
-               likeService.saveOrUpdate(project.id);
+            if (!project.numberOfLikes) {
+                project.numberOfLikes = 0;
+            }
+            if (project.liked) {
+                project.numberOfLikes--;
+            } else {
+                project.numberOfLikes++;
+            }
+            project.liked = !project.liked;
+            likeService.saveOrUpdate(project.id).then(function () {
+                $scope.message = "Likes updated";
+            }, function (err) {
+                console.log('Error updating likes: ');
+                console.log(err);
+            })
         };
     }]);
