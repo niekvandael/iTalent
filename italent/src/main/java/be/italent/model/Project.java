@@ -31,6 +31,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	private static final long serialVersionUID = 6933862050829577662L;
 	
 	@Transient
+	@JsonView(Views.List.class)
 	private boolean liked;
 
 	@Id
