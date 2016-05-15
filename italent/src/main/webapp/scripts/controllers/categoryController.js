@@ -19,11 +19,10 @@ angular.module('iTalentApp')
         };
 
         $scope.deleteCategory = function (categoryId) {
-            categoryService.deleteItem(categoryId).then(function () {
+            categoryService.deleteItem(categoryId).then(function (success) {
                 getCategories();
-                $scope.message = "Category has been deleted!";
+                success.data? $scope.message = "Category has been deleted!" : $scope.message = "Cannot delete item: some projects are depending on this category";
             }, function (err) {
-                $scope.message = "Cannot delete item: some projects are depending on this category";
                 console.log('Error deleting category: ');
                 console.log(err);
             })
