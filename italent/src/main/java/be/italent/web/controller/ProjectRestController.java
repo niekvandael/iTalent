@@ -3,7 +3,6 @@ package be.italent.web.controller;
 import java.security.Principal;
 import java.util.List;
 
-import be.italent.web.resource.assembler.ProjectResourceAssembler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import be.italent.model.Project;
 import be.italent.service.ProjectService;
 import be.italent.service.UserService;
+import be.italent.views.Views;
+import be.italent.web.resource.assembler.ProjectResourceAssembler;
 
 @RestController
 @RequestMapping("/projects")
@@ -35,6 +38,7 @@ public class ProjectRestController {
 		this.projectResourceAssembler = new ProjectResourceAssembler();
 	}
 
+	@JsonView(Views.List.class)
 	@RequestMapping(value = "/listHome", method = RequestMethod.GET, produces="application/json")
 	public List<Project> getHomeProjects(Authentication auth){
 		if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Student")))

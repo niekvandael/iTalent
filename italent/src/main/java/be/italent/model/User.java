@@ -6,6 +6,10 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+
+import be.italent.views.Views;
 import lombok.Data;
 
 @Data
@@ -19,12 +23,15 @@ public class User implements Serializable{
 	private int id;
 	
 	@Size(min=2, max=55)
+	@JsonView(Views.List.class)
 	private String firstname;
 	
 	@Size(min=2, max=55)
+	@JsonView(Views.List.class)
 	private String lastname;
 
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JsonView(Views.List.class)
 	private Role role;
 
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -42,6 +49,7 @@ public class User implements Serializable{
 	
 	@NotNull
 	@Size(min=8, max=80)
+	@JsonIgnore
 	private String password;
 
 	public int getId() {

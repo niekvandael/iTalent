@@ -9,6 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import be.italent.views.Views;
+
 @Data
 @Entity
 public class Category extends AbstractITalentEntity implements Serializable{
@@ -16,9 +20,11 @@ public class Category extends AbstractITalentEntity implements Serializable{
 
 	@Id
 	@GeneratedValue
+	@JsonView(Views.List.class)
 	private int id;
 	
 	@Size(max=200)
+	@JsonView(Views.List.class)
 	private String description;
 
 	public int getId() {
