@@ -1,7 +1,6 @@
 <div ng-if="loggedIn" class="container">
     <h2>{{'views.newProject.pageTitle' | translate}}</h2>
-
-    <form name="registrationForm" role="form">
+    <form name="registrationForm" ng-submit="registrationForm.$valid && save()">
         <div class="row">
             <div class="col-md-9">
 
@@ -26,12 +25,12 @@
                 </div>
                 <div class="form-group">
                     <label class="required">{{'views.newProject.category' | translate}}</label>
-	               	<select class="form-control" ng-options="category as category.description for category in categories track by category.id" ng-model="project.category"></select>
+               	    <select required class="form-control">
+               	    	<option></option>
+	               		<option value="category.id" ng-repeat="category in categories">{{ category.description }}</option>
+	               	</select>
                 </div>
-               
-               
-               
-               
+    
                 <div class="form-group">
                     <label>{{'views.newProject.movies' | translate}}</label>
 	               	<div ng-repeat="movie in project.movies track by $index">
@@ -89,7 +88,7 @@
                 </div>
                      
                 <button type="submit" class="btn btn-warning" ng-click="cancel()">{{'views.newProject.cancel' | translate}}</button>
-                <button type="submit" class="btn btn-primary" ng-click="save()" >{{'views.newProject.save' | translate}}</button>
+                <button type="submit" class="btn btn-primary" >{{'views.newProject.save' | translate}}</button>
                 <button ng-if="!project.partiallyBacked && project.id>0" type="button" class="btn btn-danger" ng-click="deleteProject()">{{"views.home.delete" | translate}}</button>
             </div>
         </div>
