@@ -1,6 +1,7 @@
 {
   "views.index.projects": "Projecten",
   "views.index.myProjects": "Mijn projecten",
+  "views.index.newProject": "Nieuw project",
   "views.index.categories": "Categorieën",
   "views.index.about": "Over",
   "views.index.login": "Inloggen",
@@ -21,7 +22,6 @@
   "views.home.delete": "Verwijderen",
   "views.home.search": "Zoeken",
   "views.about.madeBy": "Gemaakt door: ",
-  "views.myProjects.newProject": "Nieuw project",
   "views.myProjects.myProjects": "Mijn projecten",
   "views.myProjects.subscribedProjects": "Ingeschreven projecten",
   "views.myProjects.likedProjects": "Mijn gelikete projecten",
@@ -47,6 +47,5 @@
   "views.category.addNewCategory" : "Categorie toevoegen",
   "views.newProject.wantedSubscribers" : "Categorie teamleden",
   "views.newProject.addWantedSubscriber" : "Add wanted subscriber",
-  "directives.language-select.Language": "Taal",
-  "views.searchProjects.title": "Zoeken"
+  "directives.language-select.Language": "Taal"
 }

@@ -1,0 +1,5 @@
+Meeting klant 3/5/2016:
+- als student/docent project aanmaakt automatisch subscriber/backen? als het kan niet!
+- geen datums maar projectduur voorzien (100% backing is startdatum, startdatum + projectduur = einddatum)
+- javadoc voorzien? ja
+- unittesten? ja

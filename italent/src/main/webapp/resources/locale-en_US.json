@@ -1,6 +1,7 @@
 {
   "views.index.projects": "Projects",
   "views.index.myProjects": "My projects",
+  "views.index.newProject": "New project",
   "views.index.categories": "Categories",
   "views.index.about": "About",
   "views.index.login": "Login",
@@ -21,7 +22,6 @@
   "views.home.search": "Search",
   "views.about.title": "About iTalent PXL project",
   "views.about.madeBy": "Made by: ",
-  "views.myProjects.newProject": "New project",
   "views.myProjects.myProjects": "My projects",
   "views.myProjects.subscribedProjects": "My subscribed projects",
   "views.myProjects.likedProjects": "My liked projects",
@@ -47,6 +47,5 @@
   "views.category.addNewCategory" : "Add new category",
   "views.newProject.wantedSubscribers" : "Wanted subscribers",
   "views.newProject.addWantedSubscriber" : "Add wanted subscriber",
-  "directives.language-select.Language": "Language",
-  "views.searchProjects.title": "Zoeken"
+  "directives.language-select.Language": "Language"
 }

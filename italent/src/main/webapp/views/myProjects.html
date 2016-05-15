@@ -1,7 +1,4 @@
 <div class="container" ng-if="loggedIn">
-    <button type="button" class="btn btn-primary col-xs-offset-8 col-md-offset-10"
-            ng-click="newProject()">{{"views.myProjects.newProject" | translate}}
-    </button>
     <button type="button" class="btn btn-default" ng-click="myProjectsIsCollapsed = !myProjectsIsCollapsed">{{"views.myProjects.myProjects" | translate}}</button>
     <div uib-collapse="myProjectsIsCollapsed">
     	<div class="project-block" ng-repeat="project in myProjects">

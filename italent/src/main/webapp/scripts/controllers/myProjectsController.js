@@ -26,10 +26,6 @@ angular.module('iTalentApp')
         }, function (err) {
             console.log('Error getting myliked projects: ' + err)
         });
-       
-        $scope.newProject = function() {
-            $location.path('/newProject');
-        };
         
         $scope.editProject = function(id) {
             $location.path('/editProject/' + id);
