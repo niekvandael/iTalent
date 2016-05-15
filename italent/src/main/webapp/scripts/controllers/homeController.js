@@ -8,7 +8,7 @@ angular.module('iTalentApp')
             
             $scope.categoryFilterArray = new Array();
             for (var i = 0; i < categories.length; i++) {
-            	$scope.categoryFilterArray.push({description: categories[i].description, on: true});
+            	$scope.categoryFilterArray.push({id: categories[i].id, description: categories[i].description, on: true});
 			}
             
         }, function (err) {
@@ -57,7 +57,7 @@ angular.module('iTalentApp')
         $scope.categoryFilter = function(proj){
     	   for(cat in $scope.categoryFilterArray){
                var t = $scope.categoryFilterArray[cat];
-               if(t.on && proj.category.description == t.description){
+               if(t.on && proj.category.id == t.id){
                    return true;   
                }               
            }
