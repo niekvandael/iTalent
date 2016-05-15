@@ -2,8 +2,19 @@
  * Created by arjen on 05/04/16.
  */
 angular.module('iTalentApp')
-    .controller('homeController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService', 'subscriberStudentService', 'subscriberDocentService', function ($scope, $rootScope, $location, projectService, likeService, subscriberStudentService, subscriberDocentService) {
-    	
+    .controller('homeController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService', 'subscriberStudentService', 'subscriberDocentService', 'categoryService', function ($scope, $rootScope, $location, projectService, likeService, subscriberStudentService, subscriberDocentService, categoryService) {
+        categoryService.list().then(function (categories) {
+            $scope.categories = categories;
+            
+            $scope.categoryFilterArray = new Array();
+            for (var i = 0; i < categories.length; i++) {
+            	$scope.categoryFilterArray.push({description: categories[i].description, on: true});
+			}
+            
+        }, function (err) {
+            console.log('Error getting categories: ' + err)
+        });
+        
         projectService.listHome().then(function (projects) {
             $scope.projects = projects;
         }, function (err) {
@@ -42,5 +53,13 @@ angular.module('iTalentApp')
                 console.log('Error saving subscriberDocent.')
             })
         };
-        
+
+        $scope.categoryFilter = function(proj){
+    	   for(cat in $scope.categoryFilterArray){
+               var t = $scope.categoryFilterArray[cat];
+               if(t.on && proj.category.description == t.description){
+                   return true;   
+               }               
+           }
+        }
     }]);
