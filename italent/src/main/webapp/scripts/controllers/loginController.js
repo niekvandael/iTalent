@@ -1,5 +1,5 @@
 angular.module('iTalentApp')
-    .controller('loginController', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
+    .controller('loginController', ['$scope', '$rootScope', '$http', '$location', function ($scope, $rootScope, $http, $location) {
         // $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
         $scope.loginSubmit = function () {
@@ -33,6 +33,7 @@ angular.module('iTalentApp')
                         $rootScope.authenticated = true;
                         $rootScope.user.displayName = $scope.credentials.username;
                         $rootScope.loggedIn = true;
+                        $location.path('/');
                     } else {
                         /* When failed, do this */
                         $rootScope.authenticated = false;
