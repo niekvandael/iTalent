@@ -18,6 +18,7 @@ angular.module('iTalentApp')
                     if (response.data.name) {
                         /* When success, do this */
                         $rootScope.authenticated = true;
+                        $rootScope.role = response.data.authorities[0].authority;
                         $rootScope.user.displayName = $scope.credentials.username;
                         $location.path('/');
                     } else {
@@ -37,6 +38,7 @@ angular.module('iTalentApp')
         $scope.logout = function () {
             $http.post('logout', {}).finally(function() {
                 $rootScope.user.displayName = '';
+                $rootScope.role = '';
                 $rootScope.authenticated = false;
                 $location.path('/');
             });
