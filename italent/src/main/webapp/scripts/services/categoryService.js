@@ -8,23 +8,23 @@ angular.module('iTalentApp')
         return {
             get: function (id) {
                 var deferred = $q.defer();
-
                 var resource = $resource(GLOBALS.baseURL + "categories/:id", {id: "@_id"});
 
-                resource.get({id: id}, function (Category) {
-                    deferred.resolve(Category);
+                resource.get({id: id}, function (category) {
+                    deferred.resolve(category);
                 }, function (err) {
                     deferred.reject(err);
                 });
 
                 return deferred.promise;
             },
+
             list: function () {
                 var deferred = $q.defer();
                 var resource = $resource(GLOBALS.baseURL + "categories", {}, {list: {method: "GET", isArray: true}});
 
-                resource.list(function (CategoryList) {
-                    deferred.resolve(CategoryList);
+                resource.list(function (categoryList) {
+                    deferred.resolve(categoryList);
                 }, function (err) {
                     deferred.reject(err);
                 });
