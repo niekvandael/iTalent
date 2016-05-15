@@ -13,26 +13,28 @@ angular.module('iTalentApp')
                 $scope.newCategory.description = "";
             }, function (err) {
                 $scope.message = "Category addition failed...";
-                console.log('Error saving category: ' + err)
+                console.log('Error saving category: ');
+                console.log(err);
             })
         };
 
         $scope.deleteCategory = function (categoryId) {
-            categoryService.deleteItem(categoryId).then(function (success) {
-                if (!success.data) {
-                    $scope.message = "Cannot delete item: some projects are depending on this category";
-                } else {
-                    getCategories();
-                    $scope.message = "Deletion successfull";
-                }
-            });
+            categoryService.deleteItem(categoryId).then(function () {
+                getCategories();
+                $scope.message = "Category has been deleted!";
+            }, function (err) {
+                $scope.message = "Cannot delete item: some projects are depending on this category";
+                console.log('Error deleting category: ');
+                console.log(err);
+            })
         };
 
         function getCategories() {
             categoryService.list().then(function (categories) {
                 $scope.categories = categories;
             }, function (err) {
-                console.log('Error getting categories: ' + err)
+                console.log('Error getting categories: ' + err);
+                console.log(err);
             });
         }
 
