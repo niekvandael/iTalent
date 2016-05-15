@@ -12,19 +12,22 @@ angular.module('iTalentApp')
     	projectService.listUser().then(function (projects) {
             $scope.myProjects = projects;
         }, function (err) {
-            console.log('Error getting projects: ' + err)
+            console.log('Error getting projects:');
+            console.log(err);
         });
     	
     	projectService.listMySubscribed().then(function (projects) {
             $scope.mySubscribedProjects = projects;
         }, function (err) {
-            console.log('Error getting mySubscribed projects: ' + err)
+            console.log('Error getting mySubscribed projects:');
+            console.log(err);
         });
     	
     	projectService.listMyLiked().then(function (projects) {
             $scope.myLikedProjects = projects;
         }, function (err) {
-            console.log('Error getting myliked projects: ' + err)
+            console.log('Error getting myliked projects:');
+            console.log(err);
         });
         
         $scope.editProject = function(id) {
@@ -45,6 +48,12 @@ angular.module('iTalentApp')
                 project.numberOfLikes++;
             }
             project.liked = !project.liked;
-            likeService.saveOrUpdate(project.id);
+            likeService.saveOrUpdate(project.id).then(function () {
+                $scope.message = "Likes updated";
+            }, function (err) {
+                console.log('Error updating likes: ');
+                console.log(err);
+            })
         };
+
     }]);
