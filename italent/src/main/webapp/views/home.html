@@ -62,39 +62,38 @@
 					ng-click="showDetails(project.id)">{{"views.home.details"
 					| translate}}</button>
 
-				<!-- TODO only show when role is student -->
-				<form name="subscribeForm" role="form">
-					<div class="row">
-						<div class="col-md-9">
-							<div class="form-group">
-								<label class="required">{{'views.home.hours' |
-									translate}}</label> <input required type="number" ng-model="hours"
-									class="form-control" min="1" max="160" />
+				<div ng-if="role === 'Student'">
+					<form name="subscribeForm" role="form">
+						<div class="row">
+							<div class="col-md-9">
+								<div class="form-group">
+									<label class="required">{{'views.home.hours' | translate}}</label> <input required type="number" ng-model="hours"
+										class="form-control" min="1" max="160"/>
+								</div>
+								<button type="submit" class="btn btn-warning btn-warning-detail" ng-click="saveSubscriberStudent(project.id, hours)"
+										ng-disabled="registrationForm.$invalid">{{'views.home.subscribe'
+									| translate}}
+								</button>
 							</div>
-							<button type="submit" class="btn btn-warning btn-warning-detail"
-								ng-click="saveSubscriberStudent(project.id, hours)"
-								ng-disabled="registrationForm.$invalid">{{'views.home.subscribe'
-								| translate}}</button>
 						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 
-				<!-- TODO only show when role is docent -->
-				<form name="backForm" role="form">
-					<div class="row">
-						<div class="col-md-9">
-							<div class="form-group">
-								<label class="required">{{'views.home.percentage' |
-									translate}}</label> <input required type="number" ng-model="percentage"
-									class="form-control" min="1" max="100" />
+				<div ng-if="role === 'Docent'">
+					<form name="backForm" role="form">
+						<div class="row">
+							<div class="col-md-9">
+								<div class="form-group">
+									<label class="required">{{'views.home.percentage' | translate}}</label> <input required type="number" ng-model="percentage"
+									    class="form-control" min="1" max="100"/>
+								</div>
+								<button type="submit" class="btn btn-warning btn-warning-detail" ng-click="saveSubscriberDocent(project.id, percentage)"
+										ng-disabled="registrationForm.$invalid">{{'views.home.back' | translate}}
+								</button>
 							</div>
-							<button type="submit" class="btn btn-warning btn-warning-detail"
-								ng-click="saveSubscriberDocent(project.id, percentage)"
-								ng-disabled="registrationForm.$invalid">{{'views.home.back'
-								| translate}}</button>
 						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 
 			</div>
 		</div>
