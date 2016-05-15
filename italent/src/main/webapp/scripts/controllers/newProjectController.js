@@ -165,8 +165,9 @@ angular.module('iTalentApp')
        };
        
        $scope.resizeOnImageLoad = function(image, index){
-    	   var width = 800;
-    	  
+    	   var width = 600;
+    	   var quality = 0.9; // 0: low, 1: high
+    	   
     	   // create an off-screen canvas
     	    var canvas = document.createElement('canvas');
     	   
@@ -185,7 +186,7 @@ angular.module('iTalentApp')
     	    ctx.drawImage(imgObj, 0, 0, width, height);
 
     	    // encode image to data-uri with base64 version of compressed image
-    	    var smallerImage = canvas.toDataURL('image/jpeg', 1);
+    	    var smallerImage = canvas.toDataURL('image/jpeg', quality);
     	    imgObj.src = smallerImage;
     	    ctx.drawImage(imgObj, 0, 0, width, height);
     	    
