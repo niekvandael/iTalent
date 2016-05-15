@@ -116,7 +116,7 @@ angular.module('iTalentApp')
 			}
         };
         $scope.storeWantedSubscribers = function(){
-        	for (var i = 0; i < $scope.maxLengthOfMilestones; i++) {
+        	for (var i = 0; i < $scope.maxLengthOfWantedSubscribers; i++) {
 				var departmentInput = document.getElementById("project_wantedSubscriber_department_" + i);
 				var numberInput = document.getElementById("project_wantedSubscriber_number_" + i);
 				
@@ -129,8 +129,6 @@ angular.module('iTalentApp')
 			}
         };
         $scope.convertImage = function(element, i) {
-        	
-        	
             $scope.$apply(function(scope) {
             	
             	$scope.picturesConverted = false;
