@@ -7,8 +7,8 @@
             <div class="project-block-title">{{ project.title }}</div>
             <div class="row">
                 <div class="col-md-5">
-                    <div class="project-block-media img-responsive" ng-if="project.pictures[0].bytes == undefined"></div>
-                    <img class="project-block-media img-responsive" ng-src="data:image/jpeg;base64, {{ project.pictures[0].bytes }}"
+                    <div class="project-block-media img-responsive img-rounded" ng-if="project.pictures[0].bytes == undefined"></div>
+                    <img class="project-block-media img-responsive img-rounded" ng-src="data:image/jpeg;base64, {{ project.pictures[0].bytes }}"
                          ng-if="project.pictures[0].bytes !== undefined" style="margin-left: auto;margin-right: auto"/>
                 </div>
                 <div class="col-md-7">
