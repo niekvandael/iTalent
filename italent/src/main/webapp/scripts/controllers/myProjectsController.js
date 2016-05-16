@@ -8,6 +8,8 @@ angular.module('iTalentApp')
     	$scope.subscribedProjectsIsCollapsed = true;
     	$scope.likedProjectsIsCollapsed = true;
     	$scope.myProjects = {};
+    	$scope.myLikedProjects = {};
+    	$scope.mySubscribedProjects = {};
     	 
     	projectService.listUser().then(function (projects) {
             $scope.myProjects = projects;

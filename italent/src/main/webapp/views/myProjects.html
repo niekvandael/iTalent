@@ -1,7 +1,7 @@
 <div class="container" ng-if="authenticated">
-    <button type="button" class="btn btn-default" ng-click="myProjectsIsCollapsed = !myProjectsIsCollapsed">
+    <div class="jumbotron pointer" ng-click="myProjectsIsCollapsed = !myProjectsIsCollapsed">
         {{"views.myProjects.myProjects" | translate}}
-    </button>
+    </div>
     <div uib-collapse="myProjectsIsCollapsed">
         <div class="project-block" ng-repeat="project in myProjects">
             <div class="project-block-title">{{ project.title }}</div>
@@ -37,12 +37,13 @@
                 </div>
             </div>
         </div>
+        <div ng-hide="myProjects.length">{{"views.myProjects.noMyProjects" | translate}}</div>
     </div>
     <br>
     <br>
-    <button type="button" class="btn btn-default" ng-click="subscribedProjectsIsCollapsed = !subscribedProjectsIsCollapsed">
-        {{"views.myProjects.subscribedProjects" | translate}}
-    </button>
+    <div class="jumbotron pointer" ng-click="subscribedProjectsIsCollapsed = !subscribedProjectsIsCollapsed">
+            {{"views.myProjects.subscribedProjects" | translate}}
+    </div>
     <div uib-collapse="subscribedProjectsIsCollapsed">
         <div class="project-block" ng-repeat="project in mySubscribedProjects">
             <div class="project-block-title">{{ project.title }}</div>
@@ -73,12 +74,13 @@
                 </div>
             </div>
         </div>
+        <div ng-hide="mySubscribedProjects.length">{{"views.myProjects.noSubscribedProjects" | translate}}</div>
     </div>
     <br>
     <br>
-    <button type="button" class="btn btn-default" ng-click="likedProjectsIsCollapsed = !likedProjectsIsCollapsed">
-        {{"views.myProjects.likedProjects" | translate}}
-    </button>
+    <div class="jumbotron pointer" ng-click="likedProjectsIsCollapsed = !likedProjectsIsCollapsed">
+            {{"views.myProjects.likedProjects" | translate}}
+    </div>
     <div uib-collapse="likedProjectsIsCollapsed">
         <div class="project-block" ng-repeat="project in myLikedProjects">
             <div class="project-block-title">{{ project.title }}</div>
@@ -113,4 +115,6 @@
                 </div>
             </div>
         </div>
+        <div ng-hide="myLikedProjects.length">{{"views.myProjects.noLikedProjects" | translate}}</div>
     </div>
+</div>
