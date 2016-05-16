@@ -9,7 +9,9 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
 
+import be.italent.views.Views;
 import lombok.Data;
 
 @Data
@@ -29,9 +31,11 @@ public class Picture extends AbstractITalentEntity implements Serializable {
 	 * END: TESTING PURPOSES: TO ALLOW IMPORT.SQL INSERING PICTURES TO TEST
 	 */
 	@Size(max=10000000)
+	@JsonView(Views.List.class)
 	private String bytes;
 	
 	@Size(max=500)
+	@JsonView(Views.List.class)
 	private String description;
 	
 	@JsonIgnore
