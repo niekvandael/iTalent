@@ -1,25 +1,27 @@
-<div>
-    <table class="table table-condensed table-hover" ng-show="categories && categories.length">
-        <tr ng-repeat="category in categories">
-            <td class="col-md-4 text-center">{{ category.description }}</td>
-            <td class="col-md-2">
-                <button type="submit" class="btn btn-default" ng-click="deleteCategory(category.id)">
-                    <i class="glyphicon glyphicon-trash"></i>
-                </button>
-            </td>
-        </tr>
-    </table>
+<div ng-if="authenticated" class="container">
+	<div>
+	    <table class="table table-condensed table-hover" ng-show="categories && categories.length">
+	        <tr ng-repeat="category in categories">
+	            <td class="col-md-4 text-center">{{ category.description }}</td>
+	            <td class="col-md-2">
+	                <button type="submit" class="btn btn-default" ng-click="deleteCategory(category.id)">
+	                    <i class="glyphicon glyphicon-trash"></i>
+	                </button>
+	            </td>
+	        </tr>
+	    </table>
+	</div>
+	
+	<div class="jumbotron">
+	    <h3 class="col-md-offset-1">{{'views.category.addNewCategory' | translate}}</h3>
+	    <div class="input-group col-md-offset-1 col-md-10">
+	        <input required type="text" ng-model="newCategory.description" class="form-control" min="1" max="160"/>
+	        <span class="input-group-btn">
+	        <button type="button" class="btn btn-warning" ng-click="addCategory()"
+	                ng-disabled="registrationForm.$invalid">{{'views.home.add' | translate}}
+	        </button></span>
+	    </div>
+	</div>
+	
+	<div class="project-block-title">{{ message }}</div>
 </div>
-
-<div class="jumbotron">
-    <h3 class="col-md-offset-1">{{'views.category.addNewCategory' | translate}}</h3>
-    <div class="input-group col-md-offset-1 col-md-10">
-        <input required type="text" ng-model="newCategory.description" class="form-control" min="1" max="160"/>
-        <span class="input-group-btn">
-        <button type="button" class="btn btn-warning" ng-click="addCategory()"
-                ng-disabled="registrationForm.$invalid">{{'views.home.add' | translate}}
-        </button></span>
-    </div>
-</div>
-
-<div class="project-block-title">{{ message }}</div>

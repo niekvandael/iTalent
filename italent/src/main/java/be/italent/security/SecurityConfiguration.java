@@ -42,7 +42,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web){
         web.ignoring()
         .antMatchers("/scripts/**/*.{js,html}")
-        .antMatchers("/views/*.html")
+        .antMatchers("/views/about.html")
+        .antMatchers("/views/detail.html")
+        .antMatchers("/views/home.html")
+        .antMatchers("/views/login.html")
         .antMatchers("/bower_components/**")
         .antMatchers("/resources/*.json");
     }
@@ -52,24 +55,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.httpBasic()
                     .and()
                 .authorizeRequests()
-                .antMatchers("/user", "/index.html", "/", "/projects/listHome", "/projects/{id}", "/categories", "/login").permitAll().anyRequest()
+                .antMatchers("/user", "/index.html", "/", "/projects/listHome", "/projects/{id}", "/categories").permitAll().anyRequest()
                 .authenticated()
                     .and()
                 .csrf().csrfTokenRepository(csrfTokenRepository())
                     .and()
                 .addFilterAfter(csrfHeaderFilter(), CsrfFilter.class);
-
-//        // @formatter:off
-// /*       http
-//                .httpBasic().disable()
-//                .csrf().disable()
-//                .authorizeRequests()
-//                .anyRequest().permitAll();
-//*/
-//        // Disable CSRF explicitly
-//        http.authorizeRequests().antMatchers("/**").permitAll().and().csrf().disable();
-//
-//        // @formatter:on
     }
 
     private Filter csrfHeaderFilter() {
