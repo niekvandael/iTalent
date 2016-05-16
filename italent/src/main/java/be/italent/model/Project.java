@@ -43,7 +43,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@JsonView(Views.List.class)
 	private String title;
 	
-	@Size(max=1000)
+	@Size(max=2000)
 	@Lob
 	@JsonView(Views.Detail.class)
 	private String description;

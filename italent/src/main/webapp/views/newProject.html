@@ -1,6 +1,6 @@
 <div ng-if="authenticated" class="container">
     <h2>{{'views.newProject.pageTitle' | translate}}</h2>
-    <form name="registrationForm" ng-submit="registrationForm.$valid && save()">
+    <form name="registrationForm">
         <div class="row">
             <div class="col-md-9">
 
@@ -88,7 +88,7 @@
                 </div>
                      
                 <button type="submit" class="btn btn-warning" ng-click="cancel()">{{'views.newProject.cancel' | translate}}</button>
-                <button type="submit" class="btn btn-primary" >{{'views.newProject.save' | translate}}</button>
+                <button type="submit" class="btn btn-primary" ng-click="save()">{{'views.newProject.save' | translate}}</button>
                 <button ng-if="!project.partiallyBacked && project.id>0" type="button" class="btn btn-danger" ng-click="deleteProject()">{{"views.home.delete" | translate}}</button>
             </div>
         </div>

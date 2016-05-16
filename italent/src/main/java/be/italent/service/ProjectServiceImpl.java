@@ -73,9 +73,6 @@ public class ProjectServiceImpl implements ProjectService{
     }
     
     private Project setChildData(Project project){
-    	for(Comment comment : project.getComments()){
-    		comment.setProject(project);
-    	}
     	for(Like like : project.getLikes()){
     		like.setProject(project);
     	}
