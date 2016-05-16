@@ -87,43 +87,31 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	
 	@Column(name="is_public")
 	@JsonView(Views.List.class)
-	private boolean isPublic;
-	
-	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JsonView(Views.List.class)
-	private List<Announcement> announcements = new ArrayList<Announcement>();
-	
+	private boolean isPublic;	
 	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JsonIgnore
 	private List<Like> likes = new ArrayList<Like>();
 	
-	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JsonView(Views.Detail.class)
 	private List<Milestone> milestones = new ArrayList<Milestone>();
-
 	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JsonView(Views.Detail.class)
 	private List<Movie> movies = new ArrayList<Movie>();
 	
-	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JsonView(Views.List.class)
 	private List<Picture> pictures = new ArrayList<Picture>();
-	
 	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JsonView(Views.Detail.class)
 	private List<WantedSubscriber> wantedSubscribers = new ArrayList<WantedSubscriber>();
 	
-	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JsonView(Views.Detail.class)
 	private List<SubscriberStudent> subscribersStudent = new ArrayList<SubscriberStudent>();
-	
 	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JsonView(Views.Detail.class)
@@ -276,14 +264,6 @@ public class Project extends AbstractITalentEntity implements Serializable {
 
 	public void setPublic(boolean isPublic) {
 		this.isPublic = isPublic;
-	}
-
-	public List<Announcement> getAnnouncements() {
-		return announcements;
-	}
-
-	public void setAnnouncements(List<Announcement> announcements) {
-		this.announcements = announcements;
 	}
 
 	public List<Like> getLikes() {

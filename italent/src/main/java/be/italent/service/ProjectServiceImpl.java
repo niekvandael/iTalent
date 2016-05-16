@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import be.italent.model.Announcement;
 import be.italent.model.Like;
 import be.italent.model.Milestone;
 import be.italent.model.Movie;
@@ -72,11 +71,10 @@ public class ProjectServiceImpl implements ProjectService{
     public void deleteProject(int id){
     	projectRepo.delete(id);
     }
-
     
     private Project setChildData(Project project){
-    	for(Announcement announcement : project.getAnnouncements()){
-    		announcement.setProject(project);
+    	for(Comment comment : project.getComments()){
+    		comment.setProject(project);
     	}
     	for(Like like : project.getLikes()){
     		like.setProject(project);
