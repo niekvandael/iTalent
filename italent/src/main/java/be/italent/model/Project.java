@@ -347,19 +347,16 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	}
 
 	public boolean isLiked() {
-		this.liked = false;
-		for (Like l : this.getLikes()) {
-			//TODO
-			//if(l.getUser().getId() == ITalentAuth.getAuthenticatedUser().getId()){
-			if(l.getUser().getId() == 1){
-				this.setLiked(true);
-				break;
-			}
-		}
 		return this.liked;
 	}
 
-	public void setLiked(boolean liked) {
-		this.liked = liked;
+	public void setLiked(int currentUserId) {
+		this.liked = false;
+		for (Like l : this.getLikes()) {
+			if(l.getUser().getId() == currentUserId){
+				this.liked = true;
+				break;
+			}
+		}
 	}
 }

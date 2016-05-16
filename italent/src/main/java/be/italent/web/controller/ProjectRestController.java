@@ -42,9 +42,9 @@ public class ProjectRestController {
 	@RequestMapping(value = "/listHome", method = RequestMethod.GET, produces="application/json")
 	public List<Project> getHomeProjects(Authentication auth){
 		if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Student")))
-			return (projectService.getBackedProjects());
+			return (projectService.getBackedProjects(userService.getUserByUsername(auth.getName()).getId()));
 		else if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Docent")))
-			return projectService.getAllProjects();
+			return projectService.getAllProjects(userService.getUserByUsername(auth.getName()).getId());
 		else
 			return projectService.getPublicProjects();
 	}
@@ -70,8 +70,8 @@ public class ProjectRestController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces="application/json")
-	public Project getProject(@PathVariable("id") final int id){
-		return projectService.getProjectById(id);
+	public Project getProject(@PathVariable("id") final int id, Principal principal){
+		return projectService.getProjectById(id, userService.getUserByUsername(principal.getName()).getId());
 	
 	}
 	
