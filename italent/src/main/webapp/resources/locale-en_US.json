@@ -47,6 +47,7 @@
   "views.newProject.addPrezi": "Add prezi",
   "views.newProject.onlineFiles": "Online Files",
   "views.newProject.category" : "Category",
+  "views.newProject.domain" : "Domain",
   "views.newProject.addOnlineFile": "Add Online File",
   "views.category.addNewCategory" : "Add new category",
   "views.newProject.wantedSubscribers" : "Wanted subscribers",

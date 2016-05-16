@@ -2,7 +2,8 @@
  * Created by arjen on 05/04/16.
  */
 angular.module('iTalentApp')
-    .controller('newProjectController', ['$scope', '$location', '$routeParams', 'projectService', 'departmentService', 'categoryService', function ($scope, $location, $routeParams, projectService, departmentService, categoryService) {
+    .controller('newProjectController', ['$scope', '$location', '$routeParams', 'projectService', 'departmentService', 'categoryService', 'domainService',
+                                         function ($scope, $location, $routeParams, projectService, departmentService, categoryService, domainService) {
 
         var projectId = $routeParams.id;
         $scope.project = {
@@ -16,6 +17,7 @@ angular.module('iTalentApp')
         };
         $scope.departments = [];
         $scope.categories = [];
+        $scope.domains = [];
 
         $scope.maxLengthOfMovies = 5;
         $scope.maxLengthOfPictures = 10;
@@ -64,7 +66,16 @@ angular.module('iTalentApp')
             categoryService.list().then(function (categories) {
                 $scope.categories = categories;
             }, function (err) {
-                console.log('Error getting departments');
+                console.log('Error getting categories');
+                console.log(err);
+            })
+        };
+        
+        $scope.getDomains = function () {
+            domainService.list().then(function (domains) {
+                $scope.domains = domains;
+            }, function (err) {
+                console.log('Error getting domains');
                 console.log(err);
             })
         };
@@ -255,4 +266,5 @@ angular.module('iTalentApp')
         
         $scope.getDepartments();
         $scope.getCategories();
+        $scope.getDomains();
     }]);
