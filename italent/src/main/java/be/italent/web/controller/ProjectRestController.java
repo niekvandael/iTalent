@@ -83,7 +83,7 @@ public class ProjectRestController {
 	
 	@RequestMapping(value = "/save/{id}", method = RequestMethod.PUT, produces="application/json")
 	public Project updateProject(@PathVariable("id") final int id, @RequestBody Project project, Principal principal){
-		project.setUser(userService.getUserByUsername(principal.getName()));
+		//project.setUser(userService.getUserByUsername(principal.getName()));
 		return projectService.saveProject(project);
 	}
 	
