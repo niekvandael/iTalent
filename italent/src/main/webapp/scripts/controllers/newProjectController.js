@@ -1,6 +1,3 @@
-/**
- * Created by arjen on 05/04/16.
- */
 angular.module('iTalentApp')
     .controller('newProjectController', ['$scope', '$location', '$routeParams', 'projectService', 'departmentService', 'categoryService', 'domainService',
                                          function ($scope, $location, $routeParams, projectService, departmentService, categoryService, domainService) {

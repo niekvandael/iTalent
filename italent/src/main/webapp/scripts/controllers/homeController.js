@@ -1,6 +1,3 @@
-/**
- * Created by arjen on 05/04/16.
- */
 angular.module('iTalentApp')
     .controller('homeController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService', 'subscriberStudentService', 'subscriberDocentService', 'categoryService', function ($scope, $rootScope, $location, projectService, likeService, subscriberStudentService, subscriberDocentService, categoryService) {
         categoryService.list().then(function (categories) {
@@ -8,7 +5,7 @@ angular.module('iTalentApp')
 
             $scope.categoryFilterArray = [];
             for (var i = 0; i < categories.length; i++) {
-            	$scope.categoryFilterArray.push({id: categories[i].id, description: categories[i].description, on: true});
+            	$scope.categoryFilterArray.push({id: categories[i].categoryId, description: categories[i].description, on: true});
 			}
         }, function (err) {
             console.log('Error getting categories:');
@@ -67,7 +64,8 @@ angular.module('iTalentApp')
         $scope.categoryFilter = function(proj){
     	   for(var cat in $scope.categoryFilterArray){
                var t = $scope.categoryFilterArray[cat];
-               if(t.on && proj.category.id === t.id){
+               
+               if(t.on && proj.category.categoryId === t.id){
                    return true;   
                }               
            }
