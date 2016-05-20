@@ -2,16 +2,18 @@ package be.italent.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonView;
 
-import be.italent.views.Views;
 import lombok.Data;
 
 @Data
@@ -23,19 +25,11 @@ public class Picture extends AbstractITalentEntity implements Serializable {
 	@GeneratedValue
 	private int id;
 	
-	/* 
-	 * TESTING PURPOSES: TO ALLOW IMPORT.SQL INSERING PICTURES TO TEST
-	 * @Lob @Basic(fetch = FetchType.LAZY)
-	 * @Column(length=100000)
-	 * private String bytes; // private byte[] bytes;
-	 * END: TESTING PURPOSES: TO ALLOW IMPORT.SQL INSERING PICTURES TO TEST
-	 */
-	@Size(max=10000000)
-	@JsonView(Views.List.class)
-	private String bytes;
-	
+	  @Lob @Basic(fetch = FetchType.LAZY)
+	  @Column(length=100000)
+	  private byte[] bytes;
+	 
 	@Size(max=500)
-	@JsonView(Views.List.class)
 	private String description;
 	
 	@JsonIgnore
@@ -50,11 +44,11 @@ public class Picture extends AbstractITalentEntity implements Serializable {
 		this.id = id;
 	}
 
-	public String getBytes() {
+	public byte[] getBytes() {
 		return bytes;
 	}
 
-	public void setBytes(String bytes) {
+	public void setBytes(byte[] bytes) {
 		this.bytes = bytes;
 	}
 

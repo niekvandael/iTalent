@@ -20,9 +20,7 @@ import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonView;
 
-import be.italent.views.Views;
 import lombok.Data;
 
 @Data
@@ -31,62 +29,49 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	private static final long serialVersionUID = 6933862050829577662L;
 	
 	@Transient
-	@JsonView(Views.List.class)
 	private boolean liked;
 
 	@Id
 	@GeneratedValue
-	@JsonView(Views.List.class)
 	private int id;
 	
 	@Size(min=2, max=100)
-	@JsonView(Views.List.class)
 	private String title;
 	
 	@Size(max=2000)
 	@Lob
-	@JsonView(Views.Detail.class)
 	private String description;
 	
 	@Size(max=200)
 	@Column(name="short_description")
-	@JsonView(Views.List.class)
 	private String shortDescription;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="creation_date")
-	@JsonView(Views.List.class)
     private Date creationDate;
 	
 	@OneToOne
-	@JsonView(Views.List.class)
 	private User user;
 	
 	private int duration;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="start_date")
-	@JsonView(Views.List.class)
     private Date startDate;
 	
 	@OneToOne
-	@JsonView(Views.List.class)
 	private Category category;
 	
 	@OneToOne
-	@JsonView(Views.Detail.class)
 	private Domain domain;
 	
 	@Column(name="project_status")
-	@JsonView(Views.Detail.class)
 	private int projectStatus;
 	
 	@Column(name="is_verified")
-	@JsonView(Views.Detail.class)
 	private boolean isVerified;
 	
 	@Column(name="is_public")
-	@JsonView(Views.List.class)
 	private boolean isPublic;	
 	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -94,43 +79,33 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	private List<Like> likes = new ArrayList<Like>();
 	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JsonView(Views.Detail.class)
 	private List<Milestone> milestones = new ArrayList<Milestone>();
 	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JsonView(Views.Detail.class)
 	private List<Movie> movies = new ArrayList<Movie>();
 	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JsonView(Views.List.class)
 	private List<Picture> pictures = new ArrayList<Picture>();
 	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JsonView(Views.Detail.class)
 	private List<WantedSubscriber> wantedSubscribers = new ArrayList<WantedSubscriber>();
 	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JsonView(Views.Detail.class)
 	private List<SubscriberStudent> subscribersStudent = new ArrayList<SubscriberStudent>();
 	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JsonView(Views.Detail.class)
 	private List<SubscriberDocent> subscribersDocent = new ArrayList<SubscriberDocent>();
 	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JsonView(Views.Detail.class)
 	private List<Prezi> prezis = new ArrayList<Prezi>();
 	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JsonView(Views.Detail.class)
 	private List<OnlineFile> onlineFiles = new ArrayList<OnlineFile>();
 	
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JsonView(Views.Detail.class)
 	private List<Comment> Comments = new ArrayList<Comment>();
 
 	@Transient
-	@JsonView(Views.List.class)
 	private int numberOfLikes;
 	//Don't delete this getter
 	public int getNumberOfLikes(){
@@ -141,7 +116,6 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	//Een student kan een project verwijderen zolang er nog niemand gebacked heeft
 	//misschien status voor gebruiken?
 	@Transient
-	@JsonView(Views.Detail.class)
 	private boolean partiallyBacked;
 	//Don't delete this getter
 	public boolean isPartiallybacked(){
@@ -150,7 +124,6 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	
 	//@Transient
 	@Column(name="is_backed")
-	@JsonView(Views.Detail.class)
 	private boolean isBacked;
 	//Don't delete this getter
 	//TODO TEST
