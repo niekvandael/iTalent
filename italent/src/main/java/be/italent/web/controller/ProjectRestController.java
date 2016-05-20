@@ -67,7 +67,12 @@ public class ProjectRestController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
     public Project getProject(@PathVariable("id") final int id, Principal principal) {
-        return projectService.getProjectById(id, userService.getUserByUsername(principal.getName()).getId());
+    	if (principal == null){
+    		return projectService.getProjectById(id, 0);
+    	}
+    	else{
+    		return projectService.getProjectById(id, userService.getUserByUsername(principal.getName()).getId());
+    	}
 
     }
 

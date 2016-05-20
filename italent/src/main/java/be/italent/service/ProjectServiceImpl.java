@@ -33,45 +33,51 @@ public class ProjectServiceImpl implements ProjectService{
     //Student
     public List<Project> getBackedProjects(int currentUserId) {
     	List<Project>  projects = projectRepo.findAllByIsBacked(true);
-    	if(projects.size()>0)
+    	if(projects.size()>0){
     		setIsLikedByCurrentUser(projects, currentUserId);
+    	}
     	return projects;
     }
     
     //Docent
     public List<Project> getAllProjects(int currentUserId) {
     	List<Project>  projects = projectRepo.findAll();
-    	if(projects.size()>0)
+    	if(projects.size()>0){
     		setIsLikedByCurrentUser(projects, currentUserId);
+    	}
     	return projects;
     }
     
     //User created projects
     public List<Project> getAllUserProjects(User user) {
     	List<Project>  projects = projectRepo.findUserProjects(user);
-    	if(projects.size()>0)
+    	if(projects.size()>0){
     		setIsLikedByCurrentUser(projects, user.getId());
+    	}
     	return projects;
     }
     
     public List<Project> getMyLikedProjects(User user){
     	List<Project>  projects = projectRepo.findMyLikedProjects(user);
-    	if(projects.size()>0)
+    	if(projects.size()>0){
     		setIsLikedByCurrentUser(projects, user.getId());
+    	}
     	return projects;
     }
     
     public List<Project> getMySubscribedProjects(User user){
     	List<Project>  projects = projectRepo.findMySubscribedProjects(user);
-    	if(projects.size()>0)
+    	if(projects.size()>0){
     		setIsLikedByCurrentUser(projects, user.getId());
+    	}
     	return projects;
     }
     
     public List<Project> getMyBackedProjects(User user){
     	List<Project>  projects = projectRepo.findMyBackedProjects(user);
-    	if(projects.size()>0)
+    	if(projects.size()>0){
     		setIsLikedByCurrentUser(projects, user.getId());
+    	}
     	return projects;
     }
     
