@@ -1,8 +1,6 @@
-/**
- * Created by arjen on 05/04/16.
- */
 angular.module('iTalentApp')
-    .controller('detailController', ['$scope', '$routeParams', 'projectService', 'likeService', function ($scope, $routeParams, projectService, likeService) {
+    .controller('detailController', ['$scope', '$routeParams', 'projectService', 'likeService',
+        function ($scope, $routeParams, projectService, likeService) {
 
         var projectId = $routeParams.id;
 
@@ -23,7 +21,7 @@ angular.module('iTalentApp')
                 project.numberOfLikes++;
             }
             project.liked = !project.liked;
-            likeService.saveOrUpdate(project.id).then(function () {
+            likeService.saveOrUpdate(project.projectId).then(function () {
                 $scope.message = "Likes updated";
             }, function (err) {
                 console.log('Error updating likes: ');

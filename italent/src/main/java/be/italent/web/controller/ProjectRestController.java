@@ -3,8 +3,8 @@ package be.italent.web.controller;
 import be.italent.model.Project;
 import be.italent.service.ProjectService;
 import be.italent.service.UserService;
-import be.italent.web.resource.ProjectListHomeResource;
-import be.italent.web.resource.assembler.ProjectListHomeResourceAssembler;
+import be.italent.web.resource.*;
+import be.italent.web.resource.assembler.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,9 +26,19 @@ public class ProjectRestController {
     private UserService userService;
 
     private ProjectListHomeResourceAssembler projectListHomeResourceAssembler;
+    private ProjectDetailResourceAssembler projectDetailResourceAssembler;
+    private ProjectUserResourceAssembler projectUserResourceAssembler;
+    private ProjectMyLikedResourceAssembler projectMyLikedResourceAssembler;
+    private ProjectMySubscribedResourceAssembler projectMySubscribedResourceAssembler;
+    private ProjectMyBackedResourceAssembler projectMyBackedResourceAssembler;
 
     public ProjectRestController() {
         this.projectListHomeResourceAssembler = new ProjectListHomeResourceAssembler();
+        this.projectDetailResourceAssembler = new ProjectDetailResourceAssembler();
+        this.projectUserResourceAssembler = new ProjectUserResourceAssembler();
+        this.projectMyLikedResourceAssembler = new ProjectMyLikedResourceAssembler();
+        this.projectMySubscribedResourceAssembler = new ProjectMySubscribedResourceAssembler();
+        this.projectMyBackedResourceAssembler = new ProjectMyBackedResourceAssembler();
     }
 
     @RequestMapping(value = "/listHome", method = RequestMethod.GET, produces = "application/json")
@@ -46,34 +56,39 @@ public class ProjectRestController {
     }
 
     @RequestMapping(value = "/user", method = RequestMethod.GET, produces = "application/json")
-    public List<Project> getUserProjects(Principal principal) {
-        return projectService.getAllUserProjects(userService.getUserByUsername(principal.getName()));
+    public ResponseEntity<List<ProjectUserResource>> getUserProjects(Principal principal) {
+        return new ResponseEntity<>(projectUserResourceAssembler.toResources(
+                projectService.getAllUserProjects(userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/myLiked", method = RequestMethod.GET, produces = "application/json")
-    public List<Project> getMyLikedProjects(Principal principal) {
-        return projectService.getMyLikedProjects(userService.getUserByUsername(principal.getName()));
+    public ResponseEntity<List<ProjectMyLikedResource>> getMyLikedProjects(Principal principal) {
+        return new ResponseEntity<>(projectMyLikedResourceAssembler.toResources(
+                projectService.getMyLikedProjects(userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/mySubscribed", method = RequestMethod.GET, produces = "application/json")
-    public List<Project> getMySubscribedProjects(Principal principal) {
-        return projectService.getMySubscribedProjects(userService.getUserByUsername(principal.getName()));
+        public ResponseEntity<List<ProjectMySubscribedResource>> getMySubscribedProjects(Principal principal) {
+        return new ResponseEntity<>(projectMySubscribedResourceAssembler.toResources(
+                projectService.getMySubscribedProjects(userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/myBacked", method = RequestMethod.GET, produces = "application/json")
-    public List<Project> getMyBackedProjects(Principal principal) {
-        return projectService.getMyBackedProjects(userService.getUserByUsername(principal.getName()));
+    public ResponseEntity<List<ProjectMyBackedResource>> getMyBackedProjects(Principal principal) {
+        return new ResponseEntity<>(projectMyBackedResourceAssembler.toResources(
+                projectService.getMyBackedProjects(userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
-    public Project getProject(@PathVariable("id") final int id, Principal principal) {
+    public ResponseEntity<ProjectDetailResource> getProject(@PathVariable("id") final int id, Principal principal) {
     	if (principal == null){
-    		return projectService.getProjectById(id, 0);
+            return new ResponseEntity<>(projectDetailResourceAssembler
+                    .toResource(projectService.getProjectById(id, 0)), HttpStatus.OK);
     	}
-    	else{
-    		return projectService.getProjectById(id, userService.getUserByUsername(principal.getName()).getId());
+    	else {
+            return new ResponseEntity<>(projectDetailResourceAssembler
+                    .toResource(projectService.getProjectById(id, userService.getUserByUsername(principal.getName()).getId())), HttpStatus.OK);
     	}
-
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST, produces = "application/json")

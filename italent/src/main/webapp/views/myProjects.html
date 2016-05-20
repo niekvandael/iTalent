@@ -19,7 +19,7 @@
                     <div class="project-block-text col-xs-8">{{project.user.firstname + ' ' + project.user.lastname}}</div>
 
                     <div class="project-block-label col-xs-4">{{"views.home.startDate" | translate}}</div>
-                    <div class="project-block-text col-xs-8">{{project.beginDate | date}}</div>
+                    <div class="project-block-text col-xs-8">{{project.startDate | date}}</div>
                 </div>
             </div>
             <div class="row">
@@ -29,10 +29,10 @@
                     <div ng-if="project.numberOfLikes" class="likes-number col-xs-2">{{project.numberOfLikes}}</div>
                     <div ng-if="!project.numberOfLikes" class="likes-number col-xs-2">0</div>
                     <button type="button" class="btn btn-warning btn-warning-detail col-xs-2 col-md-2 col-xs-offset-1"
-                            ng-click="showDetails(project.id)">{{"views.home.details" | translate}}
+                            ng-click="showDetails(project.projectId)">{{"views.home.details" | translate}}
                     </button>
                     <button type="button" class="btn btn-danger btn-danger-detail col-xs-2 col-md-2 col-xs-offset-1"
-                            ng-click="editProject(project.id)">{{"views.home.edit" | translate}}
+                            ng-click="editProject(project.projectId)">{{"views.home.edit" | translate}}
                     </button>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                     <div class="project-block-text col-xs-8">{{project.user.firstname + ' ' + project.user.lastname}}</div>
 
                     <div class="project-block-label col-xs-4">{{"views.home.startDate" | translate}}</div>
-                    <div class="project-block-text col-xs-8">{{project.beginDate | date}}</div>
+                    <div class="project-block-text col-xs-8">{{project.startDate | date}}</div>
                 </div>
             </div>
             <div class="row">
@@ -69,7 +69,7 @@
                     <div ng-if="project.numberOfLikes" class="likes-number col-xs-2">{{project.numberOfLikes}}</div>
                     <div ng-if="!project.numberOfLikes" class="likes-number col-xs-2">0</div>
                     <button type="button" class="btn btn-warning btn-warning-detail col-xs-4 col-md-2 col-xs-offset-1 col-md-offset-2"
-                            ng-click="showDetails(project.id)">{{"views.home.details" | translate}}
+                            ng-click="showDetails(project.projectId)">{{"views.home.details" | translate}}
                     </button>
                 </div>
             </div>
@@ -97,7 +97,7 @@
                     </div>
 
                     <div class="project-block-label col-xs-4">{{"views.home.startDate" | translate}}</div>
-                    <div class="project-block-text col-xs-8">{{project.beginDate | date}}</div>
+                    <div class="project-block-text col-xs-8">{{project.startDate | date}}</div>
                 </div>
             </div>
             <div class="row">
@@ -110,7 +110,7 @@
                     <div ng-if="!project.numberOfLikes" class="likes-number col-xs-2">0</div>
                     <button type="button"
                             class="btn btn-warning btn-warning-detail col-xs-4 col-md-2 col-xs-offset-1 col-md-offset-2"
-                            ng-click="showDetails(project.id)">{{"views.home.details" | translate}}
+                            ng-click="showDetails(project.projectId)">{{"views.home.details" | translate}}
                     </button>
                 </div>
             </div>

@@ -1,7 +1,3 @@
-/**
- * Created by arjen on 18/04/2016.
- */
-
 angular.module('iTalentApp')
     .factory('projectService', ['$resource', '$q', '$http', 'GLOBALS', function ($resource, $q, $http, GLOBALS) {
 

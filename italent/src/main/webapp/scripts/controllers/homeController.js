@@ -1,5 +1,6 @@
 angular.module('iTalentApp')
-    .controller('homeController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService', 'subscriberStudentService', 'subscriberDocentService', 'categoryService', function ($scope, $rootScope, $location, projectService, likeService, subscriberStudentService, subscriberDocentService, categoryService) {
+    .controller('homeController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService', 'subscriberStudentService', 'subscriberDocentService', 'categoryService',
+        function ($scope, $rootScope, $location, projectService, likeService, subscriberStudentService, subscriberDocentService, categoryService) {
         categoryService.list().then(function (categories) {
             $scope.categories = categories;
 
@@ -31,7 +32,7 @@ angular.module('iTalentApp')
             }
             project.liked = !project.liked;
             
-            likeService.saveOrUpdate(project.id).then(function () {
+            likeService.saveOrUpdate(project.projectId).then(function () {
                 $scope.message = "Likes updated";
             }, function (err) {
                 console.log('Error updating likes: ');

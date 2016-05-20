@@ -10,28 +10,27 @@ import java.util.List;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProjectListHomeResource extends ResourceSupport {
-    @Mapping("id")
-    private Integer projectId;
-    private String title;
+public class ProjectMyBackedResource extends ResourceSupport {
+	@Mapping("id")
+	private Integer projectId;
+	private String title;
 	private String description;
 	private String shortDescription;
 	private Date creationDate;
 	private UserResource user;
 	private Date startDate;
-    private CategoryResource category;
+	private CategoryResource category;
 	private DomainResource domain;
 	private boolean isPublic;
-    private List<PictureResource> pictures;
-    private List<MovieResource> movies;
+	private List<PictureResource> pictures;
+	private List<MovieResource> movies;
 	private List<MilestoneResource> milestones;
 	private List<WantedSubscriberResource> wantedSubscribers;
 	private List<SubscriberDocentResource> subscribersDocent;
 	private List<SubscriberStudentResource> subscribersStudent;
 	private List<PreziResource> prezis;
 	private List<OnlineFileResource> onlineFiles;
-    private int numberOfLikes;
-    private boolean liked;
+	private int numberOfLikes;
+	private boolean liked;
 	private boolean partiallyBacked;
 }
-

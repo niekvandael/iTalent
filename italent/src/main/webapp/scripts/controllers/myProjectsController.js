@@ -2,7 +2,8 @@
  * Created by arjen on 05/04/16.
  */
 angular.module('iTalentApp')
-     .controller('myProjectsController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService', function ($scope, $rootScope, $location, projectService, likeService) {
+     .controller('myProjectsController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService',
+         function ($scope, $rootScope, $location, projectService, likeService) {
 
     	$scope.myProjectsIsCollapsed = true;
     	$scope.subscribedProjectsIsCollapsed = true;
@@ -50,7 +51,7 @@ angular.module('iTalentApp')
                 project.numberOfLikes++;
             }
             project.liked = !project.liked;
-            likeService.saveOrUpdate(project.id).then(function () {
+            likeService.saveOrUpdate(project.projectid).then(function () {
                 $scope.message = "Likes updated";
             }, function (err) {
                 console.log('Error updating likes: ');
