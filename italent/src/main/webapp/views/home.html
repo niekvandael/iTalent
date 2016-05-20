@@ -57,9 +57,7 @@
 					
 				<div ng-if="project.numberOfLikes" class="likes-number col-xs-2">{{project.numberOfLikes}}</div>
 				<div ng-if="!project.numberOfLikes" class="likes-number col-xs-2">0</div>
-				<button type="button"
-					class="btn btn-warning btn-warning-detail col-xs-4 col-md-2 col-xs-offset-1 col-md-offset-2"
-					ng-click="showDetails(project.id)">{{"views.home.details" | translate}}</button>
+				<button ng-if="authenticated" type="button" class="btn btn-warning btn-warning-detail col-xs-4 col-md-2 col-xs-offset-1 col-md-offset-2" ng-click="showDetails(project.id)">{{"views.home.details" | translate}}</button>
 			</div>
 			<div ng-if="role === 'Student'">
 				<div class="row col-xs-offset-2">
