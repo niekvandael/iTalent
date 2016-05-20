@@ -3,6 +3,7 @@ package be.italent.web.controller;
 import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +24,7 @@ public class SubscriberStudentRestController {
 	@Autowired
 	private UserService userService;
 	
+	@Secured("Student")
 	@RequestMapping(value = "/save/{id}/{hours}", method = RequestMethod.POST, produces="application/json")
 	public SubscriberStudent save(@PathVariable("id") final int id, @PathVariable("hours") final int hours, Principal principal){
 	
@@ -37,6 +39,7 @@ public class SubscriberStudentRestController {
 		return subscriberStudentService.save(subscriberStudent);
 	}
 	
+	@Secured({"Docent", "Student"})
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.POST, produces="application/json")
 	public void delete(@PathVariable("id") final int id){
 		subscriberStudentService.delete(id);

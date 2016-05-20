@@ -9,6 +9,7 @@ import be.italent.web.resource.assembler.CategoryResourceAssembler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,11 +34,13 @@ public class CategoryRestController {
         return new ResponseEntity<>(categoryResourceAssembler.toResources(categoryService.getAllCategories()), HttpStatus.OK);
     }
     
+    @Secured("Docent")
     @RequestMapping(method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity<CategoryResource> createCategory(@RequestBody Category category) {
         return new ResponseEntity<>(categoryResourceAssembler.toResource(categoryService.createCategory(category)), HttpStatus.OK);
     }
     
+    @Secured("Docent")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE, produces = "application/json")
     public boolean deleteCategory(@PathVariable("id") final int id) {
         return categoryService.deleteCategory(id);

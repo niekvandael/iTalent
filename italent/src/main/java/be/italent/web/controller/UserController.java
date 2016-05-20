@@ -12,11 +12,4 @@ public class UserController {
 	public Principal user(Principal user) {
 		return user;
 	}
-
-
-//	@RequestMapping("/login")
-//	public boolean login(){
-//		return true;
-//	}
-//
 }

@@ -8,6 +8,7 @@ import be.italent.web.resource.assembler.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.web.bind.annotation.*;
@@ -55,24 +56,28 @@ public class ProjectRestController {
         }
     }
 
+    @Secured({"Docent", "Student"})
     @RequestMapping(value = "/user", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<ProjectUserResource>> getUserProjects(Principal principal) {
         return new ResponseEntity<>(projectUserResourceAssembler.toResources(
                 projectService.getAllUserProjects(userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
     }
 
+    @Secured({"Docent", "Student"})
     @RequestMapping(value = "/myLiked", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<ProjectMyLikedResource>> getMyLikedProjects(Principal principal) {
         return new ResponseEntity<>(projectMyLikedResourceAssembler.toResources(
                 projectService.getMyLikedProjects(userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
     }
 
+    @Secured("Student")
     @RequestMapping(value = "/mySubscribed", method = RequestMethod.GET, produces = "application/json")
         public ResponseEntity<List<ProjectMySubscribedResource>> getMySubscribedProjects(Principal principal) {
         return new ResponseEntity<>(projectMySubscribedResourceAssembler.toResources(
                 projectService.getMySubscribedProjects(userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
     }
 
+    @Secured("Docent")
     @RequestMapping(value = "/myBacked", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<ProjectMyBackedResource>> getMyBackedProjects(Principal principal) {
         return new ResponseEntity<>(projectMyBackedResourceAssembler.toResources(
@@ -91,17 +96,20 @@ public class ProjectRestController {
     	}
     }
 
+    @Secured({"Docent", "Student"})
     @RequestMapping(value = "/save", method = RequestMethod.POST, produces = "application/json")
     public Project saveProject(@RequestBody Project project, Principal principal) {
         project.setUser(userService.getUserByUsername(principal.getName()));
         return projectService.saveProject(project);
     }
 
+    @Secured({"Docent", "Student"})
     @RequestMapping(value = "/save/{id}", method = RequestMethod.PUT, produces = "application/json")
     public Project updateProject(@PathVariable("id") final int id, @RequestBody Project project, Principal principal) {
         return projectService.saveProject(project);
     }
 
+    @Secured({"Docent", "Student"})
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST, produces = "application/json")
     public void deleteProject(@PathVariable("id") final int id) {
         projectService.deleteProject(id);

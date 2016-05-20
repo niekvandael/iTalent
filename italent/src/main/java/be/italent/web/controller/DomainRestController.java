@@ -9,6 +9,7 @@ import be.italent.web.resource.assembler.DomainResourceAssembler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,11 +35,13 @@ public class DomainRestController {
         return new ResponseEntity<>(domainResourceAssembler.toResources(DomainService.getAllDomains()), HttpStatus.OK);
     }
     
+    @Secured("Docent")
     @RequestMapping(method = RequestMethod.POST, produces = "application/json")
     public Domain createDomain(@RequestBody Domain Domain) {
         return DomainService.createDomain(Domain);
     }
     
+    @Secured("Docent")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE, produces = "application/json")
     public boolean deleteDomain(@PathVariable("id") final int id) {
         return DomainService.deleteDomain(id);
