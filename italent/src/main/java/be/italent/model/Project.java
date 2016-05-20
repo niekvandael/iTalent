@@ -22,12 +22,14 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 public class Project extends AbstractITalentEntity implements Serializable {
-	private static final long serialVersionUID = 6933862050829577662L;
-	
+	private static final long serialVersionUID = -4204763103896511879L;
+
 	@Transient
 	private boolean liked;
 
@@ -135,194 +137,6 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		return total > 99;
 	}
 	
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getShortDescription() {
-		return shortDescription;
-	}
-
-	public void setShortDescription(String shortDescription) {
-		this.shortDescription = shortDescription;
-	}
-
-	public Date getCreationDate() {
-		return creationDate;
-	}
-
-	public void setCreationDate(Date creationDate) {
-		this.creationDate = creationDate;
-	}
-
-	public int getDuration() {
-		return duration;
-	}
-
-	public void setDuration(int duration) {
-		this.duration = duration;
-	}
-
-	public Date getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public Category getCategory() {
-		return category;
-	}
-
-	public void setCategory(Category category) {
-		this.category = category;
-	}
-	
-	public Domain getDomain() {
-		return domain;
-	}
-
-	public void setDomain(Domain domain) {
-		this.domain = domain;
-	}
-
-	public int getProjectStatus() {
-		return projectStatus;
-	}
-
-	public void setProjectStatus(int projectStatus) {
-		this.projectStatus = projectStatus;
-	}
-
-	public boolean isVerified() {
-		return isVerified;
-	}
-
-	public void setVerified(boolean isVerified) {
-		this.isVerified = isVerified;
-	}
-
-	public boolean isPublic() {
-		return isPublic;
-	}
-
-	public void setPublic(boolean isPublic) {
-		this.isPublic = isPublic;
-	}
-
-	public List<Like> getLikes() {
-		return likes;
-	}
-
-	public void setLikes(List<Like> likes) {
-		this.likes = likes;
-	}
-
-	public List<Milestone> getMilestones() {
-		return milestones;
-	}
-
-	public void setMilestones(List<Milestone> milestones) {
-		this.milestones = milestones;
-	}
-
-	public List<Movie> getMovies() {
-		return movies;
-	}
-
-	public void setMovies(List<Movie> movies) {
-		this.movies = movies;
-	}
-
-	public List<Picture> getPictures() {
-		return pictures;
-	}
-
-	public void setPictures(List<Picture> pictures) {
-		this.pictures = pictures;
-	}
-
-	public List<WantedSubscriber> getWantedSubscribers() {
-		return wantedSubscribers;
-	}
-
-	public void setWantedSubscribers(List<WantedSubscriber> wantedSubscribers) {
-		this.wantedSubscribers = wantedSubscribers;
-	}
-
-	public List<SubscriberStudent> getSubscribersStudent() {
-		return subscribersStudent;
-	}
-
-	public void setSubscribersStudent(List<SubscriberStudent> subscribersStudent) {
-		this.subscribersStudent = subscribersStudent;
-	}
-
-	public List<SubscriberDocent> getSubscribersDocent() {
-		return subscribersDocent;
-	}
-
-	public void setSubscribersDocent(List<SubscriberDocent> subscribersDocent) {
-		this.subscribersDocent = subscribersDocent;
-	}
-	
-	public List<Prezi> getPrezis() {
-		return prezis;
-	}
-
-	public void setPrezis(List<Prezi> prezis) {
-		this.prezis = prezis;
-	}
-
-	public List<OnlineFile> getOnlineFiles() {
-		return onlineFiles;
-	}
-
-	public void setOnlineFiles(List<OnlineFile> onlineFiles) {
-		this.onlineFiles = onlineFiles;
-	}
-
-	public List<Comment> getComments() {
-		return Comments;
-	}
-
-	public void setComments(List<Comment> comments) {
-		Comments = comments;
-	}
-
-	public boolean isLiked() {
-		return this.liked;
-	}
-
 	public void setLiked(int currentUserId) {
 		this.liked = false;
 		for (Like l : this.getLikes()) {

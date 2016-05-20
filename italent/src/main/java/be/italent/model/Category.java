@@ -8,11 +8,13 @@ import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 public class Category extends AbstractITalentEntity implements Serializable{
-	private static final long serialVersionUID = 8415387598073185560L;
+	private static final long serialVersionUID = -6440767198679505981L;
 
 	@Id
 	@GeneratedValue
@@ -20,20 +22,4 @@ public class Category extends AbstractITalentEntity implements Serializable{
 	
 	@Size(max=200)
 	private String description;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
 }

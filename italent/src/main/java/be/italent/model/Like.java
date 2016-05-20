@@ -12,12 +12,15 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name="likes")
 public class Like extends AbstractITalentEntity implements Serializable {
-	private static final long serialVersionUID = -2109302458723083487L;
+	private static final long serialVersionUID = -3741055808100737913L;
+
 	@Id
 	@GeneratedValue
 	private int id;
@@ -28,28 +31,4 @@ public class Like extends AbstractITalentEntity implements Serializable {
 	@JsonIgnore
 	@ManyToOne
 	private Project project;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
 }

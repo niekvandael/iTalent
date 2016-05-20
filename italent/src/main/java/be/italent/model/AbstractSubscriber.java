@@ -9,13 +9,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @MappedSuperclass
 public class AbstractSubscriber extends AbstractITalentEntity implements Serializable {
-	private static final long serialVersionUID = 8880123919043305925L;
+	private static final long serialVersionUID = 5675828106788971892L;
 
 	@Id
 	@GeneratedValue
@@ -24,20 +25,4 @@ public class AbstractSubscriber extends AbstractITalentEntity implements Seriali
 	@JsonIgnore
 	@ManyToOne(cascade = CascadeType.DETACH)
 	private Project project;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
 }

@@ -11,11 +11,13 @@ import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 public class Comment extends AbstractITalentEntity implements Serializable {
-	private static final long serialVersionUID = -8315416623935891643L;
+	private static final long serialVersionUID = -2741183697423201839L;
 
 	@Id
 	@GeneratedValue
@@ -30,36 +32,4 @@ public class Comment extends AbstractITalentEntity implements Serializable {
 	
 	@OneToOne
 	private User user;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
 }

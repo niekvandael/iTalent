@@ -14,14 +14,8 @@ import javax.validation.constraints.Size;
 @Data
 @MappedSuperclass
 public abstract class AbstractITalentEntity implements Serializable{
-	private static final long serialVersionUID = 1446086446762595302L;
-	
-	public AbstractITalentEntity() {
-		this.setStatus(this.getStatus());
-		this.setLastUpdate(this.getLastUpdate());
-		this.setLastUpdatedBy(this.getLastUpdatedBy());
-	}
-	
+	private static final long serialVersionUID = -5530760931727737943L;
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="last_update")
 	private Calendar lastUpdate;
@@ -33,37 +27,8 @@ public abstract class AbstractITalentEntity implements Serializable{
 	@Size(max = 20)
 	private String status;
 
-	public Calendar getLastUpdate() {
-		this.lastUpdate = Calendar.getInstance();
-		return lastUpdate;
-	}
-
-	public void setLastUpdate(Calendar lastUpdate) {
-		this.lastUpdate = lastUpdate;
-	}
-
-	public String getLastUpdatedBy() {
-		if(lastUpdatedBy == null){
-			//TODO
-			//this.lastUpdatedBy = ITalentAuth.getAuthenticatedUser().getFirstname() + " " + ITalentAuth.getAuthenticatedUser().getLastname();
-			this.lastUpdatedBy = "Team 1";
-		}
-		return lastUpdatedBy;
-	}
-
-	public void setLastUpdatedBy(String lastUpdatedBy) {
-		this.lastUpdatedBy = lastUpdatedBy;
-	}
-
-	public String getStatus() {
-		if(this.status == null){
-			this.status = "A";
-		}
-		
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
+	protected void setItalentEntity(String lastUpdatedBy){
+		this.setLastUpdate(Calendar.getInstance());
+		this.setLastUpdatedBy(lastUpdatedBy);
 	}
 }

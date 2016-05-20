@@ -1,22 +1,17 @@
 package be.italent.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 
 import javax.persistence.Entity;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 public class SubscriberStudent extends Subscriber implements Serializable {
-	private static final long serialVersionUID = 4992941772661082318L;
+	private static final long serialVersionUID = 3925239470278575202L;
 	
 	private int hours;
-	
-	public int getHours() {
-		return hours;
-	}
-	public void setHours(int hours) {
-		this.hours = hours;
-	}
 }

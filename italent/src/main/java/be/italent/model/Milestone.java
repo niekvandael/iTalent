@@ -10,11 +10,14 @@ import javax.persistence.ManyToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 public class Milestone extends AbstractITalentEntity implements Serializable {
-	private static final long serialVersionUID = 4572147731049218685L;
+	private static final long serialVersionUID = 8835977245280932297L;
+
 	@Id
 	@GeneratedValue
 	private int id;
@@ -26,36 +29,4 @@ public class Milestone extends AbstractITalentEntity implements Serializable {
 	private Project project;
 
 	private String description;
-	
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public boolean isDone() {
-		return done;
-	}
-
-	public void setDone(boolean done) {
-		this.done = done;
-	}
-
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
 }

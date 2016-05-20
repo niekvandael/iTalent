@@ -11,11 +11,13 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 public class OnlineFile extends AbstractITalentEntity implements Serializable {
-	private static final long serialVersionUID = 1161294773565393593L;
+	private static final long serialVersionUID = 5952593443437015118L;
 
 	@Id
 	@GeneratedValue
@@ -30,36 +32,4 @@ public class OnlineFile extends AbstractITalentEntity implements Serializable {
 	@JsonIgnore
 	@ManyToOne
 	private Project project;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
 }

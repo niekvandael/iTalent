@@ -16,8 +16,8 @@ import lombok.ToString;
 @ToString(exclude = "users")
 @Entity
 public class Role implements Serializable{
-	private static final long serialVersionUID = -6207223955990641498L;
-	
+	private static final long serialVersionUID = -6836673373609047169L;
+
 	@Id
 	@GeneratedValue
 	private int id;
@@ -28,28 +28,4 @@ public class Role implements Serializable{
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="role")
 	private List<User> users = new ArrayList<User>();
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public List<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
 }

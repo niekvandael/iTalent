@@ -12,11 +12,13 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 public class Prezi extends AbstractITalentEntity implements Serializable {
-	private static final long serialVersionUID = -8069058663611130322L;
+	private static final long serialVersionUID = -1895055623204245402L;
 
 	@Id
 	@GeneratedValue
@@ -32,36 +34,4 @@ public class Prezi extends AbstractITalentEntity implements Serializable {
 	@JsonIgnore
 	@ManyToOne
 	private Project project;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getPreziId() {
-		return preziId;
-	}
-
-	public void setPreziId(String preziId) {
-		this.preziId = preziId;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
 }
