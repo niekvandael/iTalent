@@ -84,15 +84,27 @@ public class ProjectRestController {
                 projectService.getMyBackedProjects(userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
     }
 
+    //TODO opsplitsen in docent/studen/public/save/update detail
+//    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
+//    public ResponseEntity<ProjectDetailResource> getProject(@PathVariable("id") final int id, Principal principal) {
+//    	if (principal == null){
+//            return new ResponseEntity<>(projectDetailResourceAssembler
+//                    .toResource(projectService.getProjectById(id, 0)), HttpStatus.OK);
+//    	}
+//    	else {
+//            return new ResponseEntity<>(projectDetailResourceAssembler
+//                    .toResource(projectService.getProjectById(id, userService.getUserByUsername(principal.getName()).getUserId())), HttpStatus.OK);
+//    	}
+//    }
+    
+    //TODO: Tijdelijk... (anders werkt het opslaan niet) zie todo hierboven...
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<ProjectDetailResource> getProject(@PathVariable("id") final int id, Principal principal) {
+    public Project getProject(@PathVariable("id") final int id, Principal principal) {
     	if (principal == null){
-            return new ResponseEntity<>(projectDetailResourceAssembler
-                    .toResource(projectService.getProjectById(id, 0)), HttpStatus.OK);
+            return projectService.getProjectById(id, 0);
     	}
     	else {
-            return new ResponseEntity<>(projectDetailResourceAssembler
-                    .toResource(projectService.getProjectById(id, userService.getUserByUsername(principal.getName()).getUserId())), HttpStatus.OK);
+            return projectService.getProjectById(id, userService.getUserByUsername(principal.getName()).getUserId());
     	}
     }
 

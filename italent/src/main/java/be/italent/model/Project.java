@@ -138,6 +138,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		return total > 99;
 	}
 	
+	@JsonIgnore
 	public void setLiked(int currentUserId) {
 		this.liked = false;
 		for (Like l : this.getLikes()) {
