@@ -11,7 +11,10 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -62,8 +65,11 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@Column(name="start_date")
     private Date startDate;
 	
-	@OneToOne
-	private Category category;
+	@JsonIgnore
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name = "project_category", joinColumns = { 
+			@JoinColumn(name = "project_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "category_id",  nullable = false, updatable = false) })
+	private List<Category> categories = new ArrayList<Category>();
 	
 	@OneToOne
 	private Domain domain;

@@ -2,25 +2,27 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<div class="input-group">
-				<input type="text" class="form-control" ng-model="search.title" placeholder="Search for...">
-				<span class="input-group-btn">
-					<button class="btn btn-default" type="button">{{"views.home.search" | translate}}</button>
+				<input type="text" class="form-control" ng-model="search.title"
+					placeholder="Search for..."> <span class="input-group-btn">
+					<button class="btn btn-default" type="button">{{"views.home.search"
+						| translate}}</button>
 				</span>
 			</div>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-6 col-md-offset-3">	
+		<div class="col-md-6 col-md-offset-3">
 			<div class="input-group">
-				<span class="input-group-btn">
-					<tags-input ng-model="tags" add-on-paste="true" style="display:inline;" placeholder="Search with tag...">
-				    	<auto-complete source="loadTags($query)"></auto-complete> 
-				    </tags-input>
+				<span class="input-group-btn"> <tags-input ng-model="tags"
+						add-on-paste="true" style="display:inline;"
+						placeholder="Search with tag..."> <auto-complete
+						source="loadTags($query)"></auto-complete> </tags-input>
 				</span>
 			</div>
 		</div>
 	</div>
-	<div class="project-block" ng-repeat="project in projects | filter:search | filter:tagFilter">
+	<div class="project-block"
+		ng-repeat="project in projects | filter:search | filter:tagFilter">
 		<div class="project-block-title">{{ project.title }}</div>
 		<div class="row">
 			<div class="col-md-5">
@@ -47,16 +49,27 @@
 				<div class="project-block-text col-xs-8">{{project.startDate |
 					date}}</div>
 			</div>
+			<div class="post-tag" ng-repeat="category in project.categories">{{ category.description }}</div>
 		</div>
+
 		<div class="row">
 			<div class="row col-xs-offset-2">
-				<div ng-if="authenticated && project.liked" class="project-button glyphicon glyphicon-star col-xs-1" ng-click="likeClicked(project)"></div>
-				<div ng-if="authenticated && !project.liked" class="project-button glyphicon glyphicon-star-empty col-xs-1" ng-click="likeClicked(project)"></div>
-				<div ng-if="!authenticated" class="project-button glyphicon glyphicon-star col-xs-1"></div>	
-					
+				<div ng-if="authenticated && project.liked"
+					class="project-button glyphicon glyphicon-star col-xs-1"
+					ng-click="likeClicked(project)"></div>
+				<div ng-if="authenticated && !project.liked"
+					class="project-button glyphicon glyphicon-star-empty col-xs-1"
+					ng-click="likeClicked(project)"></div>
+				<div ng-if="!authenticated"
+					class="project-button glyphicon glyphicon-star col-xs-1"></div>
+
 				<div ng-if="project.numberOfLikes" class="likes-number col-xs-2">{{project.numberOfLikes}}</div>
 				<div ng-if="!project.numberOfLikes" class="likes-number col-xs-2">0</div>
-				<button type="button" class="btn btn-warning btn-warning-detail col-xs-4 col-md-2 col-xs-offset-1 col-md-offset-2" ng-click="showDetails(project.projectId)">{{"views.home.details" | translate}}</button>
+
+				<button type="button"
+					class="btn btn-warning btn-warning-detail col-xs-4 col-md-2 col-xs-offset-1 col-md-offset-2"
+					ng-click="showDetails(project.projectId)">{{"views.home.details"
+					| translate}}</button>
 			</div>
 		</div>
 	</div>

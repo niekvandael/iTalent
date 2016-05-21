@@ -15,7 +15,7 @@ angular.module('iTalentApp')
             $scope.tagsArray = [];
             for (var i = 0; i < categories.length; i++) {
             	$scope.categoryFilterArray.push({id: categories[i].categoryId, description: categories[i].description, on: true});
-            	$scope.allTags.push({text: categories[i].description});
+            	$scope.allTags.push({text: categories[i].description, categoryId: categories[i].categoryId});
 			}
         }, function (err) {
             console.log('Error getting categories:');
@@ -60,9 +60,20 @@ angular.module('iTalentApp')
         	
         	for (var i = 0; i < $scope.tags.length; i++) {
         		var tag = $scope.tags[i];
-                if(proj.category.description.replaceAll(" ", "-") === tag.text){
-                   return true;   
-                }     				
+        		
+        		if(tag.categoryId === undefined){
+        			// non-existing tag
+        			return true;
+        		}
+        		
+        		for (var j = 0; j < proj.categories.length; j++) {
+					var projectTag = proj.categories[j];
+	        		
+	                if(projectTag.categoryId === tag.categoryId){
+	                   return true;
+	                }    
+				}
+ 				
 			}
         }
     }]);

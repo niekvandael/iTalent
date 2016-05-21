@@ -15,6 +15,7 @@ angular.module('iTalentApp')
         $scope.departments = [];
         $scope.categories = [];
         $scope.domains = [];
+    	$scope.allTags = [];
 
         $scope.maxLengthOfMovies = 5;
         $scope.maxLengthOfPictures = 10;
@@ -25,6 +26,10 @@ angular.module('iTalentApp')
 
         $scope.picturesConverted = true;
 
+    	$scope.loadTags = function(){
+    		return $scope.allTags;
+    	}
+    	
         if (projectId) {
             projectService.get(projectId).then(function (project) {
                 $scope.project = project;
@@ -41,7 +46,7 @@ angular.module('iTalentApp')
             $scope.storeWantedSubscribers();
             $scope.storePrezis();
             $scope.storeOnlineFiles();
-
+            
             projectService.saveOrUpdate($scope.project).then(function () {
                 $location.path('/myProjects');
             }, function (err) {
@@ -62,6 +67,13 @@ angular.module('iTalentApp')
         $scope.getCategories = function () {
             categoryService.list().then(function (categories) {
                 $scope.categories = categories;
+
+                $scope.tagsArray = [];
+                for (var i = 0; i < categories.length; i++) {
+                	var category = categories[i];
+                	category.text = category.description;
+                	$scope.allTags.push(category);
+    			}
             }, function (err) {
                 console.log('Error getting categories');
                 console.log(err);

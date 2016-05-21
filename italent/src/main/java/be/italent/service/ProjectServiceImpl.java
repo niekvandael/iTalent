@@ -5,14 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import be.italent.model.Category;
+import be.italent.model.Comment;
 import be.italent.model.Like;
 import be.italent.model.Milestone;
 import be.italent.model.Movie;
+import be.italent.model.OnlineFile;
 import be.italent.model.Picture;
 import be.italent.model.Prezi;
 import be.italent.model.Project;
-import be.italent.model.OnlineFile;
-import be.italent.model.Comment;
 import be.italent.model.SubscriberDocent;
 import be.italent.model.SubscriberStudent;
 import be.italent.model.User;
@@ -134,6 +135,11 @@ public class ProjectServiceImpl implements ProjectService{
     	}
     	for(Comment comment : project.getComments()){
     		comment.setProject(project);
+    	}
+    	for(Category category : project.getCategories()){
+    		List<Project> projects = category.getProjects();
+    		projects.add(project);
+    		category.setProjects(projects);
     	}
     	
     	return project;
