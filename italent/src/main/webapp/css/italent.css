@@ -103,6 +103,10 @@ body {
     font-weight: bold;
 }
 
+.input-block {
+    margin-top: 25px;
+}
+
 .btn-warning-detail {
     margin-top: 20px;
 }
