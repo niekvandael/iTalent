@@ -30,7 +30,7 @@
                 
                 <div class="form-group">
                     <label class="required">{{'views.newProject.domain' | translate}}</label>
-               	    <select ng-options="domain as domain.name for domain in domains track by domain.id" ng-model="project.domain" required class="form-control"></select>
+               	    <select ng-options="domain as domain.name for domain in domains track by domain.domainId" ng-model="project.domain" required class="form-control"></select>
                 </div>
     
                 <div class="form-group">

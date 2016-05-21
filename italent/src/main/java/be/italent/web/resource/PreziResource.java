@@ -9,7 +9,6 @@ import org.springframework.hateoas.ResourceSupport;
 @EqualsAndHashCode(callSuper = false)
 public class PreziResource extends ResourceSupport {
 	@Mapping("id")
-	private int milestoneId;
-	private boolean done;
+	private int preziId;
 	private String description;
 }

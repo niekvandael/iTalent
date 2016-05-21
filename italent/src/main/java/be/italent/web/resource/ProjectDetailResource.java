@@ -15,6 +15,7 @@ public class ProjectDetailResource extends ResourceSupport {
     private Integer projectId;
 	private String title;
 	private List<PictureResource> pictures;
+	private String description;
 	private String shortDescription;
 	private UserResource user;
 	private Date startDate;
