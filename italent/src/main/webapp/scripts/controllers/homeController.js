@@ -1,6 +1,6 @@
 angular.module('iTalentApp')
-    .controller('homeController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService', 'subscriberStudentService', 'subscriberDocentService', 'categoryService',
-        function ($scope, $rootScope, $location, projectService, likeService, subscriberStudentService, subscriberDocentService, categoryService) {
+    .controller('homeController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService', 'categoryService',
+        function ($scope, $rootScope, $location, projectService, likeService, categoryService) {
         categoryService.list().then(function (categories) {
             $scope.categories = categories;
 
@@ -42,24 +42,6 @@ angular.module('iTalentApp')
         
         $scope.showDetails = function(id) {
             $location.path('/projects/' + id);
-        };
-        
-        $scope.saveSubscriberStudent = function(id, hours) {
-            subscriberStudentService.save(id, hours).then(function() {
-                $location.path('/home');
-            }, function(err) {
-                console.log('Error saving subscriberStudent.');
-                console.log(err);
-            })
-        };
-        
-        $scope.saveSubscriberDocent = function(id, percentage) {
-            subscriberDocentService.save(id, percentage).then(function() {
-                $location.path('/home');
-            }, function(err) {
-                console.log('Error saving subscriberDocent.');
-                console.log(err);
-            })
         };
 
         $scope.categoryFilter = function(proj){

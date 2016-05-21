@@ -59,24 +59,6 @@
 				<div ng-if="!project.numberOfLikes" class="likes-number col-xs-2">0</div>
 				<button type="button" class="btn btn-warning btn-warning-detail col-xs-4 col-md-2 col-xs-offset-1 col-md-offset-2" ng-click="showDetails(project.projectId)">{{"views.home.details" | translate}}</button>
 			</div>
-			<div ng-if="role === 'Student'">
-				<div class="row col-xs-offset-2">
-					<input required type="number" ng-model="hours" class="col-xs-4 col-md-2" min="1" max="160" placeholder="{{'views.home.hours' | translate}}"/>
-					<button type="submit" class="btn btn-warning col-xs-2 col-md-2-" ng-click="saveSubscriberStudent(project.projectId, hours)"
-						ng-disabled="!hours">{{'views.home.subscribe' | translate}}
-					</button>
-				</div>
-				<br>
-			</div>
-			<div ng-if="role === 'Docent'">
-				<div class="row col-xs-offset-2">
-					<input required type="number" ng-model="percentage" class="col-xs-4 col-md-2" min="1" max="100" placeholder="{{'views.home.percentage' | translate}}"/>
-					<button type="submit" class="btn btn-warning col-xs-2 col-md-2-" ng-click="saveSubscriberDocent(project.projectId, percentage)"
-						ng-disabled="!percentage">{{'views.home.back' | translate}}
-					</button>
-				</div>
-				<br>
-			</div>
 		</div>
 	</div>
 </div>
