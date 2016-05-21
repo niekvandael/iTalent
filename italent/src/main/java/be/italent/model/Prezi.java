@@ -18,15 +18,16 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 public class Prezi extends AbstractITalentEntity implements Serializable {
-	private static final long serialVersionUID = -1895055623204245402L;
+	private static final long serialVersionUID = -6497186589502207031L;
 
 	@Id
 	@GeneratedValue
-	private int id;
+	@Column(name="prezi_id")
+	private int preziId;
 	
 	@Size(max=100)
-	@Column(name="prezi_id")
-	private String preziId;
+	@Column(name="prezi_code")
+	private String preziCode;
 	
 	@Size(max=500)
 	private String description;

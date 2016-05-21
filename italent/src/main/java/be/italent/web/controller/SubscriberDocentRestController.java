@@ -33,7 +33,7 @@ public class SubscriberDocentRestController {
 		subscriberDocent.setBackingPct(percentage);
 		//TODO getproject(id) maybe?
 		Project project = new Project();
-		project.setId(id);
+		project.setProjectId(id);
 		subscriberDocent.setProject(project);
 		
 		return subscriberDocentService.save(subscriberDocent);

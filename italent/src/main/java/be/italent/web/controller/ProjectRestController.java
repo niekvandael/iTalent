@@ -46,10 +46,10 @@ public class ProjectRestController {
     public ResponseEntity<List<ProjectListHomeResource>> getHomeProjects(Authentication auth) {
         if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Student"))) {
             return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(
-                    projectService.getBackedProjects(userService.getUserByUsername(auth.getName()).getId())), HttpStatus.OK);
+                    projectService.getBackedProjects(userService.getUserByUsername(auth.getName()).getUserId())), HttpStatus.OK);
         } else if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Docent"))) {
             return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(
-                    projectService.getAllProjects(userService.getUserByUsername(auth.getName()).getId())), HttpStatus.OK);
+                    projectService.getAllProjects(userService.getUserByUsername(auth.getName()).getUserId())), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(
                     projectService.getPublicProjects()), HttpStatus.OK);
@@ -92,7 +92,7 @@ public class ProjectRestController {
     	}
     	else {
             return new ResponseEntity<>(projectDetailResourceAssembler
-                    .toResource(projectService.getProjectById(id, userService.getUserByUsername(principal.getName()).getId())), HttpStatus.OK);
+                    .toResource(projectService.getProjectById(id, userService.getUserByUsername(principal.getName()).getUserId())), HttpStatus.OK);
     	}
     }
 

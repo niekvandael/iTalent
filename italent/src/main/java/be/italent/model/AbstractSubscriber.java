@@ -3,8 +3,6 @@ package be.italent.model;
 import java.io.Serializable;
 
 import javax.persistence.CascadeType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
@@ -16,11 +14,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @MappedSuperclass
 public class AbstractSubscriber extends AbstractITalentEntity implements Serializable {
-	private static final long serialVersionUID = 5675828106788971892L;
-
-	@Id
-	@GeneratedValue
-	private int id;
+	private static final long serialVersionUID = -6640010711471485773L;
 	
 	@JsonIgnore
 	@ManyToOne(cascade = CascadeType.DETACH)

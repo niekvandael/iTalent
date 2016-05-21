@@ -94,7 +94,7 @@ angular.module('iTalentApp')
                     break;
                 }
 
-                $scope.project.movies[i].youTubeId = element.value;
+                $scope.project.movies[i].youTubeCode = element.value;
                 $scope.project.movies[i].description = element_descr.value;
             }
         };
@@ -107,7 +107,7 @@ angular.module('iTalentApp')
                     break;
                 }
 
-                $scope.project.prezis[i].preziId = element.value;
+                $scope.project.prezis[i].preziCode = element.value;
                 $scope.project.prezis[i].description = element_descr.value;
             }
         };
@@ -223,14 +223,14 @@ angular.module('iTalentApp')
             if ($scope.project.movies.length == this.maxLengthOfMovies) {
                 return;
             }
-            $scope.project.movies.push({'youTubeId': '', 'description': ''});
+            $scope.project.movies.push({'youTubeCode': '', 'description': ''});
         };
 
         $scope.addPrezi = function () {
             if ($scope.project.prezis.length == this.maxLengthOfPrezis) {
                 return;
             }
-            $scope.project.prezis.push({'preziId': '', 'description': ''});
+            $scope.project.prezis.push({'preziCode': '', 'description': ''});
         };
 
         $scope.addOnlineFile = function () {

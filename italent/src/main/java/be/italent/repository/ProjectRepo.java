@@ -41,7 +41,7 @@ public interface ProjectRepo extends JpaRepository<Project, Integer> {
     List<Project> findAllByIsBacked(boolean isBacked);
     
     //TODO testing workaround multiplication problem
-    List<Project> findAllById(int id);
+    List<Project> findAllByProjectId(int id);
     
     @Query("select p from Project p where p.user = :user")
     List<Project> findUserProjects(@Param("user") final User user);

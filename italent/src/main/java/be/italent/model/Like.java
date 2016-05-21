@@ -2,6 +2,7 @@ package be.italent.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,11 +20,12 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Table(name="likes")
 public class Like extends AbstractITalentEntity implements Serializable {
-	private static final long serialVersionUID = -3741055808100737913L;
+	private static final long serialVersionUID = 7546092683943395344L;
 
 	@Id
 	@GeneratedValue
-	private int id;
+	@Column(name="like_id")
+	private int likeId;
 	
 	@OneToOne
 	private User user;

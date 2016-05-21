@@ -18,15 +18,16 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 public class Movie extends AbstractITalentEntity implements Serializable {
-	private static final long serialVersionUID = 9142453510035852951L;
+	private static final long serialVersionUID = -3667946646976765309L;
 
 	@Id
 	@GeneratedValue
-	private int id;
+	@Column(name="movie_id")
+	private int movieId;
 	
 	@Size(max=40)
-	@Column(name="youtube_id")
-	private String youTubeId;
+	@Column(name="youtube_code")
+	private String youTubeCode;
 	
 	@Size(max=500)
 	private String description;

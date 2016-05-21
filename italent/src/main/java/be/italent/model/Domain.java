@@ -16,11 +16,12 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 public class Domain extends AbstractITalentEntity implements Serializable {
-	private static final long serialVersionUID = 2431254846926665096L;
+	private static final long serialVersionUID = -1569050112924442703L;
 
 	@Id
 	@GeneratedValue
-	private int id;
+	@Column(name="domain_id")
+	private int domainId;
 	
 	@NotNull
 	@Size(max=100)

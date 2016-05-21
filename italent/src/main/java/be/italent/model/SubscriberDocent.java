@@ -7,12 +7,19 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Entity
 public class SubscriberDocent extends Subscriber implements Serializable {
-	private static final long serialVersionUID = 2181871138971848406L;
+	private static final long serialVersionUID = -668971404145096946L;
+
+	@Id
+	@GeneratedValue
+	@Column(name="subscriber_docent_id")
+	private int subscriberDocentId;
 	
 	@Column(name="backing_pct")
 	private int backingPct;

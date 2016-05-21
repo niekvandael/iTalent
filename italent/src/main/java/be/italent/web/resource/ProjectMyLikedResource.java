@@ -2,7 +2,6 @@ package be.italent.web.resource;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.dozer.Mapping;
 import org.springframework.hateoas.ResourceSupport;
 
 import java.util.Date;
@@ -11,7 +10,6 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class ProjectMyLikedResource extends ResourceSupport {
-	@Mapping("id")
 	private Integer projectId;
 	private String title;
 	private String description;

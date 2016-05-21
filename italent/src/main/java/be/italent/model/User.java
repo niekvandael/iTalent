@@ -21,11 +21,12 @@ import lombok.Data;
 @Entity
 @Table(name="users")
 public class User implements Serializable{
-	private static final long serialVersionUID = 4864695207292402145L;
+	private static final long serialVersionUID = -6542852738048028268L;
 
 	@Id
 	@GeneratedValue
-	private int id;
+	@Column(name="user_id")
+	private int userId;
 	
 	@Size(min=2, max=55)
 	private String firstname;

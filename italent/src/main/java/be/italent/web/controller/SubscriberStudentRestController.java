@@ -33,7 +33,7 @@ public class SubscriberStudentRestController {
 		subscriberStudent.setHours(hours);
 		//TODO getproject(id) maybe?
 		Project project = new Project();
-		project.setId(id);
+		project.setProjectId(id);
 		subscriberStudent.setProject(project);
 		
 		return subscriberStudentService.save(subscriberStudent);

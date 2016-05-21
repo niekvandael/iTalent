@@ -24,7 +24,7 @@ public class DomainServiceImpl implements DomainService{
     public boolean deleteDomain(int id){
     	try {
     		Domain Domain = new Domain();
-    		Domain.setId(id);
+    		Domain.setDomainId(id);
         	DomainRepo.delete(Domain);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

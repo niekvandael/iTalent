@@ -24,7 +24,7 @@ public class CategoryServiceImpl implements CategoryService{
     public boolean deleteCategory(int id){
     	try {
     		Category category = new Category();
-    		category.setId(id);
+    		category.setCategoryId(id);
         	categoryRepo.delete(category);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

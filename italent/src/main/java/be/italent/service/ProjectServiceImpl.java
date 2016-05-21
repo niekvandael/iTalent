@@ -52,7 +52,7 @@ public class ProjectServiceImpl implements ProjectService{
     public List<Project> getAllUserProjects(User user) {
     	List<Project>  projects = projectRepo.findUserProjects(user);
     	if(projects.size()>0){
-    		setIsLikedByCurrentUser(projects, user.getId());
+    		setIsLikedByCurrentUser(projects, user.getUserId());
     	}
     	return projects;
     }
@@ -60,7 +60,7 @@ public class ProjectServiceImpl implements ProjectService{
     public List<Project> getMyLikedProjects(User user){
     	List<Project>  projects = projectRepo.findMyLikedProjects(user);
     	if(projects.size()>0){
-    		setIsLikedByCurrentUser(projects, user.getId());
+    		setIsLikedByCurrentUser(projects, user.getUserId());
     	}
     	return projects;
     }
@@ -68,7 +68,7 @@ public class ProjectServiceImpl implements ProjectService{
     public List<Project> getMySubscribedProjects(User user){
     	List<Project>  projects = projectRepo.findMySubscribedProjects(user);
     	if(projects.size()>0){
-    		setIsLikedByCurrentUser(projects, user.getId());
+    		setIsLikedByCurrentUser(projects, user.getUserId());
     	}
     	return projects;
     }
@@ -76,7 +76,7 @@ public class ProjectServiceImpl implements ProjectService{
     public List<Project> getMyBackedProjects(User user){
     	List<Project>  projects = projectRepo.findMyBackedProjects(user);
     	if(projects.size()>0){
-    		setIsLikedByCurrentUser(projects, user.getId());
+    		setIsLikedByCurrentUser(projects, user.getUserId());
     	}
     	return projects;
     }
@@ -84,7 +84,7 @@ public class ProjectServiceImpl implements ProjectService{
     public Project getProjectById(int id, int currentUserId){
     	//TODO Testing workaround for multiplication problem
         //return projectRepo.findOne(id);		
-    	Project project =  projectRepo.findAllById(id).get(0);
+    	Project project =  projectRepo.findAllByProjectId(id).get(0);
     	project.setLiked(currentUserId);
     	return project;
     }
@@ -92,7 +92,7 @@ public class ProjectServiceImpl implements ProjectService{
     public Project getProjectById(int id){
     	//TODO Testing workaround for multiplication problem
         //return projectRepo.findOne(id);		
-    	return projectRepo.findAllById(id).get(0);
+    	return projectRepo.findAllByProjectId(id).get(0);
     }
     
     public Project saveProject(Project project){

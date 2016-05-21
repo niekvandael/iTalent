@@ -2,6 +2,7 @@ package be.italent.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,11 +15,12 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 public class Category extends AbstractITalentEntity implements Serializable{
-	private static final long serialVersionUID = -6440767198679505981L;
+	private static final long serialVersionUID = 4342196308627469467L;
 
 	@Id
 	@GeneratedValue
-	private int id;
+	@Column(name="category_id")
+	private int categoryId;
 	
 	@Size(max=200)
 	private String description;

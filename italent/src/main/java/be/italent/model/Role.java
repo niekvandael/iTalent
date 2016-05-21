@@ -16,11 +16,12 @@ import lombok.ToString;
 @ToString(exclude = "users")
 @Entity
 public class Role implements Serializable{
-	private static final long serialVersionUID = -6836673373609047169L;
+	private static final long serialVersionUID = 8752830960429310663L;
 
 	@Id
 	@GeneratedValue
-	private int id;
+	@Column(name="role_id")
+	private int roleId;
 	
 	@Size(max=20)
 	private String name;

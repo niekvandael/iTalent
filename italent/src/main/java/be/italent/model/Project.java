@@ -28,14 +28,15 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 public class Project extends AbstractITalentEntity implements Serializable {
-	private static final long serialVersionUID = -4204763103896511879L;
+	private static final long serialVersionUID = 4300509934424545336L;
 
 	@Transient
 	private boolean liked;
 
 	@Id
 	@GeneratedValue
-	private int id;
+	@Column(name="project_id")
+	private int projectId;
 	
 	@Size(min=2, max=100)
 	private String title;
@@ -140,7 +141,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	public void setLiked(int currentUserId) {
 		this.liked = false;
 		for (Like l : this.getLikes()) {
-			if(l.getUser().getId() == currentUserId){
+			if(l.getUser().getUserId() == currentUserId){
 				this.liked = true;
 				break;
 			}

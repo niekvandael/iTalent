@@ -2,6 +2,7 @@ package be.italent.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,11 +18,12 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 public class OnlineFile extends AbstractITalentEntity implements Serializable {
-	private static final long serialVersionUID = 5952593443437015118L;
+	private static final long serialVersionUID = -7429965865146376099L;
 
 	@Id
 	@GeneratedValue
-	private int id;
+	@Column(name="online_file_id")
+	private int onlineFileId;
 	
 	@Size(max=40)
 	private String url;

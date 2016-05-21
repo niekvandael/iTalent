@@ -30,7 +30,7 @@
     </div>
     <div class="row">
     	<div class="row col-xs-offset-2" ng-repeat="movie in project.movies">
-            <iframe width="420" height="315" src="{{ movie.youTubeId | youtubeEmbedUrl }}" allowfullscreen></iframe>
+            <iframe width="420" height="315" src="{{ movie.youTubeCode | youtubeEmbedUrl }}" allowfullscreen></iframe>
         </div>
     </div>
 </div>

@@ -23,7 +23,7 @@ public class LikeServiceImpl implements LikeService{
 		l.setUser(user);
 
 		Project p = new Project();
-		p.setId(projectId);
+		p.setProjectId(projectId);
 		
 		l.setProject(p);
 		
