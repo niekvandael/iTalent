@@ -2,7 +2,7 @@
  * Created by arjen on 05/04/16.
  */
 (function () {
-    angular.module('iTalentApp', ['ngRoute', 'ngResource', 'pascalprecht.translate', 'tmh.dynamicLocale', 'ngCookies', 'ngAnimate', 'ui.bootstrap'])
+    angular.module('iTalentApp', ['ngRoute', 'ngResource', 'pascalprecht.translate', 'tmh.dynamicLocale', 'ngCookies', 'ngAnimate', 'ui.bootstrap', 'ngTagsInput'])
         .run(function ($rootScope) {
             $rootScope.user = {
                 base64: '',
@@ -67,3 +67,8 @@
             tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
         })
 })();
+
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};

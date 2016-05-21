@@ -1,12 +1,21 @@
 angular.module('iTalentApp')
-    .controller('homeController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService', 'categoryService',
+    .controller('homeController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService', 'categoryService', 
         function ($scope, $rootScope, $location, projectService, likeService, categoryService) {
-        categoryService.list().then(function (categories) {
+       
+    	$scope.tags = [];
+    	$scope.allTags = [];
+    	
+    	$scope.loadTags = function(){
+    		return $scope.allTags;
+    	}
+    	categoryService.list().then(function (categories) {
             $scope.categories = categories;
 
             $scope.categoryFilterArray = [];
+            $scope.tagsArray = [];
             for (var i = 0; i < categories.length; i++) {
             	$scope.categoryFilterArray.push({id: categories[i].categoryId, description: categories[i].description, on: true});
+            	$scope.allTags.push({text: categories[i].description});
 			}
         }, function (err) {
             console.log('Error getting categories:');
@@ -44,13 +53,16 @@ angular.module('iTalentApp')
             $location.path('/projects/' + id);
         };
 
-        $scope.categoryFilter = function(proj){
-    	   for(var cat in $scope.categoryFilterArray){
-               var t = $scope.categoryFilterArray[cat];
-               
-               if(t.on && proj.category.categoryId === t.id){
+        $scope.tagFilter = function(proj){
+        	if($scope.tags.length == 0){
+        		return true;
+        	}
+        	
+        	for (var i = 0; i < $scope.tags.length; i++) {
+        		var tag = $scope.tags[i];
+                if(proj.category.description.replaceAll(" ", "-") === tag.text){
                    return true;   
-               }               
-           }
+                }     				
+			}
         }
     }]);
