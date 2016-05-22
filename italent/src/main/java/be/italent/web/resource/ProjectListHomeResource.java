@@ -31,5 +31,6 @@ public class ProjectListHomeResource extends ResourceSupport {
     private int numberOfLikes;
     private boolean liked;
 	private boolean partiallyBacked;
+	private int backingPct;
 }
 

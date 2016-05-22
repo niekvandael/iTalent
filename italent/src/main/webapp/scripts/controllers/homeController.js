@@ -53,6 +53,17 @@ angular.module('iTalentApp')
             $location.path('/projects/' + id);
         };
 
+        $scope.nonBackedFilter = function(proj){
+        	if($scope.showOnlyNonBacked){
+        		if(proj.backingPct < 100){
+        			return true;	
+        		} else {
+        			return false;
+        		}
+        	}
+        	return true;
+        }
+        
         $scope.tagFilter = function(proj){
         	if($scope.tags.length == 0){
         		return true;

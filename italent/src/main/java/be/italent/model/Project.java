@@ -121,14 +121,14 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		return likes.size();
 	}
 	
-	//TODO Testen
-	//Een student kan een project verwijderen zolang er nog niemand gebacked heeft
-	//misschien status voor gebruiken?
 	@Transient
-	private boolean partiallyBacked;
-	//Don't delete this getter
-	public boolean isPartiallybacked(){
-		return subscribersDocent.size()>0;
+	private int backingPct;
+	public int getBackingPct(){
+		backingPct = 0;
+		for (int i = 0; i < this.subscribersDocent.size(); i++) {
+			backingPct += this.subscribersDocent.get(i).getBackingPct();
+		}
+		return backingPct;
 	}
 	
 	//@Transient

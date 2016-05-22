@@ -51,6 +51,7 @@
   "views.newProject.domain" : "Domein",
   "views.category.addNewCategory" : "Categorie toevoegen",
   "views.newProject.wantedSubscribers" : "Categorie teamleden",
-  "views.newProject.addWantedSubscriber" : "Add wanted subscriber",
+  "views.newProject.addWantedSubscriber" : "Ledentypes toevoegen",
+  "views.home.projectsICanBack": "Enkel niet 100% gebackte projecten tonen",
   "directives.language-select.Language": "Taal"
 }
