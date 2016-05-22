@@ -54,5 +54,6 @@
   "views.newProject.addWantedSubscriber" : "Ledentypes toevoegen",
   "views.home.projectsICanBack": "Enkel niet 100% gebackte projecten tonen",
   "views.home.seatsAvailable": "plaatsen beschikbaar",
+  "views.home.showProjectsICanEnroll": "Toon enkel projecten waarop ik kan inschrijven",
   "directives.language-select.Language": "Taal"
 }

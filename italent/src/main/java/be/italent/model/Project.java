@@ -151,6 +151,9 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		return takenSeats;
 	}
 	
+	@Transient
+	private boolean canEnroll;
+	
 	//@Transient
 	@Column(name="is_backed")
 	private boolean isBacked;

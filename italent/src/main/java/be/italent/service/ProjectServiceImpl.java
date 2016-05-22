@@ -32,19 +32,19 @@ public class ProjectServiceImpl implements ProjectService{
     }
     
     //Student
-    public List<Project> getBackedProjects(int currentUserId) {
+    public List<Project> getBackedProjects(User currentUser) {
     	List<Project>  projects = projectRepo.findAllByIsBacked(true);
     	if(projects.size()>0){
-    		setIsLikedByCurrentUser(projects, currentUserId);
+    		setTransientFields(projects, currentUser);
     	}
     	return projects;
     }
     
     //Docent
-    public List<Project> getAllProjects(int currentUserId) {
+    public List<Project> getAllProjects(User currentUser) {
     	List<Project>  projects = projectRepo.findAll();
     	if(projects.size()>0){
-    		setIsLikedByCurrentUser(projects, currentUserId);
+    		setTransientFields(projects, currentUser);
     	}
     	return projects;
     }
@@ -53,7 +53,7 @@ public class ProjectServiceImpl implements ProjectService{
     public List<Project> getAllUserProjects(User user) {
     	List<Project>  projects = projectRepo.findUserProjects(user);
     	if(projects.size()>0){
-    		setIsLikedByCurrentUser(projects, user.getUserId());
+    		setTransientFields(projects, user);
     	}
     	return projects;
     }
@@ -61,7 +61,7 @@ public class ProjectServiceImpl implements ProjectService{
     public List<Project> getMyLikedProjects(User user){
     	List<Project>  projects = projectRepo.findMyLikedProjects(user);
     	if(projects.size()>0){
-    		setIsLikedByCurrentUser(projects, user.getUserId());
+    		setTransientFields(projects, user);
     	}
     	return projects;
     }
@@ -69,7 +69,7 @@ public class ProjectServiceImpl implements ProjectService{
     public List<Project> getMySubscribedProjects(User user){
     	List<Project>  projects = projectRepo.findMySubscribedProjects(user);
     	if(projects.size()>0){
-    		setIsLikedByCurrentUser(projects, user.getUserId());
+    		setTransientFields(projects, user);
     	}
     	return projects;
     }
@@ -77,16 +77,16 @@ public class ProjectServiceImpl implements ProjectService{
     public List<Project> getMyBackedProjects(User user){
     	List<Project>  projects = projectRepo.findMyBackedProjects(user);
     	if(projects.size()>0){
-    		setIsLikedByCurrentUser(projects, user.getUserId());
+    		setTransientFields(projects, user);
     	}
     	return projects;
     }
     
-    public Project getProjectById(int id, int currentUserId){
+    public Project getProjectById(int id, User currentUser){
     	//TODO Testing workaround for multiplication problem
         //return projectRepo.findOne(id);		
     	Project project =  projectRepo.findAllByProjectId(id).get(0);
-    	project.setLiked(currentUserId);
+    	project.setLiked(currentUser.getUserId());
     	return project;
     }
     
@@ -145,9 +145,54 @@ public class ProjectServiceImpl implements ProjectService{
     	return project;
     }
     
-    private void setIsLikedByCurrentUser(List<Project> projects, int currentUserId){
+    private void setTransientFields(List<Project> projects, User currentUser){
+    	this.setIsLikedByCurrentUser(projects, currentUser);
+    	this.setCanEnrollByCurrentUser(projects, currentUser);
+    }
+    
+    private void setIsLikedByCurrentUser(List<Project> projects, User currentUser){
     	for (Project project : projects){
-    		project.setLiked(currentUserId);
+    		project.setLiked(currentUser.getUserId());
     	}
     }
+    
+    public void setCanEnrollByCurrentUser(List<Project> projects, User currentUser){
+    	for(Project project : projects){
+			int myDepartmentid = currentUser.getDepartment().getDepartmentId();
+			
+			// Check if there are available sets
+			int takenSeats = project.getTakenSeats();
+			int wantedSeats = project.getWantedSeats();
+			
+			if(wantedSeats == takenSeats){
+				project.setCanEnroll(false);
+			}
+			
+			// Check if my department asked
+			int wantedInMyDepartment = 0;
+			for (WantedSubscriber wantedSubscriber : project.getWantedSubscribers()) {
+				if(wantedSubscriber.getDepartment().getDepartmentId() == myDepartmentid){
+					wantedInMyDepartment = wantedSubscriber.getNumber();
+					break;
+				}
+			}
+	
+			if(wantedInMyDepartment == 0){
+				project.setCanEnroll(false);
+			}
+			
+			int alreadyEnrolledInMyDepartment = 0;
+			for(SubscriberStudent subscriberStudent : project.getSubscribersStudent()){
+				if(subscriberStudent.getUser().getDepartment().getDepartmentId() == myDepartmentid){
+					alreadyEnrolledInMyDepartment++;
+				}
+			}
+	
+			if(wantedInMyDepartment > alreadyEnrolledInMyDepartment){
+				project.setCanEnroll(true);
+			}
+			
+			project.setCanEnroll(false);
+    	}
+	}
 }

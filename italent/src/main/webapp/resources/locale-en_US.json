@@ -54,5 +54,6 @@
   "views.newProject.addWantedSubscriber" : "Add wanted subscriber",
   "views.home.projectsICanBack": "Show only projects to back",
   "views.home.seatsAvailable": "seats available",
+  "views.home.showProjectsICanEnroll": "Show only projects where i can enroll",
   "directives.language-select.Language": "Language"
 }

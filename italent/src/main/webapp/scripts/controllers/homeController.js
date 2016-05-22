@@ -53,6 +53,15 @@ angular.module('iTalentApp')
             $location.path('/projects/' + id);
         };
 
+        $scope.enrollFilter = function(proj){
+        	if($scope.showProjectsICanEnroll){
+        		if(!proj.canEnroll){
+        			return false;
+        		}
+        	}
+        	return true;
+        }
+        
         $scope.nonBackedFilter = function(proj){
         	if($scope.showOnlyNonBacked){
         		if(proj.backingPct < 100){

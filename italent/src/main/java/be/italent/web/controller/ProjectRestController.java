@@ -1,6 +1,7 @@
 package be.italent.web.controller;
 
 import be.italent.model.Project;
+import be.italent.model.User;
 import be.italent.service.ProjectService;
 import be.italent.service.UserService;
 import be.italent.web.resource.*;
@@ -46,10 +47,10 @@ public class ProjectRestController {
     public ResponseEntity<List<ProjectListHomeResource>> getHomeProjects(Authentication auth) {
         if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Student"))) {
             return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(
-                    projectService.getBackedProjects(userService.getUserByUsername(auth.getName()).getUserId())), HttpStatus.OK);
+                    projectService.getBackedProjects(userService.getUserByUsername(auth.getName()))), HttpStatus.OK);
         } else if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Docent"))) {
             return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(
-                    projectService.getAllProjects(userService.getUserByUsername(auth.getName()).getUserId())), HttpStatus.OK);
+                    projectService.getAllProjects(userService.getUserByUsername(auth.getName()))), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(
                     projectService.getPublicProjects()), HttpStatus.OK);
@@ -93,7 +94,7 @@ public class ProjectRestController {
 //    	}
 //    	else {
 //            return new ResponseEntity<>(projectDetailResourceAssembler
-//                    .toResource(projectService.getProjectById(id, userService.getUserByUsername(principal.getName()).getUserId())), HttpStatus.OK);
+//                    .toResource(projectService.getProjectById(id, userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
 //    	}
 //    }
     
@@ -101,10 +102,10 @@ public class ProjectRestController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
     public Project getProject(@PathVariable("id") final int id, Principal principal) {
     	if (principal == null){
-            return projectService.getProjectById(id, 0);
+            return projectService.getProjectById(id, new User());
     	}
     	else {
-            return projectService.getProjectById(id, userService.getUserByUsername(principal.getName()).getUserId());
+            return projectService.getProjectById(id, userService.getUserByUsername(principal.getName()));
     	}
     }
 

@@ -34,5 +34,6 @@ public class ProjectListHomeResource extends ResourceSupport {
 	private int backingPct;
 	private int wantedSeats;
 	private int takenSeats;
+	private boolean canEnroll;
 }
 
