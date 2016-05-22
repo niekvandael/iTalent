@@ -26,6 +26,7 @@
     "angular-translate-handler-log": "2.11.0",
     "angular-dynamic-locale": "0.1.32",
     "angular-i18n": "1.5.5",
-    "ng-tags-input": "3.0.0"
+    "ng-tags-input": "3.0.0",
+    "bootstrap-switch": "3.3.2"
   }
 }
