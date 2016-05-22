@@ -2,7 +2,7 @@
     <h2>{{'views.newProject.pageTitle' | translate}}</h2>
     <form name="registrationForm">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-6">
 
                 <div class="form-group">
                     <label class="required">{{'views.newProject.title' | translate}}</label>
@@ -29,38 +29,99 @@
 						<tags-input ng-model="project.categories" add-on-paste="true" style="display:inline;">
 					    	<auto-complete source="loadTags($query)"></auto-complete> 
 					    </tags-input>
+                </div>
 
                 <div class="form-group">
                     <label class="required">{{'views.newProject.domain' | translate}}</label>
-               	    <select ng-options="domain as domain.name for domain in domains track by domain.domainId" ng-model="project.domain" required class="form-control"></select>
+                    <select ng-options="domain as domain.name for domain in domains track by domain.domainId" ng-model="project.domain" required class="form-control"></select>
                 </div>
-    
-                <div class="form-group">
+
+            </div>
+
+            <div class="col-md-6">
+                <!--Project movies-->
+                <div class="row">
                     <label>{{'views.newProject.movies' | translate}}</label>
-	               	<div ng-repeat="movie in project.movies track by $index">
-	               		https://www.youtube.com/watch?v=
-	               		<input type="text" id="project_movie_{{ $index }}" class="form-control" placeholder="youtube-id" minlength="11" maxlength="11" />
-	               		<input type="text" id="project_movie_descr_{{ $index }}" class="form-control" placeholder="description" minlength="2" maxlength="500" />
-	               	</div>
-                	<button class="btn btn-primary" ng-click="addMovie()">{{'views.newProject.addMovie' | translate}}</button>
                 </div>
-                
-                <div class="form-group">
+                <div ng-repeat="movie in project.movies">
+                    <p>
+                    <div class="form-horizontal">
+                        <div class="col-md-10">
+                            <input type="text" ng-model="movie.description" class="form-control" placeholder="{{'views.newProject.description' | translate}}"
+                                   ng-minlength="2" ng-maxlength="500"/>
+                        </div>
+                        <div class="col-md-2">
+                            <button ng-click="removeMovie(movie)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
+                                <i class="glyphicon glyphicon-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <label>https://www.youtube.com/watch?v=</label>
+                        <input type="text" ng-model="movie.youTubeCode" class="form-control" placeholder="youtube-id" ng-minlength="11" ng-maxlength="11"/>
+                    </div>
+                    </p>
+                </div>
+                <div class="row text-center">
+                    <button class="btn btn-primary btn-primary-detail" ng-click="addMovie()">{{'views.newProject.addMovie' | translate}}
+                    </button>
+                </div>
+
+                <!--Project pictures-->
+                <div class="row">
                     <label>{{'views.newProject.pictures' | translate}}</label>
-	               	<div ng-repeat="picture in project.pictures track by $index">
-						<input type="file" id="project_picture_{{ $index }}" accept="image/*" ng-model="dummy" index="{{ $index }}" onchange="angular.element(this).scope().convertImage(this)" />
-	               		<input type="text" id="project_picture_descr_{{ $index }}" class="form-control" placeholder="description" minlength="2" maxlength="500" />
-	               	</div>
-                	<button class="btn btn-primary" ng-click="addPicture()">{{'views.newProject.addPicture' | translate}}</button>
                 </div>
-                
-                <div class="form-group">
+                <div ng-repeat="picture in project.pictures">
+                    <p>
+                    <div class="form-horizontal">
+                        <div class="col-md-10">
+                            <input type="text" ng-model="picture.description" class="form-control" placeholder="{{'views.newProject.description' | translate}}"
+                               ng-minlength="2" ng-maxlength="500"/>
+                        </div>
+                        <div class="col-md-2">
+                            <button ng-click="removePicture(picture)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
+                                <i class="glyphicon glyphicon-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <input type="file" id="project_picture_{{ $index }}" accept="image/*" ng-model="dummy" index="{{ $index }}"
+                               onchange="angular.element(this).scope().convertImage(this)" />
+                    </div>
+                    </p>
+                </div>
+                <div class="row text-center">
+                    <button class="btn btn-primary btn-primary-detail" ng-click="addPicture()">{{'views.newProject.addPicture' | translate}}
+                    </button>
+                </div>
+
+                <!--Project milestones-->
+                <div class="row">
                     <label>{{'views.newProject.milestones' | translate}}</label>
-	               	<div ng-repeat="picture in project.milestones track by $index">
-	               		<input type="text" id="project_milestone_{{ $index }}" class="form-control" placeholder="milestone" minlength="2" maxlength="500" />
-	               	</div>
-                	<button class="btn btn-primary" ng-click="addMilestone()">{{'views.newProject.addMilestone' | translate}}</button>
                 </div>
+                <div ng-repeat="milestone in project.milestones">
+                    <div class="form-horizontal">
+                        <div class="col-md-10">
+                            <input type="text" ng-model="milestone.description" class="form-control" placeholder="{{'views.newProject.milestone' | translate}}"
+                                   ng-minlength="2" ng-maxlength="500"/>
+                        </div>
+                        <div class="col-md-2">
+                            <button ng-click="removeMilestone(milestone)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
+                                <i class="glyphicon glyphicon-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <button class="btn btn-primary btn-primary-detail" ng-click="addMilestone()">{{'views.newProject.addMilestone' | translate}}
+                    </button>
+                </div>
+
+                
+                <!--<div class="form-group">-->
+                    <!--<label>{{'views.newProject.milestones' | translate}}</label>-->
+	               	<!--<div ng-repeat="picture in project.milestones track by $index">-->
+	               		<!--<input type="text" id="project_milestone_{{ $index }}" class="form-control" placeholder="milestone" minlength="2" maxlength="500" />-->
+	               	<!--</div>-->
+                	<!--<button class="btn btn-primary" ng-click="addMilestone()">{{'views.newProject.addMilestone' | translate}}</button>-->
+                <!--</div>-->
                 
                 <div class="form-group">
                     <label>{{'views.newProject.wantedSubscribers' | translate}}</label>

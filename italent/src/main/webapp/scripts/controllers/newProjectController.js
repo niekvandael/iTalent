@@ -28,7 +28,7 @@ angular.module('iTalentApp')
 
     	$scope.loadTags = function(){
     		return $scope.allTags;
-    	}
+    	};
     	
         if (projectId) {
             projectService.get(projectId).then(function (project) {
@@ -40,9 +40,6 @@ angular.module('iTalentApp')
         }
 
         $scope.save = function () {
-            $scope.storeMovies();
-            $scope.storePictures();
-            $scope.storeMilestones();
             $scope.storeWantedSubscribers();
             $scope.storePrezis();
             $scope.storeOnlineFiles();
@@ -98,17 +95,16 @@ angular.module('iTalentApp')
             })
         };
 
-        $scope.storeMovies = function () {
-            for (var i = 0; i < $scope.maxLengthOfMovies; i++) {
-                var element = document.getElementById("project_movie_" + i);
-                var element_descr = document.getElementById("project_movie_descr_" + i);
-                if (element_descr == null) {
-                    break;
-                }
+        $scope.removeMovie = function(movie) {
+            $scope.project.movies = _.without($scope.project.movies, movie);
+        };
 
-                $scope.project.movies[i].youTubeCode = element.value;
-                $scope.project.movies[i].description = element_descr.value;
-            }
+        $scope.removePicture = function (picture) {
+            $scope.project.pictures = _.without($scope.project.pictures, picture);
+        };
+
+        $scope.removeMilestone = function (milestone) {
+            $scope.project.milestones = _.without($scope.project.milestones, milestone);
         };
 
         $scope.storePrezis = function () {
@@ -137,27 +133,6 @@ angular.module('iTalentApp')
             }
         };
 
-        $scope.storePictures = function () {
-            for (var i = 0; i < $scope.maxLengthOfPictures; i++) {
-                var element_descr = document.getElementById("project_picture_descr_" + i);
-                if (element_descr == null) {
-                    break;
-                }
-
-                $scope.project.pictures[i].description = element_descr.value;
-            }
-        };
-        $scope.storeMilestones = function () {
-            for (var i = 0; i < $scope.maxLengthOfMilestones; i++) {
-                var element = document.getElementById("project_milestone_" + i);
-                if (element == null) {
-                    break;
-                }
-
-                $scope.project.milestones[i].description = element.value;
-            }
-        };
-
         $scope.storeWantedSubscribers = function () {
             for (var i = 0; i < $scope.maxLengthOfWantedSubscribers; i++) {
                 var departmentInput = document.getElementById("project_wantedSubscriber_department_" + i);
@@ -181,6 +156,7 @@ angular.module('iTalentApp')
                 (function () {
                     reader.addEventListener("load", function () {
                         var index = parseInt(element.getAttribute("index"));
+                        var resizedImage = $scope.resizeImage(reader.result, index);
                     }, false);
                 })(i);
 
