@@ -91,6 +91,6 @@ insert into project_category(project_id, category_id) values (3,3);
 
 -- subscriber_docent
 insert into subscriber_docent(user_user_id, project_project_id, backing_pct, status, last_updated_by, last_update) values(6, 1, 100, 'A', 'Team1', '2016-01-01');
-insert into subscriber_docent(user_user_id, project_project_id, backing_pct, status, last_updated_by, last_update) values(7, 2, 50, 'A', 'Team1', '2016-01-01');
+insert into subscriber_docent(user_user_id, project_project_id, backing_pct, status, last_updated_by, last_update) values(7, 2, 2, 'A', 'Team1', '2016-01-01');
 insert into subscriber_docent(user_user_id, project_project_id, backing_pct, status, last_updated_by, last_update) values(7, 3, 20, 'A', 'Team1', '2016-01-01');
 insert into subscriber_docent(user_user_id, project_project_id, backing_pct, status, last_updated_by, last_update) values(8, 3, 30, 'A', 'Team1', '2016-01-01');
