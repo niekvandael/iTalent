@@ -53,5 +53,6 @@
   "views.newProject.wantedSubscribers" : "Categorie teamleden",
   "views.newProject.addWantedSubscriber" : "Ledentypes toevoegen",
   "views.home.projectsICanBack": "Enkel niet 100% gebackte projecten tonen",
+  "views.home.seatsAvailable": "plaatsen beschikbaar",
   "directives.language-select.Language": "Taal"
 }

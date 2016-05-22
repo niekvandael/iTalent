@@ -35,6 +35,14 @@
 			<div ng-if="project.backingPct < 99 && project.backingPct > 5" class="btn-warning">{{ project.backingPct }} % Backed</div>
 			<div ng-if="project.backingPct < 5" class="btn-danger">{{ project.backingPct }} % Backed</div>
 		</div>
+		
+		<div ng-if="authenticated && (role === 'Student')">
+			<div class="project-block-title" >{{ project.title }}</div>
+			<div ng-if="(project.takenSeats / project.wantedSeats * 100) > 90" class="btn-danger">{{ project.wantedSeats - project.takenSeats }} {{"views.home.seatsAvailable" | translate}}</div>
+			<div ng-if="(project.takenSeats / project.wantedSeats * 100) > 50 && (project.takenSeats / project.wantedSeats * 100) < 90" " class="btn-warning">{{ project.wantedSeats - project.takenSeats }} {{"views.home.seatsAvailable" | translate}}</div>
+			<div ng-if="(project.takenSeats / project.wantedSeats * 100) > 0 && (project.takenSeats / project.wantedSeats * 100) < 50" class="btn-success">{{ project.wantedSeats - project.takenSeats }} {{"views.home.seatsAvailable" | translate}}</div>
+		</div>
+		
 		<div class="row">
 			<div class="col-md-5">
 				<div class="project-block-media img-responsive img-rounded"

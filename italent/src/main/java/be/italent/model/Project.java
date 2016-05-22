@@ -131,6 +131,26 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		return backingPct;
 	}
 	
+	@Transient
+	private int wantedSeats;
+	public int getWantedSeats(){
+		wantedSeats = 0;
+		for (int i = 0; i < this.getWantedSubscribers().size(); i++) {
+			wantedSeats += this.getWantedSubscribers().get(i).getNumber();
+		}
+		return wantedSeats;
+	}
+	
+	@Transient
+	private int takenSeats;
+	public int getTakenSeats(){
+		takenSeats = 0;
+		for (int i = 0; i < this.getSubscribersStudent().size(); i++) {
+			takenSeats += 1;
+		}
+		return takenSeats;
+	}
+	
 	//@Transient
 	@Column(name="is_backed")
 	private boolean isBacked;

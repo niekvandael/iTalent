@@ -32,5 +32,7 @@ public class ProjectListHomeResource extends ResourceSupport {
     private boolean liked;
 	private boolean partiallyBacked;
 	private int backingPct;
+	private int wantedSeats;
+	private int takenSeats;
 }
 

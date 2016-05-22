@@ -52,6 +52,7 @@
   "views.category.addNewCategory" : "Add new category",
   "views.newProject.wantedSubscribers" : "Wanted subscribers",
   "views.newProject.addWantedSubscriber" : "Add wanted subscriber",
-"views.home.projectsICanBack": "Show only projects to back",
+  "views.home.projectsICanBack": "Show only projects to back",
+  "views.home.seatsAvailable": "seats available",
   "directives.language-select.Language": "Language"
 }
