@@ -40,8 +40,6 @@ angular.module('iTalentApp')
         }
 
         $scope.save = function () {
-            $scope.storeOnlineFiles();
-            
             projectService.saveOrUpdate($scope.project).then(function () {
                 $location.path('/myProjects');
             }, function (err) {
@@ -113,17 +111,8 @@ angular.module('iTalentApp')
             $scope.project.prezis = _.without($scope.project.prezis, prezi);
         };
 
-        $scope.storeOnlineFiles = function () {
-            for (var i = 0; i < $scope.maxLengthOfOnlineFiles; i++) {
-                var element = document.getElementById("project_onlineFile_" + i);
-                var element_descr = document.getElementById("project_onlineFile_descr_" + i);
-                if (element_descr == null) {
-                    break;
-                }
-
-                $scope.project.onlineFiles[i].url = element.value;
-                $scope.project.onlineFiles[i].description = element_descr.value;
-            }
+        $scope.removeFile = function (file) {
+            $scope.project.onlineFiles = _.without($scope.project.onlineFiles, file);
         };
 
         $scope.convertImage = function (element, i) {

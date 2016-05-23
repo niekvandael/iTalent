@@ -186,17 +186,37 @@
                     </div>
                 </div>
 
-                <!--TODO rearrange other inputs-->
-                <div class="form-group">
-                    <label>{{'views.newProject.onlineFiles' | translate}}</label>
-	               	<div ng-repeat="onlineFile in project.onlineFiles track by $index">
-	               		URL:
-	               		<input type="text" id="project_onlineFile_{{ $index }}" class="form-control" placeholder="url" minlength="5" maxlength="100" />
-	               		<input  type="text" id="project_onlineFile_descr_{{ $index }}" class="form-control" placeholder="description" minlength="2" maxlength="500" />
-	               	</div>
-                	<button type="button" class="btn btn-primary" ng-click="addOnlineFile()">{{'views.newProject.addOnlineFile' | translate}}</button>
+                <!--Project file-->
+                <div class="project-block">
+                    <div class="project-block-label">
+                        <label>{{'views.newProject.onlineFiles' | translate}}</label>
+                    </div>
+                    <div ng-repeat="file in project.onlineFiles">
+                        <div class="form-horizontal">
+                            <div class="col-md-10">
+                                <input type="text" ng-model="file.description" class="form-control"
+                                       placeholder="{{'views.newProject.description' | translate}}"
+                                       ng-minlength="2" ng-maxlength="500"/>
+                            </div>
+                            <div class="col-md-2">
+                                <button ng-click="removeFile(file)" class="btn btn-default"
+                                        title="{{'views.newProject.delete' | translate}}">
+                                    <i class="glyphicon glyphicon-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="form-inline">
+                            <label>URL:</label>
+                            <input type="text" ng-model="file.url" class="form-control"
+                                   placeholder="url" ng-minlength="5" ng-maxlength="100"/>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <button class="btn btn-primary btn-primary-detail" ng-click="addOnlineFile()">
+                            {{'views.newProject.addOnlineFile' | translate}}
+                        </button>
+                    </div>
                 </div>
-                     
+
                 <button type="submit" class="btn btn-warning" ng-click="cancel()">{{'views.newProject.cancel' | translate}}</button>
                 <button type="submit" class="btn btn-primary" ng-click="save()">{{'views.newProject.save' | translate}}</button>
                 <button ng-if="!project.partiallyBacked && project.id>0" type="button" class="btn btn-danger" ng-click="deleteProject()">{{"views.home.delete" | translate}}</button>
