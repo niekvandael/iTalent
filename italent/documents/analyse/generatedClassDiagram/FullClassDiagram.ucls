@@ -1,0 +1,1869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.9" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="be.italent.web.resource.SubscriberStudentResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/SubscriberStudentResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="186" x="5178" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="be.italent.model.AbstractSubscriber" project="italent" 
+    file="/italent/src/main/java/be/italent/model/AbstractSubscriber.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="150" x="7773" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="be.italent.model.SubscriberStudent" project="italent" 
+    file="/italent/src/main/java/be/italent/model/SubscriberStudent.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="178" x="7773" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="be.italent.web.resource.DepartmentResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/DepartmentResource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="150" x="4909" y="3096"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="be.italent.web.resource.assembler.ProjectMySubscribedResourceAssembler" 
+    project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/assembler/ProjectMySubscribedResourceAssembler.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="275" x="1488" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="be.italent.model.Movie" project="italent" 
+    file="/italent/src/main/java/be/italent/model/Movie.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="369" width="168" x="8209" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="be.italent.model.Picture" project="italent" 
+    file="/italent/src/main/java/be/italent/model/Picture.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="369" width="154" x="8417" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="be.italent.web.resource.assembler.CategoryResourceAssembler" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/assembler/CategoryResourceAssembler.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="228" x="7040" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="be.italent.web.resource.WantedSubscriberResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/WantedSubscriberResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="297" width="229" x="4909" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="be.italent.web.resource.assembler.ProjectUserResourceAssembler" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/assembler/ProjectUserResourceAssembler.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="229" x="1803" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="11" language="java" name="be.italent.service.ProjectService" project="italent" 
+    file="/italent/src/main/java/be/italent/service/ProjectService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="245" x="3215" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="12" language="java" name="be.italent.model.Milestone" project="italent" 
+    file="/italent/src/main/java/be/italent/model/Milestone.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="369" width="154" x="8611" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="be.italent.model.WantedSubscriber" project="italent" 
+    file="/italent/src/main/java/be/italent/model/WantedSubscriber.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="182" x="7329" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="be.italent.web.resource.OnlineFileResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/OnlineFileResource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="154" x="5404" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="be.italent.model.OnlineFile" project="italent" 
+    file="/italent/src/main/java/be/italent/model/OnlineFile.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="369" width="154" x="8805" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="16" language="java" name="be.italent.service.SubscriberDocentService" project="italent" 
+    file="/italent/src/main/java/be/italent/service/SubscriberDocentService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="235" x="3984" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="17" language="java" name="be.italent.service.SubscriberDocentServiceImpl" project="italent" 
+    file="/italent/src/main/java/be/italent/service/SubscriberDocentServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="235" x="3709" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="be.italent.web.controller.ProjectRestController" project="italent" 
+    file="/italent/src/main/java/be/italent/web/controller/ProjectRestController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="465" x="2640" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="be.italent.web.resource.assembler.DomainResourceAssembler" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/assembler/DomainResourceAssembler.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="210" x="6009" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="be.italent.model.Role" project="italent" 
+    file="/italent/src/main/java/be/italent/model/Role.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="153" x="7551" y="3096"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="be.italent.web.controller.LikeRestController" project="italent" 
+    file="/italent/src/main/java/be/italent/web/controller/LikeRestController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="177" x="4737" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="be.italent.model.Project" project="italent" 
+    file="/italent/src/main/java/be/italent/model/Project.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="1575" width="287" x="8417" y="874"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="be.italent.web.resource.assembler.ProjectMyBackedResourceAssembler" 
+    project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/assembler/ProjectMyBackedResourceAssembler.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="256" x="2072" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="be.italent.web.controller.UserController" project="italent" 
+    file="/italent/src/main/java/be/italent/web/controller/UserController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="139" x="358" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="be.italent.web.resource.DomainResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/DomainResource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="423" width="156" x="5598" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="be.italent.service.UserServiceImpl" project="italent" 
+    file="/italent/src/main/java/be/italent/service/UserServiceImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="188" x="4240" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="27" language="java" name="be.italent.repository.SubscriberStudentRepo" project="italent" 
+    file="/italent/src/main/java/be/italent/repository/SubscriberStudentRepo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="63" width="160" x="5453" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <package id="28" language="java" name="be.italent.security" project="italent" 
+    file="/italent/src/main/java/be/italent/security" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="125" x="537" y="92"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="29" language="java" name="be.italent.web.resource.ProjectMySubscribedResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/ProjectMySubscribedResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="1089" width="334" x="5178" y="874"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="be.italent.web.resource.MovieResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/MovieResource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="168" x="6982" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="31" language="java" name="be.italent.service.CategoryService" project="italent" 
+    file="/italent/src/main/java/be/italent/service/CategoryService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="200" x="6800" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="32" language="java" name="be.italent.model.SubscriberDocent" project="italent" 
+    file="/italent/src/main/java/be/italent/model/SubscriberDocent.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="178" x="7991" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="be.italent.service.CurrentUserDetailsService" project="italent" 
+    file="/italent/src/main/java/be/italent/service/CurrentUserDetailsService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="229" x="4468" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="be.italent.service.DomainServiceImpl" project="italent" 
+    file="/italent/src/main/java/be/italent/service/DomainServiceImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="173" x="5707" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="35" language="java" name="be.italent.repository" project="italent" 
+    file="/italent/src/main/java/be/italent/repository" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="137" x="702" y="92"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="36" language="java" name="be.italent.model.Domain" project="italent" 
+    file="/italent/src/main/java/be/italent/model/Domain.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="441" width="156" x="9406" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="be.italent.model.Prezi" project="italent" 
+    file="/italent/src/main/java/be/italent/model/Prezi.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="369" width="154" x="8999" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="38" language="java" name="be.italent.security.SecurityConfiguration" project="italent" 
+    file="/italent/src/main/java/be/italent/security/SecurityConfiguration.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="247" x="879" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="39" language="java" name="be.italent.service.SubscriberStudentService" project="italent" 
+    file="/italent/src/main/java/be/italent/service/SubscriberStudentService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="241" x="4937" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="40" language="java" name="be.italent.service.CategoryServiceImpl" project="italent" 
+    file="/italent/src/main/java/be/italent/service/CategoryServiceImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="200" x="6733" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="41" language="java" name="be.italent.repository.DomainRepo" project="italent" 
+    file="/italent/src/main/java/be/italent/repository/DomainRepo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="63" width="103" x="5653" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="42" language="java" name="be.italent.model.Subscriber" project="italent" 
+    file="/italent/src/main/java/be/italent/model/Subscriber.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="150" x="7773" y="874"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="43" language="java" name="be.italent.model.Like" project="italent" 
+    file="/italent/src/main/java/be/italent/model/Like.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="150" x="8343" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="44" language="java" name="be.italent.repository.DepartmentRepo" project="italent" 
+    file="/italent/src/main/java/be/italent/repository/DepartmentRepo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="63" width="120" x="6259" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="45" language="java" name="be.italent.web.resource.ProjectListHomeResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/ProjectListHomeResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="1305" width="334" x="5552" y="874"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="46" language="java" name="be.italent.web.resource.PictureResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/PictureResource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="154" x="6788" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="47" language="java" name="be.italent.model.Comment" project="italent" 
+    file="/italent/src/main/java/be/italent/model/Comment.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="351" width="150" x="8533" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="48" language="java" name="be.italent.repository.SubscriberDocentRepo" project="italent" 
+    file="/italent/src/main/java/be/italent/repository/SubscriberDocentRepo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="63" width="156" x="3788" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="49" language="java" name="be.italent.web.resource.ProjectUserResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/ProjectUserResource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="1089" width="334" x="5926" y="874"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="50" language="java" name="be.italent.web.resource.assembler" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/assembler" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="222" x="1166" y="92"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="51" language="java" name="be.italent.web.resource.assembler.ProjectDetailResourceAssembler" 
+    project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/assembler/ProjectDetailResourceAssembler.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="232" x="2368" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="52" language="java" name="be.italent.web.resource.CategoryResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/CategoryResource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="154" x="5794" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="53" language="java" name="be.italent.service.ProjectServiceImpl" project="italent" 
+    file="/italent/src/main/java/be/italent/service/ProjectServiceImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="265" x="3357" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="54" language="java" name="be.italent.repository.LikeRepo" project="italent" 
+    file="/italent/src/main/java/be/italent/repository/LikeRepo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="195" x="5218" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="55" language="java" name="be.italent.service.DepartmentServiceImpl" project="italent" 
+    file="/italent/src/main/java/be/italent/service/DepartmentServiceImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="197" x="6259" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="56" language="java" name="be.italent.service.DomainService" project="italent" 
+    file="/italent/src/main/java/be/italent/service/DomainService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="173" x="5796" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <package id="57" language="java" name="be.italent.model" project="italent" 
+    file="/italent/src/main/java/be/italent/model" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="114" x="1428" y="92"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <interface id="58" language="java" name="be.italent.service.DepartmentService" project="italent" 
+    file="/italent/src/main/java/be/italent/service/DepartmentService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="197" x="6419" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="59" language="java" name="be.italent.web.controller.SubscriberStudentRestController" project="italent" 
+    file="/italent/src/main/java/be/italent/web/controller/SubscriberStudentRestController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="219" x="4954" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="60" language="java" name="be.italent.repository.CategoryRepo" project="italent" 
+    file="/italent/src/main/java/be/italent/repository/CategoryRepo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="63" width="104" x="6656" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="61" language="java" name="be.italent.model.Category" project="italent" 
+    file="/italent/src/main/java/be/italent/model/Category.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="173" x="9193" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="62" language="java" name="be.italent.web.resource.assembler.ProjectListHomeResourceAssembler" 
+    project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/assembler/ProjectListHomeResourceAssembler.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="250" x="2640" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="63" language="java" name="be.italent.web.controller.SubscriberDocentRestController" project="italent" 
+    file="/italent/src/main/java/be/italent/web/controller/SubscriberDocentRestController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="216" x="3984" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="64" language="java" name="be.italent.web.controller.DepartmentRestController" project="italent" 
+    file="/italent/src/main/java/be/italent/web/controller/DepartmentRestController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="197" x="6496" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="65" language="java" name="be.italent.Italent" project="italent" 
+    file="/italent/src/main/java/be/italent/Italent.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="317" x="1582" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="66" language="java" name="be.italent.web.resource.ProjectDetailResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/ProjectDetailResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="639" width="220" x="7048" y="874"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="67" language="java" name="be.italent.model.Department" project="italent" 
+    file="/italent/src/main/java/be/italent/model/Department.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="150" x="7329" y="3096"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="68" language="java" name="be.italent.web.resource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="158" x="1939" y="92"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="69" language="java" name="be.italent.model.CurrentUser" project="italent" 
+    file="/italent/src/main/java/be/italent/model/CurrentUser.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="131" x="7551" y="874"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="70" language="java" name="be.italent.service.LikeServiceImpl" project="italent" 
+    file="/italent/src/main/java/be/italent/service/LikeServiceImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="160" x="5213" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="71" language="java" name="be.italent.service.UserRepository" project="italent" 
+    file="/italent/src/main/java/be/italent/service/UserRepository.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="168" x="4259" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="72" language="java" name="be.italent.model.AbstractITalentEntity" project="italent" 
+    file="/italent/src/main/java/be/italent/model/AbstractITalentEntity.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="351" width="174" x="8704" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="73" language="java" name="be.italent" project="italent" file="/italent/src/main/java/be/italent" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="2137" y="92"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="74" language="java" name="be.italent.web.resource.PreziResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/PreziResource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="154" x="5988" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="75" language="java" name="be.italent.service.LikeService" project="italent" 
+    file="/italent/src/main/java/be/italent/service/LikeService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="160" x="4737" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="76" language="java" name="be.italent.web.resource.MilestoneResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/MilestoneResource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="154" x="6182" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="77" language="java" name="be.italent.web.resource.ProjectMyBackedResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/ProjectMyBackedResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="1089" width="334" x="6300" y="874"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="78" language="java" name="be.italent.web.resource.UserResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/UserResource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="150" x="6598" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="79" language="java" name="be.italent.web.resource.assembler.ProjectMyLikedResourceAssembler" 
+    project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/assembler/ProjectMyLikedResourceAssembler.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="245" x="2930" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="80" language="java" name="be.italent.repository.ProjectRepo" project="italent" 
+    file="/italent/src/main/java/be/italent/repository/ProjectRepo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="248" x="3500" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <package id="81" language="java" name="be.italent.web.controller" project="italent" 
+    file="/italent/src/main/java/be/italent/web/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="161" x="2278" y="92"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="82" language="java" name="be.italent.web.controller.CategoryRestController" project="italent" 
+    file="/italent/src/main/java/be/italent/web/controller/CategoryRestController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="334" x="6973" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="83" language="java" name="be.italent.web.resource.ProjectMyLikedResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/ProjectMyLikedResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="1089" width="334" x="6674" y="874"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="84" language="java" name="be.italent.model.User" project="italent" 
+    file="/italent/src/main/java/be/italent/model/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="567" width="182" x="7551" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="85" language="java" name="be.italent.web.controller.DomainRestController" project="italent" 
+    file="/italent/src/main/java/be/italent/web/controller/DomainRestController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="291" x="5920" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="86" language="java" name="be.italent.service.SubscriberStudentServiceImpl" project="italent" 
+    file="/italent/src/main/java/be/italent/service/SubscriberStudentServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="241" x="5413" y="92"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="87" language="java" name="be.italent.web.resource.SubscriberDocentResource" project="italent" 
+    file="/italent/src/main/java/be/italent/web/resource/SubscriberDocentResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="182" x="6376" y="2489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="88" language="java" name="be.italent.service" project="italent" 
+    file="/italent/src/main/java/be/italent/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="121" x="2479" y="92"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <interface id="89" language="java" name="be.italent.service.UserService" project="italent" 
+    file="/italent/src/main/java/be/italent/service/UserService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="188" x="4467" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <association id="90">    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="91" name="milestones"/>      
+      <multiplicity id="92" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="76" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="93">    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="94" name="domain"/>      
+      <multiplicity id="95" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="96">    
+    <end type="SOURCE" refId="85" navigable="false">      
+      <attribute id="97" name="DomainService"/>      
+      <multiplicity id="98" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="56" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="99">    
+    <bendpoint x="7742" y="874"/>    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="100" name="user"/>      
+      <multiplicity id="101" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="84" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="102">    
+    <end type="SOURCE" refId="49" navigable="false">      
+      <attribute id="103" name="subscribersStudent"/>      
+      <multiplicity id="104" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="105">    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="106" name="milestones"/>      
+      <multiplicity id="107" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="76" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="108">    
+    <end type="SOURCE" refId="64" navigable="false">      
+      <attribute id="109" name="departmentService"/>      
+      <multiplicity id="110" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="58" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="111">    
+    <end type="SOURCE" refId="53"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <association id="112">    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="113" name="subscribersDocent"/>      
+      <multiplicity id="114" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="87" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="115">    
+    <end type="SOURCE" refId="86"/>    
+    <end type="TARGET" refId="39"/>  
+  </realization>  
+  <generalization id="116">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="42"/>  
+  </generalization>  
+  <association id="117">    
+    <end type="SOURCE" refId="84" navigable="false">      
+      <attribute id="118" name="role"/>      
+      <multiplicity id="119" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="120">    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="121" name="subscribersDocent"/>      
+      <multiplicity id="122" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="87" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="123">    
+    <end type="SOURCE" refId="59" navigable="false">      
+      <attribute id="124" name="subscriberStudentService"/>      
+      <multiplicity id="125" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="126">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="72"/>  
+  </generalization>  
+  <association id="127">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="128" name="project"/>      
+      <multiplicity id="129" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="130">    
+    <end type="SOURCE" refId="70" navigable="false">      
+      <attribute id="131" name="likeRepo"/>      
+      <multiplicity id="132" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="133">    
+    <bendpoint x="8957" y="874"/>    
+    <bendpoint x="8957" y="483"/>    
+    <end type="SOURCE" refId="61"/>    
+    <end type="TARGET" refId="72"/>  
+  </generalization>  
+  <association id="134">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="135" name="onlineFiles"/>      
+      <multiplicity id="136" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="137">    
+    <end type="SOURCE" refId="49" navigable="false">      
+      <attribute id="138" name="pictures"/>      
+      <multiplicity id="139" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="46" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="140">    
+    <end type="SOURCE" refId="82" navigable="false">      
+      <attribute id="141" name="categoryService"/>      
+      <multiplicity id="142" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="143">    
+    <end type="SOURCE" refId="49" navigable="false">      
+      <attribute id="144" name="domain"/>      
+      <multiplicity id="145" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="146">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="147" name="onlineFiles"/>      
+      <multiplicity id="148" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="149">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="150" name="wantedSubscribers"/>      
+      <multiplicity id="151" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="152">    
+    <end type="SOURCE" refId="82" navigable="false">      
+      <attribute id="153" name="categoryResourceAssembler"/>      
+      <multiplicity id="154" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="155">    
+    <end type="SOURCE" refId="49" navigable="false">      
+      <attribute id="156" name="movies"/>      
+      <multiplicity id="157" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="158">    
+    <end type="SOURCE" refId="49" navigable="false">      
+      <attribute id="159" name="wantedSubscribers"/>      
+      <multiplicity id="160" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="161">    
+    <end type="SOURCE" refId="61" navigable="false">      
+      <attribute id="162" name="projects"/>      
+      <multiplicity id="163" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="164">    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="165" name="domain"/>      
+      <multiplicity id="166" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="167">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="168" name="category"/>      
+      <multiplicity id="169" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="170">    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <association id="171">    
+    <end type="SOURCE" refId="49" navigable="false">      
+      <attribute id="172" name="subscribersDocent"/>      
+      <multiplicity id="173" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="87" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="174">    
+    <bendpoint x="7298" y="2489"/>    
+    <bendpoint x="7298" y="874"/>    
+    <bendpoint x="7298" y="483"/>    
+    <end type="SOURCE" refId="67"/>    
+    <end type="TARGET" refId="72"/>  
+  </generalization>  
+  <association id="175">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="176" name="projectListHomeResourceAssembler"/>      
+      <multiplicity id="177" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="62" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="178">    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="179" name="pictures"/>      
+      <multiplicity id="180" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="46" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="181">    
+    <end type="SOURCE" refId="49" navigable="false">      
+      <attribute id="182" name="user"/>      
+      <multiplicity id="183" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="78" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="184">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="185" name="domain"/>      
+      <multiplicity id="186" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="187">    
+    <end type="SOURCE" refId="70"/>    
+    <end type="TARGET" refId="75"/>  
+  </realization>  
+  <generalization id="188">    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="72"/>  
+  </generalization>  
+  <association id="189">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="190" name="pictures"/>      
+      <multiplicity id="191" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="46" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="192">    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="193" name="category"/>      
+      <multiplicity id="194" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="195">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="196" name="likeService"/>      
+      <multiplicity id="197" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="75" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="198">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="199" name="domain"/>      
+      <multiplicity id="200" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="201">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="202" name="wantedSubscribers"/>      
+      <multiplicity id="203" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="204">    
+    <end type="SOURCE" refId="42" navigable="false">      
+      <attribute id="205" name="user"/>      
+      <multiplicity id="206" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="84" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="207">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="208" name="subscribersStudent"/>      
+      <multiplicity id="209" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="210">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="89"/>  
+  </realization>  
+  <association id="211">    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="212" name="prezis"/>      
+      <multiplicity id="213" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="74" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="214">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="215" name="categories"/>      
+      <multiplicity id="216" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="61" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="217">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="42"/>  
+  </generalization>  
+  <association id="218">    
+    <end type="SOURCE" refId="84" navigable="false">      
+      <attribute id="219" name="department"/>      
+      <multiplicity id="220" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="67" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="221">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="222" name="prezis"/>      
+      <multiplicity id="223" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="74" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="224">    
+    <bendpoint x="8861" y="874"/>    
+    <bendpoint x="8861" y="483"/>    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="72"/>  
+  </generalization>  
+  <association id="225">    
+    <end type="SOURCE" refId="66" navigable="false">      
+      <attribute id="226" name="movies"/>      
+      <multiplicity id="227" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="228">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="229" name="movies"/>      
+      <multiplicity id="230" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="231">    
+    <end type="SOURCE" refId="69" navigable="false">      
+      <attribute id="232" name="user"/>      
+      <multiplicity id="233" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="84" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="234">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="235" name="pictures"/>      
+      <multiplicity id="236" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="237">    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="238" name="userService"/>      
+      <multiplicity id="239" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="89" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="240">    
+    <bendpoint x="8248" y="874"/>    
+    <bendpoint x="8248" y="483"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="72"/>  
+  </generalization>  
+  <realization id="241">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <association id="242">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="243" name="projectMyLikedResourceAssembler"/>      
+      <multiplicity id="244" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="79" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="245">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="246" name="pictures"/>      
+      <multiplicity id="247" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="46" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="248">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="249" name="projectService"/>      
+      <multiplicity id="250" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="251">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="56"/>  
+  </realization>  
+  <association id="252">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="253" name="movies"/>      
+      <multiplicity id="254" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="255">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="256" name="user"/>      
+      <multiplicity id="257" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="78" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="258">    
+    <bendpoint x="8734" y="874"/>    
+    <bendpoint x="8734" y="483"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="72"/>  
+  </generalization>  
+  <association id="259">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="260" name="subscribersDocent"/>      
+      <multiplicity id="261" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="262">    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="263" name="user"/>      
+      <multiplicity id="264" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="78" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="265">    
+    <bendpoint x="8764" y="874"/>    
+    <bendpoint x="8764" y="483"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="72"/>  
+  </generalization>  
+  <association id="266">    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="267" name="movies"/>      
+      <multiplicity id="268" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="269">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="270" name="milestones"/>      
+      <multiplicity id="271" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="76" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="272">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="273" name="subscribersStudent"/>      
+      <multiplicity id="274" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="275">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="31"/>  
+  </realization>  
+  <association id="276">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="277" name="prezis"/>      
+      <multiplicity id="278" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="74" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="279">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="280" name="likes"/>      
+      <multiplicity id="281" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="43" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="282">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="283" name="project"/>      
+      <multiplicity id="284" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="285">    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="286" name="user"/>      
+      <multiplicity id="287" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="78" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="288">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="289" name="department"/>      
+      <multiplicity id="290" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="291">    
+    <bendpoint x="8713" y="483"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="72"/>  
+  </generalization>  
+  <association id="292">    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="293" name="pictures"/>      
+      <multiplicity id="294" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="46" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="295">    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="296" name="category"/>      
+      <multiplicity id="297" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="298">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="299" name="onlineFiles"/>      
+      <multiplicity id="300" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="301">    
+    <end type="SOURCE" refId="78" navigable="false">      
+      <attribute id="302" name="role"/>      
+      <multiplicity id="303" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="304">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="305" name="subscriberDocentRepo"/>      
+      <multiplicity id="306" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="48" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="307">    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="308" name="wantedSubscribers"/>      
+      <multiplicity id="309" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="310">    
+    <end type="SOURCE" refId="49" navigable="false">      
+      <attribute id="311" name="onlineFiles"/>      
+      <multiplicity id="312" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="313">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="314" name="subscribersStudent"/>      
+      <multiplicity id="315" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="316">    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="317" name="DomainRepo"/>      
+      <multiplicity id="318" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="319">    
+    <bendpoint x="8312" y="874"/>    
+    <bendpoint x="8312" y="483"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="72"/>  
+  </generalization>  
+  <association id="320">    
+    <end type="SOURCE" refId="40" navigable="false">      
+      <attribute id="321" name="categoryRepo"/>      
+      <multiplicity id="322" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="60" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="323">    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="324" name="project"/>      
+      <multiplicity id="325" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="326">    
+    <end type="SOURCE" refId="49" navigable="false">      
+      <attribute id="327" name="milestones"/>      
+      <multiplicity id="328" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="76" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="329">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="72"/>  
+  </generalization>  
+  <association id="330">    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="331" name="project"/>      
+      <multiplicity id="332" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="333">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="334" name="wantedSubscribers"/>      
+      <multiplicity id="335" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="336">    
+    <end type="SOURCE" refId="66" navigable="false">      
+      <attribute id="337" name="pictures"/>      
+      <multiplicity id="338" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="46" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="339">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="340" name="projectMyBackedResourceAssembler"/>      
+      <multiplicity id="341" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="342">    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="343" name="onlineFiles"/>      
+      <multiplicity id="344" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="345">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="346" name="categories"/>      
+      <multiplicity id="347" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="348">    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="349" name="prezis"/>      
+      <multiplicity id="350" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="74" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="351">    
+    <end type="SOURCE" refId="63" navigable="false">      
+      <attribute id="352" name="userService"/>      
+      <multiplicity id="353" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="89" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="354">    
+    <end type="SOURCE" refId="66" navigable="false">      
+      <attribute id="355" name="user"/>      
+      <multiplicity id="356" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="78" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="357">    
+    <bendpoint x="7520" y="874"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <association id="358">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="359" name="milestones"/>      
+      <multiplicity id="360" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="361">    
+    <end type="SOURCE" refId="63" navigable="false">      
+      <attribute id="362" name="subscriberDocentService"/>      
+      <multiplicity id="363" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="364">    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="365" name="wantedSubscribers"/>      
+      <multiplicity id="366" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="367">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="368" name="projectMySubscribedResourceAssembler"/>      
+      <multiplicity id="369" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="370">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="371" name="user"/>      
+      <multiplicity id="372" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="84" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="373">    
+    <end type="SOURCE" refId="53" navigable="false">      
+      <attribute id="374" name="projectRepo"/>      
+      <multiplicity id="375" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="80" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="376">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="377" name="project"/>      
+      <multiplicity id="378" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="379">    
+    <bendpoint x="8269" y="874"/>    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="380" name="user"/>      
+      <multiplicity id="381" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="84" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="382">    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="383" name="subscribersStudent"/>      
+      <multiplicity id="384" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="385">    
+    <end type="SOURCE" refId="59" navigable="false">      
+      <attribute id="386" name="userService"/>      
+      <multiplicity id="387" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="89" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="388">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="389" name="userRepository"/>      
+      <multiplicity id="390" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="71" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="391">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="392" name="movies"/>      
+      <multiplicity id="393" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="394">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="395" name="project"/>      
+      <multiplicity id="396" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="397">    
+    <end type="SOURCE" refId="85" navigable="false">      
+      <attribute id="398" name="domainResourceAssembler"/>      
+      <multiplicity id="399" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="400">    
+    <end type="SOURCE" refId="86" navigable="false">      
+      <attribute id="401" name="subscriberStudentRepo"/>      
+      <multiplicity id="402" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="403">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="404" name="userService"/>      
+      <multiplicity id="405" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="89" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="406">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="407" name="projectUserResourceAssembler"/>      
+      <multiplicity id="408" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="409">    
+    <end type="SOURCE" refId="49" navigable="false">      
+      <attribute id="410" name="prezis"/>      
+      <multiplicity id="411" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="74" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="412">    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="413" name="movies"/>      
+      <multiplicity id="414" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="415">    
+    <end type="SOURCE" refId="49" navigable="false">      
+      <attribute id="416" name="category"/>      
+      <multiplicity id="417" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="418">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="419" name="prezis"/>      
+      <multiplicity id="420" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="421">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="422" name="userService"/>      
+      <multiplicity id="423" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="89" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="424">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="425" name="projectDetailResourceAssembler"/>      
+      <multiplicity id="426" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="51" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="427">    
+    <end type="SOURCE" refId="55" navigable="false">      
+      <attribute id="428" name="departmentRepo"/>      
+      <multiplicity id="429" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="44" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="430">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="431" name="domain"/>      
+      <multiplicity id="432" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="433">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="434" name="user"/>      
+      <multiplicity id="435" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="78" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="436">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="437" name="subscribersDocent"/>      
+      <multiplicity id="438" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="87" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="439">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="440" name="users"/>      
+      <multiplicity id="441" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="84" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="442">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="443" name="subscribersDocent"/>      
+      <multiplicity id="444" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="87" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="445">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="446" name="milestones"/>      
+      <multiplicity id="447" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="76" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="448">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="449" name="Comments"/>      
+      <multiplicity id="450" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="451">    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="452" name="subscribersStudent"/>      
+      <multiplicity id="453" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="454">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="455" name="project"/>      
+      <multiplicity id="456" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="457">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="458" name="department"/>      
+      <multiplicity id="459" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="67" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="460">    
+    <end type="SOURCE" refId="83" navigable="false">      
+      <attribute id="461" name="onlineFiles"/>      
+      <multiplicity id="462" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="463">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="464" name="project"/>      
+      <multiplicity id="465" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="466">    
+    <bendpoint x="9064" y="874"/>    
+    <bendpoint x="9064" y="483"/>    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="72"/>  
+  </generalization>  
+  <realization id="467">    
+    <end type="SOURCE" refId="55"/>    
+    <end type="TARGET" refId="58"/>  
+  </realization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
