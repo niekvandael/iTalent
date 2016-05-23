@@ -130,7 +130,7 @@
                 <div class="form-group">
                     <label>{{'views.newProject.wantedSubscribers' | translate}}</label>
 	               	<div ng-repeat="picture in project.wantedSubscribers track by $index">
-	               		<select id="project_wantedSubscriber_department_{{ $index }}" class="form-control" ng-options="department as department.name for department in departments track by department.id" ng-model="selection"></select>
+	               		<select id="project_wantedSubscriber_department_{{ $index }}" class="form-control" ng-options="department as department.name for department in departments track by department.departmentId" ng-model="selection"></select>
 	               		<input type="number" id="project_wantedSubscriber_number_{{ $index }}" class="form-control" placeholder="number" />
 	               	</div>
                 	<button class="btn btn-primary" ng-click="addWantedSubscriber()">{{'views.newProject.addWantedSubscriber' | translate}}</button>
