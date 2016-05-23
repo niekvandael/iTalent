@@ -126,16 +126,36 @@
                         </button>
                     </div>
                 </div>
-                <!--TODO rearrange other inputs-->
-                <div class="form-group">
-                    <label>{{'views.newProject.wantedSubscribers' | translate}}</label>
-	               	<div ng-repeat="picture in project.wantedSubscribers track by $index">
-	               		<select id="project_wantedSubscriber_department_{{ $index }}" class="form-control" ng-options="department as department.name for department in departments track by department.departmentId" ng-model="selection"></select>
-	               		<input type="number" id="project_wantedSubscriber_number_{{ $index }}" class="form-control" placeholder="number" />
-	               	</div>
-                	<button class="btn btn-primary" ng-click="addWantedSubscriber()">{{'views.newProject.addWantedSubscriber' | translate}}</button>
+
+                <!--Project subscribers-->
+                <div class="project-block">
+                    <div class="project-block-label">
+                        <label>{{'views.newProject.wantedSubscribers' | translate}}</label>
+                    </div>
+                    <div ng-repeat="subscriber in project.wantedSubscribers">
+                        <div class="form-horizontal">
+                            <div class="col-md-10">
+                                <select class="form-control" ng-options="department as department.name for department in departments track by department.departmentId"
+                                        ng-model="subscriber.department"></select>
+                            </div>
+                            <div class="col-md-2">
+                                <button ng-click="removeSubscriber(subscriber)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
+                                    <i class="glyphicon glyphicon-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="form-inline">
+                                <label>{{'views.newProject.number' | translate}}</label>
+                                <input type="number" ng-model="subscriber.number" class="form-control" placeholder="{{'views.newProject.number' | translate}}" />
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <button class="btn btn-primary btn-primary-detail" ng-click="addWantedSubscriber()">
+                            {{'views.newProject.addWantedSubscriber' | translate}}
+                        </button>
+                    </div>
                 </div>
-                
+
+                <!--TODO rearrange other inputs-->
                 <div class="form-group">
                     <label>{{'views.newProject.prezis' | translate}}</label>
 	               	<div ng-repeat="prezi in project.prezis track by $index">

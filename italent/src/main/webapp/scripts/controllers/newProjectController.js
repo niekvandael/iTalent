@@ -40,7 +40,6 @@ angular.module('iTalentApp')
         }
 
         $scope.save = function () {
-            $scope.storeWantedSubscribers();
             $scope.storePrezis();
             $scope.storeOnlineFiles();
             
@@ -107,6 +106,10 @@ angular.module('iTalentApp')
             $scope.project.milestones = _.without($scope.project.milestones, milestone);
         };
 
+        $scope.removeSubscriber = function (subscriber) {
+            $scope.project.wantedSubscribers = _.without($scope.project.wantedSubscribers, subscriber);
+        };
+
         $scope.storePrezis = function () {
             for (var i = 0; i < $scope.maxLengthOfPrezis; i++) {
                 var element = document.getElementById("project_prezi_" + i);
@@ -130,20 +133,6 @@ angular.module('iTalentApp')
 
                 $scope.project.onlineFiles[i].url = element.value;
                 $scope.project.onlineFiles[i].description = element_descr.value;
-            }
-        };
-
-        $scope.storeWantedSubscribers = function () {
-            for (var i = 0; i < $scope.maxLengthOfWantedSubscribers; i++) {
-                var departmentInput = document.getElementById("project_wantedSubscriber_department_" + i);
-                var numberInput = document.getElementById("project_wantedSubscriber_number_" + i);
-
-                if (departmentInput == null || numberInput == null) {
-                    break;
-                }
-
-                $scope.project.wantedSubscribers[i].number = numberInput.value;
-                $scope.project.wantedSubscribers[i].department.id = departmentInput.value;
             }
         };
 

@@ -45,6 +45,7 @@
   "views.newProject.milestones": "Milestones",
   "views.newProject.milestone": "Milestone",
   "views.newProject.addMilestone": "Milestone toevoegen",
+  "views.newProject.number": "Aantal",
   "views.newProject.prezis": "Prezis",
   "views.newProject.addPrezi": "Prezi toevoegen",
   "views.newProject.onlineFiles": "Online bestanden",
