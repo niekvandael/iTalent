@@ -10,6 +10,10 @@ body {
 	padding-top: 7px;
 }
 
+#loginButton{
+	color: orange;
+}
+
 .topMargin {
 	padding-top: 50px;
 }
