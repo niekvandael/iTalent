@@ -27,7 +27,6 @@ public class SubscriberDocentRestController {
 	@Secured("Docent")
 	@RequestMapping(value = "/save/{id}/{percentage}", method = RequestMethod.POST, produces="application/json")
 	public SubscriberDocent save(@PathVariable("id") final int id, @PathVariable("percentage") final int percentage, Principal principal){
-		System.out.println("test");
 		SubscriberDocent subscriberDocent = new SubscriberDocent();
 		subscriberDocent.setUser(userService.getUserByUsername(principal.getName()));
 		subscriberDocent.setBackingPct(percentage);
