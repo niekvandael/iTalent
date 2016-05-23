@@ -1,7 +1,6 @@
 package be.italent.web.controller;
 
 import be.italent.model.Project;
-import be.italent.model.User;
 import be.italent.service.ProjectService;
 import be.italent.service.UserService;
 import be.italent.web.resource.*;
@@ -102,7 +101,7 @@ public class ProjectRestController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
     public Project getProject(@PathVariable("id") final int id, Principal principal) {
     	if (principal == null){
-            return projectService.getProjectById(id, new User());
+            return projectService.getProjectById(id);
     	}
     	else {
             return projectService.getProjectById(id, userService.getUserByUsername(principal.getName()));
