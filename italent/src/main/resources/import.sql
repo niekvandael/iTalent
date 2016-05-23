@@ -103,6 +103,6 @@ insert into subscriber_student(user_user_id, project_project_id, hours, status, 
 insert into subscriber_student(user_user_id, project_project_id, hours, status, last_updated_by, last_update) values(4, 3, 5, 'A', 'Team1', '2016-01-01');
 
 -- wanted_subscriber
-insert into wanted_subscriber(department_department_id, project_project_id, number, status, last_updated_by, last_update) values(1, 1, 5, 'A', 'Team1', '2016-01-01');
+insert into wanted_subscriber(department_department_id, project_project_id, number, status, last_updated_by, last_update) values(4, 1, 4, 'A', 'Team1', '2016-01-01');
 insert into wanted_subscriber(department_department_id, project_project_id, number, status, last_updated_by, last_update) values(1, 2, 1, 'A', 'Team1', '2016-01-01');
 insert into wanted_subscriber(department_department_id, project_project_id, number, status, last_updated_by, last_update) values(2, 2, 3, 'A', 'Team1', '2016-01-01');

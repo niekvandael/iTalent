@@ -116,7 +116,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 
 	@Transient
 	private int numberOfLikes;
-	//Don't delete this getter
+
 	public int getNumberOfLikes(){
 		return likes.size();
 	}
@@ -134,31 +134,61 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@Transient
 	private int wantedSeats;
 	public int getWantedSeats(){
-		wantedSeats = 0;
+		this.wantedSeats = 0;
 		for (int i = 0; i < this.getWantedSubscribers().size(); i++) {
-			wantedSeats += this.getWantedSubscribers().get(i).getNumber();
+			this.wantedSeats += this.getWantedSubscribers().get(i).getNumber();
 		}
-		return wantedSeats;
+		return this.wantedSeats;
 	}
 	
 	@Transient
 	private int takenSeats;
 	public int getTakenSeats(){
-		takenSeats = 0;
+		this.takenSeats = 0;
 		for (int i = 0; i < this.getSubscribersStudent().size(); i++) {
-			takenSeats += 1;
+			this.takenSeats += 1;
 		}
-		return takenSeats;
+		return this.takenSeats;
 	}
 	
 	@Transient
-	private boolean canEnroll;
+	private boolean canSubscribe = false;
 	
-	//@Transient
+	public void setCanSubscribe(int currentUserId, int departmentId){
+		//TODO why doesn't direct field access work here (Jesse)
+		if (this.getWantedSeats()>this.getTakenSeats()){
+			// Check amount asked in user department
+			int wantedInMyDepartment = 0;
+			for (WantedSubscriber wantedSubscriber : this.getWantedSubscribers()) {
+				if(wantedSubscriber.getDepartment().getDepartmentId() == departmentId){
+					wantedInMyDepartment = wantedSubscriber.getNumber();
+					break;
+				}
+			}
+			if(wantedInMyDepartment == 0){
+				return;
+			}
+			int alreadyEnrolledInMyDepartment = 0;
+			for(SubscriberStudent subscriberStudent : this.getSubscribersStudent()){
+				if(subscriberStudent.getUser().getDepartment().getDepartmentId() == departmentId){
+					//check if user is already subscribed
+					if (subscriberStudent.getUser().getUserId() == currentUserId){
+						return;
+					}
+					alreadyEnrolledInMyDepartment++;
+				}
+			}
+			if(wantedInMyDepartment > alreadyEnrolledInMyDepartment){
+				this.setCanSubscribe(true);
+			}
+		}
+		else{
+			return;
+		}
+	}
+	
 	@Column(name="is_backed")
 	private boolean isBacked;
-	//Don't delete this getter
-	//TODO TEST
 	public boolean isBacked() {
 		int total = 0;
 		for(SubscriberDocent s : subscribersDocent){

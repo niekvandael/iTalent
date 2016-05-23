@@ -32,19 +32,20 @@ public class ProjectServiceImpl implements ProjectService{
     }
     
     //Student
-    public List<Project> getBackedProjects(User currentUser) {
+    public List<Project> getBackedProjects(User user) {
     	List<Project>  projects = projectRepo.findAllByIsBacked(true);
-    	if(projects.size()>0){
-    		setTransientFields(projects, currentUser);
+    	for (Project project : projects){
+    		project.setLiked(user.getUserId());
+    		project.setCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId());
     	}
     	return projects;
     }
     
     //Docent
-    public List<Project> getAllProjects(User currentUser) {
+    public List<Project> getAllProjects(User user) {
     	List<Project>  projects = projectRepo.findAll();
     	if(projects.size()>0){
-    		setTransientFields(projects, currentUser);
+    		this.setIsLikedByCurrentUser(projects, user);
     	}
     	return projects;
     }
@@ -53,7 +54,7 @@ public class ProjectServiceImpl implements ProjectService{
     public List<Project> getAllUserProjects(User user) {
     	List<Project>  projects = projectRepo.findUserProjects(user);
     	if(projects.size()>0){
-    		setTransientFields(projects, user);
+    		this.setIsLikedByCurrentUser(projects, user);
     	}
     	return projects;
     }
@@ -61,7 +62,7 @@ public class ProjectServiceImpl implements ProjectService{
     public List<Project> getMyLikedProjects(User user){
     	List<Project>  projects = projectRepo.findMyLikedProjects(user);
     	if(projects.size()>0){
-    		setTransientFields(projects, user);
+    		this.setIsLikedByCurrentUser(projects, user);
     	}
     	return projects;
     }
@@ -69,7 +70,7 @@ public class ProjectServiceImpl implements ProjectService{
     public List<Project> getMySubscribedProjects(User user){
     	List<Project>  projects = projectRepo.findMySubscribedProjects(user);
     	if(projects.size()>0){
-    		setTransientFields(projects, user);
+    		this.setIsLikedByCurrentUser(projects, user);
     	}
     	return projects;
     }
@@ -77,16 +78,18 @@ public class ProjectServiceImpl implements ProjectService{
     public List<Project> getMyBackedProjects(User user){
     	List<Project>  projects = projectRepo.findMyBackedProjects(user);
     	if(projects.size()>0){
-    		setTransientFields(projects, user);
+    		this.setIsLikedByCurrentUser(projects, user);
     	}
     	return projects;
     }
     
-    public Project getProjectById(int id, User currentUser){
+    public Project getProjectById(int id, User user){
     	//TODO Testing workaround for multiplication problem
         //return projectRepo.findOne(id);		
     	Project project =  projectRepo.findAllByProjectId(id).get(0);
-    	project.setLiked(currentUser.getUserId());
+    	project.setLiked(user.getUserId());
+    	//TODO only if student
+    	project.setCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId());
     	return project;
     }
     
@@ -145,10 +148,10 @@ public class ProjectServiceImpl implements ProjectService{
     	return project;
     }
     
-    private void setTransientFields(List<Project> projects, User currentUser){
+    /*private void setTransientFields(List<Project> projects, User currentUser){
     	this.setIsLikedByCurrentUser(projects, currentUser);
     	this.setCanEnrollByCurrentUser(projects, currentUser);
-    }
+    }*/
     
     private void setIsLikedByCurrentUser(List<Project> projects, User currentUser){
     	for (Project project : projects){
@@ -156,7 +159,7 @@ public class ProjectServiceImpl implements ProjectService{
     	}
     }
     
-    public void setCanEnrollByCurrentUser(List<Project> projects, User currentUser){
+    /*public void setCanEnrollByCurrentUser(List<Project> projects, User currentUser){
     	for(Project project : projects){
 			int myDepartmentid = currentUser.getDepartment().getDepartmentId();
 			
@@ -194,5 +197,5 @@ public class ProjectServiceImpl implements ProjectService{
 			
 			project.setCanEnroll(false);
     	}
-	}
+	}*/
 }

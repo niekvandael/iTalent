@@ -3,7 +3,8 @@ angular.module('iTalentApp')
         function ($scope, $routeParams, projectService, likeService, subscriberStudentService, subscriberDocentService) {
 
         var projectId = $routeParams.id;
-
+        $scope.project = [];
+        
         projectService.get(projectId).then(function (project) {
             $scope.project = project;
         }, function (err) {
@@ -32,6 +33,7 @@ angular.module('iTalentApp')
         $scope.saveSubscriberStudent = function(id, hours) {
             subscriberStudentService.save(id, hours).then(function() {
                 console.log('Success saving subscriberStudent');
+                $scope.project.canSubscribe = false;
             }, function(err) {
                 console.log('Error saving subscriberStudent.');
                 console.log(err);

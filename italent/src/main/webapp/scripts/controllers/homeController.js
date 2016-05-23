@@ -55,7 +55,7 @@ angular.module('iTalentApp')
 
         $scope.enrollFilter = function(proj){
         	if($scope.showProjectsICanEnroll){
-        		if(!proj.canEnroll){
+        		if(!proj.canSubscribe){
         			return false;
         		}
         	}
