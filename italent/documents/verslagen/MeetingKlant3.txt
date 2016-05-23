@@ -1,0 +1,7 @@
+Meeting klant 17/5/2016:
+- hoe ver moeten we gaan met security (ssl, encryptie passwords): ja
+- online file vs dropbox presentatie: ok
+- dropdown voor filteren: eventueel met tags
+- limiteren aantal pic, movies, etc...: ja
+
+eventueel media afwisselen met tekst bij het aanmaken van een project
