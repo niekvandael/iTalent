@@ -6,6 +6,10 @@ body {
 	background-size: cover;
 }
 
+#languageSelect{
+	padding-top: 7px;
+}
+
 .topMargin {
 	padding-top: 50px;
 }

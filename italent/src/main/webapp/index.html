@@ -39,7 +39,7 @@
                     <li ng-class="{ active: isActive('/about')}"><a href="#/about">{{"views.index.about" | translate}}</a></li>
                 </ul>
                 <ul ng-controller="loginController" class="nav navbar-nav navbar-right">
-                	<li><div ng-translate-language-select></div></li>
+                	<li><div id="languageSelect"  ng-translate-language-select></div></li>
                     <li ng-if="authenticated"><a href="#" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> {{"views.index.logout" | translate}} {{user.displayName}}</a></li>
                     <li ng-if="!authenticated"><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> {{"views.index.login" | translate}}</a></li>
                 </ul>
