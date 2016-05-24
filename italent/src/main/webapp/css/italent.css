@@ -6,6 +6,10 @@ body {
 	background-size: cover;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
 #languageSelect{
 	padding-top: 7px;
 }
@@ -55,6 +59,8 @@ body {
 	padding: 5px;
 	overflow: hidden;
 	border-bottom: 1px solid #e0e0e0;
+	
+	text-transform: uppercase;
 }
 
 .project-block-label {
@@ -64,6 +70,8 @@ body {
 	padding: 5px;
 	overflow: hidden;
 	font-weight: bold;
+	
+	text-transform: uppercase;
 }
 
 .project-block-text {
