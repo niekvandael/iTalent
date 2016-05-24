@@ -19,6 +19,7 @@ angular.module('iTalentApp')
                         /* When success, do this */
                         $rootScope.authenticated = true;
                         $rootScope.role = response.data.authorities[0].authority;
+                        $rootScope.user={};
                         $rootScope.user.displayName = $scope.credentials.username;
                         $location.path('/');
                     } else {

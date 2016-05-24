@@ -48,22 +48,24 @@
                         <div class="form-horizontal">
                             <div class="col-md-10">
                                 <input type="text" ng-model="movie.description" class="form-control"
-                                       placeholder="{{'views.newProject.description' | translate}}"
-                                       ng-minlength="2" ng-maxlength="500"/>
+                                       placeholder="{{'views.newProject.description' | translate}}" ng-minlength="2" ng-maxlength="500"/>
                             </div>
                             <div class="col-md-2">
-                                <button ng-click="removeMovie(movie)" class="btn btn-default"
-                                        title="{{'views.newProject.delete' | translate}}">
+                                <button ng-click="removeMovie(movie)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
                                     <i class="glyphicon glyphicon-trash"></i></button>
                             </div>
                         </div>
-                        <div class="form-inline">
-                            <label>https://www.youtube.com/watch?v=</label>
-                            <input type="text" ng-model="movie.youTubeCode" class="form-control"
-                                   placeholder="youtube-id" ng-minlength="11" ng-maxlength="11"/>
+                        <div class="form-horizontal">
+                            <div class="col-md-6">
+                                <div class="add-project-label">https://www.youtube.com/watch?v=</div>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" ng-model="movie.youTubeCode" class="form-control" placeholder="youtube-id"
+                                       ng-minlength="11" ng-maxlength="11"/>
+                            </div>
                         </div>
                     </div>
-                    <div class="row text-center">
+                    <div class="col-xs-offset-4">
                         <button class="btn btn-primary btn-primary-detail" ng-click="addMovie()">
                             {{'views.newProject.addMovie' | translate}}
                         </button>
@@ -88,13 +90,14 @@
                                     <i class="glyphicon glyphicon-trash"></i></button>
                             </div>
                         </div>
-                        <div class="form-inline">
-                            <input type="file" id="project_picture_{{ $index }}" accept="image/*" ng-model="dummy"
-                                   index="{{ $index }}"
-                                   onchange="angular.element(this).scope().convertImage(this)"/>
+                        <div class="form-horizontal">
+                            <div class="col-md-10">
+                                <input type="file" id="project_picture_{{ $index }}" accept="image/*" ng-model="dummy"
+                                   index="{{ $index }}" onchange="angular.element(this).scope().convertImage(this)"/>
+                            </div>
                         </div>
                     </div>
-                    <div class="row text-center">
+                    <div class="col-xs-offset-4">
                         <button class="btn btn-primary btn-primary-detail" ng-click="addPicture()">
                             {{'views.newProject.addPicture' | translate}}
                         </button>
@@ -120,7 +123,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row text-center">
+                    <div class="col-xs-offset-4">
                         <button class="btn btn-primary btn-primary-detail" ng-click="addMilestone()">
                             {{'views.newProject.addMilestone' | translate}}
                         </button>
@@ -143,12 +146,16 @@
                                     <i class="glyphicon glyphicon-trash"></i></button>
                             </div>
                         </div>
-                        <div class="form-inline">
-                                <label>{{'views.newProject.number' | translate}}</label>
+                        <div class="form-horizontal">
+                            <div class="col-md-4">
+                                <div class="add-project-label">{{'views.newProject.number' | translate}}</div>
+                            </div>
+                            <div class="col-md-6">
                                 <input type="number" ng-model="subscriber.number" class="form-control" placeholder="{{'views.newProject.number' | translate}}" />
+                            </div>
                         </div>
                     </div>
-                    <div class="row text-center">
+                    <div class="col-xs-offset-4">
                         <button class="btn btn-primary btn-primary-detail" ng-click="addWantedSubscriber()">
                             {{'views.newProject.addWantedSubscriber' | translate}}
                         </button>
@@ -173,13 +180,17 @@
                                     <i class="glyphicon glyphicon-trash"></i></button>
                             </div>
                         </div>
-                        <div class="form-inline">
-                            <label>https://www.prezi.com/</label>
-                            <input type="text" ng-model="prezi.preziCode" class="form-control"
+                        <div class="form-horizontal">
+                            <div class="col-md-5">
+                                <div class="add-project-label">https://www.prezi.com/</div>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" ng-model="prezi.preziCode" class="form-control"
                                    placeholder="prezi-id" ng-minlength="5" ng-maxlength="100"/>
+                            </div>
                         </div>
                     </div>
-                    <div class="row text-center">
+                    <div class="col-xs-offset-4">
                         <button class="btn btn-primary btn-primary-detail" ng-click="addPrezi()">
                             {{'views.newProject.addPrezi' | translate}}
                         </button>
@@ -204,13 +215,17 @@
                                     <i class="glyphicon glyphicon-trash"></i></button>
                             </div>
                         </div>
-                        <div class="form-inline">
-                            <label>URL:</label>
-                            <input type="text" ng-model="file.url" class="form-control"
+                        <div class="form-horizontal">
+                            <div class="col-md-3">
+                                <div class="add-project-label">URL:</div>
+                            </div>
+                            <div class="col-md-7">
+                                <input type="text" ng-model="file.url" class="form-control"
                                    placeholder="url" ng-minlength="5" ng-maxlength="100"/>
+                            </div>
                         </div>
                     </div>
-                    <div class="row text-center">
+                    <div class="col-xs-offset-4">
                         <button class="btn btn-primary btn-primary-detail" ng-click="addOnlineFile()">
                             {{'views.newProject.addOnlineFile' | translate}}
                         </button>

@@ -114,6 +114,12 @@ body {
 	color: #f0ad4e;
 }
 
+.add-project-label {
+	font-size: 14px;
+	vertical-align: middle;
+	padding: 5px;
+}
+
 .likes-number {
 	font-size: 24px;
 	margin-top: 20px;

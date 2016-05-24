@@ -3,13 +3,10 @@
  */
 (function () {
     angular.module('iTalentApp', ['ngRoute', 'ngResource', 'pascalprecht.translate', 'tmh.dynamicLocale', 'ngCookies', 'ngAnimate', 'ui.bootstrap', 'ngTagsInput'])
-        .run(function ($rootScope) {
-            $rootScope.user = {
-                base64: '',
-                displayName: ''
-            };
-            $rootScope.showNavBar = '';
-        })
+        .run(['$rootScope', '$http', 'userService', function ($rootScope, $http, userService) {
+        	userService.refresh();
+        }])
+        
         .filter('youtubeEmbedUrl', function ($sce) {
 		    return function(videoId) {
 		      return $sce.trustAsResourceUrl('https://www.youtube.com/embed/' + videoId);

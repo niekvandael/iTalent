@@ -38,13 +38,17 @@
 	</div>
 	
 	<div class="project-block" ng-repeat="project in projects | filter:search | filter:tagFilter | filter:nonBackedFilter | filter:enrollFilter">
-		<div class="project-block-title" >{{ project.title }}</div>
 		<div ng-if="authenticated && (role === 'Docent')">
-			<div ng-if="project.backingPct > 99" class="btn-success">{{ project.backingPct }} % Backed</div>
-			<div ng-if="project.backingPct < 99 && project.backingPct > 5" class="btn-warning">{{ project.backingPct }} % Backed</div>
-			<div ng-if="project.backingPct < 5" class="btn-danger">{{ project.backingPct }} % Backed</div>
+			<div class="project-block-title" >{{ project.title }}</div>
+				<div class="progress">
+				 <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="{{ project.backingPct }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ project.backingPct }}%">
+				      {{ project.backingPct }}%  {{"views.home.backed" | translate}}
+				 </div>
+				</div>
 		</div>
+		
 		<div ng-if="authenticated && (role === 'Student')">
+			<div class="project-block-title" >{{ project.title }}</div>
 			<div ng-if="(project.takenSeats / project.wantedSeats * 100) > 90" class="btn-danger">{{ project.wantedSeats - project.takenSeats }} {{"views.home.seatsAvailable" | translate}}</div>
 			<div ng-if="(project.takenSeats / project.wantedSeats * 100) > 50 && (project.takenSeats / project.wantedSeats * 100) < 90" " class="btn-warning">{{ project.wantedSeats - project.takenSeats }} {{"views.home.seatsAvailable" | translate}}</div>
 			<div ng-if="(project.takenSeats / project.wantedSeats * 100) > 0 && (project.takenSeats / project.wantedSeats * 100) < 50" class="btn-success">{{ project.wantedSeats - project.takenSeats }} {{"views.home.seatsAvailable" | translate}}</div>
@@ -70,13 +74,13 @@
 				<div class="project-block-text col-xs-8">{{project.user.firstname
 					+ ' ' + project.user.lastname}}</div>
 
-				<!-- <div class="project-block-label col-xs-4">{{"views.home.startDate"
+				<div class="project-block-label col-xs-4">{{"views.home.startDate"
 					| translate}}</div>
 				<div class="project-block-text col-xs-8">{{project.startDate |
-					date}}</div> -->
-			</div>
+					date}}</div>
 			<div class="post-tag" ng-repeat="category in project.categories">{{
 				category.description }}</div>
+			</div>
 		</div>
 
 		<div class="row">

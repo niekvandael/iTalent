@@ -1,11 +1,12 @@
 package be.italent.web.resource;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import org.springframework.hateoas.ResourceSupport;
-
 import java.util.Date;
 import java.util.List;
+
+import org.springframework.hateoas.ResourceSupport;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = false)

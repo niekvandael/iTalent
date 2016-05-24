@@ -58,5 +58,6 @@
   "views.home.projectsICanBack": "Show only projects to back",
   "views.home.seatsAvailable": "seats available",
   "views.home.showProjectsICanEnroll": "Show only projects where i can enroll",
+  "views.home.backed": "Backed",
   "directives.language-select.Language": "Language"
 }
