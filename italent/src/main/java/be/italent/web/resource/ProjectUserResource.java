@@ -29,5 +29,4 @@ public class ProjectUserResource extends ResourceSupport {
 	private List<OnlineFileResource> onlineFiles;
 	private int numberOfLikes;
 	private boolean liked;
-	private boolean partiallyBacked;
 }

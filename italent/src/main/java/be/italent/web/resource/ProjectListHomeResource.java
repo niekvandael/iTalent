@@ -30,7 +30,6 @@ public class ProjectListHomeResource extends ResourceSupport {
 	private List<OnlineFileResource> onlineFiles;
     private int numberOfLikes;
     private boolean liked;
-	private boolean partiallyBacked;
 	private int backingPct;
 	private int wantedSeats;
 	private int takenSeats;

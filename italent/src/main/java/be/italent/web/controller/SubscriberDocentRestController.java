@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import be.italent.model.Project;
 import be.italent.model.SubscriberDocent;
 import be.italent.service.ProjectService;
 import be.italent.service.SubscriberDocentService;
@@ -29,17 +30,21 @@ public class SubscriberDocentRestController {
 	
 	@Secured("Docent")
 	@RequestMapping(value = "/save/{id}/{percentage}", method = RequestMethod.POST, produces="application/json")
-	public SubscriberDocent save(@PathVariable("id") final int id, @PathVariable("percentage") final int percentage, Principal principal){
+	public void save(@PathVariable("id") final int id, @PathVariable("percentage") final int percentage, Principal principal){
 		SubscriberDocent subscriberDocent = new SubscriberDocent();
 		subscriberDocent.setUser(userService.getUserByUsername(principal.getName()));
 		subscriberDocent.setBackingPct(percentage);
-		subscriberDocent.setProject(projectService.getProjectById(id));
-		return subscriberDocentService.save(subscriberDocent);
+		Project project = projectService.getProjectById(id);
+		subscriberDocent.setProject(project);
+		project.getSubscribersDocent().add(subscriberDocent);
+		project.updateBackingPct();
+		projectService.saveProject(project);
 	}
 	
 	@Secured("Docent")
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.POST, produces="application/json")
 	public void delete(@PathVariable("id") final int id){
+		//TODO update project backingpct if we allow back delete else remove this method
 		subscriberDocentService.delete(id);
 	}
 }

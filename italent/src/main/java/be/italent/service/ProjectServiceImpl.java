@@ -33,7 +33,7 @@ public class ProjectServiceImpl implements ProjectService{
     
     //Student
     public List<Project> getBackedProjects(User user) {
-    	List<Project>  projects = projectRepo.findAllByIsBacked(true);
+    	List<Project>  projects = projectRepo.findAllFullBackedProjects();
     	for (Project project : projects){
     		project.setLiked(user.getUserId());
     		//project.setCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId());

@@ -38,7 +38,8 @@ import java.util.List;
 public interface ProjectRepo extends JpaRepository<Project, Integer> {
     List<Project> findAllByIsPublic(boolean isPublic);
     
-    List<Project> findAllByIsBacked(boolean isBacked);
+    @Query("select p from Project p where p.backingPct > 99")
+    List<Project> findAllFullBackedProjects();
     
     //TODO testing workaround multiplication problem
     List<Project> findAllByProjectId(int id);

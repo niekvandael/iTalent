@@ -76,11 +76,8 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@OneToOne
 	private Domain domain;
 	
-	@Column(name="project_status")
-	private int projectStatus;
-	
-	@Column(name="is_verified")
-	private boolean isVerified;
+	@Column(name="backing_pct")
+	private int backingPct;
 	
 	@Column(name="is_public")
 	private boolean isPublic;	
@@ -123,14 +120,12 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		return likes.size();
 	}
 	
-	@Transient
-	private int backingPct;
-	public int getBackingPct(){
-		backingPct = 0;
+	public void updateBackingPct(){
+		int total = 0;
 		for (int i = 0; i < this.subscribersDocent.size(); i++) {
-			backingPct += this.subscribersDocent.get(i).getBackingPct();
+			total += this.subscribersDocent.get(i).getBackingPct();
 		}
-		return backingPct;
+		this.backingPct = total;
 	}
 	
 	@Transient
@@ -204,7 +199,8 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		this.canBack = true;
 	}
 	
-	@Column(name="is_backed")
+	//TODO remove
+	/*@Column(name="is_backed")
 	private boolean isBacked;
 	public boolean isBacked() {
 		int total = 0;
@@ -212,7 +208,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 			total += s.getBackingPct();
 		}
 		return total > 99;
-	}
+	}*/
 	
 	@JsonIgnore
 	public void setLiked(int currentUserId) {
