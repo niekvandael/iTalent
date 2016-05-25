@@ -64,6 +64,7 @@ angular.module('iTalentApp')
         	commentService.save($scope.project.projectId, comment).then(function() {
                  console.log('Success saving comment');
                  $scope.getComments();
+                 $scope.comment = "";
              }, function(err) {
                  console.log('Error saving comment');
                  console.log(err);
