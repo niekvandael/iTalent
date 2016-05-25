@@ -36,7 +36,7 @@ public class ProjectServiceImpl implements ProjectService{
     	List<Project>  projects = projectRepo.findAllByIsBacked(true);
     	for (Project project : projects){
     		project.setLiked(user.getUserId());
-    		project.setCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId());
+    		//project.setCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId());
     	}
     	return projects;
     }
@@ -44,8 +44,9 @@ public class ProjectServiceImpl implements ProjectService{
     //Docent
     public List<Project> getAllProjects(User user) {
     	List<Project>  projects = projectRepo.findAll();
-    	if(projects.size()>0){
-    		this.setIsLikedByCurrentUser(projects, user);
+    	for (Project project : projects){
+    		project.setLiked(user.getUserId());
+    		//project.setCanBack(user.getUserId());
     	}
     	return projects;
     }
@@ -90,6 +91,8 @@ public class ProjectServiceImpl implements ProjectService{
     	project.setLiked(user.getUserId());
     	//TODO only if student
     	project.setCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId());
+    	//TODO only if docent
+    	project.setCanBack(user.getUserId());
     	return project;
     }
     

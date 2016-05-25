@@ -59,7 +59,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@OneToOne
 	private User user;
 	
-	private int duration;
+	private int durationInMinutes;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="start_date")
@@ -155,7 +155,6 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	private boolean canSubscribe = false;
 	
 	public void setCanSubscribe(int currentUserId, int departmentId){
-		//TODO why doesn't direct field access work here (Jesse)
 		if (this.getWantedSeats()>this.getTakenSeats()){
 			// Check amount asked in user department
 			int wantedInMyDepartment = 0;
@@ -185,6 +184,22 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		else{
 			return;
 		}
+	}
+	
+	@Transient
+	private boolean canBack = false;
+	
+	public void setCanBack(int currentUserId){
+		if (this.getBackingPct()>99){
+			return;
+		}
+		for(SubscriberDocent subscriberDocent : this.getSubscribersDocent()){
+			//check if docent is already backing
+			if(subscriberDocent.getUser().getUserId() == currentUserId){
+				return;
+			}
+		}
+		this.canBack = true;
 	}
 	
 	@Column(name="is_backed")

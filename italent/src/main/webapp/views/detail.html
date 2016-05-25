@@ -34,7 +34,7 @@
                         ng-disabled="!hours">{{'views.home.subscribe' | translate}}
                 </button>
             </div>
-            <div ng-if="role === 'Docent'" class="col-xs-offset-1 col-md-offset-4">
+            <div ng-if="role === 'Docent' && project.canBack" class="col-xs-offset-1 col-md-offset-4">
                 <input required type="number" ng-model="percentage" class="input-block col-xs-4 col-md-3" min="1"
                        max="100"
                        placeholder="{{'views.home.percentage' | translate}}"/>

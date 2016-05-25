@@ -43,6 +43,7 @@ angular.module('iTalentApp')
         $scope.saveSubscriberDocent = function(id, percentage) {
             subscriberDocentService.save(id, percentage).then(function() {
                 console.log('Success saving subscriberDocent');
+                $scope.project.canBack = false;
             }, function(err) {
                 console.log('Error saving subscriberDocent.');
                 console.log(err);
