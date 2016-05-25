@@ -4,6 +4,8 @@ angular.module('iTalentApp')
        
     	$scope.tags = [];
     	$scope.allTags = [];
+    	$scope.shareText = "Check out this great PXL project!";
+    	$scope.location = document.location.origin;
     	
     	$scope.loadTags = function(){
     		return $scope.allTags;
