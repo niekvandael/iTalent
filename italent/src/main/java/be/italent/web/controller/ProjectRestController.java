@@ -70,19 +70,26 @@ public class ProjectRestController {
                 projectService.getMyLikedProjects(userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
     }
 
-    @Secured("Student")
+    @Secured({"Student", "Docent"})
     @RequestMapping(value = "/mySubscribed", method = RequestMethod.GET, produces = "application/json")
-        public ResponseEntity<List<ProjectMySubscribedResource>> getMySubscribedProjects(Principal principal) {
-        return new ResponseEntity<>(projectMySubscribedResourceAssembler.toResources(
-                projectService.getMySubscribedProjects(userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
+        public ResponseEntity<List<ProjectMySubscribedResource>> getMySubscribedProjects(Authentication auth) {
+    	
+    	if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Student"))) {
+    		return new ResponseEntity<>(projectMySubscribedResourceAssembler.toResources(
+                    projectService.getMySubscribedProjects(userService.getUserByUsername(auth.getName()))), HttpStatus.OK);
+        } 
+    	else { // if role = docent...
+        	return new ResponseEntity<>(projectMySubscribedResourceAssembler.toResources(
+                    projectService.getMyBackedProjects(userService.getUserByUsername(auth.getName()))), HttpStatus.OK);
+        }
     }
 
-    @Secured("Docent")
+    /*@Secured("Docent")
     @RequestMapping(value = "/myBacked", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<ProjectMyBackedResource>> getMyBackedProjects(Principal principal) {
         return new ResponseEntity<>(projectMyBackedResourceAssembler.toResources(
                 projectService.getMyBackedProjects(userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
-    }
+    }*/
 
     //TODO opsplitsen in docent/studen/public/save/update detail
 //    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
