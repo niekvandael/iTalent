@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import be.italent.model.Project;
 import be.italent.model.SubscriberStudent;
+import be.italent.service.ProjectService;
 import be.italent.service.SubscriberStudentService;
 import be.italent.service.UserService;
 
@@ -24,18 +24,16 @@ public class SubscriberStudentRestController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private ProjectService projectService;
+	
 	@Secured("Student")
 	@RequestMapping(value = "/save/{id}/{hours}", method = RequestMethod.POST, produces="application/json")
 	public SubscriberStudent save(@PathVariable("id") final int id, @PathVariable("hours") final int hours, Principal principal){
-	
 		SubscriberStudent subscriberStudent = new SubscriberStudent();
 		subscriberStudent.setUser(userService.getUserByUsername(principal.getName()));
 		subscriberStudent.setHours(hours);
-		//TODO getproject(id) maybe?
-		Project project = new Project();
-		project.setProjectId(id);
-		subscriberStudent.setProject(project);
-		
+		subscriberStudent.setProject(projectService.getProjectById(id));
 		return subscriberStudentService.save(subscriberStudent);
 	}
 	
