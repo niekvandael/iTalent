@@ -87,31 +87,31 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@JsonIgnore
 	private List<Like> likes = new ArrayList<Like>();
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval=true)
 	private List<Milestone> milestones = new ArrayList<Milestone>();
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval=true)
 	private List<Movie> movies = new ArrayList<Movie>();
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval=true)
 	private List<Picture> pictures = new ArrayList<Picture>();
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval=true)
 	private List<WantedSubscriber> wantedSubscribers = new ArrayList<WantedSubscriber>();
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval=true)
 	private List<SubscriberStudent> subscribersStudent = new ArrayList<SubscriberStudent>();
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval=true)
 	private List<SubscriberDocent> subscribersDocent = new ArrayList<SubscriberDocent>();
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval=true)
 	private List<Prezi> prezis = new ArrayList<Prezi>();
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval=true)
 	private List<OnlineFile> onlineFiles = new ArrayList<OnlineFile>();
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval=true)
 	private List<Comment> Comments = new ArrayList<Comment>();
 
 	@Transient
