@@ -56,7 +56,7 @@
   "views.newProject.wantedSubscribers" : "Gezochte teamleden",
   "views.newProject.addWantedSubscriber" : "Gezocht teamlid toevoegen",
   "views.home.projectsICanBack": "Enkel niet 100% gebackte projecten tonen",
-  "views.home.seatsAvailable": "plaatsen beschikbaar",
+  "views.home.seatsAvailable": "plaats(en) beschikbaar",
   "views.home.showProjectsICanEnroll": "Toon enkel projecten waarop ik kan inschrijven",
   "views.home.backed": "Backed",
   "directives.language-select.Language": "Taal"

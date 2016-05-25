@@ -49,9 +49,12 @@
 		
 		<div ng-if="authenticated && (role === 'Student')">
 			<div class="project-block-title" >{{ project.title }}</div>
-			<div ng-if="(project.takenSeats / project.wantedSeats * 100) > 90" class="btn-danger">{{ project.wantedSeats - project.takenSeats }} {{"views.home.seatsAvailable" | translate}}</div>
-			<div ng-if="(project.takenSeats / project.wantedSeats * 100) > 50 && (project.takenSeats / project.wantedSeats * 100) < 90" " class="btn-warning">{{ project.wantedSeats - project.takenSeats }} {{"views.home.seatsAvailable" | translate}}</div>
-			<div ng-if="(project.takenSeats / project.wantedSeats * 100) > 0 && (project.takenSeats / project.wantedSeats * 100) < 50" class="btn-success">{{ project.wantedSeats - project.takenSeats }} {{"views.home.seatsAvailable" | translate}}</div>
+				<div class="progress">
+				 <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="{{ (project.takenSeats / project.wantedSeats * 100) }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ (project.takenSeats / project.wantedSeats * 100) }}%">
+				      {{ project.wantedSeats - project.takenSeats }} {{"views.home.seatsAvailable" | translate}}
+				 </div>
+				</div>
+				
 		</div>
 		
 		<div class="row">
