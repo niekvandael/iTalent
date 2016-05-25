@@ -10,6 +10,10 @@ body {
     text-transform: uppercase;
 }
 
+.centerText{
+	text-align: center;
+}
+
 #languageSelect{
 	padding-top: 7px;
 }

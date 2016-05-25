@@ -39,9 +39,42 @@
             </div>
 
             <div class="col-md-6">
+            
+            	<!--Project pictures-->
+                <div class="project-block">
+                    <div class="project-block-label centerText">
+                        <label>{{'views.newProject.pictures' | translate}}</label>
+                    </div>
+                    <div ng-repeat="picture in project.pictures">
+                        <div class="form-horizontal">
+                            <div class="col-md-10">
+                                <input type="text" ng-model="picture.description" class="form-control"
+                                       placeholder="{{'views.newProject.description' | translate}}"
+                                       ng-minlength="2" ng-maxlength="500"/>
+                            </div>
+                            <div class="col-md-2">
+                                <button ng-click="removePicture(picture)" class="btn btn-default"
+                                        title="{{'views.newProject.delete' | translate}}">
+                                    <i class="glyphicon glyphicon-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="col-md-10">
+                                <input type="file" id="project_picture_{{ $index }}" accept="image/*" ng-model="dummy"
+                                   index="{{ $index }}" onchange="angular.element(this).scope().convertImage(this)"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="centerText">
+                        <button class="btn btn-primary btn-primary-detail" ng-click="addPicture()">
+                            {{'views.newProject.addPicture' | translate}}
+                        </button>
+                    </div>
+                </div>
+                
                 <!--Project movies-->
                 <div class="project-block">
-                    <div class="project-block-label">
+                    <div class="project-block-label centerText">
                         <label>{{'views.newProject.movies' | translate}}</label>
                     </div>
                     <div ng-repeat="movie in project.movies">
@@ -65,48 +98,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-offset-4">
+                    <div class="centerText">
                         <button class="btn btn-primary btn-primary-detail" ng-click="addMovie()">
                             {{'views.newProject.addMovie' | translate}}
                         </button>
                     </div>
                 </div>
 
-                <!--Project pictures-->
-                <div class="project-block">
-                    <div class="project-block-label">
-                        <label>{{'views.newProject.pictures' | translate}}</label>
-                    </div>
-                    <div ng-repeat="picture in project.pictures">
-                        <div class="form-horizontal">
-                            <div class="col-md-10">
-                                <input type="text" ng-model="picture.description" class="form-control"
-                                       placeholder="{{'views.newProject.description' | translate}}"
-                                       ng-minlength="2" ng-maxlength="500"/>
-                            </div>
-                            <div class="col-md-2">
-                                <button ng-click="removePicture(picture)" class="btn btn-default"
-                                        title="{{'views.newProject.delete' | translate}}">
-                                    <i class="glyphicon glyphicon-trash"></i></button>
-                            </div>
-                        </div>
-                        <div class="form-horizontal">
-                            <div class="col-md-10">
-                                <input type="file" id="project_picture_{{ $index }}" accept="image/*" ng-model="dummy"
-                                   index="{{ $index }}" onchange="angular.element(this).scope().convertImage(this)"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-offset-4">
-                        <button class="btn btn-primary btn-primary-detail" ng-click="addPicture()">
-                            {{'views.newProject.addPicture' | translate}}
-                        </button>
-                    </div>
-                </div>
-
                 <!--Project milestones-->
                 <div class="project-block">
-                    <div class="project-block-label">
+                    <div class="project-block-label centerText">
                         <label>{{'views.newProject.milestones' | translate}}</label>
                     </div>
                     <div ng-repeat="milestone in project.milestones">
@@ -123,7 +124,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-offset-4">
+                    <div class="centerText">
                         <button class="btn btn-primary btn-primary-detail" ng-click="addMilestone()">
                             {{'views.newProject.addMilestone' | translate}}
                         </button>
@@ -132,7 +133,7 @@
 
                 <!--Project subscribers-->
                 <div class="project-block">
-                    <div class="project-block-label">
+                    <div class="project-block-label centerText">
                         <label>{{'views.newProject.wantedSubscribers' | translate}}</label>
                     </div>
                     <div ng-repeat="subscriber in project.wantedSubscribers">
@@ -155,7 +156,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-offset-4">
+                    <div class="centerText">
                         <button class="btn btn-primary btn-primary-detail" ng-click="addWantedSubscriber()">
                             {{'views.newProject.addWantedSubscriber' | translate}}
                         </button>
@@ -164,7 +165,7 @@
 
                 <!--Project prezi-->
                 <div class="project-block">
-                    <div class="project-block-label">
+                    <div class="project-block-label centerText">
                         <label>{{'views.newProject.prezis' | translate}}</label>
                     </div>
                     <div ng-repeat="prezi in project.prezis">
@@ -190,7 +191,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-offset-4">
+                    <div class="centerText">
                         <button class="btn btn-primary btn-primary-detail" ng-click="addPrezi()">
                             {{'views.newProject.addPrezi' | translate}}
                         </button>
@@ -199,7 +200,7 @@
 
                 <!--Project file-->
                 <div class="project-block">
-                    <div class="project-block-label">
+                    <div class="project-block-label centerText">
                         <label>{{'views.newProject.onlineFiles' | translate}}</label>
                     </div>
                     <div ng-repeat="file in project.onlineFiles">
@@ -225,7 +226,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-offset-4">
+                    <div class="centerText">
                         <button class="btn btn-primary btn-primary-detail" ng-click="addOnlineFile()">
                             {{'views.newProject.addOnlineFile' | translate}}
                         </button>
