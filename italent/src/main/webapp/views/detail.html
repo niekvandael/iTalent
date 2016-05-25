@@ -1,53 +1,104 @@
 {{projectDetail}}
 
 <div class="container">
-    <div class="project-block-title">{{ project.title }}</div>
-    <div class="row">
-           <div class="col-md-5">
-               <div class="project-block-media img-responsive img-rounded" ng-if="project.pictures[0].bytes == undefined"></div>
-               <img class="project-block-media img-responsive img-rounded" ng-src="data:image/jpeg;base64, {{ project.pictures[0].bytes }}" ng-if="project.pictures[0].bytes !== undefined" style="margin-left: auto;margin-right: auto"/>
-           </div>
-        <div class="col-md-7">
-            <div class="project-block-label">{{"views.home.shortDescription" | translate}}</div>
-            <div class="project-block-short-description">{{ project.shortDescription }}</div>
+	<div class="project-block-title">{{ project.title }}</div>
+	<div class="row">
+		<div class="col-md-5">
+			<div class="project-block-media img-responsive img-rounded"
+				ng-if="project.pictures[0].bytes == undefined"></div>
+			<img class="project-block-media img-responsive img-rounded"
+				ng-src="data:image/jpeg;base64, {{ project.pictures[0].bytes }}"
+				ng-if="project.pictures[0].bytes !== undefined"
+				style="margin-left: auto; margin-right: auto" />
+		</div>
+		<div class="col-md-7">
+			<div class="project-block-label">{{"views.home.shortDescription"
+				| translate}}</div>
+			<div class="project-block-short-description">{{
+				project.shortDescription }}</div>
 
-            <div class="project-block-label col-xs-4">{{"views.home.createdBy" | translate}}</div>
-            <div class="project-block-text col-xs-8">{{project.user.firstname + ' ' + project.user.lastname}}</div>
+			<div class="project-block-label col-xs-4">{{"views.home.createdBy"
+				| translate}}</div>
+			<div class="project-block-text col-xs-8">{{project.user.firstname
+				+ ' ' + project.user.lastname}}</div>
 
-            <!-- <div class="project-block-label col-xs-4">{{"views.home.startDate" | translate}}</div>
+			<!-- <div class="project-block-label col-xs-4">{{"views.home.startDate" | translate}}</div>
             <div class="project-block-text col-xs-8">{{project.startDate | date}}</div> -->
-        </div>
-    </div>
-    <div class="row">
-        <div class="row col-xs-offset-2">
-        	<div ng-if="authenticated && project.liked" class="project-button glyphicon glyphicon-star col-xs-1" ng-click="likeClicked(project)"></div>
-			<div ng-if="authenticated && !project.liked" class="project-button glyphicon glyphicon-star-empty col-xs-1" ng-click="likeClicked(project)"></div>
-			<div ng-if="!authenticated" class="project-button glyphicon glyphicon-star col-xs-1"></div>	
-			
-            <div ng-if="project.numberOfLikes" class="likes-number col-xs-2">{{project.numberOfLikes}}</div>
-            <div ng-if="!project.numberOfLikes" class="likes-number col-xs-2">0</div>
-            <div ng-if="role === 'Student' && project.canSubscribe" class="col-xs-offset-1 col-md-offset-4">
-                <input required type="number" ng-model="hours" class="input-block col-xs-4 col-md-3" min="1" max="160"
-                       placeholder="{{'views.home.hours' | translate}}"/>
-                <button type="submit" class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
-                        ng-click="saveSubscriberStudent(project.projectId, hours)"
-                        ng-disabled="!hours">{{'views.home.subscribe' | translate}}
-                </button>
-            </div>
-            <div ng-if="role === 'Docent' && project.canBack" class="col-xs-offset-1 col-md-offset-4">
-                <input required type="number" ng-model="percentage" class="input-block col-xs-4 col-md-3" min="1"
-                       max="100"
-                       placeholder="{{'views.home.percentage' | translate}}"/>
-                <button type="submit" class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
-                        ng-click="saveSubscriberDocent(project.projectId, percentage)"
-                        ng-disabled="!percentage">{{'views.home.back' | translate}}
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-    	<div class="row col-xs-offset-2" ng-repeat="movie in project.movies">
-            <iframe width="420" height="315" src="{{ movie.youTubeCode | youtubeEmbedUrl }}" allowfullscreen></iframe>
-        </div>
-    </div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="row col-xs-offset-2">
+			<div ng-if="authenticated && project.liked"
+				class="project-button glyphicon glyphicon-star col-xs-1"
+				ng-click="likeClicked(project)"></div>
+			<div ng-if="authenticated && !project.liked"
+				class="project-button glyphicon glyphicon-star-empty col-xs-1"
+				ng-click="likeClicked(project)"></div>
+			<div ng-if="!authenticated"
+				class="project-button glyphicon glyphicon-star col-xs-1"></div>
+
+			<div ng-if="project.numberOfLikes" class="likes-number col-xs-2">{{project.numberOfLikes}}</div>
+			<div ng-if="!project.numberOfLikes" class="likes-number col-xs-2">0</div>
+			<div ng-if="role === 'Student' && project.canSubscribe"
+				class="col-xs-offset-1 col-md-offset-4">
+				<input required type="number" ng-model="hours"
+					class="input-block col-xs-4 col-md-3" min="1" max="160"
+					placeholder="{{'views.home.hours' | translate}}" />
+				<button type="submit"
+					class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
+					ng-click="saveSubscriberStudent(project.projectId, hours)"
+					ng-disabled="!hours">{{'views.home.subscribe' |
+					translate}}</button>
+			</div>
+			<div ng-if="role === 'Docent' && project.canBack"
+				class="col-xs-offset-1 col-md-offset-4">
+				<input required type="number" ng-model="percentage"
+					class="input-block col-xs-4 col-md-3" min="1" max="100"
+					placeholder="{{'views.home.percentage' | translate}}" />
+				<button type="submit"
+					class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
+					ng-click="saveSubscriberDocent(project.projectId, percentage)"
+					ng-disabled="!percentage">{{'views.home.back' |
+					translate}}</button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="row col-xs-offset-2" ng-repeat="movie in project.movies">
+			<iframe width="420" height="315"
+				src="{{ movie.youTubeCode | youtubeEmbedUrl }}" allowfullscreen></iframe>
+		</div>
+	</div>
+	<div class="jumbotron">
+		<div ng-repeat="comment in comments">
+			<table>
+				<tr style="vertical-align: top;">
+					<td><img alt="" src="/images/people.png" class="avatar avatar-80 photo" height="80" width="80" style="">
+					</td>
+					<td style="width:100%">
+						<div class="comment-body">
+							<h4>{{ comment.user.firstname }} {{ comment.user.lastname }}</h4>
+							<div class="comment-author vcard"></div>
+							<div class="comment-meta commentmetadata">
+								<span>{{ comment.lastUpdate | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+							</div>
+							<div class="commentmetadata">{{ comment.message }}</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br />
+		</div>
+		<div>
+			<input required type="text" ng-model="comment"
+				class="input-block col-xs-4 col-md-9" min="1" max="255"
+				placeholder="{{'views.detail.comment' | translate}}" />
+			<button
+				class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
+				ng-click="addComment(comment)"
+				ng-disabled="!comment">{{'views.detail.addComment' |
+				translate}}</button>
+		</div>
+		<br />
+	</div>
 </div>

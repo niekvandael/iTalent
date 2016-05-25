@@ -106,3 +106,8 @@ insert into subscriber_student(user_user_id, project_project_id, hours, status, 
 insert into wanted_subscriber(department_department_id, project_project_id, number, status, last_updated_by, last_update) values(4, 1, 4, 'A', 'Team1', '2016-01-01');
 insert into wanted_subscriber(department_department_id, project_project_id, number, status, last_updated_by, last_update) values(1, 2, 1, 'A', 'Team1', '2016-01-01');
 insert into wanted_subscriber(department_department_id, project_project_id, number, status, last_updated_by, last_update) values(2, 2, 3, 'A', 'Team1', '2016-01-01');
+
+-- comments
+insert into comment(user_user_id, project_project_id, message, status, last_updated_by, last_update, parent_comment_id) values(1, 1, 'Comment 1', 'A', 'Team1', '2016-01-01', -1);
+insert into comment(user_user_id, project_project_id, message, status, last_updated_by, last_update, parent_comment_id) values(1, 1, 'Comment 2', 'A', 'Team1', '2016-01-01', 1);
+insert into comment(user_user_id, project_project_id, message, status, last_updated_by, last_update, parent_comment_id) values(1, 2, 'Comment 1', 'A', 'Team1', '2016-01-01', -1);

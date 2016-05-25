@@ -59,5 +59,7 @@
   "views.home.seatsAvailable": "plaats(en) beschikbaar",
   "views.home.showProjectsICanEnroll": "Toon enkel projecten waarop ik kan inschrijven",
   "views.home.backed": "Backed",
+  "views.detail.comment": "Voeg je comment toe",
+  "views.detail.addComment": "Toevoegen",
   "directives.language-select.Language": "Taal"
 }

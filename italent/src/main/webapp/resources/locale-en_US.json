@@ -59,5 +59,7 @@
   "views.home.seatsAvailable": "seat(s) available",
   "views.home.showProjectsICanEnroll": "Show only projects where i can enroll",
   "views.home.backed": "Backed",
+  "views.detail.comment": "Add your comment",
+  "views.detail.addComment": "Add",
   "directives.language-select.Language": "Language"
 }

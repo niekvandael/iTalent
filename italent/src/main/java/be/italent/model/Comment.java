@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -34,4 +35,7 @@ public class Comment extends AbstractITalentEntity implements Serializable {
 	
 	@OneToOne
 	private User user;
+	
+	@Column(name="parent_comment_id", nullable = true)
+	private int parentCommentId;
 }

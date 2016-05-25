@@ -1,9 +1,10 @@
 angular.module('iTalentApp')
-    .controller('detailController', ['$scope', '$routeParams', 'projectService', 'likeService', 'subscriberStudentService', 'subscriberDocentService', 
-        function ($scope, $routeParams, projectService, likeService, subscriberStudentService, subscriberDocentService) {
+    .controller('detailController', ['$scope', '$routeParams', 'projectService', 'likeService', 'subscriberStudentService', 'subscriberDocentService', 'commentService', 
+        function ($scope, $routeParams, projectService, likeService, subscriberStudentService, subscriberDocentService, commentService) {
 
         var projectId = $routeParams.id;
-        $scope.project = [];
+        $scope.project = {};
+        $scope.comments = [];
         
         projectService.get(projectId).then(function (project) {
             $scope.project = project;
@@ -11,7 +12,7 @@ angular.module('iTalentApp')
             console.log('Error getting project:');
             console.log(err);
         });
-
+        
         $scope.likeClicked = function (project) {
             if (!project.numberOfLikes) {
                 project.numberOfLikes = 0;
@@ -39,7 +40,16 @@ angular.module('iTalentApp')
                 console.log(err);
             })
         };
-
+        
+        $scope.getComments = function(){
+            commentService.list(projectId).then(function (comments) {
+            	$scope.comments = comments;
+            }, function (err) {
+                console.log('Error getting comments:');
+                console.log(err);
+            });
+        }
+        
         $scope.saveSubscriberDocent = function(id, percentage) {
             subscriberDocentService.save(id, percentage).then(function() {
                 console.log('Success saving subscriberDocent');
@@ -50,4 +60,14 @@ angular.module('iTalentApp')
             })
         };
 
+        $scope.addComment = function(comment){
+        	commentService.save($scope.project.projectId, comment).then(function() {
+                 console.log('Success saving comment');
+                 $scope.getComments();
+             }, function(err) {
+                 console.log('Error saving comment');
+                 console.log(err);
+             })
+        }
+        $scope.getComments();
     }]);
