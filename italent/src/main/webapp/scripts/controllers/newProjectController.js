@@ -1,6 +1,6 @@
 angular.module('iTalentApp')
-    .controller('newProjectController', ['$scope', '$location', '$routeParams', 'projectService', 'departmentService', 'categoryService', 'domainService',
-                                         function ($scope, $location, $routeParams, projectService, departmentService, categoryService, domainService) {
+    .controller('newProjectController', ['$scope', '$location', '$routeParams', 'toastr', 'projectService', 'departmentService', 'categoryService', 'domainService',
+                                         function ($scope, $location, $routeParams, toastr, projectService, departmentService, categoryService, domainService) {
 
         var projectId = $routeParams.id;
         $scope.project = {
@@ -41,8 +41,10 @@ angular.module('iTalentApp')
 
         $scope.save = function () {
             projectService.saveOrUpdate($scope.project).then(function () {
+                toastr.success('Project is opgeslagen', 'Succes!');
                 $location.path('/myProjects');
             }, function (err) {
+                toastr.error('Probleem bij opslaan project, probeer het nogmaals.', 'Fout!');
                 console.log('Error saving project.');
                 console.log(err);
             })
@@ -84,8 +86,10 @@ angular.module('iTalentApp')
 
         $scope.deleteProject = function () {
             projectService.deleteProject(projectId).then(function () {
+                toastr.success('Project is verwijderd.', 'Succes!');
                 $location.path('/myProjects');
             }, function (err) {
+                toastr.error('Probleem bij verwijderen project, probeer het nogmaals.', 'Fout!');
                 console.log('Error deleting project.');
                 console.log(err);
             })
