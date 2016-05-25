@@ -17,12 +17,12 @@ angular.module('iTalentApp')
         $scope.domains = [];
     	$scope.allTags = [];
 
-        $scope.maxLengthOfMovies = 5;
-        $scope.maxLengthOfPictures = 10;
-        $scope.maxLengthOfMilestones = 10;
-        $scope.maxLengthOfWantedSubscribers = 10;
-        $scope.maxLengthOfPrezis = 10;
-        $scope.maxLengthOfOnlineFiles = 10;
+        $scope.maxLengthOfMovies = 100;
+        $scope.maxLengthOfPictures = 100;
+        $scope.maxLengthOfMilestones = 100;
+        $scope.maxLengthOfWantedSubscribers = 100;
+        $scope.maxLengthOfPrezis = 100;
+        $scope.maxLengthOfOnlineFiles = 100;
 
         $scope.picturesConverted = true;
 
