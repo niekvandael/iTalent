@@ -27,6 +27,7 @@
     "angular-dynamic-locale": "0.1.32",
     "angular-i18n": "1.5.5",
     "ng-tags-input": "3.0.0",
-    "angular-socialshare": "angularjs-socialshare#^2.1.6"
+    "angular-socialshare": "angularjs-socialshare#^2.1.6",
+    "angular-toastr": "1.7.0"
   }
 }
