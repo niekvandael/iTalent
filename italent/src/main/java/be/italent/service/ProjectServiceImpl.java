@@ -36,7 +36,7 @@ public class ProjectServiceImpl implements ProjectService{
     	List<Project>  projects = projectRepo.findAllFullBackedProjects();
     	for (Project project : projects){
     		project.setLiked(user.getUserId());
-    		//project.setCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId());
+    		project.setCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId()); //necessary for filter on home.html
     	}
     	return projects;
     }
