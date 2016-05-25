@@ -105,8 +105,60 @@
 
 				<button type="button"
 					class="btn btn-warning btn-warning-detail col-xs-4 col-md-2 col-xs-offset-1 col-md-offset-2"
-					ng-click="showDetails(project.projectId)">{{"views.home.details"
-					| translate}}</button>
+					ng-click="showDetails(project.projectId)">{{"views.home.details" | translate}}</button>
+			
+				<div style="float: left" ng-if="project.public">
+					<ul class="ulSocialMedia">
+					    <li>
+							<a  href="#"
+								socialshare
+								socialshare-provider="facebook"
+								socialshare-text="{{ project.title }}"
+								socialshare-hashtags="pxl"
+								socialshare-url="{{ location }}/#/projects/{{ project.projectId }}">
+								<span class="fa-stack fa-2x">
+								  <i class="fa fa-facebook"></i>
+						  		</span>
+							</a>
+						</li>
+					   	<li>
+							<a  href="#"
+								socialshare
+								socialshare-provider="twitter"
+								socialshare-text="{{ project.title }}"
+								socialshare-hashtags="pxl"
+								socialshare-url="{{ location }}/#/projects/{{ project.projectId }}">
+								<span class="fa-stack fa-2x">
+								  <i class="fa fa-twitter"></i>
+						  		</span>
+							</a>
+						</li>
+					   	<li>
+							<a  href="#"
+								socialshare
+								socialshare-provider="linkedin"
+								socialshare-text="{{ project.title }}"
+								socialshare-hashtags="pxl"
+								socialshare-url="{{ location }}/#/projects/{{ project.projectId }}">
+								<span class="fa-stack fa-2x">
+								  <i class="fa fa-linkedin"></i>
+						  		</span>
+							</a>
+						</li>
+					   	<li>
+							<a  href="#"
+								socialshare
+								socialshare-provider="google"
+								socialshare-text="{{ project.title }}"
+								socialshare-hashtags="pxl"
+								socialshare-url="{{ location }}/#/projects/{{ project.projectId }}">
+								<span class="fa-stack fa-2x">
+								  <i class="fa fa-google-plus"></i>
+						  		</span>
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
