@@ -2,17 +2,17 @@
  * Created by arjen on 05/04/16.
  */
 angular.module('iTalentApp')
-    .controller('categoryController', ['$scope', '$routeParams', 'categoryService', function ($scope, $routeParams, categoryService) {
+    .controller('categoryController', ['$scope', '$routeParams', 'toastr', 'categoryService', function ($scope, $routeParams, toastr, categoryService) {
 
         $scope.newCategory = {};
 
         $scope.addCategory = function () {
             categoryService.save($scope.newCategory).then(function () {
                 getCategories();
-                $scope.message = "Category has been created!";
+                toastr.success('Categorie is aangemaakt', 'Succes!');
                 $scope.newCategory.description = "";
             }, function (err) {
-                $scope.message = "Category addition failed...";
+                toastr.error('Probleem bij aanmaken categorie, probeer het nogmaals.', 'Fout!');
                 console.log('Error saving category: ');
                 console.log(err);
             })
@@ -21,8 +21,9 @@ angular.module('iTalentApp')
         $scope.deleteCategory = function (categoryId) {
             categoryService.deleteItem(categoryId).then(function (success) {
                 getCategories();
-                success.data? $scope.message = "Category has been deleted!" : $scope.message = "Cannot delete item: some projects are depending on this category";
+                toastr.success('Categorie is verwijderd.', 'Succes!');
             }, function (err) {
+                toastr.error('Probleem bij verwijderen categorie, probeer het nogmaals.', 'Fout!');
                 console.log('Error deleting category: ');
                 console.log(err);
             })
