@@ -46,7 +46,7 @@ public class ProjectServiceImpl implements ProjectService{
     	List<Project>  projects = projectRepo.findAll();
     	for (Project project : projects){
     		project.setLiked(user.getUserId());
-    		//project.setCanBack(user.getUserId());
+    		project.setCanBack(user.getUserId()); //necessary for filter on home.html
     	}
     	return projects;
     }

@@ -24,7 +24,7 @@
 	<div class="row" ng-show="authenticated && (role === 'Docent')" >
 		<div class="col-md-6 col-md-offset-3">
 			<div class="input-group">
-				<input type="checkbox" ng-model="showOnlyNonBacked">{{"views.home.projectsICanBack" | translate}}</input>
+				<input type="checkbox" ng-model="showProjectsICanBack">{{"views.home.projectsICanBack" | translate}}</input>
 			</div>
 		</div>
 	</div>
@@ -37,7 +37,7 @@
 		</div>
 	</div>
 	
-	<div class="project-block" ng-repeat="project in projects | filter:search | filter:tagFilter | filter:nonBackedFilter | filter:enrollFilter">
+	<div class="project-block" ng-repeat="project in projects | filter:search | filter:tagFilter | filter:backFilter | filter:enrollFilter">
 		<div class="project-block-title" >{{ project.title }}</div>
 		<div ng-if="authenticated && (role === 'Docent')">
 			<div class="progress">

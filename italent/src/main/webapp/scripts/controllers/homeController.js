@@ -57,20 +57,14 @@ angular.module('iTalentApp')
 
         $scope.enrollFilter = function(proj){
         	if($scope.showProjectsICanEnroll){
-        		if(!proj.canSubscribe){
-        			return false;
-        		}
+        			return proj.canSubscribe;
         	}
         	return true;
         }
         
-        $scope.nonBackedFilter = function(proj){
-        	if($scope.showOnlyNonBacked){
-        		if(proj.backingPct < 100){
-        			return true;	
-        		} else {
-        			return false;
-        		}
+        $scope.backFilter = function(proj){
+        	if($scope.showProjectsICanBack){
+        		return proj.canBack;
         	}
         	return true;
         }
