@@ -38,23 +38,21 @@
 	</div>
 	
 	<div class="project-block" ng-repeat="project in projects | filter:search | filter:tagFilter | filter:nonBackedFilter | filter:enrollFilter">
+		<div class="project-block-title" >{{ project.title }}</div>
 		<div ng-if="authenticated && (role === 'Docent')">
-			<div class="project-block-title" >{{ project.title }}</div>
-				<div class="progress">
+			<div class="progress">
 				 <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="{{ project.backingPct }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ project.backingPct }}%">
 				      {{ project.backingPct }}%  {{"views.home.backed" | translate}}
 				 </div>
-				</div>
+			</div>
 		</div>
 		
 		<div ng-if="authenticated && (role === 'Student')">
-			<div class="project-block-title" >{{ project.title }}</div>
-				<div class="progress">
+			<div class="progress">
 				 <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="{{ (project.takenSeats / project.wantedSeats * 100) }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ (project.takenSeats / project.wantedSeats * 100) }}%">
 				      {{ project.wantedSeats - project.takenSeats }} {{"views.home.seatsAvailable" | translate}}
 				 </div>
-				</div>
-				
+			</div>
 		</div>
 		
 		<div class="row">
