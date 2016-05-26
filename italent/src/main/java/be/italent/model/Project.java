@@ -151,6 +151,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@Transient
 	private boolean canSubscribe = false;
 	
+	@JsonIgnore
 	public void setCanSubscribe(int currentUserId, int departmentId){
 		if (this.getWantedSeats()>this.getTakenSeats()){
 			// Check amount asked in user department
@@ -186,6 +187,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@Transient
 	private boolean canBack = false;
 	
+	@JsonIgnore
 	public void setCanBack(int currentUserId){
 		if (this.getBackingPct()>99){
 			return;
