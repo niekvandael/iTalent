@@ -26,13 +26,10 @@ public abstract class AbstractITalentEntity implements Serializable{
 
 	@Size(max = 20)
 	private String status;
-
-	public AbstractITalentEntity(){
-		this.setLastUpdate(Calendar.getInstance());
-		this.setStatus("A");
-	}
 	
-	public void setLastUpdatedBy(User user){
-		
+	protected void setITalentEntity(String lastUpdatedBy, String status){
+		this.setLastUpdate(Calendar.getInstance());
+		this.setLastUpdatedBy(lastUpdatedBy);
+		this.setStatus(status);
 	}
 }

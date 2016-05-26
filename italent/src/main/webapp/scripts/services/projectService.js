@@ -88,7 +88,6 @@ angular.module('iTalentApp')
                 return deferred.promise;
             },
             
-            //TODO laten nakijken door Arjen (i have no clue what i'm doing ma het werkt ongeveer)
             deleteProject: function (id) {
                 var deferred = $q.defer();
                 var resource = $resource(GLOBALS.baseURL + "projects/delete/:id", {id: "@id"}, {update: {method: "POST"}});
