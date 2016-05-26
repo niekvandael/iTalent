@@ -108,13 +108,36 @@
 			
 				<div style="float: left" ng-if="project.public">
 					<ul class="ulSocialMedia">
+					
+					 <button class="btn btn-medium font-bold"
+					    socialshare
+					    socialshare-provider="facebook"
+					    socialshare-type="feed"
+					    socialshare-via="145634995501895"
+					    socialshare-media="http://720kb.net/assets/img/720kb-fb.png"
+					    socialshare-text="720kb"
+					    socialshare-caption="720kb is enough"
+					    socialshare-url="http://720kb.net"
+					    socialshare-redirect-uri="http://localhost"
+					    socialshare-popup-height="300"
+					    socialshare-popup-width="400"
+					    socialshare-trigger="click" >
+					    <i class="fa fa-facebook"></i> Share on Facebook (feed dialog)
+					  </button>
+  
 					    <li>
 							<a  href="#"
 								socialshare
 								socialshare-provider="facebook"
+					   			socialshare-via="51195361651746"
+							    socialshare-type="feed"
 								socialshare-text="{{ project.title }}"
+								socialshare-caption ="{{ project.title }}"
+							    socialshare-caption="720kb is enough"
 								socialshare-hashtags="pxl"
-								socialshare-url="{{ location }}/#/projects/{{ project.projectId }}">
+								socialshare-url="{{ location }}/#/projects/{{ project.projectId }}"
+								socialshare-redirect-uri="http://localhost"
+								>
 								<span class="fa-stack fa-2x">
 								  <i class="fa fa-facebook"></i>
 						  		</span>
