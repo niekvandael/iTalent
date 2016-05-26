@@ -40,10 +40,9 @@ public interface ProjectRepo extends JpaRepository<Project, Integer> {
     
     @Query("select p from Project p where p.backingPct > 99")
     List<Project> findAllFullBackedProjects();
-    
-    //TODO testing workaround multiplication problem
-    List<Project> findAllByProjectId(int id);
-    
+
+    Project findOneByProjectId(int id);
+
     @Query("select p from Project p where p.user = :user")
     List<Project> findUserProjects(@Param("user") final User user);
     // of: List<Project> findAllByUser(User user);
