@@ -62,8 +62,7 @@
 		
 		<div class="row">
 			<div class="col-md-5">
-				<div class="project-block-media img-responsive img-rounded"
-					ng-if="project.pictures[0].bytes == undefined"></div>
+				<div class="project-block-media img-responsive img-rounded" ng-if="project.pictures.length == 0"></div>
 				<img class="project-block-media img-responsive img-rounded"
 					ng-src="data:image/jpeg;base64, {{ project.pictures[0].bytes }}"
 					ng-if="project.pictures[0].bytes !== undefined"

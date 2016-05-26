@@ -61,5 +61,6 @@
   "views.home.backed": "Backed",
   "views.detail.comment": "Add your comment",
   "views.detail.addComment": "Add",
+  "views.detail.noComments": "Be the first to leave a message!",
   "directives.language-select.Language": "Language"
 }

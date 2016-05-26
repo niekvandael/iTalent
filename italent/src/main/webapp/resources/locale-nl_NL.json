@@ -61,5 +61,6 @@
   "views.home.backed": "Backed",
   "views.detail.comment": "Voeg je comment toe",
   "views.detail.addComment": "Toevoegen",
+"views.detail.noComments":"Laat als eerste een berichtje achter!",
   "directives.language-select.Language": "Taal"
 }

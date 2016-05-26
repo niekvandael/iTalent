@@ -262,3 +262,21 @@ ul li a i:hover {
 cite {
     font-style: normal;
 }
+
+#slides_control > div{
+  height: 200px;
+}
+.carouselImage{
+  margin:auto;
+  width: 400px;
+}
+#slides_control {
+  position:absolute;
+  width: 400px;
+  left:50%;
+  top:20px;
+ margin-left:-200px;
+}
+.carousel-caption{
+	color:white;
+}

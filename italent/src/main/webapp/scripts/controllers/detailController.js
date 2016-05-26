@@ -5,7 +5,8 @@ angular.module('iTalentApp')
         var projectId = $routeParams.id;
         $scope.project = {};
         $scope.comments = [];
-        
+        $scope.carouselInterval = 3000;
+
         projectService.get(projectId).then(function (project) {
             $scope.project = project;
         }, function (err) {
