@@ -76,7 +76,7 @@
 				src="{{ movie.youTubeCode | youtubeEmbedUrl }}" allowfullscreen></iframe>
 		</div>
 	</div>
-	<div class="jumbotron">
+	<div ng-if="authenticated" class="jumbotron">
 		<div ng-if="comments.length ==0">{{'views.detail.noComments' | translate}}</div>
 		<div ng-repeat="comment in comments.slice().reverse()">
 			<table>

@@ -72,5 +72,7 @@ angular.module('iTalentApp')
                  console.log(err);
              })
         }
-        $scope.getComments();
+        if ($scope.authenticated){
+        	$scope.getComments();
+        }
     }]);
