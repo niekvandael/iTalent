@@ -2,7 +2,7 @@
  * Created by arjen on 05/04/16.
  */
 (function () {
-    angular.module('iTalentApp', ['ngRoute', 'ngResource', 'pascalprecht.translate', 'tmh.dynamicLocale', 'ngCookies', 'ui.bootstrap', 'ngTagsInput', '720kb.socialshare', 'toastr'])
+    angular.module('iTalentApp', ['ngRoute', 'ngResource', 'pascalprecht.translate', 'tmh.dynamicLocale', 'ngCookies', 'ui.bootstrap', 'ngTagsInput', '720kb.socialshare', 'toastr', 'ngAnimate'])
         .run(['$rootScope', '$http', 'userService', function ($rootScope, $http, userService) {
         	userService.refresh();
         }])

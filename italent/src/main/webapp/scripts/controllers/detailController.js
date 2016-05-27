@@ -7,7 +7,8 @@ angular.module('iTalentApp')
         $scope.comments = [];
         $scope.carouselInterval = 3000;
         $scope.active = 0;
-
+        $scope.noWrapSlides = false;
+        
         projectService.get(projectId).then(function (project) {
             $scope.project = project;
         }, function (err) {

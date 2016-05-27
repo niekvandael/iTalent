@@ -116,10 +116,10 @@
 							    socialshare-type="feed"
 								socialshare-text="{{ project.title }}"
 								socialshare-caption ="{{ project.title }}"
-							    socialshare-caption="720kb is enough"
+							    socialshare-caption="{{ project.title }}"
 								socialshare-hashtags="pxl"
 								socialshare-url="{{ location }}/#/projects/{{ project.projectId }}"
-								socialshare-redirect-uri="http://localhost"
+								socialshare-redirect-uri="{{ location }}/#/projects/{{ project.projectId }}"
 								>
 								<span class="fa-stack fa-2x">
 								  <i class="fa fa-facebook"></i>
