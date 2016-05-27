@@ -151,8 +151,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@Transient
 	private boolean canSubscribe = false;
 	
-	@JsonIgnore
-	public void setCanSubscribe(int currentUserId, int departmentId){
+	public void updateCanSubscribe(int currentUserId, int departmentId){
 		if (this.getWantedSeats()>this.getTakenSeats()){
 			// Check amount asked in user department
 			int wantedInMyDepartment = 0;
@@ -187,8 +186,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@Transient
 	private boolean canBack = false;
 	
-	@JsonIgnore
-	public void setCanBack(int currentUserId){
+	public void updateCanBack(int currentUserId){
 		if (this.getBackingPct()>99){
 			return;
 		}
@@ -198,19 +196,8 @@ public class Project extends AbstractITalentEntity implements Serializable {
 				return;
 			}
 		}
-		this.canBack = true;
+		this.setCanBack(true);
 	}
-	
-	//TODO remove
-	/*@Column(name="is_backed")
-	private boolean isBacked;
-	public boolean isBacked() {
-		int total = 0;
-		for(SubscriberDocent s : subscribersDocent){
-			total += s.getBackingPct();
-		}
-		return total > 99;
-	}*/
 	
 	@JsonIgnore
 	public void setLiked(int currentUserId) {

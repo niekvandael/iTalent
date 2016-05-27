@@ -36,7 +36,7 @@ public class ProjectServiceImpl implements ProjectService{
     	List<Project>  projects = projectRepo.findAllFullBackedProjects();
     	for (Project project : projects){
     		project.setLiked(user.getUserId());
-    		project.setCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId()); //necessary for filter on home.html
+    		project.updateCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId()); //necessary for filter on home.html
     	}
     	return projects;
     }
@@ -46,7 +46,7 @@ public class ProjectServiceImpl implements ProjectService{
     	List<Project>  projects = projectRepo.findAll();
     	for (Project project : projects){
     		project.setLiked(user.getUserId());
-    		project.setCanBack(user.getUserId()); //necessary for filter on home.html
+    		project.updateCanBack(user.getUserId()); //necessary for filter on home.html
     	}
     	return projects;
     }
@@ -88,9 +88,9 @@ public class ProjectServiceImpl implements ProjectService{
     	Project project =  projectRepo.findOneByProjectId(id);
     	project.setLiked(user.getUserId());
     	//TODO only if student
-    	project.setCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId());
+    	project.updateCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId());
     	//TODO only if docent
-    	project.setCanBack(user.getUserId());
+    	project.updateCanBack(user.getUserId());
     	return project;
     }
     
@@ -143,7 +143,6 @@ public class ProjectServiceImpl implements ProjectService{
     		projects.add(project);
     		category.setProjects(projects);
     	}
-    	
     	return project;
     }
     
