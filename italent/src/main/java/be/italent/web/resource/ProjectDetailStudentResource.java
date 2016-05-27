@@ -20,4 +20,6 @@ public class ProjectDetailStudentResource extends ResourceSupport {
 	private boolean liked;
 	private int numberOfLikes;
 	private List<MovieResource> movies;
+	private boolean canSubscribe;
+	private int backingPct;
 }

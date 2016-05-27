@@ -20,4 +20,5 @@ public class ProjectDetailDocentResource extends ResourceSupport {
 	private boolean liked;
 	private int numberOfLikes;
 	private List<MovieResource> movies;
+	private boolean canBack;
 }
