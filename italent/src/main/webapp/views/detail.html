@@ -7,15 +7,15 @@
 			<div class="project-block-media img-responsive img-rounded"></div>
 		</div>
 		<div class="col-md-5" ng-if="project.pictures.length != 0">
-		      <uib-carousel active="active" interval="carouselInterval" no-wrap="noWrapSlides">
-		        <uib-slide ng-repeat="picture in project.pictures" index="$index">
-			          <img class="carouselImage" ng-src="data:image/jpeg;base64, {{ picture.bytes }}" style="height: 250px">
-			          <div class="carousel-caption">
-			          	<h4>{{ picture.pictureId }}</h4>
-			            <h4>{{ picture.description }}</h4>
-			          </div>
-			        </uib-slide>
-			    </uib-carousel>
+	      <uib-carousel active="active" interval="carouselInterval" no-wrap="noWrapSlides">
+	        <uib-slide ng-repeat="picture in project.pictures" index="$index">
+		          <img class="carouselImage" ng-src="data:image/jpeg;base64, {{ picture.bytes }}" style="height: 250px">
+		          <div class="carousel-caption">
+		          	<h4>{{ picture.pictureId }}</h4>
+		            <h4>{{ picture.description }}</h4>
+		          </div>
+		        </uib-slide>
+		    </uib-carousel>
 		</div>
 		<div class="col-md-7">
 			<div class="project-block-label">{{"views.home.shortDescription"
@@ -71,10 +71,16 @@
 	</div>
 
 	<div class="row">
-		<div class="row col-xs-offset-2" ng-repeat="movie in project.movies">
-			<iframe width="420" height="315"
-				src="{{ movie.youTubeCode | youtubeEmbedUrl }}" allowfullscreen></iframe>
-		</div>
+
+      <uib-carousel active="active" interval="carouselInterval" no-wrap="noWrapSlides">
+	        <uib-slide ng-repeat="movie in project.movies" index="$index">
+		         <iframe width="100%" height="600" src="{{ movie.youTubeCode | youtubeEmbedUrl }}" allowfullscreen></iframe>
+		          <div class="carousel-caption">
+		            <h4>{{ movie.description }}</h4>
+		          </div>
+		        </uib-slide>
+	</uib-carousel>
+
 	</div>
 	<div ng-if="authenticated" class="jumbotron">
 		<div ng-if="comments.length ==0">{{'views.detail.noComments' | translate}}</div>
