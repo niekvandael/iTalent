@@ -59,9 +59,8 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@OneToOne
 	private User user;
 	
-	//minutes
-	@Column(name="duration_in_minutes")
-	private int durationInMinutes;
+	//in minutes
+	private int duration;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="start_date")
