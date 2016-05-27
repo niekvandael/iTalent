@@ -7,16 +7,15 @@
 			<div class="project-block-media img-responsive img-rounded"></div>
 		</div>
 		<div class="col-md-5" ng-if="project.pictures.length != 0">
-			<div>
-		      <carousel interval="carouselInterval">
-		        <slide ng-repeat="picture in project.pictures" active="slide.active">
-		          <img class="carouselImage" ng-src="data:image/jpeg;base64, {{ picture.bytes }}"">
+		      <uib-carousel interval="carouselInterval">
+		        <uib-slide ng-repeat="picture in project.pictures track by picture.pictureId" index="picture.pictureId" active="active">
+		          <img class="carouselImage" ng-src="data:image/jpeg;base64, {{ picture.bytes }}">
 		          <div class="carousel-caption">
+		          	<h4>{{ picture.pictureId }}</h4>
 		            <h4>{{ picture.description }}</h4>
 		          </div>
-		        </slide>
-		      </carousel>
-		    </div>
+		        </uib-slide>
+		      </uib-carousel>
 		</div>
 		<div class="col-md-7">
 			<div class="project-block-label">{{"views.home.shortDescription"
