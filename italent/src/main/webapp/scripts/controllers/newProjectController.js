@@ -31,7 +31,7 @@ angular.module('iTalentApp')
     	};
     	
         if (projectId) {
-            projectService.get(projectId).then(function (project) {
+            projectService.getForEdit(projectId).then(function (project) {
                 $scope.project = project;
             }, function (err) {
                 console.log('Error getting project: ');

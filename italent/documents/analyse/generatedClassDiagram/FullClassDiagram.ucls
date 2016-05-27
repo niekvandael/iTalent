@@ -452,7 +452,7 @@
     <position height="50" width="222" x="1166" y="92"/>    
     <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="51" language="java" name="be.italent.web.resource.assembler.ProjectDetailResourceAssembler" 
+  <class id="51" language="java" name="be.italent.web.resource.assembler.ProjectDetailPublicResourceAssembler"
     project="italent" 
     file="/italent/src/main/java/be/italent/web/resource/assembler/ProjectDetailResourceAssembler.java" binary="false" 
     corner="BOTTOM_RIGHT">    
@@ -590,7 +590,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="66" language="java" name="be.italent.web.resource.ProjectDetailResource" project="italent" 
+  <class id="66" language="java" name="be.italent.web.resource.ProjectDetailPublicResource" project="italent"
     file="/italent/src/main/java/be/italent/web/resource/ProjectDetailResource.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="639" width="220" x="7048" y="874"/>    

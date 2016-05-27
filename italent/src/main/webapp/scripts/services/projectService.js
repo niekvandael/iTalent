@@ -15,6 +15,20 @@ angular.module('iTalentApp')
 
                 return deferred.promise;
             },
+            getForEdit: function (id) {
+                var deferred = $q.defer();
+
+                var resource = $resource(GLOBALS.baseURL + "projects/edit/:id", {id: "@_id"});
+
+                resource.get({id: id}, function (project) {
+                    deferred.resolve(project);
+                }, function (err) {
+                    deferred.reject(err);
+                });
+
+                return deferred.promise;
+            },
+
             listHome: function () {
                 var deferred = $q.defer();
                 var resource = $resource(GLOBALS.baseURL + "projects/listHome", {}, {list: {method: "GET", isArray: true}});

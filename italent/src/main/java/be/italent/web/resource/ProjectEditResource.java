@@ -1,0 +1,37 @@
+package be.italent.web.resource;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import org.springframework.hateoas.ResourceSupport;
+
+import java.util.Date;
+import java.util.List;
+
+@Data
+@EqualsAndHashCode(callSuper = false)
+public class ProjectEditResource extends ResourceSupport {
+	private Integer projectId;
+	private String title;
+	private String description;
+	private String shortDescription;
+	private Date creationDate;
+	private UserResource user;
+//		private int duration; //TODO
+	private Date startDate;
+	private CategoryResource category;
+	private DomainResource domain;
+	private boolean isPublic;
+	private List<LikeResource> likes;
+	private List<PictureResource> pictures;
+	private List<MovieResource> movies;
+	private List<MilestoneResource> milestones;
+	private List<WantedSubscriberResource> wantedSubscribers;
+	private List<SubscriberDocentResource> subscribersDocent;
+	private List<SubscriberStudentResource> subscribersStudent;
+	private List<PreziResource> prezis;
+	private List<OnlineFileResource> onlineFiles;
+	private List<CommentResource> comments;
+	private int numberOfLikes;
+	private boolean liked;
+	private Integer backingPct;
+}

@@ -1,6 +1,5 @@
 package be.italent.web.resource;
 
-import be.italent.model.Role;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.hateoas.ResourceSupport;
@@ -8,7 +7,10 @@ import org.springframework.hateoas.ResourceSupport;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class UserResource extends ResourceSupport {
+    private int userId;
     private String firstname;
     private String lastname;
-    private Role role;
+    private RoleResource role;
+    private String email;
+    private String username;
 }

@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -20,6 +22,9 @@ import java.util.List;
 @RequestMapping("/projects")
 public class ProjectRestController {
 
+    private final static String DOCENT = "Docent";
+    private final static String STUDENT = "Student";
+
     @Autowired
     private ProjectService projectService;
 
@@ -27,7 +32,10 @@ public class ProjectRestController {
     private UserService userService;
 
     private ProjectListHomeResourceAssembler projectListHomeResourceAssembler;
-    private ProjectDetailResourceAssembler projectDetailResourceAssembler;
+    private ProjectDetailPublicResourceAssembler projectDetailPublicResourceAssembler;
+    private ProjectDetailDocentResourceAssembler projectDetailDocentResourceAssembler;
+    private ProjectDetailStudentResourceAssembler projectDetailStudentResourceAssembler;
+    private ProjectEditResourceAssembler projectEditResourceAssembler;
     private ProjectUserResourceAssembler projectUserResourceAssembler;
     private ProjectMyLikedResourceAssembler projectMyLikedResourceAssembler;
     private ProjectMySubscribedResourceAssembler projectMySubscribedResourceAssembler;
@@ -35,7 +43,10 @@ public class ProjectRestController {
 
     public ProjectRestController() {
         this.projectListHomeResourceAssembler = new ProjectListHomeResourceAssembler();
-        this.projectDetailResourceAssembler = new ProjectDetailResourceAssembler();
+        this.projectDetailPublicResourceAssembler = new ProjectDetailPublicResourceAssembler();
+        this.projectDetailDocentResourceAssembler = new ProjectDetailDocentResourceAssembler();
+        this.projectDetailStudentResourceAssembler = new ProjectDetailStudentResourceAssembler();
+        this.projectEditResourceAssembler = new ProjectEditResourceAssembler();
         this.projectUserResourceAssembler = new ProjectUserResourceAssembler();
         this.projectMyLikedResourceAssembler = new ProjectMyLikedResourceAssembler();
         this.projectMySubscribedResourceAssembler = new ProjectMySubscribedResourceAssembler();
@@ -91,22 +102,37 @@ public class ProjectRestController {
                 projectService.getMyBackedProjects(userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
     }*/
 
-    //TODO opsplitsen in docent/studen/public/save/update detail
-//    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
-//    public ResponseEntity<ProjectDetailResource> getProject(@PathVariable("id") final int id, Principal principal) {
-//    	if (principal == null){
-//            return new ResponseEntity<>(projectDetailResourceAssembler
-//                    .toResource(projectService.getProjectById(id, 0)), HttpStatus.OK);
-//    	}
-//    	else {
-//            return new ResponseEntity<>(projectDetailResourceAssembler
-//                    .toResource(projectService.getProjectById(id, userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
-//    	}
+    //done: docent/student/public
+    //TODO save/update detail
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity getProject(@PathVariable("id") final int id, Principal principal) {
+        if (principal != null) {
+            UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+            if (userDetails.getAuthorities().contains(new SimpleGrantedAuthority("Student"))) {
+                return new ResponseEntity<>(projectDetailStudentResourceAssembler
+                        .toResource(projectService.getProjectById(id, userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
+            } else if (userDetails.getAuthorities().contains(new SimpleGrantedAuthority("Docent"))) {
+                return new ResponseEntity<>(projectDetailDocentResourceAssembler
+                        .toResource(projectService.getProjectById(id, userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            }
+        } else {
+            return new ResponseEntity<>(projectDetailPublicResourceAssembler
+                    .toResource(projectService.getProjectById(id)), HttpStatus.OK);
+        }
+    }
+
+//    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET, produces = "application/json")
+//    public ResponseEntity getEditProject(@PathVariable("id") final int id, Principal principal) {
+//        return new ResponseEntity<>(projectEditResourceAssembler
+//                .toResource(projectService.getProjectById(id)), HttpStatus.OK);
 //    }
     
     //TODO: Tijdelijk... (anders werkt het opslaan niet) zie todo hierboven...
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
-    public Project getProject(@PathVariable("id") final int id, Principal principal) {
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET, produces = "application/json")
+    public Project getEditProject(@PathVariable("id") final int id, Principal principal) {
     	if (principal == null){
             return projectService.getProjectById(id);
     	}

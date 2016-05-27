@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProjectDetailResource extends ResourceSupport {
+public class ProjectDetailPublicResource extends ResourceSupport {
     private Integer projectId;
 	private String title;
 	private List<PictureResource> pictures;
