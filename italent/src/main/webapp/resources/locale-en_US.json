@@ -60,6 +60,8 @@
   "views.home.seatsAvailable": "seat(s) available",
   "views.home.showProjectsICanEnroll": "Show only projects where i can enroll",
   "views.home.backed": "Backed",
+  "views.home.beTheFirstToSubscribe": "Be the first to subscribe!",
+  "views.home.noSubscribers": "No subscribers yet",
   "views.detail.comment": "Add your comment",
   "views.detail.addComment": "Add",
   "views.detail.noComments": "Be the first to leave a message!",

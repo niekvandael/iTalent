@@ -60,8 +60,10 @@
   "views.home.seatsAvailable": "plaats(en) beschikbaar",
   "views.home.showProjectsICanEnroll": "Toon enkel projecten waarop ik kan inschrijven",
   "views.home.backed": "Backed",
+  "views.home.beTheFirstToSubscribe": "Schrijf je als eerste in!",
+  "views.home.noSubscribers": "Nog geen studenten ingeschreven",
   "views.detail.comment": "Voeg je comment toe",
   "views.detail.addComment": "Toevoegen",
-"views.detail.noComments":"Laat als eerste een berichtje achter!",
+  "views.detail.noComments":"Laat als eerste een berichtje achter!",
   "directives.language-select.Language": "Taal"
 }
