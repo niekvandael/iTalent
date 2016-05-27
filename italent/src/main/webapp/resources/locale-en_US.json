@@ -64,6 +64,7 @@
   "views.home.noSubscribers": "No subscribers yet",
   "views.detail.comment": "Add your comment",
   "views.detail.addComment": "Add",
+  "views.detail.edit": "Edit Project",
   "views.detail.noComments": "Be the first to leave a message!",
   "directives.language-select.Language": "Language"
 }

@@ -64,6 +64,7 @@
   "views.home.noSubscribers": "Nog geen studenten ingeschreven",
   "views.detail.comment": "Voeg je comment toe",
   "views.detail.addComment": "Toevoegen",
+  "views.detail.edit": "Project aanpassen",
   "views.detail.noComments":"Laat als eerste een berichtje achter!",
   "directives.language-select.Language": "Taal"
 }

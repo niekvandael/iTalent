@@ -1,6 +1,6 @@
 angular.module('iTalentApp')
-    .controller('detailController', ['$scope', '$routeParams', 'projectService', 'likeService', 'subscriberStudentService', 'subscriberDocentService', 'commentService', 
-        function ($scope, $routeParams, projectService, likeService, subscriberStudentService, subscriberDocentService, commentService) {
+    .controller('detailController', ['$scope', '$routeParams', '$location', 'projectService', 'likeService', 'subscriberStudentService', 'subscriberDocentService', 'commentService', 
+        function ($scope, $routeParams, $location, projectService, likeService, subscriberStudentService, subscriberDocentService, commentService) {
 
         var projectId = $routeParams.id;
         $scope.project = {};
@@ -76,4 +76,7 @@ angular.module('iTalentApp')
         if ($scope.authenticated){
         	$scope.getComments();
         }
+        $scope.editProject = function(id) {
+            $location.path('/editProject/' + id);
+        };
     }]);

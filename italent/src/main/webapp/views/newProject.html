@@ -241,7 +241,7 @@
             <div class="col-xs-offset-5">
                 <button type="submit" class="btn btn-warning" ng-click="cancel()">{{'views.newProject.cancel' | translate}}</button>
                 <button type="submit" class="btn btn-primary" ng-click="save()">{{'views.newProject.save' | translate}}</button>
-                <button ng-if="!project.partiallyBacked && project.id>0" type="button" class="btn btn-danger" ng-click="deleteProject()">{{"views.home.delete" | translate}}</button>
+                <button ng-if="authenticated && project.projectId>0 && (role === 'Docent' || (role === 'Student' && project.backingPct < 1))" type="button" class="btn btn-danger" ng-click="deleteProject()">{{"views.home.delete" | translate}}</button>
             </div>
         </div>
     </form>

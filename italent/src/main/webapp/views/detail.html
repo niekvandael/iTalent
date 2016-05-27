@@ -67,6 +67,14 @@
 					ng-disabled="!percentage">{{'views.home.back' |
 					translate}}</button>
 			</div>
+			
+			<div ng-if="authenticated && role === 'Docent'" class="col-xs-offset-1 col-md-offset-4">
+				<button type="button" class="btn btn-danger btn-danger-detail col-xs-3 col-md-3 col-xs-offset-1"
+                            ng-click="editProject(project.projectId)">{{"views.detail.edit" | translate}}
+                    </button>
+			</div>
+			
+			
 		</div>
 	</div>
 
