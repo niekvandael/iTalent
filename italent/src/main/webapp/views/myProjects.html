@@ -31,7 +31,7 @@
                     <button type="button" class="btn btn-warning btn-warning-detail col-xs-2 col-md-2 col-xs-offset-1"
                             ng-click="showDetails(project.projectId)">{{"views.home.details" | translate}}
                     </button>
-                    <button type="button" class="btn btn-danger btn-danger-detail col-xs-2 col-md-2 col-xs-offset-1"
+                    <button ng-if="authenticated && (role === 'Docent' || (role === 'Student' && project.backingPct < 1))" type="button" class="btn btn-danger btn-danger-detail col-xs-2 col-md-2 col-xs-offset-1"
                             ng-click="editProject(project.projectId)">{{"views.home.edit" | translate}}
                     </button>
                 </div>
