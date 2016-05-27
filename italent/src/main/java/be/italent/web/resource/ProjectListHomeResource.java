@@ -17,6 +17,8 @@ public class ProjectListHomeResource extends ResourceSupport {
 	private Date creationDate;
 	private UserResource user;
 	private Date startDate;
+	private Date endDate;
+	private Integer duration;
     private List<CategoryResource> categories;
 	private DomainResource domain;
 	private boolean isPublic;

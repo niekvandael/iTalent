@@ -2,6 +2,7 @@ package be.italent.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -65,6 +66,19 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="start_date")
     private Date startDate;
+	
+	@Transient
+	private Date endDate;
+	
+	public Date getEndDate(){
+		if (startDate == null || duration == 0){
+			return null;
+		}
+		Calendar cal = Calendar.getInstance();
+        cal.setTime(startDate);
+        cal.add(Calendar.MINUTE, duration);
+        return cal.getTime();
+	}
 	
 	@JsonIgnore
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

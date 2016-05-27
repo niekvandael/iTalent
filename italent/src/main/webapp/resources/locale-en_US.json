@@ -11,6 +11,8 @@
   "views.home.shortDescription": "Short description",
   "views.home.createdBy": "Created by:",
   "views.home.startDate": "Start date:",
+  "views.home.endDate": "End date:",
+  "views.home.duration": "Duration:",
   "views.home.details": "Show details",
   "views.home.hours": "Hours",
   "views.home.percentage": "Percentage",
