@@ -37,7 +37,7 @@
 		</div>
 	</div>
 	
-	<div class="project-block" ng-repeat="project in projects | filter:search | filter:tagFilter | filter:backFilter | filter:enrollFilter">
+	<div class="project-block" ng-repeat="project in projects | filter:search | filter:tagFilter | filter:backFilter | filter:enrollFilter | filter:archiveFilter">
 		<div class="project-block-title" >{{ project.title }}</div>
 		<div ng-if="authenticated && (role === 'Docent')">
 			<div class="progress">

@@ -29,10 +29,14 @@ angular.module('iTalentApp')
                 return deferred.promise;
             },
 
-            listHome: function () {
+            listHome: function (isArchive) {
                 var deferred = $q.defer();
-                var resource = $resource(GLOBALS.baseURL + "projects/listHome", {}, {list: {method: "GET", isArray: true}});
-
+                
+                if(isArchive){
+                	var resource = $resource(GLOBALS.baseURL + "projects/listHomeArchive", {}, {list: {method: "GET", isArray: true}});
+                } else {
+                	var resource = $resource(GLOBALS.baseURL + "projects/listHome", {}, {list: {method: "GET", isArray: true}});
+                }
                 resource.list(function (projectList) {
                     deferred.resolve(projectList);
                 }, function (err) {

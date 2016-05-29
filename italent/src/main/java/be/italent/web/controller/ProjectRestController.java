@@ -1,10 +1,9 @@
 package be.italent.web.controller;
 
-import be.italent.model.Project;
-import be.italent.service.ProjectService;
-import be.italent.service.UserService;
-import be.italent.web.resource.*;
-import be.italent.web.resource.assembler.*;
+import java.security.Principal;
+import java.util.Iterator;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,10 +12,28 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.security.Principal;
-import java.util.List;
+import be.italent.model.Project;
+import be.italent.service.ProjectService;
+import be.italent.service.UserService;
+import be.italent.web.resource.ProjectListHomeResource;
+import be.italent.web.resource.ProjectMyLikedResource;
+import be.italent.web.resource.ProjectMySubscribedResource;
+import be.italent.web.resource.ProjectUserResource;
+import be.italent.web.resource.assembler.ProjectDetailDocentResourceAssembler;
+import be.italent.web.resource.assembler.ProjectDetailPublicResourceAssembler;
+import be.italent.web.resource.assembler.ProjectDetailStudentResourceAssembler;
+import be.italent.web.resource.assembler.ProjectEditResourceAssembler;
+import be.italent.web.resource.assembler.ProjectListHomeResourceAssembler;
+import be.italent.web.resource.assembler.ProjectMyBackedResourceAssembler;
+import be.italent.web.resource.assembler.ProjectMyLikedResourceAssembler;
+import be.italent.web.resource.assembler.ProjectMySubscribedResourceAssembler;
+import be.italent.web.resource.assembler.ProjectUserResourceAssembler;
 
 @RestController
 @RequestMapping("/projects")
@@ -55,18 +72,42 @@ public class ProjectRestController {
 
     @RequestMapping(value = "/listHome", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<ProjectListHomeResource>> getHomeProjects(Authentication auth) {
-        if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Student"))) {
-            return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(
-                    projectService.getBackedProjects(userService.getUserByUsername(auth.getName()))), HttpStatus.OK);
-        } else if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Docent"))) {
-            return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(
-                    projectService.getAllProjects(userService.getUserByUsername(auth.getName()))), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(
-                    projectService.getPublicProjects()), HttpStatus.OK);
-        }
+    	List<Project> projects = this.getProjectsForUser(auth);
+    	Iterator<Project> it = projects.iterator();
+    	
+    	while(it.hasNext()) {
+    	    Project proj = it.next();
+    		if(proj.isArchived()){
+    			it.remove();
+    		}
+    	}
+    	return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(projects), HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/listHomeArchive", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<List<ProjectListHomeResource>> getArchivedProjects(Authentication auth) {
+    	List<Project> projects = this.getProjectsForUser(auth);
+    	Iterator<Project> it = projects.iterator();
+    	
+    	while(it.hasNext()) {
+    	    Project proj = it.next();
+    		if(!proj.isArchived()){
+    			it.remove();
+    		}
+    	}
+    	return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(projects), HttpStatus.OK);
     }
 
+    private List<Project> getProjectsForUser(Authentication auth){
+        if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Student"))) {
+        	return projectService.getBackedProjects(userService.getUserByUsername(auth.getName()));
+        } else if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Docent"))) {
+            return projectService.getAllProjects(userService.getUserByUsername(auth.getName()));
+        } else {
+        	return projectService.getPublicProjects();
+        }
+    }
+    
     @Secured({"Docent", "Student"})
     @RequestMapping(value = "/user", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<ProjectUserResource>> getUserProjects(Principal principal) {

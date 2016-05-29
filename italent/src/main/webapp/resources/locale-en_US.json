@@ -6,6 +6,7 @@
   "views.index.about": "About",
   "views.index.login": "Login",
   "views.index.logout": "Logout",
+  "views.index.archive": "Archive",
   "views.login.username": "Username",
   "views.login.password": "Password",
   "views.home.shortDescription": "Short description",

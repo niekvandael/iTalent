@@ -6,6 +6,7 @@
   "views.index.about": "Over",
   "views.index.login": "Inloggen",
   "views.index.logout": "Uitloggen",
+  "views.index.archive": "Archief",
   "views.login.username": "Gebruikersnaam",
   "views.login.password": "Wachtwoord",
   "views.home.shortDescription": "Korte omschrijving",

@@ -6,6 +6,7 @@ angular.module('iTalentApp')
     	$scope.allTags = [];
     	$scope.shareText = "Check out this great PXL project!";
     	$scope.location = document.location.origin;
+    	$scope.isArchive = document.location.hash == "#/archive";
     	
     	$scope.loadTags = function(){
     		return $scope.allTags;
@@ -23,15 +24,13 @@ angular.module('iTalentApp')
             console.log('Error getting categories:');
             console.log(err);
         });
-        
-        projectService.listHome().then(function (projects) {
+		projectService.listHome($scope.isArchive).then(function (projects) {
             $scope.projects = projects;
         }, function (err) {
             console.log('Error getting projects:');
             console.log(err);
 
-        });
-
+        });	
         $scope.likeClicked = function (project) {
             if (!project.numberOfLikes) {
                 project.numberOfLikes = 0;

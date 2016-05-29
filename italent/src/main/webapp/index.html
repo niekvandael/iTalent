@@ -43,6 +43,7 @@
                     <li ng-if="authenticated" ng-class="{ active: isActive('/myProjects')}"><a href="#/myProjects">{{"views.index.myProjects" | translate}}</a></li>
                     <li ng-if="authenticated && (role === 'Student' || role === 'Docent')" ng-class="{ active: isActive('/newProject')}"><a href="#/newProject">{{"views.index.newProject" | translate}}</a></li>
                     <li ng-if="authenticated && role === 'Docent'" ng-class="{ active: isActive('/categories')}"><a href="#/category">{{"views.index.categories" | translate}}</a></li>
+                    <li ng-class="{ active: isActive('/archive')}"><a href="#/archive">{{"views.index.archive" | translate}}</a></li>
                     <li ng-class="{ active: isActive('/about')}"><a href="#/about">{{"views.index.about" | translate}}</a></li>
                 </ul>
                 <ul ng-controller="loginController" class="nav navbar-nav navbar-right">

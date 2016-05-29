@@ -36,7 +36,10 @@ public class Project extends AbstractITalentEntity implements Serializable {
 
 	@Transient
 	private boolean liked;
-
+	
+	@Transient
+	private boolean archived;
+	
 	@Id
 	@GeneratedValue
 	@Column(name="project_id")
@@ -221,5 +224,28 @@ public class Project extends AbstractITalentEntity implements Serializable {
 				break;
 			}
 		}
+	}
+	
+	@JsonIgnore
+	public boolean isArchived() {
+		if(this.startDate == null){
+			return false;
+		}
+		
+		Calendar date = dateToCalendar(this.startDate);
+		long t= date.getTimeInMillis();
+		Date endDate = new Date(t + (this.duration * 60000));
+		
+		if(endDate.compareTo(new Date()) < 0){
+			this.archived = true;
+		}
+		
+		return this.archived;
+	}
+	
+	private Calendar dateToCalendar(Date date) {
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		return calendar;
 	}
 }
