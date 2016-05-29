@@ -51,7 +51,7 @@ angular.module('iTalentApp')
                 console.log('Error getting comments:');
                 console.log(err);
             });
-        }
+        };
         
         $scope.saveSubscriberDocent = function(id, percentage) {
             subscriberDocentService.save(id, percentage).then(function() {
@@ -72,7 +72,8 @@ angular.module('iTalentApp')
                  console.log('Error saving comment');
                  console.log(err);
              })
-        }
+        };
+            
         if ($scope.authenticated){
         	$scope.getComments();
         }
