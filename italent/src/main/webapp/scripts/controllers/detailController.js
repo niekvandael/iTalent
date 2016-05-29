@@ -73,7 +73,14 @@ angular.module('iTalentApp')
                  console.log(err);
              })
         };
-            
+
+        var player = new PreziPlayer('prezi-player', {
+            preziId: 'hp08thgs3ifs', //TODO load prezi id from backend
+            width: 540,
+            height: 400,
+            controls: true
+        });
+
         if ($scope.authenticated){
         	$scope.getComments();
         }
