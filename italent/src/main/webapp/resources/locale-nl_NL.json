@@ -68,5 +68,8 @@
   "views.detail.addComment": "Toevoegen",
   "views.detail.edit": "Project aanpassen",
   "views.detail.noComments":"Laat als eerste een berichtje achter!",
+  "views.detail.description": "Omschrijving",
+  "views.detail.movies": "Films",
+  "views.detail.comments": "Commentaren",
   "directives.language-select.Language": "Taal"
 }

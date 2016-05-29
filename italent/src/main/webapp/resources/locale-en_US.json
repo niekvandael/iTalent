@@ -68,5 +68,8 @@
   "views.detail.addComment": "Add",
   "views.detail.edit": "Edit Project",
   "views.detail.noComments": "Be the first to leave a message!",
+  "views.detail.description": "Description",
+  "views.detail.movies": "Movies",
+  "views.detail.comments": "Comments",
   "directives.language-select.Language": "Language"
 }

@@ -18,10 +18,10 @@
 		    </uib-carousel>
 		</div>
 		<div class="col-md-7">
-			<div class="project-block-label">{{"views.home.shortDescription"
+			<div class="project-block-label">{{"views.detail.description"
 				| translate}}</div>
-			<div class="project-block-short-description">{{
-				project.shortDescription }}</div>
+			<div class="project-block-long-description">{{
+				project.description }}</div>
 
 			<div class="project-block-label col-xs-4">{{"views.home.createdBy"
 				| translate}}</div>
@@ -78,20 +78,22 @@
 		</div>
 	</div>
 
-	<div class="row">
-
-      <uib-carousel active="active" interval="carouselInterval" no-wrap="noWrapSlides">
-	        <uib-slide ng-repeat="movie in project.movies" index="$index">
-		         <iframe width="100%" height="600" src="{{ movie.youTubeCode | youtubeEmbedUrl }}" allowfullscreen></iframe>
-		          <div class="carousel-caption">
-		            <h4>{{ movie.description }}</h4>
-		          </div>
-		        </uib-slide>
-	</uib-carousel>
-
+	<div class="row col-md-6 col-md-offset-3" ng-if="project.movies && project.movies.length">
+		<div class="project-block-label">{{"views.detail.movies" | translate}}</div>
+		<uib-carousel active="active" interval="carouselInterval" no-wrap="noWrapSlides">
+			<uib-slide ng-repeat="movie in project.movies" index="$index">
+				<iframe width="100%" height="400" src="{{ movie.youTubeCode | youtubeEmbedUrl }}" allowfullscreen></iframe>
+				<div class="carousel-caption">
+					<h4>{{ movie.description }}</h4>
+				</div>
+			</uib-slide>
+		</uib-carousel>
 	</div>
-	<div ng-if="authenticated" class="jumbotron">
-		<div ng-if="comments.length ==0">{{'views.detail.noComments' | translate}}</div>
+	
+	<div ng-if="authenticated" class="project-block row jumbotron col-md-8 col-md-offset-2">
+		<div class="project-block-label centerText">{{"views.detail.comments" | translate}}</div>
+		<br />
+		<div ng-if="comments.length == 0">{{'views.detail.noComments' | translate}}</div>
 		<div ng-repeat="comment in comments.slice().reverse()">
 			<table>
 				<tr style="vertical-align: top;">
@@ -113,7 +115,7 @@
 		</div>
 		<div>
 			<input required type="text" ng-model="comment"
-				class="input-block col-xs-4 col-md-9" min="1" max="255"
+				class="input-block col-xs-4 col-xs-offset-3 col-md-9 col-md-offset-0" min="1" max="255"
 				placeholder="{{'views.detail.comment' | translate}}" />
 			<button
 				class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
