@@ -59,6 +59,7 @@
   "views.category.addNewCategory" : "Add new category",
   "views.newProject.wantedSubscribers" : "Wanted subscribers",
   "views.newProject.addWantedSubscriber" : "Add wanted subscriber",
+  "views.newProject.subscribers" : "Subscribed students",
   "views.home.projectsICanBack": "Show only projects to back",
   "views.home.seatsAvailable": "seat(s) available",
   "views.home.showProjectsICanEnroll": "Show only projects where i can enroll",

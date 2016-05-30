@@ -135,8 +135,10 @@
                         </button>
                     </div>
                 </div>
+                
+                
 
-                <!--Project subscribers-->
+                <!--Project wanted subscribers-->
                 <div class="project-block">
                     <div class="project-block-label centerText">
                         <label>{{'views.newProject.wantedSubscribers' | translate}}</label>
@@ -165,6 +167,24 @@
                         <button class="btn btn-primary btn-primary-detail" ng-click="addWantedSubscriber()">
                             {{'views.newProject.addWantedSubscriber' | translate}}
                         </button>
+                    </div>
+                </div>
+                
+                <!--Project subscribers-->
+                <div ng-if="authenticated && project.projectId>0 && role === 'Docent'" class="project-block">
+                    <div class="project-block-label centerText">
+                        <label>{{'views.newProject.subscribers' | translate}}</label>
+                    </div>
+                    <div ng-repeat="subscriber in project.subscribersStudent">
+                    	<div class="row">
+		                    <div class="col-md-10">
+		                         <div class="add-project-label">{{ subscriber.user.firstname + " " + subscriber.user.lastname }}</div>
+		                    </div>
+		                    <div class="col-md-2">
+		                        <button ng-click="removeSubscriberStudent(subscriber)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
+		                            <i class="glyphicon glyphicon-trash"></i></button>
+		                    </div>
+	                    </div>
                     </div>
                 </div>
 

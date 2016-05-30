@@ -59,6 +59,7 @@
   "views.category.addNewCategory" : "Categorie toevoegen",
   "views.newProject.wantedSubscribers" : "Gezochte teamleden",
   "views.newProject.addWantedSubscriber" : "Gezocht teamlid toevoegen",
+  "views.newProject.subscribers" : "Ingeschreven studenten",
   "views.home.projectsICanBack": "Enkel niet 100% gebackte projecten tonen",
   "views.home.seatsAvailable": "plaats(en) beschikbaar",
   "views.home.showProjectsICanEnroll": "Toon enkel projecten waarop ik kan inschrijven",

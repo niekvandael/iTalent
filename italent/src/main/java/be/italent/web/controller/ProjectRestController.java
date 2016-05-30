@@ -192,6 +192,12 @@ public class ProjectRestController {
     @Secured({"Docent", "Student"})
     @RequestMapping(value = "/save/{id}", method = RequestMethod.PUT, produces = "application/json")
     public Project updateProject(@PathVariable("id") final int id, @RequestBody Project project, Principal principal) {
+    	
+    	//when a subscriber is deleted after project is started reset start date...
+    	if (project.getStartDate()!=null && project.getWantedSeats()>project.getTakenSeats()){
+    		project.setStartDate(null);
+    	}
+    	
         return projectService.saveProject(project);
     }
 

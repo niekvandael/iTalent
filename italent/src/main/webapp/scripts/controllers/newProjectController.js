@@ -110,6 +110,10 @@ angular.module('iTalentApp')
         $scope.removeSubscriber = function (subscriber) {
             $scope.project.wantedSubscribers = _.without($scope.project.wantedSubscribers, subscriber);
         };
+        
+        $scope.removeSubscriberStudent = function (subscriber) {
+            $scope.project.subscribersStudent = _.without($scope.project.subscribersStudent, subscriber);
+        };
 
         $scope.removePrezi = function (prezi) {
             $scope.project.prezis = _.without($scope.project.prezis, prezi);

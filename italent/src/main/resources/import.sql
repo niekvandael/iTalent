@@ -104,7 +104,7 @@ insert into subscriber_docent(user_user_id, project_project_id, backing_pct, sta
 insert into subscriber_docent(user_user_id, project_project_id, backing_pct, status, last_updated_by, last_update) values(8, 4, 100, 'A', 'Team1', '2016-01-01');
 
 -- subscriber_student
-insert into subscriber_student(user_user_id, project_project_id, hours, status, last_updated_by, last_update) values(1, 1, 10, 'A', 'Team1', '2016-01-01');
+--insert into subscriber_student(user_user_id, project_project_id, hours, status, last_updated_by, last_update) values(1, 1, 10, 'A', 'Team1', '2016-01-01');
 insert into subscriber_student(user_user_id, project_project_id, hours, status, last_updated_by, last_update) values(4, 1, 10, 'A', 'Team1', '2016-01-01');
 insert into subscriber_student(user_user_id, project_project_id, hours, status, last_updated_by, last_update) values(2, 1, 20, 'A', 'Team1', '2016-01-01');
 insert into subscriber_student(user_user_id, project_project_id, hours, status, last_updated_by, last_update) values(3, 1, 100, 'A', 'Team1', '2016-01-01');
