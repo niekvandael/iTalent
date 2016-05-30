@@ -98,7 +98,7 @@ body {
 	height: 100px;
 	padding: 5px;
 	font-size: 12px;
-	overflow: hidden;
+	overflow-y: auto;
 }
 
 .project-block-media {
