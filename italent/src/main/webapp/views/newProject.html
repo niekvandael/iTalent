@@ -177,9 +177,15 @@
                     </div>
                     <div ng-repeat="subscriber in project.subscribersStudent">
                     	<div class="row">
-		                    <div class="col-md-10">
+		                    <div class="col-md-7">
 		                         <div class="add-project-label">{{ subscriber.user.firstname + " " + subscriber.user.lastname }}</div>
 		                    </div>
+		                    <div class="col-md-1">
+		                        <label>{{'views.newProject.hours' | translate}}</label>
+		                    </div>
+		                    <div class="col-md-2">
+                                <input type="number" ng-model="subscriber.hours" class="form-control" />
+                            </div>
 		                    <div class="col-md-2">
 		                        <button ng-click="removeSubscriberStudent(subscriber)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
 		                            <i class="glyphicon glyphicon-trash"></i></button>

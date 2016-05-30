@@ -55,6 +55,7 @@
   "views.newProject.category" : "Category",
   "views.newProject.domain" : "Domain",
   "views.newProject.duration" : "Duration",
+  "views.newProject.hours" : "Hours: ",
   "views.newProject.addOnlineFile": "Add Online File",
   "views.category.addNewCategory" : "Add new category",
   "views.newProject.wantedSubscribers" : "Wanted subscribers",

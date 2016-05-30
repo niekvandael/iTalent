@@ -56,6 +56,7 @@
   "views.newProject.category" : "Categorie",
   "views.newProject.domain" : "Domein",
   "views.newProject.duration" : "Duur",
+  "views.newProject.hours" : "Uren: ",
   "views.category.addNewCategory" : "Categorie toevoegen",
   "views.newProject.wantedSubscribers" : "Gezochte teamleden",
   "views.newProject.addWantedSubscriber" : "Gezocht teamlid toevoegen",
