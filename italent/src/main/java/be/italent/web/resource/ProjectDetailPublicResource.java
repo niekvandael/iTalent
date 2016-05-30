@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.hateoas.ResourceSupport;
 
+import be.italent.model.Prezi;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -21,4 +22,5 @@ public class ProjectDetailPublicResource extends ResourceSupport {
 	private boolean liked;
 	private int numberOfLikes;
 	private List<MovieResource> movies;
+	private List<Prezi> prezis;
 }

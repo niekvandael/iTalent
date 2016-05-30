@@ -11,6 +11,10 @@ angular.module('iTalentApp')
         
         projectService.get(projectId).then(function (project) {
             $scope.project = project;
+            if($scope.project.prezis.length>0){
+            	$scope.setupPreziPlayer();
+            }
+            
         }, function (err) {
             console.log('Error getting project:');
             console.log(err);
@@ -74,12 +78,15 @@ angular.module('iTalentApp')
              })
         };
 
-        var player = new PreziPlayer('prezi-player', {
-            preziId: 'hp08thgs3ifs', //TODO load prezi id from backend
-            width: 540,
-            height: 400,
-            controls: true
-        });
+        $scope.setupPreziPlayer = function() {
+        	var player = new PreziPlayer('prezi-player', {
+                preziId: $scope.project.prezis[0].preziCode, //TODO multiple codes?
+                width: 540,
+                height: 400,
+                controls: true
+            });
+        };
+        
 
         if ($scope.authenticated){
         	$scope.getComments();
