@@ -1,5 +1,5 @@
 <div ng-if="authenticated" class="container">
-    <h2>{{'views.newProject.pageTitle' | translate}}</h2>
+    <h2 ng-if="!project.projectId">{{'views.newProject.pageTitle' | translate}}</h2>
     <form name="registrationForm">
         <div class="row">
             <div class="col-md-6">
