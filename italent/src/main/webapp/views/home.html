@@ -41,14 +41,14 @@
 		<div class="project-block-title" >{{ project.title }}</div>
 		<div ng-if="authenticated && (role === 'Docent')">
 			<div class="progress">
-				 <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="{{ project.backingPct }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ project.backingPct }}%">
+				 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ project.backingPct }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ project.backingPct }}%">
 				      <span ng-if="project.backingPct != 0">{{ project.backingPct }}%  {{"views.home.backed" | translate}}</span>
 				 </div>
 				<div ng-if="project.backingPct == 0" style="width:100%;text-align: center;">{{ project.backingPct }}%  {{"views.home.backed" | translate}}</div>
 			</div>
 
 			<div ng-if="project.backingPct > 99" class="progress">
-				 <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="{{ (project.takenSeats / project.wantedSeats * 100) }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ (project.takenSeats / project.wantedSeats * 100) }}%">
+				 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ (project.takenSeats / project.wantedSeats * 100) }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ (project.takenSeats / project.wantedSeats * 100) }}%">
 				     <span ng-if="project.takenSeats != 0">{{ project.wantedSeats - project.takenSeats }} {{"views.home.seatsAvailable" | translate}}</span>
 				 </div>
 				 <div ng-if="project.takenSeats == 0" style="width:100%;text-align: center;">{{"views.home.noSubscribers" | translate}}</div>
@@ -57,7 +57,7 @@
 		
 		<div ng-if="authenticated && (role === 'Student')">
 			<div class="progress">
-				 <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="{{ (project.takenSeats / project.wantedSeats * 100) }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ (project.takenSeats / project.wantedSeats * 100) }}%">
+				 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ (project.takenSeats / project.wantedSeats * 100) }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ (project.takenSeats / project.wantedSeats * 100) }}%">
 				     <span ng-if="project.takenSeats != 0">{{ project.wantedSeats - project.takenSeats }} {{"views.home.seatsAvailable" | translate}}</span>
 				 </div>
 				 <div ng-if="project.takenSeats == 0" style="width:100%;text-align: center;">{{"views.home.beTheFirstToSubscribe" | translate}}</div>
