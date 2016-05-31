@@ -41,7 +41,7 @@
 		<div class="project-block-title" >{{ project.title }}</div>
 		<div ng-if="authenticated && (role === 'Docent')">
 			<div class="progress">
-				 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ project.backingPct }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ project.backingPct }}%">
+				 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ project.backingPct }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ project.backingPct > 100 && 100 || project.backingPct }}%">
 				      <span ng-if="project.backingPct != 0">{{ project.backingPct }}%  {{"views.home.backed" | translate}}</span>
 				 </div>
 				<div ng-if="project.backingPct == 0" style="width:100%;text-align: center;">{{ project.backingPct }}%  {{"views.home.backed" | translate}}</div>
