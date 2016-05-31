@@ -1,3 +1,4 @@
+<div class="container">
 <div class="navbar navbar-default" ng-controller="headerController">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -10,16 +11,16 @@
             </div>
 
             <div class="collapse navbar-collapse" id="navbar-myProjects">
-                <ul class="nav navbar-nav">
-                      <li class="{{ active === 'myProjects' && 'active' }}"><a href="" ng-click="showMyProjects()">{{"views.myProjects.myProjects" | translate}}</a></li>
-					  <li class="{{ active === 'mySubscribedProjects' && 'active' }}"><a href="" ng-click="showMySubscribedProjects()">{{"views.myProjects.subscribedProjects" | translate}}</a></li>
-					  <li class="{{ active === 'myLikedProjects' && 'active' }}"><a href="" ng-click="showMyLikedProjects()">{{"views.myProjects.likedProjects" | translate}}</a></li>
+                <ul class="nav navbar-nav" style="width:100%">
+                      <li style="width:33%;"  class="{{ active === 'myProjects' && 'activeSubItem' }}"><a href="" ng-click="showMyProjects()">{{"views.myProjects.myProjects" | translate}}</a></li>
+					  <li style="width:33%;"  class="{{ active === 'mySubscribedProjects' && 'activeSubItem' }}"><a href="" ng-click="showMySubscribedProjects()">{{"views.myProjects.subscribedProjects" | translate}}</a></li>
+					  <li style="width:33%;" class="{{ active === 'myLikedProjects' && 'activeSubItem' }}"><a href="" ng-click="showMyLikedProjects()">{{"views.myProjects.likedProjects" | translate}}</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-
+</div>
 <div class="container">
 	<div class="project-block" ng-repeat="project in projects">
 	    <div class="project-block-title">{{ project.title }}</div>
@@ -55,5 +56,5 @@
 	        </div>
 	    </div>
 	</div>
-	<div ng-hide="projects.length">{{"views.myProjects.noProjects" | translate}}</div>
+	<div style="text-align: center;" ng-hide="projects.length">{{"views.myProjects.noProjects" | translate}}</div>
 </div>
