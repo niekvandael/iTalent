@@ -40,9 +40,9 @@ angular.module('iTalentApp')
         }
 
         $scope.save = function () {
-            projectService.saveOrUpdate($scope.project).then(function () {
+            projectService.saveOrUpdate($scope.project).then(function (project) {
                 toastr.success('Project is opgeslagen', 'Succes!');
-                $location.path('/myProjects');
+                $location.path('/projects/' + project.projectId);
             }, function (err) {
                 toastr.error('Probleem bij opslaan project, probeer het nogmaals.', 'Fout!');
                 console.log('Error saving project.');
