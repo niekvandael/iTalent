@@ -22,7 +22,7 @@
   "views.home.add": "Add",
   "views.home.edit": "Edit",
   "views.home.delete": "Delete",
-  "views.home.search": "Search",
+  "views.home.search": "Search by tag or keyword",
   "views.about.title": "About iTalent PXL project",
   "views.about.madeBy": "Made by: ",
   "views.myProjects.myProjects": "My projects",

@@ -2,20 +2,9 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<div class="input-group">
-				<input type="text" class="form-control" ng-model="search.title"
-					placeholder="Search for..."> <span class="input-group-btn">
-					<button class="btn btn-default" type="button">{{"views.home.search"
-						| translate}}</button>
-				</span>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<div class="input-group">
 				<span class="input-group-btn"> <tags-input ng-model="tags"
 						add-on-paste="true" style="display:inline;"
-						placeholder="Search by tag..."> <auto-complete
+						placeholder="{{ 'views.home.search' | translate }}"> <auto-complete
 						source="loadTags($query)"></auto-complete> </tags-input>
 				</span>
 			</div>
@@ -37,7 +26,7 @@
 		</div>
 	</div>
 	
-	<div class="project-block" ng-repeat="project in projects | filter:search | filter:tagFilter | filter:backFilter | filter:enrollFilter | filter:archiveFilter">
+	<div class="project-block" ng-repeat="project in projects | filter:tagFilter | filter:backFilter | filter:enrollFilter">
 		<div class="project-block-title" >{{ project.title }}</div>
 		<div ng-if="authenticated && (role === 'Docent')">
 			<div class="progress">

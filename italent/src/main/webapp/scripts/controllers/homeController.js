@@ -73,22 +73,25 @@ angular.module('iTalentApp')
         		return true;
         	}
         	
+    		var minOneCategoryIsTag = false;        	
         	for (var i = 0; i < $scope.tags.length; i++) {
         		var tag = $scope.tags[i];
         		
         		if(tag.categoryId === undefined){
-        			// non-existing tag
-        			return true;
+        			// non-existing tag: try search in description
+        			if(proj.description.indexOf($scope.tags[i].text) != -1){
+        				return true;
+        			}
         		}
         		
         		for (var j = 0; j < proj.categories.length; j++) {
 					var projectTag = proj.categories[j];
 	        		
 	                if(projectTag.categoryId === tag.categoryId){
-	                   return true;
+	                	minOneCategoryIsTag = true;
 	                }    
 				}
- 				
 			}
+    		return minOneCategoryIsTag;
         }
     }]);
