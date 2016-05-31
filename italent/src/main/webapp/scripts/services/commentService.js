@@ -27,5 +27,19 @@ angular.module('iTalentApp')
                 
                 return deferred.promise;
             },
+            
+            remove: function (commentId) {
+                var deferred = $q.defer();
+                var resource = $resource(GLOBALS.baseURL + "comments/remove/" + commentId, {remove: {method: "DELETE"}});
+
+                resource.remove(commentId, function () {
+                    deferred.resolve();
+                }, function (err) {
+                    deferred.reject(err);
+                });
+                
+                return deferred.promise;
+            },
+        
         }
     }]);

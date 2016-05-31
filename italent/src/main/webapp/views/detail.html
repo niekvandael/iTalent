@@ -114,6 +114,11 @@
 							<div class="commentmetadata">{{ comment.message }}</div>
 						</div>
 					</td>
+					<td ng-if="role === 'Docent'">
+						<button ng-click="removeComment(comment)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
+	                    	<i class="glyphicon glyphicon-trash"></i>
+	                    </button>
+					</td>
 				</tr>
 			</table>
 			<br />

@@ -98,7 +98,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@Column(name="is_public")
 	private boolean isPublic;	
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="project")
 	@JsonIgnore
 	private List<Like> likes = new ArrayList<Like>();
 	
@@ -126,7 +126,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval=true)
 	private List<OnlineFile> onlineFiles = new ArrayList<OnlineFile>();
 	
-	@OneToMany(mappedBy="project", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval=true)
+	@OneToMany(mappedBy="project")
 	private List<Comment> Comments = new ArrayList<Comment>();
 
 	@Transient

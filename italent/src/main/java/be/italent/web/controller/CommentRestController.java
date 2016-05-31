@@ -35,4 +35,10 @@ public class CommentRestController {
 	public List<Comment> saveComment(@PathVariable("id") final int projectId){
 		return commentService.getComments(projectId);
 	}
+	
+	@Secured({"Docent"})
+	@RequestMapping(value = "/comments/remove/{id}", method = RequestMethod.DELETE, produces="application/json")
+	public void deleteComment(@PathVariable("id") final int commentId){
+		commentService.deleteComment(commentId);
+	}
 }

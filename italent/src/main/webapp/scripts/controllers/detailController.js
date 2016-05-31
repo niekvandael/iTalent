@@ -94,4 +94,14 @@ angular.module('iTalentApp')
         $scope.editProject = function(id) {
             $location.path('/editProject/' + id);
         };
+        
+        $scope.removeComment = function(comment){
+        	commentService.remove(comment.commentId).then(function () {
+                $scope.getComments();
+            }, function (err) {
+                console.log('Error deleting comment');
+                console.log(err);
+            })
+        
+        };
     }]);

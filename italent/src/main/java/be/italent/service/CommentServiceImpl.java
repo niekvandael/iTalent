@@ -37,6 +37,12 @@ public class CommentServiceImpl implements CommentService{
 		return commentRepo.findAllByProject(project);
 	}
 
-
-    
+	@Override
+	public void deleteComment(int commentId) {
+		Comment comment = commentRepo.findOne(commentId);
+		commentRepo.delete(comment);
+		
+		List<Comment> cmts = this.getComments(comment.getProject().getProjectId());
+		
+	}
 }
