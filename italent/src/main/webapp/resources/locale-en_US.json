@@ -31,6 +31,7 @@
   "views.myProjects.noMyProjects": "You didn't create any projects",
   "views.myProjects.noSubscribedProjects": "You are not subscribed to any project",
   "views.myProjects.noLikedProjects": "You didn't like any project",
+  "views.myProjects.noProjects": "No projects",
   "views.newProject.pageTitle": "Make a new project",
   "views.newProject.title": "Title",
   "views.newProject.delete": "Delete",

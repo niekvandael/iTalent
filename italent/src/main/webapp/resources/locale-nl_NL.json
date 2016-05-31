@@ -29,6 +29,7 @@
   "views.myProjects.subscribedProjects": "Ingeschreven projecten",
   "views.myProjects.likedProjects": "Mijn gelikete projecten",
   "views.myProjects.noMyProjects": "Je hebt nog geen projecten aangemaakt",
+  "views.myProjects.noProjects": "Geen projecten",
   "views.myProjects.noSubscribedProjects": "Je bent op geen projecten ingeschreven",
   "views.myProjects.noLikedProjects": "Je hebt nog geen project geliket",
   "views.newProject.pageTitle": "Maak een nieuw project",

@@ -4,36 +4,39 @@
 angular.module('iTalentApp')
      .controller('myProjectsController', ['$scope', '$rootScope', '$location', 'projectService', 'likeService',
          function ($scope, $rootScope, $location, projectService, likeService) {
-
-    	$scope.myProjectsIsCollapsed = true;
-    	$scope.subscribedProjectsIsCollapsed = true;
-    	$scope.likedProjectsIsCollapsed = true;
-    	$scope.myProjects = {};
-    	$scope.myLikedProjects = {};
-    	$scope.mySubscribedProjects = {};
+    	 $projects = new Array();
+    	 $scope.active = "myProjects";
     	 
-    	projectService.listUser().then(function (projects) {
-            $scope.myProjects = projects;
-        }, function (err) {
-            console.log('Error getting projects:');
-            console.log(err);
-        });
-    	
-    	projectService.listMySubscribed().then(function (projects) {
-            $scope.mySubscribedProjects = projects;
-        }, function (err) {
-            console.log('Error getting mySubscribed projects:');
-            console.log(err);
-        });
-    	
-    	projectService.listMyLiked().then(function (projects) {
-            $scope.myLikedProjects = projects;
-        }, function (err) {
-            console.log('Error getting myliked projects:');
-            console.log(err);
-        });
+         $scope.showMyProjects = function(){
+        	$scope.active = "myProjects";
+        	projectService.listUser().then(function (projects) {
+        		$scope.projects = projects;
+            }, function (err) {
+                console.log('Error getting projects:');
+                console.log(err);
+            });	
+        };
         
-        $scope.editProject = function(id) {
+        $scope.showMySubscribedProjects = function(){
+        	$scope.active = "mySubscribedProjects";
+        	projectService.listMySubscribed().then(function (projects) {
+                $scope.projects = projects;
+            }, function (err) {
+                console.log('Error getting mySubscribed projects:');
+                console.log(err);
+            });
+        };
+        
+        $scope.showMyLikedProjects = function(){
+        	$scope.active = "myLikedProjects";
+        	projectService.listMyLiked().then(function (projects) {
+        		$scope.projects = projects;
+            }, function (err) {
+                console.log('Error getting myliked projects:');
+                console.log(err);
+            });
+        };
+               $scope.editProject = function(id) {
             $location.path('/editProject/' + id);
         };
 
@@ -58,5 +61,5 @@ angular.module('iTalentApp')
                 console.log(err);
             })
         };
-
+        $scope.showMyProjects();
     }]);
