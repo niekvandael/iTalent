@@ -59,7 +59,7 @@ body {
 	padding: 5px;
 	overflow: hidden;
 	border-bottom: 1px solid #e0e0e0;
-	
+	font-weight: bold;
 	text-transform: uppercase;
 }
 
