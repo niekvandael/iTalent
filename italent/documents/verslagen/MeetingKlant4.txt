@@ -1,0 +1,21 @@
+Meeting klant 31/5/2016:
+- likes in detailpagina werken niet
+- mogelijkheid toevoegen om commentaren te verwijderen
+- na het editeren terug naar project detail navigeren
+- progressbars niet laten bewegen
+- project omschrijving meer ruimte geven in detailpagina
+- melding (toast) bij verwijderen van een categorie zegt success wanneer het verwijderen niet kan
+- zoeken anders aanpakken (verwarrend hoe het nu is)
+- navigeren naar detailpagina na klikken op titel
+- backing % niet centraal wanneer meer dan 100%
+- backen na 100% toelaten
+- projecttitel vet maken
+- naar projectlijst navigeren na het klikken op ITalent PXL in de menu
+- 'Back' hernoemen naar 'Support'
+- duidelijker maken wanneer een project 'loopt'
+- leeg formulier kan aangemaakt worden (validatie)
+- publiek maken: alleen als 100% gebackt
+- weergave prezi werkt niet goed (+comments ingeven, waarschijnlijk door prezi)
+
+
+
