@@ -27,7 +27,10 @@
 	</div>
 	
 	<div class="project-block" ng-repeat="project in projects | filter:tagFilter | filter:backFilter | filter:enrollFilter">
-		<div class="project-block-title" >{{ project.title }}</div>
+		<div class="project-block-title">{{ project.title }}
+				<img ng-if="project.running" ng-src="images/progress.png" style="width:30px; margin: 5px; float: right;"/>
+		</div>
+		
 		<div ng-if="authenticated && (role === 'Docent')">
 			<div class="progress">
 				 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ project.backingPct }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ project.backingPct > 100 && 100 || project.backingPct }}%">

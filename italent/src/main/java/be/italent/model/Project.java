@@ -39,6 +39,9 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	
 	@Transient
 	private boolean archived;
+
+	@Transient
+	private boolean running;
 	
 	@Id
 	@GeneratedValue
@@ -241,6 +244,23 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		}
 		
 		return this.archived;
+	}
+	
+	@JsonIgnore
+	public boolean isRunning() {
+		if(this.startDate == null){
+			return false;
+		}
+		
+		Calendar date = dateToCalendar(this.startDate);
+		long t= date.getTimeInMillis();
+		Date endDate = new Date(t + (this.duration * 60000));
+		
+		if(endDate.compareTo(new Date()) > 0){
+			this.running = true;
+		}
+		
+		return this.running;
 	}
 	
 	private Calendar dateToCalendar(Date date) {

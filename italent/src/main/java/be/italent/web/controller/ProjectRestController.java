@@ -98,6 +98,21 @@ public class ProjectRestController {
     	return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(projects), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/listHomeRunning", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<List<ProjectListHomeResource>> getRunningProjects(Authentication auth) {
+    	List<Project> projects = this.getProjectsForUser(auth);
+    	Iterator<Project> it = projects.iterator();
+    	
+    	while(it.hasNext()) {
+    	    Project proj = it.next();
+    		if(!proj.isRunning()){
+    			it.remove();
+    		}
+    	}
+    	return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(projects), HttpStatus.OK);
+    }
+
+    
     private List<Project> getProjectsForUser(Authentication auth){
         if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Student"))) {
         	return projectService.getBackedProjects(userService.getUserByUsername(auth.getName()));
