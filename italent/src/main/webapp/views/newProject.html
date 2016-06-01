@@ -19,7 +19,7 @@
                     <textarea required ng-model="project.shortDescription" class="form-control" rows="5" placeholder="{{'views.newProject.shortDescription' | translate}}" maxlength="200"></textarea>
                 </div>
                 
-                <div class="form-group" ng-if="authenticated && (role === 'Docent')">
+                <div class="form-group" ng-if="authenticated && role === 'Docent' && project.backingPct>99">
                     <label class="required">{{'views.newProject.public' | translate}}</label>
                     <input type="checkbox" ng-model="project.public" ng-checked="project.public" class="form-control" />
                 </div>
