@@ -27,7 +27,7 @@
 	</div>
 	
 	<div class="project-block" ng-repeat="project in projects | filter:tagFilter | filter:backFilter | filter:enrollFilter">
-		<div class="project-block-title">{{ project.title }}
+		<div ng-click="showDetails(project.projectId)" class="project-block-title pointer">{{ project.title }}
 				<img ng-if="project.running" ng-src="images/progress.png" style="width:30px; margin: 5px; float: right;"/>
 		</div>
 		

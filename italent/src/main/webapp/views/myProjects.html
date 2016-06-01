@@ -23,7 +23,7 @@
 </div>
 <div class="container">
 	<div class="project-block" ng-repeat="project in projects">
-	    <div class="project-block-title">{{ project.title }}</div>
+	    <div ng-click="showDetails(project.projectId)" class="project-block-title pointer">{{ project.title }}</div>
 	    <div class="row">
 	        <div class="col-md-5">
 	            <div class="project-block-media img-responsive img-rounded" ng-if="project.pictures[0].bytes == undefined"></div>
