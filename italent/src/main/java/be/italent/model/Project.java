@@ -206,11 +206,19 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	private boolean canBack = false;
 	
 	public void updateCanBack(int currentUserId){
-		if (this.getBackingPct()>99){
+		
+		// commented to allow backing after 100%
+//		if (this.getBackingPct()>99){
+//			return;
+//		}
+		
+		// don't allow backing when project is running
+		if (this.isRunning()){
 			return;
 		}
+		
+		//check if docent is already backing
 		for(SubscriberDocent subscriberDocent : this.getSubscribersDocent()){
-			//check if docent is already backing
 			if(subscriberDocent.getUser().getUserId() == currentUserId){
 				return;
 			}
