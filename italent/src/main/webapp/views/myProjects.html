@@ -37,8 +37,25 @@
 	            <div class="project-block-label col-xs-4">{{"views.home.createdBy" | translate}}</div>
 	            <div class="project-block-text col-xs-8">{{project.user.firstname + ' ' + project.user.lastname}}</div>
 	
-	            <!-- <div class="project-block-label col-xs-4">{{"views.home.startDate" | translate}}</div>
-	            <div class="project-block-text col-xs-8">{{project.startDate | date}}</div> -->
+	            <div ng-if="project.duration && !project.startDate" class="project-block-label col-xs-4">{{"views.home.duration"
+					| translate}}
+				</div>
+				<div ng-if="project.duration && !project.startDate" class="project-block-text col-xs-8">{{project.duration}}
+				</div>
+
+				<div ng-if="project.startDate" class="project-block-label col-xs-4">{{"views.home.startDate"
+					| translate}}
+				</div>
+				<div ng-if="project.startDate" class="project-block-text col-xs-8">{{project.startDate | date:'yyyy-MM-dd HH:mm:ss'}}
+				</div>
+				
+				<div ng-if="project.endDate" class="project-block-label col-xs-4">{{"views.home.endDate"
+					| translate}}
+				</div>
+				<div ng-if="project.endDate" class="project-block-text col-xs-8">{{project.endDate | date:'yyyy-MM-dd HH:mm:ss'}}
+				</div>
+				
+				<div class="post-tag" ng-repeat="category in project.categories">{{ category.description }}</div>
 	        </div>
 	    </div>
 	    <div class="row">

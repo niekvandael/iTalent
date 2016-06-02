@@ -17,7 +17,9 @@ public class ProjectMyBackedResource extends ResourceSupport {
 	private Date creationDate;
 	private UserResource user;
 	private Date startDate;
-	private CategoryResource category;
+	private Date endDate;
+	private Integer duration;
+	private List<CategoryResource> categories;
 	private DomainResource domain;
 	private boolean isPublic;
 	private List<PictureResource> pictures;
