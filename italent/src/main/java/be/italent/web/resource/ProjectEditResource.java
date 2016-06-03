@@ -1,4 +1,14 @@
-package be.italent.web.resource;
+// TODO Het lijkt me niet nodig om hier een resource voor te gebruiken.  Om te editeren kunnen we gewoon alles ophalen.
+
+
+//    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET, produces = "application/json")
+//    public ResponseEntity getEditProject(@PathVariable("id") final int id, Principal principal) {
+//        return new ResponseEntity<>(projectEditResourceAssembler
+//                .toResource(projectService.getProjectById(id)), HttpStatus.OK);
+//    }
+
+
+/*package be.italent.web.resource;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -34,4 +44,4 @@ public class ProjectEditResource extends ResourceSupport {
 	private int numberOfLikes;
 	private boolean liked;
 	private Integer backingPct;
-}
+}*/

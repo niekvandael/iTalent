@@ -28,9 +28,7 @@ import be.italent.web.resource.ProjectUserResource;
 import be.italent.web.resource.assembler.ProjectDetailDocentResourceAssembler;
 import be.italent.web.resource.assembler.ProjectDetailPublicResourceAssembler;
 import be.italent.web.resource.assembler.ProjectDetailStudentResourceAssembler;
-import be.italent.web.resource.assembler.ProjectEditResourceAssembler;
 import be.italent.web.resource.assembler.ProjectListHomeResourceAssembler;
-import be.italent.web.resource.assembler.ProjectMyBackedResourceAssembler;
 import be.italent.web.resource.assembler.ProjectMyLikedResourceAssembler;
 import be.italent.web.resource.assembler.ProjectMySubscribedResourceAssembler;
 import be.italent.web.resource.assembler.ProjectUserResourceAssembler;
@@ -52,22 +50,18 @@ public class ProjectRestController {
     private ProjectDetailPublicResourceAssembler projectDetailPublicResourceAssembler;
     private ProjectDetailDocentResourceAssembler projectDetailDocentResourceAssembler;
     private ProjectDetailStudentResourceAssembler projectDetailStudentResourceAssembler;
-    private ProjectEditResourceAssembler projectEditResourceAssembler;
     private ProjectUserResourceAssembler projectUserResourceAssembler;
     private ProjectMyLikedResourceAssembler projectMyLikedResourceAssembler;
     private ProjectMySubscribedResourceAssembler projectMySubscribedResourceAssembler;
-    private ProjectMyBackedResourceAssembler projectMyBackedResourceAssembler;
 
     public ProjectRestController() {
         this.projectListHomeResourceAssembler = new ProjectListHomeResourceAssembler();
         this.projectDetailPublicResourceAssembler = new ProjectDetailPublicResourceAssembler();
         this.projectDetailDocentResourceAssembler = new ProjectDetailDocentResourceAssembler();
         this.projectDetailStudentResourceAssembler = new ProjectDetailStudentResourceAssembler();
-        this.projectEditResourceAssembler = new ProjectEditResourceAssembler();
         this.projectUserResourceAssembler = new ProjectUserResourceAssembler();
         this.projectMyLikedResourceAssembler = new ProjectMyLikedResourceAssembler();
         this.projectMySubscribedResourceAssembler = new ProjectMySubscribedResourceAssembler();
-        this.projectMyBackedResourceAssembler = new ProjectMyBackedResourceAssembler();
     }
 
     @RequestMapping(value = "/listHome", method = RequestMethod.GET, produces = "application/json")
@@ -114,9 +108,9 @@ public class ProjectRestController {
 
     
     private List<Project> getProjectsForUser(Authentication auth){
-        if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Student"))) {
+        if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))) {
         	return projectService.getBackedProjects(userService.getUserByUsername(auth.getName()));
-        } else if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Docent"))) {
+        } else if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(DOCENT))) {
             return projectService.getAllProjects(userService.getUserByUsername(auth.getName()));
         } else {
         	return projectService.getPublicProjects();
@@ -141,7 +135,7 @@ public class ProjectRestController {
     @RequestMapping(value = "/mySubscribed", method = RequestMethod.GET, produces = "application/json")
         public ResponseEntity<List<ProjectMySubscribedResource>> getMySubscribedProjects(Authentication auth) {
     	
-    	if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority("Student"))) {
+    	if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))) {
     		return new ResponseEntity<>(projectMySubscribedResourceAssembler.toResources(
                     projectService.getMySubscribedProjects(userService.getUserByUsername(auth.getName()))), HttpStatus.OK);
         } 
@@ -151,13 +145,6 @@ public class ProjectRestController {
         }
     }
 
-    /*@Secured("Docent")
-    @RequestMapping(value = "/myBacked", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<List<ProjectMyBackedResource>> getMyBackedProjects(Principal principal) {
-        return new ResponseEntity<>(projectMyBackedResourceAssembler.toResources(
-                projectService.getMyBackedProjects(userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
-    }*/
-
     //done: docent/student/public
     //TODO save/update detail
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
@@ -165,10 +152,10 @@ public class ProjectRestController {
         if (principal != null) {
             UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-            if (userDetails.getAuthorities().contains(new SimpleGrantedAuthority("Student"))) {
+            if (userDetails.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))) {
                 return new ResponseEntity<>(projectDetailStudentResourceAssembler
                         .toResource(projectService.getProjectById(id, userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
-            } else if (userDetails.getAuthorities().contains(new SimpleGrantedAuthority("Docent"))) {
+            } else if (userDetails.getAuthorities().contains(new SimpleGrantedAuthority(DOCENT))) {
                 return new ResponseEntity<>(projectDetailDocentResourceAssembler
                         .toResource(projectService.getProjectById(id, userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
             } else {
@@ -179,32 +166,32 @@ public class ProjectRestController {
                     .toResource(projectService.getProjectById(id)), HttpStatus.OK);
         }
     }
-
-//    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET, produces = "application/json")
-//    public ResponseEntity getEditProject(@PathVariable("id") final int id, Principal principal) {
-//        return new ResponseEntity<>(projectEditResourceAssembler
-//                .toResource(projectService.getProjectById(id)), HttpStatus.OK);
-//    }
     
-    //TODO: Tijdelijk... (anders werkt het opslaan niet) zie todo hierboven...
+    @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET, produces = "application/json")
     public Project getEditProject(@PathVariable("id") final int id, Principal principal) {
-    	if (principal == null){
+    	/*if (principal == null){
             return projectService.getProjectById(id);
     	}
-    	else {
+    	else {*/
             return projectService.getProjectById(id, userService.getUserByUsername(principal.getName()));
-    	}
+    	//}
     }
 
-    @Secured({"Docent", "Student"})
+    @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/save", method = RequestMethod.POST, produces = "application/json")
-    public Project saveProject(@RequestBody Project project, Principal principal) {
+    public void saveProject(@RequestBody Project project, Principal principal) {
+    	
+    	//prevent request manipulation, this method can only be used to save new projects
+    	if (project.getProjectId() > 0){
+    		return;
+    	}
+    	
         project.setUser(userService.getUserByUsername(principal.getName()));
-        return projectService.saveProject(project);
+        projectService.saveProject(project);
     }
 
-    @Secured({"Docent", "Student"})
+    @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/save/{id}", method = RequestMethod.PUT, produces = "application/json")
     public Project updateProject(@PathVariable("id") final int id, @RequestBody Project project, Principal principal) {
     	
@@ -216,7 +203,7 @@ public class ProjectRestController {
         return projectService.saveProject(project);
     }
 
-    @Secured({"Docent", "Student"})
+    @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST, produces = "application/json")
     public void deleteProject(@PathVariable("id") final int id) {
         projectService.deleteProject(id);

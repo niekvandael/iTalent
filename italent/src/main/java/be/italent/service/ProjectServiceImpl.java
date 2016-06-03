@@ -146,54 +146,9 @@ public class ProjectServiceImpl implements ProjectService{
     	return project;
     }
     
-    /*private void setTransientFields(List<Project> projects, User currentUser){
-    	this.setIsLikedByCurrentUser(projects, currentUser);
-    	this.setCanEnrollByCurrentUser(projects, currentUser);
-    }*/
-    
     private void setIsLikedByCurrentUser(List<Project> projects, User currentUser){
     	for (Project project : projects){
     		project.setLiked(currentUser.getUserId());
     	}
     }
-    
-    /*public void setCanEnrollByCurrentUser(List<Project> projects, User currentUser){
-    	for(Project project : projects){
-			int myDepartmentid = currentUser.getDepartment().getDepartmentId();
-			
-			// Check if there are available sets
-			int takenSeats = project.getTakenSeats();
-			int wantedSeats = project.getWantedSeats();
-			
-			if(wantedSeats == takenSeats){
-				project.setCanEnroll(false);
-			}
-			
-			// Check if my department asked
-			int wantedInMyDepartment = 0;
-			for (WantedSubscriber wantedSubscriber : project.getWantedSubscribers()) {
-				if(wantedSubscriber.getDepartment().getDepartmentId() == myDepartmentid){
-					wantedInMyDepartment = wantedSubscriber.getNumber();
-					break;
-				}
-			}
-	
-			if(wantedInMyDepartment == 0){
-				project.setCanEnroll(false);
-			}
-			
-			int alreadyEnrolledInMyDepartment = 0;
-			for(SubscriberStudent subscriberStudent : project.getSubscribersStudent()){
-				if(subscriberStudent.getUser().getDepartment().getDepartmentId() == myDepartmentid){
-					alreadyEnrolledInMyDepartment++;
-				}
-			}
-	
-			if(wantedInMyDepartment > alreadyEnrolledInMyDepartment){
-				project.setCanEnroll(true);
-			}
-			
-			project.setCanEnroll(false);
-    	}
-	}*/
 }

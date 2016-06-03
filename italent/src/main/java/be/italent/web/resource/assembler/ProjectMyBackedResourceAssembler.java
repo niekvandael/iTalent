@@ -1,4 +1,5 @@
-package be.italent.web.resource.assembler;
+// TODO not used
+/*package be.italent.web.resource.assembler;
 
 import be.italent.model.Picture;
 import be.italent.model.Project;
@@ -32,4 +33,4 @@ public class ProjectMyBackedResourceAssembler extends ResourceAssemblerSupport<P
         }
         return resource;
     }
-}
+}*/

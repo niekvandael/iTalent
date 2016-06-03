@@ -1,4 +1,6 @@
-package be.italent.web.resource;
+// TODO not used...
+
+/*package be.italent.web.resource;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -32,4 +34,4 @@ public class ProjectMyBackedResource extends ResourceSupport {
 	private List<OnlineFileResource> onlineFiles;
 	private int numberOfLikes;
 	private boolean liked;
-}
+}*/

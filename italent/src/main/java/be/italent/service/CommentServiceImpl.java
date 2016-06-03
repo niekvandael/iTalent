@@ -42,7 +42,7 @@ public class CommentServiceImpl implements CommentService{
 		Comment comment = commentRepo.findOne(commentId);
 		commentRepo.delete(comment);
 		
-		List<Comment> cmts = this.getComments(comment.getProject().getProjectId());
+		// List<Comment> cmts = this.getComments(comment.getProject().getProjectId()); TODO ?
 		
 	}
 }

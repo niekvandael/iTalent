@@ -1,4 +1,6 @@
-package be.italent.web.resource.assembler;
+//TODO Not used
+
+/*package be.italent.web.resource.assembler;
 
 import be.italent.model.Project;
 import be.italent.web.resource.ProjectEditResource;
@@ -21,4 +23,4 @@ public class ProjectEditResourceAssembler extends ResourceAssemblerSupport<Proje
         }
         return resource;
     }
-}
+}*/
