@@ -169,31 +169,42 @@ public class ProjectRestController {
     
     @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET, produces = "application/json")
-    public Project getEditProject(@PathVariable("id") final int id, Principal principal) {
-    	/*if (principal == null){
-            return projectService.getProjectById(id);
+    public Project getEditProject(@PathVariable("id") final int id, Principal principal, Authentication auth) {
+    	Project project = projectService.getProjectById(id, userService.getUserByUsername(principal.getName()));
+    	
+    	//prevent request manipulation, students can only edit their own projects and only when there are no backers yet
+    	if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))){
+    		if(!project.getUser().getUsername().equals(principal.getName()) || project.getBackingPct()>0){
+    			return null;
+    		}
     	}
-    	else {*/
-            return projectService.getProjectById(id, userService.getUserByUsername(principal.getName()));
-    	//}
+    	
+    	return project;
     }
 
     @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/save", method = RequestMethod.POST, produces = "application/json")
-    public void saveProject(@RequestBody Project project, Principal principal) {
+    public Project saveProject(@RequestBody Project project, Principal principal) {
     	
     	//prevent request manipulation, this method can only be used to save new projects
     	if (project.getProjectId() > 0){
-    		return;
+    		return null;
     	}
     	
         project.setUser(userService.getUserByUsername(principal.getName()));
-        projectService.saveProject(project);
+        return projectService.saveProject(project);
     }
 
     @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/save/{id}", method = RequestMethod.PUT, produces = "application/json")
-    public Project updateProject(@PathVariable("id") final int id, @RequestBody Project project, Principal principal) {
+    public Project updateProject(@PathVariable("id") final int id, @RequestBody Project project, Principal principal, Authentication auth) {
+    	
+    	//prevent request manipulation, students can only edit their own projects and only when there are no backers yet
+    	if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))){
+    		if(!project.getUser().getUsername().equals(principal.getName()) || project.getBackingPct()>0){
+    			return null;
+    		}
+    	}
     	
     	//when a subscriber is deleted after project is started reset start date...
     	if (project.getStartDate()!=null && project.getWantedSeats()>project.getTakenSeats()){
@@ -205,7 +216,16 @@ public class ProjectRestController {
 
     @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST, produces = "application/json")
-    public void deleteProject(@PathVariable("id") final int id) {
+    public void deleteProject(@PathVariable("id") final int id, Principal principal, Authentication auth) {
+    	
+    	//prevent request manipulation, students can only delete their own projects and only when there are no backers yet
+    	Project project = projectService.getProjectById(id, userService.getUserByUsername(principal.getName()));
+    	if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))){
+    		if(!project.getUser().getUsername().equals(principal.getName()) || project.getBackingPct()>0){
+    			return;
+    		}
+    	}
+    	
         projectService.deleteProject(id);
     }
 }
