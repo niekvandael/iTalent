@@ -87,10 +87,13 @@ public class ProjectServiceImpl implements ProjectService{
     public Project getProjectById(int id, User user){
     	Project project =  projectRepo.findOneByProjectId(id);
     	project.setLiked(user.getUserId());
-    	//TODO only if student
-    	project.updateCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId());
-    	//TODO only if docent
-    	project.updateCanBack(user.getUserId());
+    	
+    	if (user.getRole().getName().equals("Student")){
+    		project.updateCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId());
+    	}
+    	else{ //if role is docent...
+    		project.updateCanBack(user.getUserId());
+    	}
     	return project;
     }
     

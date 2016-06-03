@@ -12,15 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 import be.italent.model.Project;
 import be.italent.model.SubscriberDocent;
 import be.italent.service.ProjectService;
-import be.italent.service.SubscriberDocentService;
 import be.italent.service.UserService;
 
 @RestController
 @RequestMapping("/subscriberDocent")
 public class SubscriberDocentRestController {
 
-	@Autowired
-	private SubscriberDocentService subscriberDocentService;
+	//@Autowired
+	//private SubscriberDocentService subscriberDocentService;
 	
 	@Autowired
 	private UserService userService;
@@ -41,10 +40,10 @@ public class SubscriberDocentRestController {
 		projectService.saveProject(project);
 	}
 	
-	@Secured("Docent")
+	/*@Secured("Docent")
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.POST, produces="application/json")
 	public void delete(@PathVariable("id") final int id){
 		//TODO update project backingpct if we allow back delete else remove this method
 		subscriberDocentService.delete(id);
-	}
+	}*/
 }

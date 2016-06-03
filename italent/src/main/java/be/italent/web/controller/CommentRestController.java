@@ -32,7 +32,7 @@ public class CommentRestController {
 	
 	@Secured({"Docent", "Student"})
 	@RequestMapping(value = "/comments/{id}", method = RequestMethod.GET, produces="application/json")
-	public List<Comment> saveComment(@PathVariable("id") final int projectId){
+	public List<Comment> getComments(@PathVariable("id") final int projectId){
 		return commentService.getComments(projectId);
 	}
 	
