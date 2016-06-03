@@ -62,7 +62,7 @@
   "views.newProject.wantedSubscribers" : "Gezochte teamleden",
   "views.newProject.addWantedSubscriber" : "Gezocht teamlid toevoegen",
   "views.newProject.subscribers" : "Ingeschreven studenten",
-  "views.home.projectsICanBack": "Enkel niet 100% gesteunde projecten tonen",
+  "views.home.projectsICanBack": "Toon enkel projecten die ik kan steunen",
   "views.home.seatsAvailable": "plaats(en) beschikbaar",
   "views.home.showProjectsICanEnroll": "Toon enkel projecten waarop ik kan inschrijven",
   "views.home.backed": "Gesteund",
