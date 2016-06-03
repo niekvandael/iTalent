@@ -26,7 +26,9 @@
 		</div>
 	</div>
 	
-	<div class="project-block" ng-repeat="project in projects | filter:tagFilter | filter:backFilter | filter:enrollFilter">
+	<div class="emptyListText" ng-hide="filteredProjects.length">{{"views.myProjects.noProjects" | translate}}</div>
+	
+	<div class="project-block" ng-repeat="project in filteredProjects = (projects | filter:tagFilter | filter:backFilter | filter:enrollFilter)">
 		<div ng-click="showDetails(project.projectId)" class="project-block-title pointer">{{ project.title }}
 				<img ng-if="project.running" ng-src="images/progress.png" style="width:30px; margin: 5px; float: right;"/>
 		</div>
