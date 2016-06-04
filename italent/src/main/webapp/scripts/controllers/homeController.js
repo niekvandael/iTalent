@@ -78,8 +78,11 @@ angular.module('iTalentApp')
         		var tag = $scope.tags[i];
         		
         		if(tag.categoryId === undefined){
-        			// non-existing tag: try search in description
-        			if(proj.description.indexOf($scope.tags[i].text) != -1){
+        			// non-existing tag: try search in title, description, creator first & lastname
+        			if(proj.description.toLowerCase().indexOf($scope.tags[i].text.toLowerCase()) != -1
+        					|| proj.title.toLowerCase().indexOf($scope.tags[i].text.toLowerCase()) != -1
+        					|| proj.user.firstname.toLowerCase().indexOf($scope.tags[i].text.toLowerCase()) != -1
+        					|| proj.user.lastname.toLowerCase().indexOf($scope.tags[i].text.toLowerCase()) != -1){
         				return true;
         			}
         		}
