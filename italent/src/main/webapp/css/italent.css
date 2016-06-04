@@ -296,5 +296,21 @@ cite {
 .navbar_custom{
 	padding-top: 20px;
 	padding-left: 100px;
-	font-weight: bold
+	font-weight: bold;
+}
+
+.dropdown-menu a{
+	color: #999 !important;
+	font-weight: bold !important;
+}
+
+.dropdown_custom{
+	background-color: #222;
+}
+
+.dropdown_custom>li>a:hover {
+	color: #ffffff !important;
+	background-color: #000;
+	font-weight: bold;
+
 }
