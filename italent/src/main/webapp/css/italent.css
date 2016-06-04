@@ -287,3 +287,14 @@ cite {
 .activeSubItem{
 	background-color: #F0F0F0;
 }
+
+.navbar_image{
+	padding-top: 0;
+	padding-left: 0;
+}
+
+.navbar_custom{
+	padding-top: 20px;
+	padding-left: 100px;
+	font-weight: bold
+}
