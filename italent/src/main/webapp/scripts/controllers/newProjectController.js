@@ -184,7 +184,13 @@ angular.module('iTalentApp')
         };
 
         $scope.cancel = function () {
-            $location.path('/myProjects');
+        	if ($scope.project.projectId){
+        		$location.path('/projects/' + $scope.project.projectId);
+        	}
+        	else{
+        		$location.path('/myProjects');
+        	}
+            
         };
 
         $scope.addMovie = function () {
