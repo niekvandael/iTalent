@@ -170,8 +170,32 @@
                     </div>
                 </div>
                 
+                <!--Project backers-->
+                <div ng-if="authenticated && project.projectId>0 && role === 'Docent' && project.subscribersDocent.length>0" class="project-block">
+                    <div class="project-block-label centerText">
+                        <label>{{'views.newProject.backers' | translate}}</label>
+                    </div>
+                    <div ng-repeat="subscriber in project.subscribersDocent">
+                    	<div class="row">
+		                    <div class="col-md-6">
+		                         <div class="add-project-label">{{ subscriber.user.firstname + " " + subscriber.user.lastname }}</div>
+		                    </div>
+		                    <div class="col-md-2">
+		                        <label>{{'views.newProject.percentage' | translate}}</label>
+		                    </div>
+		                    <div class="col-md-2">
+                                <input required type="number" ng-model="subscriber.backingPct" class="form-control" />
+                            </div>
+		                    <div class="col-md-2">
+		                        <button ng-click="removeSubscriberDocent(subscriber)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
+		                            <i class="glyphicon glyphicon-trash"></i></button>
+		                    </div>
+	                    </div>
+                    </div>
+                </div>
+                
                 <!--Project subscribers-->
-                <div ng-if="authenticated && project.projectId>0 && role === 'Docent'" class="project-block">
+                <div ng-if="authenticated && project.projectId>0 && role === 'Docent' && project.subscribersStudent.length>0" class="project-block">
                     <div class="project-block-label centerText">
                         <label>{{'views.newProject.subscribers' | translate}}</label>
                     </div>

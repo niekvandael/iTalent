@@ -211,6 +211,9 @@ public class ProjectRestController {
     		project.setStartDate(null);
     	}
     	
+    	//when a supporter is deleted or changed update backingpct
+    	project.updateBackingPct();
+    	
         return projectService.saveProject(project);
     }
 
