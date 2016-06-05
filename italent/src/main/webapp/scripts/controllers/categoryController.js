@@ -20,8 +20,12 @@ angular.module('iTalentApp')
 
         $scope.deleteCategory = function (categoryId) {
             categoryService.deleteItem(categoryId).then(function (success) {
+                if (success.data) {
+                    toastr.success('Categorie is verwijderd.', 'Succes!');
+                } else {
+                    toastr.error('Kan categorie niet verwijderen aangezien deze nog in gebruik is.', 'Fout!');
+                }
                 getCategories();
-                toastr.success('Categorie is verwijderd.', 'Succes!');
             }, function (err) {
                 toastr.error('Probleem bij verwijderen categorie, probeer het nogmaals.', 'Fout!');
                 console.log('Error deleting category: ');
