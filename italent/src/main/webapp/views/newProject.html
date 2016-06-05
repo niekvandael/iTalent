@@ -184,10 +184,10 @@
 		                        <label>{{'views.newProject.percentage' | translate}}</label>
 		                    </div>
 		                    <div class="col-md-2">
-                                <input required type="number" min="1" ng-model="subscriber.backingPct" class="form-control" />
+                                <input ng-disabled="project.startDate" required type="number" min="1" ng-model="subscriber.backingPct" class="form-control" />
                             </div>
 		                    <div class="col-md-2">
-		                        <button ng-click="removeSubscriberDocent(subscriber)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
+		                        <button ng-hide="project.startDate" ng-click="removeSubscriberDocent(subscriber)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
 		                            <i class="glyphicon glyphicon-trash"></i></button>
 		                    </div>
 	                    </div>

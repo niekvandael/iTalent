@@ -37,6 +37,5 @@ public class ProjectListHomeResource extends ResourceSupport {
 	private int takenSeats;
 	private boolean canSubscribe;
 	private boolean canBack;
-	private boolean running;
 }
 
