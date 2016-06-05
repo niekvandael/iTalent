@@ -122,9 +122,16 @@ body {
 }
 
 .add-project-label {
+	font-size: 12px;
+	vertical-align: middle;
+	padding: 5px;
+}
+
+.add-project-label-big {
 	font-size: 14px;
 	vertical-align: middle;
 	padding: 5px;
+	font-weight: bold;
 }
 
 .likes-number {
