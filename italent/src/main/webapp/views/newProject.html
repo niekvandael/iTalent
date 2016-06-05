@@ -51,20 +51,20 @@
                         <label>{{'views.newProject.pictures' | translate}}</label>
                     </div>
                     <div ng-repeat="picture in project.pictures">
-                        <div class="form-horizontal">
-                            <div class="col-md-10">
+                        <div class="row form-horizontal">
+                            <div class="col-xs-9 col-xs-offset-1">
                                 <input required type="text" ng-model="picture.description" class="form-control"
                                        placeholder="{{'views.newProject.description' | translate}}"
                                        ng-minlength="2" ng-maxlength="500"/>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-xs-1">
                                 <button ng-click="removePicture(picture)" class="btn btn-default"
                                         title="{{'views.newProject.delete' | translate}}">
                                     <i class="glyphicon glyphicon-trash"></i></button>
                             </div>
                         </div>
-                        <div class="form-horizontal">
-                            <div class="col-md-10">
+                        <div class="row form-horizontal">
+                            <div class="col-xs-9 col-xs-offset-1">
                                 <input type="file" id="project_picture_{{ $index }}" accept="image/*" ng-model="dummy"
                                    index="{{ $index }}" onchange="angular.element(this).scope().convertImage(this)"/>
                             </div>
@@ -83,21 +83,21 @@
                         <label>{{'views.newProject.movies' | translate}}</label>
                     </div>
                     <div ng-repeat="movie in project.movies">
-                        <div class="form-horizontal">
-                            <div class="col-md-10">
+                        <div class="row form-horizontal">
+                            <div class="col-xs-9 col-xs-offset-1">
                                 <input required type="text" ng-model="movie.description" class="form-control"
                                        placeholder="{{'views.newProject.description' | translate}}" ng-minlength="2" ng-maxlength="500"/>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-xs-1">
                                 <button ng-click="removeMovie(movie)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
                                     <i class="glyphicon glyphicon-trash"></i></button>
                             </div>
                         </div>
-                        <div class="form-horizontal">
-                            <div class="col-md-6">
+                        <div class="row form-horizontal">
+                            <div class="col-xs-5 col-xs-offset-1">
                                 <div class="add-project-label">https://www.youtube.com/watch?v=</div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-xs-4">
                                 <input required type="text" ng-model="movie.youTubeCode" class="form-control" placeholder="youtube-id"
                                        ng-minlength="11" ng-maxlength="11"/>
                             </div>
@@ -116,13 +116,13 @@
                         <label>{{'views.newProject.milestones' | translate}}</label>
                     </div>
                     <div ng-repeat="milestone in project.milestones">
-                        <div class="form-horizontal">
-                            <div class="col-md-10">
+                        <div class="row form-horizontal">
+                            <div class="col-xs-9 col-xs-offset-1">
                                 <input required type="text" ng-model="milestone.description" class="form-control"
                                        placeholder="{{'views.newProject.milestone' | translate}}"
                                        ng-minlength="2" ng-maxlength="500"/>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-xs-1">
                                 <button ng-click="removeMilestone(milestone)" class="btn btn-default"
                                         title="{{'views.newProject.delete' | translate}}">
                                     <i class="glyphicon glyphicon-trash"></i></button>
@@ -135,8 +135,6 @@
                         </button>
                     </div>
                 </div>
-                
-                
 
                 <!--Project wanted subscribers-->
                 <div class="project-block">
@@ -144,21 +142,21 @@
                         <label>{{'views.newProject.wantedSubscribers' | translate}}</label>
                     </div>
                     <div ng-repeat="subscriber in project.wantedSubscribers">
-                        <div class="form-horizontal">
-                            <div class="col-md-10">
+                        <div class="row form-horizontal">
+                            <div class="col-xs-9 col-xs-offset-1">
                                 <select required class="form-control" ng-options="department as department.name for department in departments track by department.name"
                                         ng-model="subscriber.department" class="form-control"></select>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-xs-1">
                                 <button ng-click="removeSubscriber(subscriber)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
                                     <i class="glyphicon glyphicon-trash"></i></button>
                             </div>
                         </div>
-                        <div class="form-horizontal">
-                            <div class="col-md-4">
+                        <div class="row form-horizontal">
+                            <div class="col-xs-5 col-xs-offset-1">
                                 <div class="add-project-label">{{'views.newProject.number' | translate}}</div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-xs-4">
                                 <input required type="number" ng-model="subscriber.number" min="1" class="form-control" placeholder="{{'views.newProject.number' | translate}}" />
                             </div>
                         </div>
@@ -176,22 +174,23 @@
                         <label>{{'views.newProject.backers' | translate}}</label>
                     </div>
                     <div ng-repeat="subscriber in project.subscribersDocent">
-                    	<div class="row">
-		                    <div class="col-md-6">
+                    	<div class="row form-horizontal">
+		                    <div class="col-xs-4 col-xs-offset-1">
 		                         <div class="add-project-label">{{ subscriber.user.firstname + " " + subscriber.user.lastname }}</div>
 		                    </div>
-		                    <div class="col-md-2">
+		                    <div class="add-project-label-big col-xs-2">
 		                        <label>{{'views.newProject.percentage' | translate}}</label>
 		                    </div>
-		                    <div class="col-md-2">
+		                    <div class="col-xs-3">
                                 <input ng-disabled="project.startDate" required type="number" min="1" ng-model="subscriber.backingPct" class="form-control" />
                             </div>
-		                    <div class="col-md-2">
+		                    <div class="col-xs-1">
 		                        <button ng-hide="project.startDate" ng-click="removeSubscriberDocent(subscriber)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
 		                            <i class="glyphicon glyphicon-trash"></i></button>
 		                    </div>
 	                    </div>
                     </div>
+                    <br>
                 </div>
                 
                 <!--Project subscribers-->
@@ -200,22 +199,23 @@
                         <label>{{'views.newProject.subscribers' | translate}}</label>
                     </div>
                     <div ng-repeat="subscriber in project.subscribersStudent">
-                    	<div class="row">
-		                    <div class="col-md-7">
+                    	<div class="row form-horizontal">
+		                    <div class="col-xs-5 col-xs-offset-1">
 		                         <div class="add-project-label">{{ subscriber.user.firstname + " " + subscriber.user.lastname }}</div>
 		                    </div>
-		                    <div class="col-md-1">
+		                    <div class="add-project-label-big col-xs-1">
 		                        <label>{{'views.newProject.hours' | translate}}</label>
 		                    </div>
-		                    <div class="col-md-2">
+		                    <div class="col-xs-3">
                                 <input required type="number" min="1" ng-model="subscriber.hours" class="form-control" />
                             </div>
-		                    <div class="col-md-2">
+		                    <div class="col-xs-1">
 		                        <button ng-click="removeSubscriberStudent(subscriber)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
 		                            <i class="glyphicon glyphicon-trash"></i></button>
 		                    </div>
 	                    </div>
                     </div>
+                    <br>
                 </div>
 
                 <!--Project prezi-->
@@ -224,23 +224,23 @@
                         <label>{{'views.newProject.prezis' | translate}}</label>
                     </div>
                     <div ng-repeat="prezi in project.prezis">
-                        <div class="form-horizontal">
-                            <div class="col-md-10">
+                        <div class="row form-horizontal">
+                            <div class="col-xs-9 col-xs-offset-1">
                                 <input required type="text" ng-model="prezi.description" class="form-control"
                                        placeholder="{{'views.newProject.description' | translate}}"
                                        ng-minlength="2" ng-maxlength="500"/>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-xs-1">
                                 <button ng-click="removePrezi(prezi)" class="btn btn-default"
                                         title="{{'views.newProject.delete' | translate}}">
                                     <i class="glyphicon glyphicon-trash"></i></button>
                             </div>
                         </div>
-                        <div class="form-horizontal">
-                            <div class="col-md-5">
+                        <div class="row form-horizontal">
+                            <div class="col-xs-5 col-xs-offset-1">
                                 <div class="add-project-label">https://www.prezi.com/</div>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-xs-4">
                                 <input required type="text" ng-model="prezi.preziCode" class="form-control"
                                    placeholder="prezi-id" ng-minlength="2" ng-maxlength="100"/>
                             </div>
@@ -259,23 +259,23 @@
                         <label>{{'views.newProject.onlineFiles' | translate}}</label>
                     </div>
                     <div ng-repeat="file in project.onlineFiles">
-                        <div class="form-horizontal">
-                            <div class="col-md-10">
+                        <div class="row form-horizontal">
+                            <div class="col-xs-9 col-xs-offset-1">
                                 <input required type="text" ng-model="file.description" class="form-control"
                                        placeholder="{{'views.newProject.description' | translate}}"
                                        ng-minlength="2" ng-maxlength="500"/>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-xs-1">
                                 <button ng-click="removeFile(file)" class="btn btn-default"
                                         title="{{'views.newProject.delete' | translate}}">
                                     <i class="glyphicon glyphicon-trash"></i></button>
                             </div>
                         </div>
-                        <div class="form-horizontal">
-                            <div class="col-md-3">
+                        <div class="row form-horizontal">
+                            <div class="col-xs-2 col-xs-offset-1">
                                 <div class="add-project-label">URL:</div>
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-xs-7">
                                 <input required type="text" ng-model="file.url" class="form-control"
                                    placeholder="url" ng-minlength="5" ng-maxlength="200"/>
                             </div>
