@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
@@ -18,5 +19,6 @@ public class AbstractSubscriber extends AbstractITalentEntity implements Seriali
 	
 	@JsonIgnore
 	@ManyToOne(cascade = CascadeType.DETACH)
+	@NotNull
 	private Project project;
 }

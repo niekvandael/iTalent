@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -28,14 +30,19 @@ public class Comment extends AbstractITalentEntity implements Serializable {
 	
 	@JsonIgnore
 	@ManyToOne
+	@NotNull
 	private Project project;
 
 	@Lob
+	@NotNull
+	@Size(min=2, max=500)
 	private String message;
 	
 	@OneToOne
+	@NotNull
 	private User user;
 	
+	//TODO do we use this?
 	@Column(name="parent_comment_id", nullable = true)
 	private int parentCommentId;
 }

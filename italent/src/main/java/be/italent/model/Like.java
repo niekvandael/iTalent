@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -28,9 +29,11 @@ public class Like extends AbstractITalentEntity implements Serializable {
 	private int likeId;
 	
 	@OneToOne
+	@NotNull
 	private User user;
 	
 	@JsonIgnore
 	@ManyToOne
+	@NotNull
 	private Project project;
 }

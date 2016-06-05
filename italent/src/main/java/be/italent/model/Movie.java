@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -25,14 +26,17 @@ public class Movie extends AbstractITalentEntity implements Serializable {
 	@Column(name="movie_id")
 	private int movieId;
 	
-	@Size(max=40)
+	@Size(min=11, max=11)
 	@Column(name="youtube_code")
+	@NotNull
 	private String youTubeCode;
 	
-	@Size(max=500)
+	@Size(min=2, max=500)
+	@NotNull
 	private String description;
 	
 	@JsonIgnore
 	@ManyToOne
+	@NotNull
 	private Project project;
 }

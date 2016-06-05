@@ -29,9 +29,11 @@ public class User implements Serializable{
 	private int userId;
 	
 	@Size(min=2, max=55)
+	@NotNull
 	private String firstname;
 	
 	@Size(min=2, max=55)
+	@NotNull
 	private String lastname;
 
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -41,7 +43,7 @@ public class User implements Serializable{
 	private Department department;
 	
 	@NotNull
-	@Size(min=2, max=55)
+	@Size(min=5, max=100)
 	@Column(unique = true)
 	private String email;
 	
@@ -51,7 +53,7 @@ public class User implements Serializable{
 	private String username;
 	
 	@NotNull
-	@Size(min=8, max=80)
+	@Size(min=6, max=80)
 	@JsonIgnore
 	private String password;
 }

@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -25,18 +26,16 @@ public class Picture extends AbstractITalentEntity implements Serializable {
 	@Column(name="picture_id")
 	private int pictureId;
 	
-	//Eventueel json post/call converteren en pictures opslaan als bytes
-	//@Lob 
-	//@Column(length=100000)
-	//private byte[] bytes;
-	
-	@Size(max=10000000)
+	@Size(max=1000000)
+	@NotNull
 	private String bytes;
 	 
-	@Size(max=500)
+	@Size(min=2, max=500)
+	@NotNull
 	private String description;
 	
 	@JsonIgnore
 	@ManyToOne
+	@NotNull
 	private Project project;
 }

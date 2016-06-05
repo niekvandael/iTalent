@@ -16,16 +16,16 @@ import javax.validation.constraints.Size;
 public abstract class AbstractITalentEntity implements Serializable{
 	private static final long serialVersionUID = -5530760931727737943L;
 
+	@Size(max = 1)
+	private String status;
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="last_update")
 	private Calendar lastUpdate;
 
-	@Size(max = 50)
+	@Size(max = 55)
 	@Column(name="last_updated_by")
 	private String lastUpdatedBy;
-
-	@Size(max = 20)
-	private String status;
 	
 	public void setITalentEntity(String lastUpdatedBy, String status){
 		this.setLastUpdate(Calendar.getInstance());

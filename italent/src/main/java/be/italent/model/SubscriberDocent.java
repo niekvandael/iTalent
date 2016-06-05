@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -22,5 +23,6 @@ public class SubscriberDocent extends Subscriber implements Serializable {
 	private int subscriberDocentId;
 	
 	@Column(name="backing_pct")
+	@NotNull
 	private int backingPct;
 }

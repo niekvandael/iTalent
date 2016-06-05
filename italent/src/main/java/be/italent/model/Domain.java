@@ -24,10 +24,10 @@ public class Domain extends AbstractITalentEntity implements Serializable {
 	private int domainId;
 	
 	@NotNull
-	@Size(max=100)
+	@Size(min=1, max=100)
 	private String name;
 	
-	@Size(max=500)
+	@Size(min=2, max=500)
 	private String description;
 	
 	@Column(name="minimum_hours")

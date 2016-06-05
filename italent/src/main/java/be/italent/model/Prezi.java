@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -25,14 +26,17 @@ public class Prezi extends AbstractITalentEntity implements Serializable {
 	@Column(name="prezi_id")
 	private int preziId;
 	
-	@Size(max=100)
+	@Size(min=2, max=100)
+	@NotNull
 	@Column(name="prezi_code")
 	private String preziCode;
 	
-	@Size(max=500)
+	@Size(min=2, max=500)
+	@NotNull
 	private String description;
 	
 	@JsonIgnore
 	@ManyToOne
+	@NotNull
 	private Project project;
 }

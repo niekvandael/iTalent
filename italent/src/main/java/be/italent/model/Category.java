@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -28,7 +29,8 @@ public class Category extends AbstractITalentEntity implements Serializable{
 	@Column(name="category_id")
 	private int categoryId;
 	
-	@Size(max=200)
+	@Size(min=1, max=50)
+	@NotNull
 	private String description;
 	
 	@JsonIgnore

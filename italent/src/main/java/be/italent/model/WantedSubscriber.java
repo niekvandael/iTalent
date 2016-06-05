@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -22,8 +23,10 @@ public class WantedSubscriber extends AbstractSubscriber implements Serializable
 	@Column(name="wanted_subscriber_id")
 	private int wantedSubscriberId;
 	
+	@NotNull
 	private int number;
 	
 	@OneToOne
+	@NotNull
 	private Department department;
 }

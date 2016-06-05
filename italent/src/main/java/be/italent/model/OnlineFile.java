@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -25,13 +26,16 @@ public class OnlineFile extends AbstractITalentEntity implements Serializable {
 	@Column(name="online_file_id")
 	private int onlineFileId;
 	
-	@Size(max=40)
+	@Size(min=5, max=200)
+	@NotNull
 	private String url;
 	
 	@Size(max=500)
+	@NotNull
 	private String description;
 	
 	@JsonIgnore
 	@ManyToOne
+	@NotNull
 	private Project project;
 }

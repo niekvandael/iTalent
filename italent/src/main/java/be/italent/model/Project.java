@@ -21,6 +21,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -34,28 +35,22 @@ import lombok.EqualsAndHashCode;
 public class Project extends AbstractITalentEntity implements Serializable {
 	private static final long serialVersionUID = 4300509934424545336L;
 
-	@Transient
-	private boolean liked;
-	
-	@Transient
-	private boolean archived;
-
-	@Transient
-	private boolean running;
-	
 	@Id
 	@GeneratedValue
 	@Column(name="project_id")
 	private int projectId;
 	
-	@Size(min=2, max=100)
+	@Size(min=2, max=75)
+	@NotNull
 	private String title;
 	
-	@Size(max=2000)
+	@Size(min=5, max=2000)
 	@Lob
+	@NotNull
 	private String description;
 	
-	@Size(max=200)
+	@Size(min=5, max=200)
+	@NotNull
 	@Column(name="short_description")
 	private String shortDescription;
 	
@@ -64,9 +59,11 @@ public class Project extends AbstractITalentEntity implements Serializable {
     private Date creationDate;
 	
 	@OneToOne
+	@NotNull
 	private User user;
 	
 	//in minutes
+	@NotNull
 	private int duration;
 	
 	@Temporal(TemporalType.TIMESTAMP)
@@ -132,6 +129,15 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@OneToMany(mappedBy="project")
 	private List<Comment> Comments = new ArrayList<Comment>();
 
+	@Transient
+	private boolean liked;
+	
+	@Transient
+	private boolean archived;
+
+	@Transient
+	private boolean running;
+	
 	@Transient
 	private int numberOfLikes;
 

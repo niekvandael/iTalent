@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -21,5 +22,6 @@ public class SubscriberStudent extends Subscriber implements Serializable {
 	@Column(name="subscriber_student_id")
 	private int subscriberStudenId;
 	
+	@NotNull
 	private int hours;
 }

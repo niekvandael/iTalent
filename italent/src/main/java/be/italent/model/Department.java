@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Data
@@ -22,6 +23,7 @@ public class Department extends AbstractITalentEntity implements Serializable {
 	@Column(name="department_id")
 	private int departmentId;
 	
-	@Size(max=55)
+	@Size(min=1, max=55)
+	@NotNull
 	private String name;
 }

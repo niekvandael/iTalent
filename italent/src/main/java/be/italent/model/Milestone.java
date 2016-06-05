@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -28,7 +30,10 @@ public class Milestone extends AbstractITalentEntity implements Serializable {
 	
 	@JsonIgnore
 	@ManyToOne
+	@NotNull
 	private Project project;
 
+	@NotNull
+	@Size(min=2, max=500)
 	private String description;
 }

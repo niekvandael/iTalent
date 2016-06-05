@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -23,7 +24,8 @@ public class Role implements Serializable{
 	@Column(name="role_id")
 	private int roleId;
 	
-	@Size(max=20)
+	@Size(min=1, max=20)
+	@NotNull
 	private String name;
 
 	@JsonIgnore
