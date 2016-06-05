@@ -6,17 +6,17 @@
 
                 <div class="form-group">
                     <label class="required">{{'views.newProject.title' | translate}}</label>
-                    <input required type="text" ng-model="project.title" class="form-control" placeholder="{{'views.newProject.title' | translate}}" minlength="2" maxlength="100" />
+                    <input required type="text" ng-model="project.title" class="form-control" placeholder="{{'views.newProject.title' | translate}}" minlength="2" maxlength="75" />
                 </div>
 
                 <div class="form-group">
                     <label class="required">{{'views.newProject.description' | translate}}</label>
-                    <textarea required ng-model="project.description" class="form-control" rows="10" placeholder="{{'views.newProject.description' | translate}}" maxlength="1000"></textarea>
+                    <textarea required ng-model="project.description" class="form-control" rows="10" placeholder="{{'views.newProject.description' | translate}}"  minlength="5" maxlength="2000"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label class="required">{{'views.newProject.shortDescription' | translate}}</label>
-                    <textarea required ng-model="project.shortDescription" class="form-control" rows="5" placeholder="{{'views.newProject.shortDescription' | translate}}" maxlength="200"></textarea>
+                    <textarea required ng-model="project.shortDescription" class="form-control" rows="5" placeholder="{{'views.newProject.shortDescription' | translate}}"  minlength="5" maxlength="200"></textarea>
                 </div>
                 
                 <div class="form-group" ng-if="authenticated && role === 'Docent' && project.backingPct>99">
@@ -184,7 +184,7 @@
 		                        <label>{{'views.newProject.percentage' | translate}}</label>
 		                    </div>
 		                    <div class="col-md-2">
-                                <input required type="number" ng-model="subscriber.backingPct" class="form-control" />
+                                <input required type="number" min="1" ng-model="subscriber.backingPct" class="form-control" />
                             </div>
 		                    <div class="col-md-2">
 		                        <button ng-click="removeSubscriberDocent(subscriber)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
@@ -208,7 +208,7 @@
 		                        <label>{{'views.newProject.hours' | translate}}</label>
 		                    </div>
 		                    <div class="col-md-2">
-                                <input required type="number" ng-model="subscriber.hours" class="form-control" />
+                                <input required type="number" min="1" ng-model="subscriber.hours" class="form-control" />
                             </div>
 		                    <div class="col-md-2">
 		                        <button ng-click="removeSubscriberStudent(subscriber)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
@@ -242,7 +242,7 @@
                             </div>
                             <div class="col-md-5">
                                 <input required type="text" ng-model="prezi.preziCode" class="form-control"
-                                   placeholder="prezi-id" ng-minlength="5" ng-maxlength="100"/>
+                                   placeholder="prezi-id" ng-minlength="2" ng-maxlength="100"/>
                             </div>
                         </div>
                     </div>
@@ -277,7 +277,7 @@
                             </div>
                             <div class="col-md-7">
                                 <input required type="text" ng-model="file.url" class="form-control"
-                                   placeholder="url" ng-minlength="5" ng-maxlength="100"/>
+                                   placeholder="url" ng-minlength="5" ng-maxlength="200"/>
                             </div>
                         </div>
                     </div>

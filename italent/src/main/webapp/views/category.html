@@ -15,7 +15,7 @@
 	<div class="jumbotron">
 	    <h3 class="col-md-offset-1">{{'views.category.addNewCategory' | translate}}</h3>
 	    <div class="input-group col-md-offset-1 col-md-10">
-	        <input required type="text" ng-model="newCategory.description" class="form-control" min="1" max="160"/>
+	        <input required type="text" ng-model="newCategory.description" class="form-control" min="2" max="50"/>
 	        <span class="input-group-btn">
 	        <button type="button" class="btn btn-warning" ng-click="addCategory()"
 	                ng-disabled="registrationForm.$invalid">{{'views.home.add' | translate}}
