@@ -25,7 +25,25 @@ angular.module('iTalentApp')
         $scope.maxLengthOfOnlineFiles = 100;
 
         $scope.picturesConverted = true;
-
+        
+        
+        $scope.durationModes = [{
+            value: 'minuten',
+            label: 'Minuten'
+          }, {
+            value: 'uren',
+            label: 'Uren'
+          }, {
+            value: 'dagen',
+            label: 'Dagen'
+          }, {
+            value: 'maanden',
+            label: 'Maanden'
+          }];   
+        $scope.project.durationSelect = $scope.durationModes[2];
+        
+        
+        
     	$scope.loadTags = function(){
     		return $scope.allTags;
     	};
@@ -33,13 +51,34 @@ angular.module('iTalentApp')
         if (projectId) {
             projectService.getForEdit(projectId).then(function (project) {
                 $scope.project = project;
+                $scope.setDurationMode();
             }, function (err) {
                 console.log('Error getting project: ');
                 console.log(err);
             });
         }
+        
+        $scope.setDurationMode = function () {
+            if ($scope.project.duration % 2678400 == 0) {
+            	$scope.project.duration = $scope.project.duration / 2678400;
+            	$scope.project.durationSelect = $scope.durationModes[3]; //months
+                return;
+            }
+            if ($scope.project.duration % 86400 == 0) {
+            	$scope.project.duration = $scope.project.duration / 86400;
+            	$scope.project.durationSelect = $scope.durationModes[2]; //days
+                return;
+            }
+            if ($scope.project.duration % 3600 == 0) {
+            	$scope.project.duration = $scope.project.duration / 3600;
+            	$scope.project.durationSelect = $scope.durationModes[1]; //hours
+                return;
+            }
+            $scope.project.durationSelect = $scope.durationModes[0]; //minutes
+        };
 
         $scope.save = function () {
+        	$scope.calculateDuration();
             projectService.saveOrUpdate($scope.project).then(function (project) {
                 toastr.success('Project is opgeslagen', 'Succes!');
                 $location.path('/projects/' + project.projectId);
@@ -48,6 +87,22 @@ angular.module('iTalentApp')
                 console.log('Error saving project.');
                 console.log(err);
             })
+        };
+        
+        $scope.calculateDuration = function () {
+            if ($scope.project.durationSelect == $scope.durationModes[3]) {
+            	$scope.project.duration = $scope.project.duration * 2678400; //months
+                return;
+            }
+            if ($scope.project.durationSelect == $scope.durationModes[2]) {
+            	$scope.project.duration = $scope.project.duration * 86400; //days
+                return;
+            }
+            if ($scope.project.durationSelect == $scope.durationModes[1]) {
+            	$scope.project.duration = $scope.project.duration * 3600; //hours
+                return;
+            }
+            // do nothing if minutes...
         };
 
         $scope.getDepartments = function () {
