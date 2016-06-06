@@ -127,7 +127,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	private List<OnlineFile> onlineFiles = new ArrayList<OnlineFile>();
 	
 	@OneToMany(mappedBy="project")
-	private List<Comment> Comments = new ArrayList<Comment>();
+	private List<Comment> comments = new ArrayList<Comment>();
 
 	@Transient
 	private boolean liked;

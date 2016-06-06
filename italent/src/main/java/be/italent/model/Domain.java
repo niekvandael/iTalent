@@ -31,8 +31,8 @@ public class Domain extends AbstractITalentEntity implements Serializable {
 	private String description;
 	
 	@Column(name="minimum_hours")
-	private int MinimumHours;
+	private int minimumHours;
 	
 	@Column(name="maximum_hours")
-	private int MaximumHours;
+	private int maximumHours;
 }
