@@ -59,18 +59,18 @@ angular.module('iTalentApp')
         }
         
         $scope.setDurationMode = function () {
-            if ($scope.project.duration % 2678400 == 0) {
-            	$scope.project.duration = $scope.project.duration / 2678400;
+            if ($scope.project.duration % 44640 == 0) {
+            	$scope.project.duration = $scope.project.duration / 44640;
             	$scope.project.durationSelect = $scope.durationModes[3]; //months
                 return;
             }
-            if ($scope.project.duration % 86400 == 0) {
-            	$scope.project.duration = $scope.project.duration / 86400;
+            if ($scope.project.duration % 1440 == 0) {
+            	$scope.project.duration = $scope.project.duration / 1440;
             	$scope.project.durationSelect = $scope.durationModes[2]; //days
                 return;
             }
-            if ($scope.project.duration % 3600 == 0) {
-            	$scope.project.duration = $scope.project.duration / 3600;
+            if ($scope.project.duration % 60 == 0) {
+            	$scope.project.duration = $scope.project.duration / 60;
             	$scope.project.durationSelect = $scope.durationModes[1]; //hours
                 return;
             }
@@ -91,15 +91,15 @@ angular.module('iTalentApp')
         
         $scope.calculateDuration = function () {
             if ($scope.project.durationSelect == $scope.durationModes[3]) {
-            	$scope.project.duration = $scope.project.duration * 2678400; //months
+            	$scope.project.duration = $scope.project.duration * 44640; //months
                 return;
             }
             if ($scope.project.durationSelect == $scope.durationModes[2]) {
-            	$scope.project.duration = $scope.project.duration * 86400; //days
+            	$scope.project.duration = $scope.project.duration * 1440; //days
                 return;
             }
             if ($scope.project.durationSelect == $scope.durationModes[1]) {
-            	$scope.project.duration = $scope.project.duration * 3600; //hours
+            	$scope.project.duration = $scope.project.duration * 60; //hours
                 return;
             }
             // do nothing if minutes...
