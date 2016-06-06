@@ -26,7 +26,10 @@
 		</div>
 	</div>
 	
-	<div class="emptyListText" ng-hide="filteredProjects.length">{{"views.myProjects.noProjects" | translate}}</div>
+	<div class="emptyListText" ng-show="!filteredProjects.length && loadingDone">{{"views.myProjects.noProjects" | translate}}</div>
+	<div ng-hide="loadingDone"  align="middle">
+		<img ng-src="images/page-loader.gif" style="width:100px; margin: 50px;"/>
+	</div>
 	
 	<div class="project-block" ng-repeat="project in filteredProjects = (projects | filter:tagFilter | filter:backFilter | filter:enrollFilter)">
 		<div ng-click="showDetails(project.projectId)" class="project-block-title pointer">{{ project.title }}

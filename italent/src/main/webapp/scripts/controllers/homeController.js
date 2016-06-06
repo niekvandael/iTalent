@@ -7,6 +7,7 @@ angular.module('iTalentApp')
     	$scope.shareText = "Check out this great PXL project!";
     	$scope.location = document.location.origin;
     	$scope.isArchive = document.location.hash == "#/archive";
+    	$scope.loadingDone = false;
     	
     	$scope.loadTags = function(){
     		return $scope.allTags;
@@ -26,6 +27,7 @@ angular.module('iTalentApp')
         });
 		projectService.listHome($scope.isArchive).then(function (projects) {
             $scope.projects = projects;
+            $scope.loadingDone = true;
         }, function (err) {
             console.log('Error getting projects:');
             console.log(err);
