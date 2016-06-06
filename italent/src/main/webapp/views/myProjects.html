@@ -21,7 +21,7 @@
     </div>
 </div>
 <div class="container">
-	<div class="project-block" ng-repeat="project in projects">
+	<div class="project-block" ng-repeat="project in projects | orderBy:'-numberOfLikes'">
 	    <div ng-click="showDetails(project.projectId)" class="project-block-title pointer">{{ project.title }}</div>
 	    <div class="row">
 	        <div class="col-md-5">
