@@ -15,6 +15,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+/**
+ * This class represents a YouTube Movie.
+ * 
+ * @author Team 1
+ * @version 1.0
+ */
+
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Entity

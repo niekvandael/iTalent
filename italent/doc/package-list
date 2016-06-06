@@ -1,0 +1,9 @@
+be.italent
+be.italent.controllers
+be.italent.model
+be.italent.repository
+be.italent.security
+be.italent.service
+be.italent.web.controller
+be.italent.web.resource
+be.italent.web.resource.assembler

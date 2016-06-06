@@ -17,15 +17,15 @@ public abstract class AbstractITalentEntity implements Serializable{
 	private static final long serialVersionUID = -5530760931727737943L;
 
 	@Size(max = 1)
-	private String status;
+	private String status = "A";
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="last_update")
-	private Calendar lastUpdate;
+	private Calendar lastUpdate = Calendar.getInstance();
 
 	@Size(max = 55)
 	@Column(name="last_updated_by")
-	private String lastUpdatedBy;
+	private String lastUpdatedBy = "Team 1";
 	
 	public void setITalentEntity(String lastUpdatedBy, String status){
 		this.setLastUpdate(Calendar.getInstance());
