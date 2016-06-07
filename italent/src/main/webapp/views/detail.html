@@ -7,132 +7,142 @@
 			<div class="project-block-media img-responsive img-rounded"></div>
 		</div>
 		<div class="col-md-5" ng-if="project.pictures.length != 0">
-	      <uib-carousel active="active" interval="carouselInterval" no-wrap="noWrapSlides">
-	        <uib-slide ng-repeat="picture in project.pictures" index="$index">
-		          <img class="carouselImage" ng-src="data:image/jpeg;base64, {{ picture.bytes }}" style="height: 250px">
-		          <div class="carousel-caption">
-		          	<h4>{{ picture.pictureId }}</h4>
-		            <h4>{{ picture.description }}</h4>
-		          </div>
-		        </uib-slide>
-		    </uib-carousel>
+			<uib-carousel active="active" interval="carouselInterval" no-wrap="noWrapSlides">
+				<uib-slide ng-repeat="picture in project.pictures" index="$index">
+					<img class="carouselImage" ng-src="data:image/jpeg;base64, {{ picture.bytes }}" style="height: 250px">
+					<div class="carousel-caption">
+						<h4>{{ picture.pictureId }}</h4>
+						<h4>{{ picture.description }}</h4>
+					</div>
+				</uib-slide>
+			</uib-carousel>
 		</div>
 		<div class="col-md-7">
-			<div class="project-block-label">{{"views.detail.description"
-				| translate}}</div>
-			<div class="project-block-long-description">{{
-				project.description }}</div>
-
-			<div class="project-block-label col-xs-4">{{"views.home.createdBy"
-				| translate}}</div>
-			<div class="project-block-text col-xs-8">{{project.user.firstname
-				+ ' ' + project.user.lastname}}</div>
-
-			<!-- <div class="project-block-label col-xs-4">{{"views.home.startDate" | translate}}</div>
-            <div class="project-block-text col-xs-8">{{project.startDate | date}}</div> -->
+			<div class="project-block-label">{{"views.detail.description" | translate}}</div>
+			<div class="project-block-long-description">{{ project.description }}</div>
+			<div class="project-block-label col-xs-4">{{"views.home.createdBy" | translate}}</div>
+			<div class="project-block-text col-xs-8">{{project.user.firstname + ' ' + project.user.lastname}}</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="row col-xs-offset-2">
-			<div ng-if="authenticated && project.liked"
-				class="project-button glyphicon glyphicon-star col-xs-1"
-				ng-click="likeClicked(project)"></div>
-			<div ng-if="authenticated && !project.liked"
-				class="project-button glyphicon glyphicon-star-empty col-xs-1"
-				ng-click="likeClicked(project)"></div>
-			<div ng-if="!authenticated"
-				class="project-button glyphicon glyphicon-star col-xs-1"></div>
-
+			<div ng-if="authenticated && project.liked" class="project-button glyphicon glyphicon-star col-xs-1"
+				 ng-click="likeClicked(project)"></div>
+			<div ng-if="authenticated && !project.liked" class="project-button glyphicon glyphicon-star-empty col-xs-1"
+				 ng-click="likeClicked(project)"></div>
+			<div ng-if="!authenticated" class="project-button glyphicon glyphicon-star col-xs-1"></div>
 			<div ng-if="project.numberOfLikes" class="likes-number col-xs-2">{{project.numberOfLikes}}</div>
 			<div ng-if="!project.numberOfLikes" class="likes-number col-xs-2">0</div>
-			<div ng-if="role === 'Student' && project.canSubscribe"
-				class="col-xs-offset-1 col-md-offset-4">
-				<input required type="number" ng-model="hours"
-					class="input-block col-xs-4 col-md-3" min="1" max="160"
-					placeholder="{{'views.home.hours' | translate}}" />
-				<button type="submit"
-					class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
-					ng-click="saveSubscriberStudent(project.projectId, hours)"
-					ng-disabled="!hours">{{'views.home.subscribe' |
-					translate}}</button>
+			<div ng-if="role === 'Student' && project.canSubscribe" class="col-xs-offset-1 col-md-offset-4">
+				<input required type="number" ng-model="hours" class="input-block col-xs-4 col-md-3" min="1" max="160"
+					   placeholder="{{'views.home.hours' | translate}}"/>
+				<button type="submit" class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
+						ng-click="saveSubscriberStudent(project.projectId, hours)"
+						ng-disabled="!hours">{{'views.home.subscribe' | translate}}
+				</button>
 			</div>
-			<div ng-if="role === 'Docent' && project.canBack"
-				class="col-xs-offset-1 col-md-offset-4">
-				<input required type="number" ng-model="percentage"
-					class="input-block col-xs-4 col-md-3" min="1" max="100"
-					placeholder="{{'views.home.percentage' | translate}}" />
-				<button type="submit"
-					class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
-					ng-click="saveSubscriberDocent(project.projectId, percentage)"
-					ng-disabled="!percentage">{{'views.home.back' |
-					translate}}</button>
+			<div ng-if="role === 'Docent' && project.canBack" class="col-xs-offset-1 col-md-offset-4">
+				<input required type="number" ng-model="percentage" class="input-block col-xs-4 col-md-3" min="1" max="100"
+					   placeholder="{{'views.home.percentage' | translate}}"/>
+				<button type="submit" class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
+						ng-click="saveSubscriberDocent(project.projectId, percentage)"
+						ng-disabled="!percentage">{{'views.home.back' | translate}}
+				</button>
 			</div>
-			
+
 			<div ng-if="authenticated && role === 'Docent'" class="col-xs-offset-1 col-md-offset-4">
 				<button type="button" class="btn btn-danger btn-danger-detail col-xs-3 col-md-3 col-xs-offset-1"
-                            ng-click="editProject(project.projectId)">{{"views.detail.edit" | translate}}
-                    </button>
+						ng-click="editProject(project.projectId)">{{"views.detail.edit" | translate}}
+				</button>
 			</div>
-			
-			
 		</div>
 	</div>
 
-	<div class="row col-md-6 col-md-offset-3" ng-if="project.movies && project.movies.length">
-		<div class="project-block-label">{{"views.detail.movies" | translate}}</div>
-		<uib-carousel active="active" interval="carouselInterval" no-wrap="noWrapSlides">
-			<uib-slide ng-repeat="movie in project.movies" index="$index">
-				<iframe width="100%" height="400" src="{{ movie.youTubeCode | youtubeEmbedUrl }}" allowfullscreen></iframe>
-				<div class="carousel-caption">
-					<h4>{{ movie.description }}</h4>
-				</div>
-			</uib-slide>
-		</uib-carousel>
-	</div>
-
-	<div ng-show="project.prezis.length>0" class="row col-md-6 col-md-offset-3">
-		<div class="project-block-label">Prezi</div>
-		<div id="prezi-player"></div>
-	</div>
-	
-	<div ng-if="authenticated" class="project-block row jumbotron col-md-8 col-md-offset-2">
-		<div class="project-block-label centerText">{{"views.detail.comments" | translate}}</div>
-		<br />
-		<div ng-if="comments.length == 0">{{'views.detail.noComments' | translate}}</div>
-		<div ng-repeat="comment in comments.slice().reverse()">
-			<table>
-				<tr style="vertical-align: top;">
-					<td><img src="/images/people.png" class="avatar avatar-80 photo"  style="border-radius: 50%;" height="80" width="80" >
-					</td>
-					<td style="width:100%">
-						<div class="comment-body">
-							<h4>{{ comment.user.firstname }} {{ comment.user.lastname }}</h4>
-							<div class="comment-author vcard"></div>
-							<div class="comment-meta commentmetadata">
-								<span>{{ comment.lastUpdate | date:'yyyy-MM-dd HH:mm:ss'}}</span>
-							</div>
-							<div class="commentmetadata">{{ comment.message }}</div>
+	<div class="col-md-7">
+		<div class="row">
+			<div class="col-xs-offset-1" ng-if="project.movies && project.movies.length">
+				<div class="project-block-label">{{"views.detail.movies" | translate}}</div>
+				<uib-carousel active="active" interval="carouselInterval" no-wrap="noWrapSlides">
+					<uib-slide ng-repeat="movie in project.movies" index="$index">
+						<iframe width="100%" height="400" src="{{ movie.youTubeCode | youtubeEmbedUrl }}"
+								allowfullscreen></iframe>
+						<div class="carousel-caption">
+							<h4>{{ movie.description }}</h4>
 						</div>
-					</td>
-					<td ng-if="role === 'Docent'">
-						<button ng-click="removeComment(comment)" class="btn btn-default" title="{{'views.newProject.delete' | translate}}">
-	                    	<i class="glyphicon glyphicon-trash"></i>
-	                    </button>
-					</td>
-				</tr>
-			</table>
-			<br />
+					</uib-slide>
+				</uib-carousel>
+			</div>
 		</div>
-		<div>
-			<input required type="text" ng-model="comment"
-				class="input-block col-xs-4 col-xs-offset-3 col-md-9 col-md-offset-0" min="1" max="255"
-				placeholder="{{'views.detail.comment' | translate}}" />
-			<button
-				class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
-				ng-click="addComment(comment)"
-				ng-disabled="!comment">{{'views.detail.addComment' |
-				translate}}</button>
+		<div class="row">
+			<div ng-show="project.prezis.length>0" class="col-xs-offset-1">
+				<div class="project-block-label">Prezi</div>
+				<div id="prezi-player"></div>
+			</div>
 		</div>
-		<br />
 	</div>
+
+	<div class="col-md-5">
+		<div class="project-block-label col-xs-offset-5">{{"views.detail.milestones" | translate}}</div>
+		<ul class="timeline">
+			<li ng-repeat="milestone in project.milestones" class="timeline-inverted">
+				<div class="timeline-badge info"><i class="glyphicon glyphicon-cog"></i></div>
+				<div class="timeline-panel">
+					<div class="timeline-heading">
+						<h4 class="timeline-title">{{milestone.description}}</h4>
+						<p>
+							<small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{milestone.lastUpdate | date:'yyyy-MM-dd HH:mm:ss'}}
+							</small>
+						</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="row">
+		<div ng-if="authenticated" class="project-block jumbotron col-md-8 col-md-offset-2">
+			<div class="project-block-label centerText">{{"views.detail.comments" | translate}}</div>
+			<br/>
+			<div ng-if="comments.length == 0">{{'views.detail.noComments' | translate}}</div>
+			<div ng-repeat="comment in comments.slice().reverse()">
+				<table>
+					<tr style="vertical-align: top;">
+						<td><img src="/images/people.png" class="avatar avatar-80 photo" style="border-radius: 50%;"
+								 height="80" width="80">
+						</td>
+						<td style="width:100%">
+							<div class="comment-body">
+								<h4>{{ comment.user.firstname }} {{ comment.user.lastname }}</h4>
+								<div class="comment-author vcard"></div>
+								<div class="comment-meta commentmetadata">
+									<span>{{ comment.lastUpdate | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+								</div>
+								<div class="commentmetadata">{{ comment.message }}</div>
+							</div>
+						</td>
+						<td ng-if="role === 'Docent'">
+							<button ng-click="removeComment(comment)" class="btn btn-default"
+									title="{{'views.newProject.delete' | translate}}">
+								<i class="glyphicon glyphicon-trash"></i>
+							</button>
+						</td>
+					</tr>
+				</table>
+				<br/>
+			</div>
+			<div>
+				<input required type="text" ng-model="comment"
+					   class="input-block col-xs-4 col-xs-offset-3 col-md-9 col-md-offset-0" min="1" max="255"
+					   placeholder="{{'views.detail.comment' | translate}}"/>
+				<button
+						class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
+						ng-click="addComment(comment)"
+						ng-disabled="!comment">{{'views.detail.addComment' |
+					translate}}
+				</button>
+			</div>
+			<br/>
+		</div>
+	</div>
+
 </div>
