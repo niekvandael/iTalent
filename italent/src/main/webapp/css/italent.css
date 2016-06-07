@@ -98,7 +98,7 @@ body {
 }
 
 .project-block-long-description {
-	height: 200px;
+	height: 100px;
 	padding: 5px;
 	font-size: 12px;
 	overflow-y: auto;

@@ -28,4 +28,5 @@ public class ProjectDetailDocentResource extends ResourceSupport {
 	private List<WantedSubscriberResource> wantedSubscribers;
 	private boolean canBack;
 	private boolean running;
+	private boolean isPublic;
 }

@@ -27,4 +27,5 @@ public class ProjectDetailStudentResource extends ResourceSupport {
 	private List<Milestone> milestones;
 	private boolean canSubscribe;
 	private int backingPct;
+	private boolean isPublic;
 }
