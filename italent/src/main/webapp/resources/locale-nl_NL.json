@@ -81,5 +81,6 @@
   "views.detail.description": "Omschrijving",
   "views.detail.movies": "Films",
   "views.detail.comments": "Commentaren",
+  "views.detail.milestones": "Mijpalen",
   "directives.language-select.Language": "Taal"
 }
