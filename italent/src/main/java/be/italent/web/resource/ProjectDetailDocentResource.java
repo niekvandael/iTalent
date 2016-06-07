@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.hateoas.ResourceSupport;
 
+import be.italent.model.Milestone;
 import be.italent.model.Prezi;
 
 import java.util.Date;
@@ -23,6 +24,7 @@ public class ProjectDetailDocentResource extends ResourceSupport {
 	private int numberOfLikes;
 	private List<MovieResource> movies;
 	private List<Prezi> prezis;
+	private List<Milestone> milestones;
 	private List<WantedSubscriberResource> wantedSubscribers;
 	private boolean canBack;
 	private boolean running;
