@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 import org.springframework.hateoas.ResourceSupport;
 
 import be.italent.model.Milestone;
+import be.italent.model.OnlineFile;
 import be.italent.model.Prezi;
 
 import java.util.Date;
@@ -26,6 +27,7 @@ public class ProjectDetailDocentResource extends ResourceSupport {
 	private List<Prezi> prezis;
 	private List<Milestone> milestones;
 	private List<WantedSubscriberResource> wantedSubscribers;
+	private List<OnlineFile> onlineFiles;
 	private boolean canBack;
 	private boolean running;
 	private boolean isPublic;
