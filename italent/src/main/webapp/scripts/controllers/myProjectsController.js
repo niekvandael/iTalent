@@ -6,11 +6,14 @@ angular.module('iTalentApp')
          function ($scope, $rootScope, $location, projectService, likeService) {
     	 $projects = new Array();
     	 $scope.active = "myProjects";
+    	 $scope.loadingDone = false;
     	 
          $scope.showMyProjects = function(){
         	$scope.active = "myProjects";
+        	$scope.loadingDone = false;
         	projectService.listUser().then(function (projects) {
         		$scope.projects = projects;
+        		$scope.loadingDone = true;
             }, function (err) {
                 console.log('Error getting projects:');
                 console.log(err);
@@ -19,8 +22,10 @@ angular.module('iTalentApp')
         
         $scope.showMySubscribedProjects = function(){
         	$scope.active = "mySubscribedProjects";
+        	$scope.loadingDone = false;
         	projectService.listMySubscribed().then(function (projects) {
                 $scope.projects = projects;
+                $scope.loadingDone = true;
             }, function (err) {
                 console.log('Error getting mySubscribed projects:');
                 console.log(err);
@@ -29,8 +34,10 @@ angular.module('iTalentApp')
         
         $scope.showMyLikedProjects = function(){
         	$scope.active = "myLikedProjects";
+        	$scope.loadingDone = false;
         	projectService.listMyLiked().then(function (projects) {
         		$scope.projects = projects;
+        		$scope.loadingDone = true;
             }, function (err) {
                 console.log('Error getting myliked projects:');
                 console.log(err);

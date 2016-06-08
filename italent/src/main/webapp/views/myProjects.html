@@ -84,5 +84,8 @@
 	        </div>
 	    </div>
 	</div>
-	<div class="emptyListText" ng-hide="projects.length">{{"views.myProjects.noProjects" | translate}}</div>
+	<div class="emptyListText" ng-show="!projects.length && loadingDone">{{"views.myProjects.noProjects" | translate}}</div>
+	<div ng-hide="loadingDone"  align="middle">
+		<img ng-src="images/page-loader.gif" style="width:100px; margin: 50px;"/>
+	</div>
 </div>
