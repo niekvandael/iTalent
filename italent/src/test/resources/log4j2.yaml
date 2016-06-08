@@ -1,0 +1,21 @@
+configuration:
+  status: WARN
+
+  appenders:
+    file:
+      name: FILE
+      filename: ${log4j2.test.filename}
+      append: true
+      patternlayout:
+        pattern: ${log4j2.test.pattern}
+    console:
+      name: CONSOLE
+      target: SYSTEM_OUT
+      patternlayout:
+        pattern: ${log4j2.test.pattern}
+
+  loggers:
+    root:
+      level: ${log4j2.test.level}
+      appenderref:
+        ref: ${log4j2.test.appenderref}

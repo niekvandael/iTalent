@@ -1,4 +1,4 @@
-package be.italent.controllers;
+package be.italent.web.controller;
 
 import org.junit.Test;
 
