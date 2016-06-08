@@ -28,4 +28,5 @@ public class ProjectDetailStudentResource extends ResourceSupport {
 	private boolean canSubscribe;
 	private int backingPct;
 	private boolean isPublic;
+    private List<CategoryResource> categories;
 }

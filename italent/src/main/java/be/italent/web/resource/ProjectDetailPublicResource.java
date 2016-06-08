@@ -26,4 +26,5 @@ public class ProjectDetailPublicResource extends ResourceSupport {
 	private List<Prezi> prezis;
 	private List<Milestone> milestones;
 	private boolean isPublic;
+    private List<CategoryResource> categories;
 }

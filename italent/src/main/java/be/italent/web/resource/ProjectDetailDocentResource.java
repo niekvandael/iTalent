@@ -29,4 +29,5 @@ public class ProjectDetailDocentResource extends ResourceSupport {
 	private boolean canBack;
 	private boolean running;
 	private boolean isPublic;
+    private List<CategoryResource> categories;
 }

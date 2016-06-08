@@ -83,7 +83,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
         return cal.getTime();
 	}
 	
-	@JsonIgnore
+//	@JsonIgnore
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(name = "project_category", joinColumns = { 
 			@JoinColumn(name = "project_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "category_id",  nullable = false, updatable = false) })

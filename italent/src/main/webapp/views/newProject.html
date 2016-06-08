@@ -26,7 +26,7 @@
                 
                 <div class="form-group">
                     <label class="required">{{'views.newProject.category' | translate}}</label>
-						<tags-input ng-model="project.categories" add-on-paste="true" style="display:inline;">
+						<tags-input ng-model="project.categories" display-property="description" add-on-paste="true" style="display:inline;">
 					    	<auto-complete source="loadTags($query)"></auto-complete> 
 					    </tags-input>
                 </div>
