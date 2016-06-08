@@ -76,8 +76,16 @@ angular.module('iTalentApp')
             }
             $scope.project.durationSelect = $scope.durationModes[0]; //minutes
         };
-
+        
+        $scope.isValid = function(){
+        	return $scope.registrationForm.$valid;
+        };
+        
         $scope.save = function () {
+        	if(!$scope.isValid()){
+        		return;
+        	}
+        	
         	$scope.calculateDuration();
             projectService.saveOrUpdate($scope.project).then(function (project) {
                 toastr.success('Project is opgeslagen', 'Succes!');

@@ -1,6 +1,7 @@
+<form name="registrationForm">
+
 <div ng-if="authenticated" class="container">
     <h2 ng-if="!project.projectId">{{'views.newProject.pageTitle' | translate}}</h2>
-    <form name="registrationForm" role="form">
         <div class="row">
             <div class="col-md-6">
 
@@ -40,7 +41,7 @@
                     <label class="required">{{'views.newProject.duration' | translate}}</label>
                     <div class="row form-horizontal">
                         <div class="col-xs-5">
-                            <input required type="number" ng-min="1" ng-max="1000" ng-model="project.duration" class="form-control" />
+                            <input required type="number" min="1" max="1000" ng-model="project.duration" class="form-control" />
                         </div>
                         <div class="col-xs-7">
                             <select ng-model="project.durationSelect" ng-options="durationMode as durationMode.label for durationMode in durationModes" class="form-control"></select>
@@ -301,6 +302,6 @@
                 <button ng-if="authenticated && project.projectId>0 && (role === 'Docent' || (role === 'Student' && project.backingPct < 1))" type="button" class="btn btn-danger" ng-click="deleteProject()">{{"views.home.delete" | translate}}</button>
             </div>
         </div>
-    </form>
     <br>
 </div>
+</form>
