@@ -11,7 +11,6 @@
 				<uib-slide ng-repeat="picture in project.pictures" index="$index">
 					<img class="carouselImage" ng-src="data:image/jpeg;base64, {{ picture.bytes }}" style="height: 250px">
 					<div class="carousel-caption">
-						<h4>{{ picture.pictureId }}</h4>
 						<h4>{{ picture.description }}</h4>
 					</div>
 				</uib-slide>
