@@ -80,7 +80,7 @@
 		</div>
 	</div>
 
-	<div class="col-md-5" ng-if="project.milestones.length">
+	<div class="col-md-5" ng-if="project.milestones && project.milestones.length">
 		<div class="project-block-label col-xs-offset-5">{{"views.detail.milestones" | translate}}</div>
 		<ul class="timeline">
 			<li ng-repeat="milestone in project.milestones" class="timeline-inverted">
