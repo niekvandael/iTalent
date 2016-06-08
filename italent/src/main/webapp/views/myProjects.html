@@ -39,7 +39,19 @@
 	            <div ng-if="project.duration && !project.startDate" class="project-block-label col-xs-4">{{"views.home.duration"
 					| translate}}
 				</div>
-				<div ng-if="project.duration && !project.startDate" class="project-block-text col-xs-8">{{project.duration}}
+				<div ng-if="authenticated && project.duration && !project.startDate" class="project-block-text col-xs-8">
+					<span ng-if="project.duration % 44640 == 0">
+						{{project.duration / 44640}} {{"views.home.duration.months" | translate}}
+					</span>
+					<span ng-if="!(project.duration % 44640 == 0) && project.duration % 1440 == 0" >
+						{{project.duration / 1440}} {{"views.home.duration.days" | translate}}
+					</span>
+					<span ng-if="!(project.duration % 44640 == 0) && !(project.duration % 1440 == 0) && project.duration % 60 == 0" >
+						{{project.duration / 60}} {{"views.home.duration.hours" | translate}}
+					</span>
+					<span ng-if="!(project.duration % 44640 == 0) && !(project.duration % 1440 == 0) && !(project.duration % 60 == 0)" >
+						{{project.duration}} {{"views.home.duration.minutes" | translate}}
+					</span>
 				</div>
 
 				<div ng-if="project.startDate" class="project-block-label col-xs-4">{{"views.home.startDate"
