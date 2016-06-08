@@ -98,6 +98,18 @@
 		</ul>
 	</div>
 
+	<div class="row project-block col-md-8 col-md-offset-2" ng-if="project.onlineFiles && project.onlineFiles.length">
+		<div class="project-block-label centerText">{{"views.detail.onlineFiles" | translate}}</div>
+		<div ng-repeat="onlineFile in project.onlineFiles">
+			<div class="add-project-label-big col-xs-3 col-xs-offset-1">
+				<label>{{onlineFile.description | translate}}</label>
+			</div>
+			<div class="col-xs-4">
+				<a class="add-project-label-big" href="http://{{ onlineFile.url }}">{{ onlineFile.url }}</a>
+			</div>
+		</div>
+	</div>
+
 	<div class="row">
 		<div ng-if="authenticated" class="project-block jumbotron col-md-8 col-md-offset-2">
 			<div class="project-block-label centerText">{{"views.detail.comments" | translate}}</div>
