@@ -82,5 +82,6 @@
   "views.detail.movies": "Movies",
   "views.detail.comments": "Comments",
   "views.detail.milestones": "Milestones",
+  "views.detail.onlineFiles": "Online files",
   "directives.language-select.Language": "Language"
 }
