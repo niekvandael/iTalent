@@ -20,5 +20,5 @@ public class AbstractSubscriber extends AbstractITalentEntity implements Seriali
 	@JsonIgnore
 	@ManyToOne(cascade = CascadeType.DETACH)
 	@NotNull
-	private Project project;
+	protected Project project;
 }

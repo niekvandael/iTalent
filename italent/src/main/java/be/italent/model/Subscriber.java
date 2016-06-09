@@ -17,5 +17,5 @@ public class Subscriber extends AbstractSubscriber implements Serializable  {
 	
 	@OneToOne
 	@NotNull
-	private User user;
+	protected User user;
 }
