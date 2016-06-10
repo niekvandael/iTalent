@@ -41,7 +41,7 @@
                     <label class="required">{{'views.newProject.duration' | translate}}</label>
                     <div class="row form-horizontal">
                         <div class="col-xs-5">
-                            <input required type="number" min="1" max="1000" ng-model="project.duration" class="form-control" />
+                            <input required type="number" min="1" max="1000" ng-model="project.durationInMinutes" class="form-control" />
                         </div>
                         <div class="col-xs-7">
                             <select ng-model="project.durationSelect" ng-options="durationMode as durationMode.label for durationMode in durationModes" class="form-control"></select>
