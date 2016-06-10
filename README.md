@@ -22,7 +22,3 @@ De back-end wordt ontwikkeld met JAVA, Hibernate en Spring, de front-end met Jav
 - Arjen Schuurman
 - Niek Vandael
 - Jesse Vranken
-
-
-## I-Talent platform License
-??
