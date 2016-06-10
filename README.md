@@ -4,9 +4,9 @@
 ## I-Talent platform omschrijving
 Hogeschool PXL zou graag gebruik maken van een online systeem om het i-talent project voor zowel studenten als docenten makkelijker te maken.
 
-Studenten van verschillende departementen van hogeschool PXL moeten een verplicht aantal uren werken aan een zelfgekozen project. Projecten kunnen niet altijd slechts door 1 of enkele studenten verwezenlijkt worden, daarom zou een online platform waarop studenten ideeën kunnen lanceren en/of zich hierop inschrijven uitkomst kunnen bieden. Samenwerking met verschillende departementen kan op die manier bevorderd worden en studenten hebben de mogelijkheid om deel te nemen aan projecten die in de lijn van hun interesses liggen. 
+Studenten van verschillende departementen van hogeschool PXL moeten een verplicht aantal uren werken aan een zelfgekozen project. Projecten kunnen niet altijd slechts door 1 of enkele studenten verwezenlijkt worden, daarom zou een online platform waarop studenten ideeën kunnen lanceren en/of zich hierop inschrijven uitkomst kunnen bieden. Samenwerking tussen verschillende departementen kan op die manier bevorderd worden en studenten hebben de mogelijkheid om deel te nemen aan projecten die in de lijn van hun interesses liggen. 
 
-Uiteraard is niet de bedoeling dat ieder idee zomaar gelanceerd kan worden. Hiervoor is toestemming nodig van begeleidende docenten. Docenten kunnen projecten goedkeuren, monitoren en eventueel (gedeeltelijk) ondersteunen. 
+Uiteraard is het niet de bedoeling dat ieder idee zomaar gelanceerd kan worden. Hiervoor is toestemming nodig van begeleidende docenten. Docenten kunnen projecten goedkeuren, monitoren en eventueel (gedeeltelijk) ondersteunen. 
 
 Voor gebruik van deze applicatie moet men eerst inloggen en daardoor is deze alleen toegankelijk voor studenten en docenten van de Hogeschool PXL.
 
