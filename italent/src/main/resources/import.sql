@@ -127,6 +127,9 @@ insert into wanted_subscriber(department_department_id, project_project_id, numb
 insert into wanted_subscriber(department_department_id, project_project_id, number, status, last_updated_by, last_update) values(2, 2, 3, 'A', 'Team1', '2016-01-01');
 --test project: public archived
 insert into wanted_subscriber(department_department_id, project_project_id, number, status, last_updated_by, last_update) values(4, 4, 1, 'A', 'Team1', '2016-01-01');
+insert into wanted_subscriber(department_department_id, project_project_id, number, status, last_updated_by, last_update) values(4, 5, 4, 'A', 'Team1', '2016-01-01');
+insert into wanted_subscriber(department_department_id, project_project_id, number, status, last_updated_by, last_update) values(4, 6, 4, 'A', 'Team1', '2016-01-01');
+insert into wanted_subscriber(department_department_id, project_project_id, number, status, last_updated_by, last_update) values(4, 7, 4, 'A', 'Team1', '2016-01-01');
 
 -- comments
 insert into comment(user_user_id, project_project_id, message, status, last_updated_by, last_update, parent_comment_id) values(1, 1, 'Comment 1', 'A', 'Team1', '2016-01-01', -1);
