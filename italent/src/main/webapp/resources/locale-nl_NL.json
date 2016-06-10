@@ -83,5 +83,20 @@
   "views.detail.comments": "Commentaren",
   "views.detail.milestones": "Mijpalen",
   "views.detail.onlineFiles": "Online bestanden",
-  "directives.language-select.Language": "Taal"
+  "directives.language-select.Language": "Taal",
+  "views.messages.project_saved_long" : "Project is opgeslagen",
+  "views.messages.success" : "Success!",
+  "views.messages.save_error" : "Probleem bij opslaan project, probeer het nogmaals.",
+  "views.messages.fail" : "Fout!",
+  "views.messages.project_deleted" : "Project is verwijderd.",
+  "views.messages.error_delete_project" : "Probleem bij verwijderen project, probeer het nogmaals.",
+  "views.messages.success_create_category" : "Categorie is aangemaakt",
+  "views.messages.error_create_category" : "Probleem bij aanmaken categorie, probeer het nogmaals.",
+  "views.messages.success_delete_category" : "Categorie is verwijderd",
+  "views.messages.error_delete_category_already_in_use" : "Kan categorie niet verwijderen aangezien deze nog in gebruik is",
+  "views.messages.error_delete_category" : "Probleem bij verwijderen categorie, probeer het nogmaals.",
+  "views.messages.success_subscribe" : "Je bent ingeschreven",
+  "views.messages.error_subscribe" : "Probleem bij het inschrijven, probeer het nogmaals.",
+  "views.messages.success_support" : "Je steunt het project",
+  "views.messages.error_support" : "Probleem bij het registreren van ondersteuning, probeer het nogmaals."
 }

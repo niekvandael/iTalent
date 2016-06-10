@@ -1,6 +1,6 @@
 angular.module('iTalentApp')
-    .controller('detailController', ['$scope', '$routeParams', '$location', 'projectService', 'likeService', 'subscriberStudentService', 'subscriberDocentService', 'commentService', 'toastr', 
-        function ($scope, $routeParams, $location, projectService, likeService, subscriberStudentService, subscriberDocentService, commentService, toastr) {
+    .controller('detailController', ['$scope', '$routeParams', '$location', 'projectService', 'likeService', 'subscriberStudentService', 'subscriberDocentService', 'commentService', 'toastr', '$translate', 
+        function ($scope, $routeParams, $location, projectService, likeService, subscriberStudentService, subscriberDocentService, commentService, toastr, $translate) {
 
         var projectId = $routeParams.id;
         $scope.project = {};
@@ -40,11 +40,11 @@ angular.module('iTalentApp')
 
         $scope.saveSubscriberStudent = function(id, hours) {
             subscriberStudentService.save(id, hours).then(function() {
-            	toastr.success('Je bent ingeschreven', 'Succes!');
+            	toastr.success($translate.instant('views.messages.success_subscribe'), $translate.instant('views.messages.success'));
                 console.log('Success saving subscriberStudent');
                 $scope.project.canSubscribe = false;
             }, function(err) {
-            	toastr.error('Probleem bij het inschrijven, probeer het nogmaals.', 'Fout!');
+            	toastr.error($translate.instant('views.messages.success_subscribe'), $translate.instant('views.messages.fail'));
                 console.log('Error saving subscriberStudent.');
                 console.log(err);
             })
@@ -61,11 +61,11 @@ angular.module('iTalentApp')
         
         $scope.saveSubscriberDocent = function(id, percentage) {
             subscriberDocentService.save(id, percentage).then(function() {
-            	toastr.success('Je steunt het project', 'Succes!');
+            	toastr.success($translate.instant('views.messages.success_support'), $translate.instant('views.messages.success'));
                 console.log('Success saving subscriberDocent');
                 $scope.project.canBack = false;
             }, function(err) {
-            	toastr.error('Probleem bij het registreren van ondersteuning, probeer het nogmaals.', 'Fout!');
+            	toastr.error($translate.instant('views.messages.error_support'), $translate.instant('views.messages.fail'));
                 console.log('Error saving subscriberDocent.');
                 console.log(err);
             })

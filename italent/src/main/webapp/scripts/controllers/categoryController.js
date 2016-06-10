@@ -2,17 +2,17 @@
  * Created by arjen on 05/04/16.
  */
 angular.module('iTalentApp')
-    .controller('categoryController', ['$scope', '$routeParams', 'toastr', 'categoryService', function ($scope, $routeParams, toastr, categoryService) {
+    .controller('categoryController', ['$scope', '$routeParams', 'toastr', 'categoryService', '$translate', function ($scope, $routeParams, toastr, categoryService, $translate) {
 
         $scope.newCategory = {};
 
         $scope.addCategory = function () {
             categoryService.save($scope.newCategory).then(function () {
                 getCategories();
-                toastr.success('Categorie is aangemaakt', 'Succes!');
+                toastr.success($translate.instant('views.messages.success_create_category'), $translate.instant('views.messages.success'));
                 $scope.newCategory.description = "";
             }, function (err) {
-                toastr.error('Probleem bij aanmaken categorie, probeer het nogmaals.', 'Fout!');
+                toastr.error($translate.instant('views.messages.error_create_category'), $translate.instant('views.messages.fail'));
                 console.log('Error saving category: ');
                 console.log(err);
             })
@@ -21,13 +21,13 @@ angular.module('iTalentApp')
         $scope.deleteCategory = function (categoryId) {
             categoryService.deleteItem(categoryId).then(function (success) {
                 if (success.data) {
-                    toastr.success('Categorie is verwijderd.', 'Succes!');
+                    toastr.success($translate.instant('views.messages.success_delete_category'), $translate.instant('views.messages.success'));
                 } else {
-                    toastr.error('Kan categorie niet verwijderen aangezien deze nog in gebruik is.', 'Fout!');
+                    toastr.error($translate.instant('views.messages.error_delete_category_already_in_use'), $translate.instant('views.messages.fail'));
                 }
                 getCategories();
             }, function (err) {
-                toastr.error('Probleem bij verwijderen categorie, probeer het nogmaals.', 'Fout!');
+                toastr.error($translate.instant('views.messages.error_delete_category'), $translate.instant('views.messages.fail'));
                 console.log('Error deleting category: ');
                 console.log(err);
             })

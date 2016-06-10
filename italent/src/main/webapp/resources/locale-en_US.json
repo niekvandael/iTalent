@@ -83,5 +83,20 @@
   "views.detail.comments": "Comments",
   "views.detail.milestones": "Milestones",
   "views.detail.onlineFiles": "Online files",
-  "directives.language-select.Language": "Language"
+  "directives.language-select.Language": "Language",
+  "views.messages.project_saved_long" : "Project is saved",
+  "views.messages.success" : "Success!",
+  "views.messages.save_error" : "Problem saving, please try again.",
+  "views.messages.fail" : "Error!",
+  "views.messages.project_deleted" : "Project has been deleted",
+  "views.messages.error_delete_project" : "Problem deleting project, please try again.",
+  "views.messages.success_create_category" : "Category created",
+  "views.messages.error_create_category" : "Problem creating category, try again.",
+  "views.messages.success_delete_category" : "Category deleted",
+  "views.messages.error_delete_category_already_in_use" : "Cannot delete category: it's in use.",
+  "views.messages.error_delete_category" : "Cannot delete category, try again.",
+  "views.messages.success_subscribe" : "You are subscribed",
+  "views.messages.error_subscribe" : "Problem subscribing, try again.",
+  "views.messages.success_support" : "You are backig this project.",
+  "views.messages.error_support" : "Problem registering support of the project, try again."  
 }

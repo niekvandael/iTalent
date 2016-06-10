@@ -1,6 +1,6 @@
 angular.module('iTalentApp')
-    .controller('newProjectController', ['$scope', '$location', '$routeParams', 'toastr', 'projectService', 'departmentService', 'categoryService', 'domainService',
-                                         function ($scope, $location, $routeParams, toastr, projectService, departmentService, categoryService, domainService) {
+    .controller('newProjectController', ['$scope', '$location', '$routeParams', 'toastr', 'projectService', 'departmentService', 'categoryService', 'domainService', '$translate',
+                                         function ($scope, $location, $routeParams, toastr, projectService, departmentService, categoryService, domainService, $translate) {
 
         var projectId = $routeParams.id;
         $scope.project = {
@@ -88,10 +88,10 @@ angular.module('iTalentApp')
         	
         	$scope.calculateDuration();
             projectService.saveOrUpdate($scope.project).then(function (project) {
-                toastr.success('Project is opgeslagen', 'Succes!');
+                toastr.success($translate.instant('views.messages.project_saved_long'), $translate.instant('views.messages.success'));
                 $location.path('/projects/' + project.projectId);
             }, function (err) {
-                toastr.error('Probleem bij opslaan project, probeer het nogmaals.', 'Fout!');
+                toastr.error($translate.instant('views.messages.save_error'), $translate.instant('views.messages.fail'));
                 console.log('Error saving project.');
                 console.log(err);
             })
@@ -149,10 +149,10 @@ angular.module('iTalentApp')
 
         $scope.deleteProject = function () {
             projectService.deleteProject(projectId).then(function () {
-                toastr.success('Project is verwijderd.', 'Succes!');
+                toastr.success($translate.instant('views.messages.project_deleted'), $translate.instant('views.messages.success'));
                 $location.path('/myProjects');
             }, function (err) {
-                toastr.error('Probleem bij verwijderen project, probeer het nogmaals.', 'Fout!');
+                toastr.error($translate.instant('views.messages.error_delete_project'), $translate.instant('views.messages.fail'));
                 console.log('Error deleting project.');
                 console.log(err);
             })
