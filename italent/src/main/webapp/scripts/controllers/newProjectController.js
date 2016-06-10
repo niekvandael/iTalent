@@ -281,7 +281,7 @@ angular.module('iTalentApp')
             if ($scope.project.wantedSubscribers.length == this.maxLengthOfWantedSubscribers) {
                 return;
             }
-            $scope.project.wantedSubscribers.push({'department': {id: 0}, 'number': 0});
+            $scope.project.wantedSubscribers.push({'department': $scope.departments[0], 'number': 0});
         };
 
         $scope.addPicture = function () {

@@ -2,10 +2,12 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<div class="input-group">
-				<span class="input-group-btn"> <tags-input ng-model="tags"
+				<span class="input-group-btn"> 
+					<tags-input ng-model="tags"
 						add-on-paste="true" style="display:inline;"
-						placeholder="{{ 'views.home.search' | translate }}"> <auto-complete
-						source="loadTags($query)"></auto-complete> </tags-input>
+						placeholder="{{ 'views.home.search' | translate }}"> 
+						<auto-complete source="loadTags($query)"></auto-complete> 
+					</tags-input>
 				</span>
 			</div>
 		</div>

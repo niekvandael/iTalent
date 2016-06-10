@@ -28,7 +28,7 @@
   "views.home.duration.hours": "hours",
   "views.home.duration.minutes": "minutes",
   "views.about.title": "About iTalent PXL project",
-  "views.about.madeBy": "Made by: ",
+  "views.about.madeBy": "Created by: ",
   "views.myProjects.myProjects": "My projects",
   "views.myProjects.subscribedProjects": "My subscribed projects",
   "views.myProjects.likedProjects": "My liked projects",
@@ -98,5 +98,9 @@
   "views.messages.success_subscribe" : "You are subscribed",
   "views.messages.error_subscribe" : "Problem subscribing, try again.",
   "views.messages.success_support" : "You are backig this project.",
-  "views.messages.error_support" : "Problem registering support of the project, try again."  
+  "views.messages.error_support" : "Problem registering support of the project, try again.",
+   "views.about.description" : "I-Talent platform description",
+  "views.about.description_message" : "PXL would like to use an online system to create and maintain i-talent projects for both students and teachers. Students from different departments of PXL have to work a required number of hours to a chosen project. Projects can not always be achieved by one or a few students, that's why there is an need for an online platform where students can launch ideas and / or subscribe to it. Cooperation with various departments can be promoted that way and students have the opportunity to participate in projects that are in line with their interests. Of course, it is not intended that any idea can simply be released. This requires the consent of supervising teachers. Teachers can approve projects, monitor and possibly support (partially). To use this application it's required to login and is therefore only accessible only for students and teachers of the PXL.", 
+  "views.about.technical" : "I-Talent platform technical",
+  "views.about.technical_message" : "The project is hosted on OpenShift and is designed for both PC and mobile devices. The back end is developed with Java , Hibernate and Spring, the front end with JavaScript , AngularJS and Bootstrap."
 }
