@@ -152,7 +152,7 @@
                     <div ng-repeat="subscriber in project.wantedSubscribers">
                         <div class="row form-horizontal">
                             <div class="col-xs-8 col-md-9 col-xs-offset-1">
-                                <select required class="form-control" ng-options="department as department.name for department in departments track by department.name" ng-model="subscriber.department" class="form-control">
+                                <select required class="form-control" ng-options="department as department.name for department in departments track by department.name" ng-model="subscriber.department">
                                 </select>
                             </div>
                             <div class="col-xs-1">
