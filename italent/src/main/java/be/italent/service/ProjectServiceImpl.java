@@ -36,6 +36,8 @@ public class ProjectServiceImpl implements ProjectService{
     	List<Project>  projects = projectRepo.findAllFullBackedProjects();
     	for (Project project : projects){
     		project.setLiked(user.getUserId());
+       		project.setMyBackingPct(user.getUserId());
+    		project.setMySubscribedHours(user.getUserId())
     		project.updateCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId()); //necessary for filter on home.html
     	}
     	return projects;
@@ -46,6 +48,8 @@ public class ProjectServiceImpl implements ProjectService{
     	List<Project>  projects = projectRepo.findAll();
     	for (Project project : projects){
     		project.setLiked(user.getUserId());
+    		project.setMyBackingPct(user.getUserId());
+    		project.setMySubscribedHours(user.getUserId());
     		project.updateCanBack(user.getUserId()); //necessary for filter on home.html
     	}
     	return projects;
@@ -56,6 +60,8 @@ public class ProjectServiceImpl implements ProjectService{
     	List<Project>  projects = projectRepo.findUserProjects(user);
     	if(projects.size()>0){
     		this.setIsLikedByCurrentUser(projects, user);
+    		this.setBackingPctByCurrentUser(projects, user);
+    		this.setSubscribedHoursByCurrentUser(projects, user);
     	}
     	return projects;
     }
@@ -64,6 +70,8 @@ public class ProjectServiceImpl implements ProjectService{
     	List<Project>  projects = projectRepo.findMyLikedProjects(user);
     	if(projects.size()>0){
     		this.setIsLikedByCurrentUser(projects, user);
+    		this.setBackingPctByCurrentUser(projects, user);
+    		this.setSubscribedHoursByCurrentUser(projects, user);
     	}
     	return projects;
     }
@@ -72,6 +80,8 @@ public class ProjectServiceImpl implements ProjectService{
     	List<Project>  projects = projectRepo.findMySubscribedProjects(user);
     	if(projects.size()>0){
     		this.setIsLikedByCurrentUser(projects, user);
+    		this.setBackingPctByCurrentUser(projects, user);
+    		this.setSubscribedHoursByCurrentUser(projects, user);
     	}
     	return projects;
     }
@@ -80,6 +90,8 @@ public class ProjectServiceImpl implements ProjectService{
     	List<Project>  projects = projectRepo.findMyBackedProjects(user);
     	if(projects.size()>0){
     		this.setIsLikedByCurrentUser(projects, user);
+    		this.setBackingPctByCurrentUser(projects, user);
+    		this.setSubscribedHoursByCurrentUser(projects, user);
     	}
     	return projects;
     }
@@ -87,7 +99,9 @@ public class ProjectServiceImpl implements ProjectService{
     public Project getProjectById(int id, User user){
     	Project project =  projectRepo.findOneByProjectId(id);
     	project.setLiked(user.getUserId());
-    	
+   		project.setMyBackingPct(user.getUserId());
+		project.setMySubscribedHours(user.getUserId());
+		
     	if (user.getRole().getName().equals("Student")){
     		project.updateCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId());
     	}
@@ -154,4 +168,17 @@ public class ProjectServiceImpl implements ProjectService{
     		project.setLiked(currentUser.getUserId());
     	}
     }
+  
+    private void setBackingPctByCurrentUser(List<Project> projects, User currentUser){
+    	for (Project project : projects){
+    		project.setMyBackingPct(currentUser.getUserId());
+    	}
+    }
+    
+    private void setSubscribedHoursByCurrentUser(List<Project> projects, User currentUser){
+    	for (Project project : projects){
+    		project.setMySubscribedHours(currentUser.getUserId());
+    	}
+    }
+    
 }

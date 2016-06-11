@@ -130,6 +130,12 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	private List<Comment> comments = new ArrayList<Comment>();
 
 	@Transient
+	private int myBackingPct;
+	
+	@Transient
+	private int mySubscribedHours;
+	
+	@Transient
 	private boolean liked;
 	
 	@Transient
@@ -241,6 +247,25 @@ public class Project extends AbstractITalentEntity implements Serializable {
 				break;
 			}
 		}
+	}
+	
+	@JsonIgnore
+	public void setMySubscribedHours(int currentUserId) {
+		for (SubscriberStudent s : this.getSubscribersStudent()) {
+			if(s.getUser().getUserId() == currentUserId){
+				this.mySubscribedHours = s.getHours();
+				break;
+			}
+		}
+	}
+
+	public void setMyBackingPct(int currentUserId) {
+		for (SubscriberDocent s : this.getSubscribersDocent()) {
+			if(s.getUser().getUserId() == currentUserId){
+				this.myBackingPct = s.getBackingPct();
+				break;
+			}
+		}	
 	}
 	
 	@JsonIgnore

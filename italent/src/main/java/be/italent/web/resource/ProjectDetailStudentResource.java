@@ -31,4 +31,5 @@ public class ProjectDetailStudentResource extends ResourceSupport {
 	private int backingPct;
 	private boolean isPublic;
     private List<CategoryResource> categories;
+    private int mySubscribedHours;
 }

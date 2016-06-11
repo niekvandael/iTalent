@@ -63,7 +63,7 @@ angular.module('iTalentApp')
             subscriberDocentService.save(id, percentage).then(function() {
             	toastr.success($translate.instant('views.messages.success_support'), $translate.instant('views.messages.success'));
                 console.log('Success saving subscriberDocent');
-                $scope.project.canBack = false;
+                $scope.project.myBackingPct = percentage;
             }, function(err) {
             	toastr.error($translate.instant('views.messages.error_support'), $translate.instant('views.messages.fail'));
                 console.log('Error saving subscriberDocent.');

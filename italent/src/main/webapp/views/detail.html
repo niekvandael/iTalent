@@ -1,11 +1,19 @@
 <div style="float:left">
 	<div ng-if="authenticated && role === 'Docent'">
-		<img ng-src="images/edit.png" type="button" style="cursor: pointer; width: 50px; margin-left: 100px;" ng-click="editProject(project.projectId)">
+		<img ng-src="images/edit.png" type="button" style="cursor: pointer; width: 40px; margin-left: 100px;" ng-click="editProject(project.projectId)">
 		</img>
 	</div>
-	<div ng-if="authenticated && role === 'Docent' && project.canBack">
+	<div ng-if="authenticated && role === 'Docent' && (project.canBack || project.myBackingPct != 0)">
 		<div>
-		  <img ng-src="images/handshake.png" type="button" style="cursor: pointer; width: 50px; margin-left: 100px;" data-toggle="modal" data-target="#myModal">
+		  <div ng-if="project.myBackingPct != 0">
+		  	<img ng-src="images/handshake-success.png" type="button" style="width: 50px; margin-left: 100px;">
+		  	<strong>{{ project.myBackingPct }}%</strong>
+		  </div>
+		  
+		  <div ng-if="project.myBackingPct == 0">
+		  	<img ng-src="images/handshake.png" type="button" style="cursor: pointer; width: 50px; margin-left: 100px;" data-toggle="modal" data-target="#myModal">
+		  </div>
+		  
 		  <!-- Modal -->
 		  <div class="modal fade" id="myModal" role="dialog">
 		    <div class="modal-dialog">
