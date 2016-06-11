@@ -1,4 +1,38 @@
-{{projectDetail}}
+<div style="float:left">
+	<div ng-if="authenticated && role === 'Docent'">
+		<img ng-src="images/edit.png" type="button" style="cursor: pointer; width: 50px; margin-left: 100px;" ng-click="editProject(project.projectId)">
+		</img>
+	</div>
+	<div ng-if="authenticated && role === 'Docent' && project.canBack">
+		<div>
+		  <img ng-src="images/handshake.png" type="button" style="cursor: pointer; width: 50px; margin-left: 100px;" data-toggle="modal" data-target="#myModal">
+		  <!-- Modal -->
+		  <div class="modal fade" id="myModal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title">{{'views.messages.how_much_do_you_want_to_support' | translate}}</h4>
+		        </div>
+		        <div class="modal-body">
+		          	<input required type="number" ng-model="percentage" style="width:30%;" min="1" max="100" placeholder="{{'views.home.percentage' | translate}}"/>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="saveSubscriberDocent(project.projectId, percentage)" ng-disabled="!percentage">{{'views.home.back' | translate}}</button>
+		          <button type="button" class="btn btn-default" data-dismiss="modal">{{'views.messages.cancel' | translate}}</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+		  </div>
+		</div>
+
+	</div>
+</div>
+
+
 
 <div class="container">
 	<div class="project-block-title">{{ project.title }}</div>
@@ -71,20 +105,6 @@
 				<button type="submit" class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
 						ng-click="saveSubscriberStudent(project.projectId, hours)"
 						ng-disabled="!hours">{{'views.home.subscribe' | translate}}
-				</button>
-			</div>
-			<div ng-if="role === 'Docent' && project.canBack" class="col-xs-offset-1 col-md-offset-4">
-				<input required type="number" ng-model="percentage" class="input-block col-xs-4 col-md-3" min="1" max="100"
-					   placeholder="{{'views.home.percentage' | translate}}"/>
-				<button type="submit" class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
-						ng-click="saveSubscriberDocent(project.projectId, percentage)"
-						ng-disabled="!percentage">{{'views.home.back' | translate}}
-				</button>
-			</div>
-
-			<div ng-if="authenticated && role === 'Docent'" class="col-xs-offset-1 col-md-offset-4">
-				<button type="button" class="btn btn-danger btn-danger-detail col-xs-3 col-md-3 col-xs-offset-1"
-						ng-click="editProject(project.projectId)">{{"views.detail.edit" | translate}}
 				</button>
 			</div>
 		</div>
