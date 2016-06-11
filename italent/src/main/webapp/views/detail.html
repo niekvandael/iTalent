@@ -6,7 +6,7 @@
 	</div>
 	
 	<!-- Docents support button -->
-	<div ng-if="authenticated && role === 'Docent' && (project.canBack || project.myBackingPct != 0)">
+	<div ng-if="authenticated && role === 'Docent'">
 		<div>
 		  <div ng-if="project.myBackingPct != 0">
 		  	<img ng-src="images/handshake-success.png" type="button" style="width: 50px; margin-left: 100px;" />
