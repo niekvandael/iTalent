@@ -285,7 +285,7 @@ public class ProjectRestController {
     	
     	//When a project was edited by someone else during this edit throw exception
     	Project previousProject = projectService.getProjectById(project.getProjectId());
-    	if(!previousProject.getLastUpdatedBy().equals(project.getLastUpdatedBy())){
+    	if(!(previousProject.getLastUpdate().compareTo(project.getLastUpdate()) == 0)){
     		project.setStatus("ConcurrentEdit");
     		return project;
     	}
