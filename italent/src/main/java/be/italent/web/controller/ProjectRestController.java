@@ -191,7 +191,7 @@ public class ProjectRestController {
     /**
      * Retrieve a {@link Project} by authentication
      *
-     * @param id {@link int} The id of the requested project
+     * @param id {@link int} The id of the requested {@link Project}
      * @param principal {@link Principal}
      * @return {@link ResponseEntity} containing a list of {@link Project}s and a {@link HttpStatus}.OK
      * @return One of the following:
@@ -222,7 +222,7 @@ public class ProjectRestController {
     /**
      * Retrieve a {@link Project} for editing
      *
-     * @param id {@link int} The id of the requested project
+     * @param id {@link int} The id of the requested {@link Project}
      * @param principal {@link Principal}
      * @param auth {@link Authentication}
      * @return the requested {@link Project}
@@ -245,7 +245,7 @@ public class ProjectRestController {
     /**
      * Save a specific {@link Project}
      *
-     * @param project {@link Project}
+     * @param project the {@link Project} to be saved
      * @param principal {@link Principal}
      * @return the saved {@link Project}
      */
@@ -263,18 +263,9 @@ public class ProjectRestController {
     }
 
     /**
-     * Save a specific {@link Project}
-     *
-     * @param project {@link Project}
-     * @param principal {@link Principal}
-     * @return the saved {@link Project}
-     */
-
-
-    /**
      * Update a specific {@link Project}
      *
-     * @param id {@link int} The id of the project to be updated
+     * @param id {@link int} The id of the {@link Project} to be updated
      * @param project {@link Project}
      * @param principal {@link Principal}
      * @param auth {@link Authentication}
@@ -305,7 +296,7 @@ public class ProjectRestController {
     /**
      * Delete a specific {@link Project}
      *
-     * @param id {@link int} The id of the project to be deleted
+     * @param id {@link int} The id of the {@link Project} to be deleted
      * @param principal {@link Principal}
      * @param auth {@link Authentication}
      */
