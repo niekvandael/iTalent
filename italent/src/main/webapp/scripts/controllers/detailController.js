@@ -84,7 +84,7 @@ angular.module('iTalentApp')
 
         $scope.setupPreziPlayer = function() {
         	var player = new PreziPlayer('prezi-player', {
-                preziId: $scope.project.prezis[0].preziCode, //TODO multiple codes?
+                preziId: $scope.project.prezis[0].preziCode,
                 width: 540,
                 height: 400,
                 controls: true

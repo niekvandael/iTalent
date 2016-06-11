@@ -42,7 +42,6 @@ public class Comment extends AbstractITalentEntity implements Serializable {
 	@NotNull
 	private User user;
 	
-	//TODO do we use this?
 	@Column(name="parent_comment_id", nullable = true)
 	private int parentCommentId;
 }

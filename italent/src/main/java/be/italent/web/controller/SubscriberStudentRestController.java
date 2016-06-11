@@ -18,9 +18,6 @@ import be.italent.service.UserService;
 @RestController
 @RequestMapping("/subscriberStudent")
 public class SubscriberStudentRestController {
-
-	//@Autowired
-	//private SubscriberStudentService subscriberStudentService;
 	
 	@Autowired
 	private UserService userService;
