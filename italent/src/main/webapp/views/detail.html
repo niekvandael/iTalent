@@ -2,6 +2,39 @@
 
 <div class="container">
 	<div class="project-block-title">{{ project.title }}</div>
+		<div style="float: right" ng-if="project.public">
+			<ul class="ulSocialMedia">
+				<li><a href="#" socialshare socialshare-provider="facebook"
+					socialshare-via="1102503169807746" socialshare-type="feed"
+					socialshare-text="{{ project.title }}"
+					socialshare-caption="{{ project.title }}"
+					socialshare-caption="{{ project.title }}"
+					socialshare-hashtags="pxl"
+					socialshare-url="{{ location }}/#/projects/{{ project.projectId }}"
+					socialshare-redirect-uri="{{ location }}/#/projects/{{ project.projectId }}">
+						<span class="fa-stack fa-2x"> <i class="fa fa-facebook"></i>
+					</span>
+				</a></li>
+				<li><a href="#" socialshare socialshare-provider="twitter"
+					socialshare-text="{{ project.title }}" socialshare-hashtags="pxl"
+					socialshare-url="{{ location }}/#/projects/{{ project.projectId }}">
+						<span class="fa-stack fa-2x"> <i class="fa fa-twitter"></i>
+					</span>
+				</a></li>
+				<li><a href="#" socialshare socialshare-provider="linkedin"
+					socialshare-text="{{ project.title }}" socialshare-hashtags="pxl"
+					socialshare-url="{{ location }}/#/projects/{{ project.projectId }}">
+						<span class="fa-stack fa-2x"> <i class="fa fa-linkedin"></i>
+					</span>
+				</a></li>
+				<li><a href="#" socialshare socialshare-provider="google"
+					socialshare-text="{{ project.title }}" socialshare-hashtags="pxl"
+					socialshare-url="{{ location }}/#/projects/{{ project.projectId }}">
+						<span class="fa-stack fa-2x"> <i class="fa fa-google-plus"></i>
+					</span>
+				</a></li>
+			</ul>
+		</div>
 	<div class="row">
 		<div class="col-md-5" ng-if="project.pictures.length == 0">
 			<div class="project-block-media img-responsive img-rounded"></div>
