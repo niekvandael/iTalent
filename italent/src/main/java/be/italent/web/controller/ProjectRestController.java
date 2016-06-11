@@ -64,6 +64,12 @@ public class ProjectRestController {
         this.projectMySubscribedResourceAssembler = new ProjectMySubscribedResourceAssembler();
     }
 
+    /**
+     * Retrieve a list with {@link Project}s
+     *
+     * @param auth {@link Authentication}
+     * @return {@link ResponseEntity} containing a list of {@link Project}s and a {@link HttpStatus}.OK
+     */
     @RequestMapping(value = "/listHome", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<ProjectListHomeResource>> getHomeProjects(Authentication auth) {
     	List<Project> projects = this.getProjectsForUser(auth);
@@ -77,7 +83,13 @@ public class ProjectRestController {
     	}
     	return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(projects), HttpStatus.OK);
     }
-    
+
+    /**
+     * Retrieve a list with archived {@link Project}s
+     *
+     * @param auth {@link Authentication}
+     * @return {@link ResponseEntity} containing a list of {@link Project}s and a {@link HttpStatus}.OK
+     */
     @RequestMapping(value = "/listHomeArchive", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<ProjectListHomeResource>> getArchivedProjects(Authentication auth) {
     	List<Project> projects = this.getProjectsForUser(auth);
@@ -92,6 +104,13 @@ public class ProjectRestController {
     	return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(projects), HttpStatus.OK);
     }
 
+    /**
+     * Retrieve a list with running {@link Project}s
+     *
+     * @param auth {@link Authentication}
+     * @return {@link ResponseEntity} containing a list of {@link Project}s and a {@link HttpStatus}.OK
+     *
+     */
     @RequestMapping(value = "/listHomeRunning", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<ProjectListHomeResource>> getRunningProjects(Authentication auth) {
     	List<Project> projects = this.getProjectsForUser(auth);
@@ -106,7 +125,13 @@ public class ProjectRestController {
     	return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(projects), HttpStatus.OK);
     }
 
-    
+    /**
+     * Retrieve a list with {@link Project}s for the currently authenticated user based on role
+     *
+     * @param auth {@link Authentication}
+     * @return {@link List} containing {@link Project}s
+     *
+     */
     private List<Project> getProjectsForUser(Authentication auth){
         if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))) {
         	return projectService.getBackedProjects(userService.getUserByUsername(auth.getName()));
@@ -116,7 +141,13 @@ public class ProjectRestController {
         	return projectService.getPublicProjects();
         }
     }
-    
+
+    /**
+     * Retrieve a list with {@link Project}s for the currently authenticated user
+     *
+     * @param principal {@link Principal}
+     * @return {@link ResponseEntity} containing a list of {@link Project}s and a {@link HttpStatus}.OK
+     */
     @Secured({"Docent", "Student"})
     @RequestMapping(value = "/user", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<ProjectUserResource>> getUserProjects(Principal principal) {
@@ -124,6 +155,12 @@ public class ProjectRestController {
                 projectService.getAllUserProjects(userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
     }
 
+    /**
+     * Retrieve a list with {@link Project}s liked by the currently authenticated user
+     *
+     * @param principal {@link Principal}
+     * @return {@link ResponseEntity} containing a list of {@link Project}s and a {@link HttpStatus}.OK
+     */
     @Secured({"Docent", "Student"})
     @RequestMapping(value = "/myLiked", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<ProjectMyLikedResource>> getMyLikedProjects(Principal principal) {
@@ -131,6 +168,12 @@ public class ProjectRestController {
                 projectService.getMyLikedProjects(userService.getUserByUsername(principal.getName()))), HttpStatus.OK);
     }
 
+    /**
+     * Retrieve a list with {@link Project}s subscribed by the currently authenticated user
+     *
+     * @param auth {@link Authentication}
+     * @return {@link ResponseEntity} containing a list of {@link Project}s and a {@link HttpStatus}.OK
+     */
     @Secured({"Student", "Docent"})
     @RequestMapping(value = "/mySubscribed", method = RequestMethod.GET, produces = "application/json")
         public ResponseEntity<List<ProjectMySubscribedResource>> getMySubscribedProjects(Authentication auth) {
@@ -145,8 +188,17 @@ public class ProjectRestController {
         }
     }
 
-    //done: docent/student/public
-    //TODO save/update detail
+    /**
+     * Retrieve a {@link Project} by authentication
+     *
+     * @param id {@link int} The id of the requested project
+     * @param principal {@link Principal}
+     * @return {@link ResponseEntity} containing a list of {@link Project}s and a {@link HttpStatus}.OK
+     * @return One of the following:
+     * <p>
+     * - {@link HttpStatus}.OK and the {@link Project} that was requested
+     * - {@link HttpStatus}.UNAUTHORIZED when the user is not authorized
+     */
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity getProject(@PathVariable("id") final int id, Principal principal) {
         if (principal != null) {
@@ -166,7 +218,15 @@ public class ProjectRestController {
                     .toResource(projectService.getProjectById(id)), HttpStatus.OK);
         }
     }
-    
+
+    /**
+     * Retrieve a {@link Project} for editing
+     *
+     * @param id {@link int} The id of the requested project
+     * @param principal {@link Principal}
+     * @param auth {@link Authentication}
+     * @return the requested {@link Project}
+     */
     @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET, produces = "application/json")
     public Project getEditProject(@PathVariable("id") final int id, Principal principal, Authentication auth) {
@@ -182,6 +242,13 @@ public class ProjectRestController {
     	return project;
     }
 
+    /**
+     * Save a specific {@link Project}
+     *
+     * @param project {@link Project}
+     * @param principal {@link Principal}
+     * @return the saved {@link Project}
+     */
     @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/save", method = RequestMethod.POST, produces = "application/json")
     public Project saveProject(@RequestBody Project project, Principal principal) {
@@ -195,6 +262,24 @@ public class ProjectRestController {
         return projectService.saveProject(project);
     }
 
+    /**
+     * Save a specific {@link Project}
+     *
+     * @param project {@link Project}
+     * @param principal {@link Principal}
+     * @return the saved {@link Project}
+     */
+
+
+    /**
+     * Update a specific {@link Project}
+     *
+     * @param id {@link int} The id of the project to be updated
+     * @param project {@link Project}
+     * @param principal {@link Principal}
+     * @param auth {@link Authentication}
+     * @return the updated {@link Project}
+     */
     @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/save/{id}", method = RequestMethod.PUT, produces = "application/json")
     public Project updateProject(@PathVariable("id") final int id, @RequestBody Project project, Principal principal, Authentication auth) {
@@ -217,6 +302,13 @@ public class ProjectRestController {
         return projectService.saveProject(project);
     }
 
+    /**
+     * Delete a specific {@link Project}
+     *
+     * @param id {@link int} The id of the project to be deleted
+     * @param principal {@link Principal}
+     * @param auth {@link Authentication}
+     */
     @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST, produces = "application/json")
     public void deleteProject(@PathVariable("id") final int id, Principal principal, Authentication auth) {
