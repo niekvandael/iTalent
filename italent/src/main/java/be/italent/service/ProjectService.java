@@ -15,6 +15,6 @@ public interface ProjectService {
 	public List<Project> getMyBackedProjects(User user);
 	public Project getProjectById(int id, User currentUser);
 	public Project getProjectById(int id);
-	public Project saveProject(Project project);
+	public Project saveProject(Project project, String username);
 	public void deleteProject(int id);
 }

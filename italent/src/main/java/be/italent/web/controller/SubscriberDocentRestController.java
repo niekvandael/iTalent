@@ -41,6 +41,6 @@ public class SubscriberDocentRestController {
 		subscriberDocent.setProject(project);
 		project.getSubscribersDocent().add(subscriberDocent);
 		project.updateBackingPct();
-		projectService.saveProject(project);
+		projectService.saveProject(project, principal.getName());
 	}
 }

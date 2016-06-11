@@ -27,9 +27,8 @@ public abstract class AbstractITalentEntity implements Serializable{
 	@Column(name="last_updated_by")
 	protected String lastUpdatedBy = "Team 1";
 	
-	public void setITalentEntity(String lastUpdatedBy, String status){
+	public void setITalentEntity(String lastUpdatedBy){
 		this.setLastUpdate(Calendar.getInstance());
 		this.setLastUpdatedBy(lastUpdatedBy);
-		this.setStatus(status);
 	}
 }

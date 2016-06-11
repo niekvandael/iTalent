@@ -89,7 +89,12 @@ angular.module('iTalentApp')
         	
         	$scope.calculateDuration();
             projectService.saveOrUpdate($scope.project).then(function (project) {
-                toastr.success($translate.instant('views.messages.project_saved_long'), $translate.instant('views.messages.success'));
+            	if (project.status === "ConcurrentEdit"){
+            		toastr.error($translate.instant('views.messages.concurrentEdit'), $translate.instant('views.messages.fail'));
+            	}
+            	else{
+            		toastr.success($translate.instant('views.messages.project_saved_long'), $translate.instant('views.messages.success'));
+            	}
                 $location.path('/projects/' + project.projectId);
             }, function (err) {
                 toastr.error($translate.instant('views.messages.save_error'), $translate.instant('views.messages.fail'));

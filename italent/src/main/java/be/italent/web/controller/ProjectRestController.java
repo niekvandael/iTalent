@@ -200,7 +200,7 @@ public class ProjectRestController {
      * - {@link HttpStatus}.UNAUTHORIZED when the user is not authorized
      */
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity getProject(@PathVariable("id") final int id, Principal principal) {
+    public ResponseEntity<?> getProject(@PathVariable("id") final int id, Principal principal) {
         if (principal != null) {
             UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
@@ -259,7 +259,7 @@ public class ProjectRestController {
     	}
     	
         project.setUser(userService.getUserByUsername(principal.getName()));
-        return projectService.saveProject(project);
+        return projectService.saveProject(project, principal.getName());
     }
 
     /**
@@ -270,16 +270,24 @@ public class ProjectRestController {
      * @param principal {@link Principal}
      * @param auth {@link Authentication}
      * @return the updated {@link Project}
+     * @throws Exception 
      */
     @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/save/{id}", method = RequestMethod.PUT, produces = "application/json")
-    public Project updateProject(@PathVariable("id") final int id, @RequestBody Project project, Principal principal, Authentication auth) {
+    public Project updateProject(@PathVariable("id") final int id, @RequestBody Project project, Principal principal, Authentication auth){
     	
     	//prevent request manipulation, students can only edit their own projects and only when there are no backers yet
     	if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))){
     		if(!project.getUser().getUsername().equals(principal.getName()) || project.getBackingPct()>0){
     			return null;
     		}
+    	}
+    	
+    	//When a project was edited by someone else during this edit throw exception
+    	Project previousProject = projectService.getProjectById(project.getProjectId());
+    	if(!previousProject.getLastUpdatedBy().equals(project.getLastUpdatedBy())){
+    		project.setStatus("ConcurrentEdit");
+    		return project;
     	}
     	
     	//when a subscriber is deleted after project is started reset start date...
@@ -290,7 +298,7 @@ public class ProjectRestController {
     	//when a supporter is deleted or changed update backingpct
     	project.updateBackingPct();
     	
-        return projectService.saveProject(project);
+        return projectService.saveProject(project, principal.getName());
     }
 
     /**

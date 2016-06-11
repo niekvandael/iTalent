@@ -175,7 +175,8 @@ public class ProjectServiceImpl implements ProjectService{
 	 * @param project the {@link Project} to be saved
 	 * @return a {@link Project}
      */
-    public Project saveProject(Project project){
+    public Project saveProject(Project project, String user){
+    	project.setITalentEntity(user);
     	setChildData(project);
     	return projectRepo.save(project);	
     }

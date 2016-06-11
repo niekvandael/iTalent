@@ -53,7 +53,7 @@ public class SubscriberStudentRestController {
 			project.setStartDate(Calendar.getInstance().getTime());
 		}
 		
-		projectService.saveProject(project);
+		projectService.saveProject(project, principal.getName());
 	}
 
 }
