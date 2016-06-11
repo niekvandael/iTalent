@@ -26,7 +26,14 @@ public class SubscriberDocentRestController {
 	
 	@Autowired
 	private ProjectService projectService;
-	
+
+	/**
+	 * Add the percentage of a backing for a {@link be.italent.model.Project} for an authenticated Docent
+	 *
+	 * @param id {@link int} The id of the {@link Project} to be backed
+	 * @param percentage {@link int} The percentage of backing the project receives
+	 * @param principal {@link Principal}
+     */
 	@Secured("Docent")
 	@RequestMapping(value = "/save/{id}/{percentage}", method = RequestMethod.POST, produces="application/json")
 	public void save(@PathVariable("id") final int id, @PathVariable("percentage") final int percentage, Principal principal){
@@ -39,11 +46,4 @@ public class SubscriberDocentRestController {
 		project.updateBackingPct();
 		projectService.saveProject(project);
 	}
-	
-	/*@Secured("Docent")
-	@RequestMapping(value = "/delete/{id}", method = RequestMethod.POST, produces="application/json")
-	public void delete(@PathVariable("id") final int id){
-		//TODO update project backingpct if we allow back delete else remove this method
-		subscriberDocentService.delete(id);
-	}*/
 }

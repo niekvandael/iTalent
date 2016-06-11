@@ -27,7 +27,22 @@ public class SubscriberStudentRestController {
 	
 	@Autowired
 	private ProjectService projectService;
-	
+
+	/**
+	 * Add the percentage of a backing for a {@link be.italent.model.Project} for an authenticated Docent
+	 *
+	 * @param id {@link int} The id of the {@link Project} to be backed
+	 * @param percentage {@link int} The percentage of backing the project receives
+	 * @param principal {@link Principal}
+	 */
+
+	/**
+ 	 * Add the hours of subscription to a {@link be.italent.model.Project} for an authenticated Student
+	 *
+	 * @param id {@link int} The id of the {@link Project} to be subscribed to
+	 * @param hours {@link int} The hours of subscription the project receives
+	 * @param principal {@link Principal}
+     */
 	@Secured("Student")
 	@RequestMapping(value = "/save/{id}/{hours}", method = RequestMethod.POST, produces="application/json")
 	public void save(@PathVariable("id") final int id, @PathVariable("hours") final int hours, Principal principal){
@@ -51,11 +66,5 @@ public class SubscriberStudentRestController {
 		
 		projectService.saveProject(project);
 	}
-	
-	/*@Secured({"Docent", "Student"})
-	@RequestMapping(value = "/delete/{id}", method = RequestMethod.POST, produces="application/json")
-	public void delete(@PathVariable("id") final int id){
-		//TODO update project start/end date (if needed) if we allow subscribe delete else remove this method
-		subscriberStudentService.delete(id);
-	}*/
+
 }

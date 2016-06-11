@@ -40,7 +40,7 @@ public class CategoryRestController {
     }
 
     /**
-     * Save a specific {@link Category}
+     * Create a {@link Category}
      *
      * @param category the {@link Category} to be saved
      * @return the saved {@link Category}

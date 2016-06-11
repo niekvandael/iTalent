@@ -18,6 +18,11 @@ public class DepartmentRestController {
 	@Autowired
 	private DepartmentService departmentService;
 
+	/**
+	 * Retrieve a list with {@link Department}s
+	 *
+	 * @return {@link List} containing a list of {@link Department}s
+     */
 	@Secured({"Docent", "Student"})
 	@RequestMapping(method = RequestMethod.GET, produces="application/json")
 	public List<Department> getDepartments(){

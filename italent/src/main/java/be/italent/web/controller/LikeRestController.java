@@ -22,6 +22,13 @@ public class LikeRestController {
 	@Autowired
 	private UserService userService;
 
+	/**
+	 * Toggles the likes status of a {@link be.italent.model.Project} for an authenticated user
+	 *
+	 * @param projectId {@link int} The id of the {@link be.italent.model.Project} to be (un)liked
+	 * @param principal {@link Principal}
+     * @return a {@link boolean} with the newliked value
+     */
 	@Secured({"Docent", "Student"})
 	@RequestMapping(value = "/likeProject", method = RequestMethod.POST, produces="application/json")
 	public boolean toggleLike(@RequestBody int projectId, Principal principal){

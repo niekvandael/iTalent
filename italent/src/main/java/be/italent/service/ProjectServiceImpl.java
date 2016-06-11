@@ -37,7 +37,7 @@ public class ProjectServiceImpl implements ProjectService{
     	for (Project project : projects){
     		project.setLiked(user.getUserId());
        		project.setMyBackingPct(user.getUserId());
-    		project.setMySubscribedHours(user.getUserId())
+    		project.setMySubscribedHours(user.getUserId());
     		project.updateCanSubscribe(user.getUserId(), user.getDepartment().getDepartmentId()); //necessary for filter on home.html
     	}
     	return projects;

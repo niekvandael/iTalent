@@ -243,7 +243,7 @@ public class ProjectRestController {
     }
 
     /**
-     * Save a specific {@link Project}
+     * Create/save a {@link Project}
      *
      * @param project the {@link Project} to be saved
      * @param principal {@link Principal}

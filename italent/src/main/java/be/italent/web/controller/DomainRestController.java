@@ -29,18 +29,34 @@ public class DomainRestController {
         this.domainResourceAssembler = new DomainResourceAssembler();
     }
 
-
+    /**
+     * Retrieve a list with {@link Domain}s
+     *
+     * @return {@link ResponseEntity} containing a list of {@link Domain}s and a {@link HttpStatus}.OK
+     */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<DomainResource>> getDomains() {
         return new ResponseEntity<>(domainResourceAssembler.toResources(DomainService.getAllDomains()), HttpStatus.OK);
     }
-    
+
+    /**
+     * Create a {@link Domain}
+     * *
+     * @param Domain the {@link Domain} to be saved
+     * @return the saved {@link Domain}
+     */
     @Secured("Docent")
     @RequestMapping(method = RequestMethod.POST, produces = "application/json")
     public Domain createDomain(@RequestBody Domain Domain) {
         return DomainService.createDomain(Domain);
     }
-    
+
+    /**
+     * Delete a specific {@link Domain}
+     *
+     * @param id {@link int} The id of the {@link Domain} to be deleted
+     * @return {@link boolean} which tells if {@link Domain} has been deleted
+     */
     @Secured("Docent")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE, produces = "application/json")
     public boolean deleteDomain(@PathVariable("id") final int id) {

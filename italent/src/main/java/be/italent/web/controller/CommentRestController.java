@@ -25,7 +25,7 @@ public class CommentRestController {
 	private UserService userService;
 
 	/**
-	 * Save a {@link Comment} for a specific {@link be.italent.model.Project}
+	 * Create a {@link Comment} for a specific {@link be.italent.model.Project}
 	 *
 	 * @param projectId {@link int} with the {@link be.italent.model.Project}.id you wish to save the comment for
 	 * @param comment {@link Comment} thhe comment you wish to save
