@@ -74,6 +74,7 @@ angular.module('iTalentApp')
             	$scope.project.durationSelect = $scope.durationModes[1]; //hours
                 return;
             }
+            $scope.project.durationInMinutes = $scope.project.duration;
             $scope.project.durationSelect = $scope.durationModes[0]; //minutes
         };
         
@@ -110,7 +111,7 @@ angular.module('iTalentApp')
             	$scope.project.duration = $scope.project.durationInMinutes * 60; //hours
                 return;
             }
-            // do nothing if minutes...
+            $scope.project.duration = $scope.project.durationInMinutes;//minutes...
         };
 
         $scope.getDepartments = function () {
