@@ -104,5 +104,9 @@
   "views.about.technical" : "I-Talent platform technical",
   "views.about.technical_message" : "The project is hosted on OpenShift and is designed for both PC and mobile devices. The back end is developed with Java , Hibernate and Spring, the front end with JavaScript , AngularJS and Bootstrap.",
   "views.messages.cancel" : "Cancel",
-  "views.messages.how_much_do_you_want_to_support" : "How much would you like to support?"
+  "views.messages.how_much_do_you_want_to_support" : "How much would you like to support?",
+  "views.detail.hours" : "hours",
+  "views.messages.how_much_do_you_want_to_subscribe" : "For how much hours would you like to subscribe?",
+  "views.messages.teachers_can_change" : "Teachers can always change your project hours"
+  
 }

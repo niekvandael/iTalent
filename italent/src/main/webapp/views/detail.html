@@ -1,8 +1,12 @@
 <div style="float:left">
+	
+	<!-- Docent edit button -->
 	<div ng-if="authenticated && role === 'Docent'">
 		<img ng-src="images/edit.png" type="button" style="cursor: pointer; width: 40px; margin-left: 100px;" ng-click="editProject(project.projectId)">
 		</img>
 	</div>
+	
+	<!-- Docents support button -->
 	<div ng-if="authenticated && role === 'Docent' && (project.canBack || project.myBackingPct != 0)">
 		<div>
 		  <div ng-if="project.myBackingPct != 0">
@@ -28,8 +32,8 @@
 		          	<input required type="number" ng-model="percentage" style="width:30%;" min="1" max="100" placeholder="{{'views.home.percentage' | translate}}"/>
 		        </div>
 		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="saveSubscriberDocent(project.projectId, percentage)" ng-disabled="!percentage">{{'views.home.back' | translate}}</button>
-		          <button type="button" class="btn btn-default" data-dismiss="modal">{{'views.messages.cancel' | translate}}</button>
+		          <button type="button" class="btn btn-default btn-success" data-dismiss="modal" ng-click="saveSubscriberDocent(project.projectId, percentage)" ng-disabled="!percentage">{{'views.home.back' | translate}}</button>
+		          <button type="button" class="btn btn-default btn-danger" data-dismiss="modal">{{'views.messages.cancel' | translate}}</button>
 		        </div>
 		      </div>
 		      
@@ -38,6 +42,46 @@
 		</div>
 
 	</div>
+		
+	<!--  Students subscribe button -->
+	<div ng-if="authenticated && role === 'Student'" >
+		<div ng-if="role === 'Student'">
+		<div>
+		  <div ng-if="project.mySubscribedHours != 0">
+		  	<img ng-src="images/handshake-success.png" type="button" style="width: 50px; margin-left: 100px;">
+		  	<strong>{{ project.mySubscribedHours }} {{'views.detail.hours' | translate}}</strong>
+		  </div>
+		  
+		  <div ng-if="project.mySubscribedHours == 0 && project.canSubscribe">
+		  	<img ng-src="images/handshake.png" type="button" style="cursor: pointer; width: 50px; margin-left: 100px;" data-toggle="modal" data-target="#myModal">
+		  </div>
+		  
+		  <!-- Modal -->
+		  <div class="modal fade" id="myModal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title">{{'views.messages.how_much_do_you_want_to_subscribe' | translate}}</h4>
+		          <h6 class="modal-title">{{'views.messages.teachers_can_change' | translate}}</h6>
+		        </div>
+		        <div class="modal-body">
+		          	<input required type="number" ng-model="hours" style="width:30%;" min="1" max="160" placeholder="{{'views.home.hours' | translate}}"/>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default btn-success" data-dismiss="modal" ng-click="saveSubscriberStudent(project.projectId, hours)" ng-disabled="!hours">{{'views.home.subscribe' | translate}}</button>
+		          <button type="button" class="btn btn-default btn-danger" data-dismiss="modal">{{'views.messages.cancel' | translate}}</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+		  </div>
+		</div>
+		</div>
+	</div>
+
 </div>
 
 
@@ -107,14 +151,6 @@
 			<div ng-if="!authenticated" class="project-button glyphicon glyphicon-star col-xs-1"></div>
 			<div ng-if="project.numberOfLikes" class="likes-number col-xs-2">{{project.numberOfLikes}}</div>
 			<div ng-if="!project.numberOfLikes" class="likes-number col-xs-2">0</div>
-			<div ng-if="role === 'Student' && project.canSubscribe" class="col-xs-offset-1 col-md-offset-4">
-				<input required type="number" ng-model="hours" class="input-block col-xs-4 col-md-3" min="1" max="160"
-					   placeholder="{{'views.home.hours' | translate}}"/>
-				<button type="submit" class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
-						ng-click="saveSubscriberStudent(project.projectId, hours)"
-						ng-disabled="!hours">{{'views.home.subscribe' | translate}}
-				</button>
-			</div>
 		</div>
 	</div>
 

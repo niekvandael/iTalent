@@ -42,7 +42,7 @@ angular.module('iTalentApp')
             subscriberStudentService.save(id, hours).then(function() {
             	toastr.success($translate.instant('views.messages.success_subscribe'), $translate.instant('views.messages.success'));
                 console.log('Success saving subscriberStudent');
-                $scope.project.canSubscribe = false;
+                $scope.project.mySubscribedHours = hours;
             }, function(err) {
             	toastr.error($translate.instant('views.messages.success_subscribe'), $translate.instant('views.messages.fail'));
                 console.log('Error saving subscriberStudent.');
