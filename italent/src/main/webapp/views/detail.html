@@ -2,20 +2,19 @@
 	
 	<!-- Docent edit button -->
 	<div ng-if="authenticated && role === 'Docent'">
-		<img ng-src="images/edit.png" type="button" style="cursor: pointer; width: 40px; margin-left: 100px;" ng-click="editProject(project.projectId)">
-		</img>
+		<img ng-src="images/edit.png" type="button" style="cursor: pointer; width: 40px; margin-left: 100px;" ng-click="editProject(project.projectId)" />
 	</div>
 	
 	<!-- Docents support button -->
 	<div ng-if="authenticated && role === 'Docent' && (project.canBack || project.myBackingPct != 0)">
 		<div>
 		  <div ng-if="project.myBackingPct != 0">
-		  	<img ng-src="images/handshake-success.png" type="button" style="width: 50px; margin-left: 100px;">
+		  	<img ng-src="images/handshake-success.png" type="button" style="width: 50px; margin-left: 100px;" />
 		  	<strong>{{ project.myBackingPct }}%</strong>
 		  </div>
 		  
 		  <div ng-if="project.myBackingPct == 0">
-		  	<img ng-src="images/handshake.png" type="button" style="cursor: pointer; width: 50px; margin-left: 100px;" data-toggle="modal" data-target="#myModal">
+		  	<img ng-src="images/handshake.png" type="button" style="cursor: pointer; width: 50px; margin-left: 100px;" data-toggle="modal" data-target="#myModal" />
 		  </div>
 		  
 		  <!-- Modal -->
@@ -48,12 +47,12 @@
 		<div ng-if="role === 'Student'">
 		<div>
 		  <div ng-if="project.mySubscribedHours != 0">
-		  	<img ng-src="images/handshake-success.png" type="button" style="width: 50px; margin-left: 100px;">
+		  	<img ng-src="images/handshake-success.png" type="button" style="width: 50px; margin-left: 100px;" />
 		  	<strong>{{ project.mySubscribedHours }} {{'views.detail.hours' | translate}}</strong>
 		  </div>
 		  
 		  <div ng-if="project.mySubscribedHours == 0 && project.canSubscribe">
-		  	<img ng-src="images/handshake.png" type="button" style="cursor: pointer; width: 50px; margin-left: 100px;" data-toggle="modal" data-target="#myModal">
+		  	<img ng-src="images/handshake.png" type="button" style="cursor: pointer; width: 50px; margin-left: 100px;" data-toggle="modal" data-target="#myModal" />
 		  </div>
 		  
 		  <!-- Modal -->
@@ -128,7 +127,7 @@
 		<div class="col-md-5" ng-if="project.pictures.length != 0">
 			<uib-carousel active="active" interval="carouselInterval" no-wrap="noWrapSlides">
 				<uib-slide ng-repeat="picture in project.pictures" index="$index">
-					<img class="carouselImage" ng-src="data:image/jpeg;base64, {{ picture.bytes }}" style="height: 250px">
+					<img class="carouselImage" ng-src="data:image/jpeg;base64, {{ picture.bytes }}" style="height: 250px" />
 					<div class="carousel-caption">
 						<h4>{{ picture.description }}</h4>
 					</div>
@@ -215,8 +214,7 @@
 			<div ng-repeat="comment in comments.slice().reverse()">
 				<table>
 					<tr style="vertical-align: top;">
-						<td><img src="/images/people.png" class="avatar avatar-80 photo" style="border-radius: 50%;"
-								 height="80" width="80">
+						<td><img src="/images/people.png" class="avatar avatar-80 photo" style="border-radius: 50%;" height="80" width="80" />
 						</td>
 						<td style="width:100%">
 							<div class="comment-body">

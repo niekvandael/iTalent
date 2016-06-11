@@ -39,5 +39,6 @@ public class ProjectListHomeResource extends ResourceSupport {
 	private boolean canBack;
     private int mySubscribedHours;
     private int myBackingPct;
+    private boolean running;
 }
 

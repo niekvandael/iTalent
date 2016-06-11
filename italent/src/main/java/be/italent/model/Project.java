@@ -271,18 +271,25 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	@JsonIgnore
 	public boolean isArchived() {
 		if(this.startDate == null){
+			this.archived = false;
+			return this.archived;
+		}
+
+		if(this.isRunning()){
 			return false;
 		}
 		
 		Calendar date = dateToCalendar(this.startDate);
-		long t= date.getTimeInMillis();
-		Date endDate = new Date(t + (this.duration * 60000));
+		date.add(Calendar.MINUTE, this.duration);
+		long t = date.getTimeInMillis();
+		Date endDate = new Date(t);
 		
 		if(endDate.compareTo(new Date()) < 0){
 			this.archived = true;
 		}
 		
 		return this.archived;
+		
 	}
 	
 	@JsonIgnore
@@ -292,8 +299,9 @@ public class Project extends AbstractITalentEntity implements Serializable {
 		}
 		
 		Calendar date = dateToCalendar(this.startDate);
-		long t= date.getTimeInMillis();
-		Date endDate = new Date(t + (this.duration * 60000));
+		date.add(Calendar.MINUTE, this.duration);
+		long t = date.getTimeInMillis();
+		Date endDate = new Date(t);
 		
 		if(endDate.compareTo(new Date()) > 0){
 			this.running = true;
