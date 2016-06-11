@@ -24,17 +24,9 @@ public class SubscriberStudentRestController {
 	
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private ProjectService projectService;
-
-	/**
-	 * Add the percentage of a backing for a {@link be.italent.model.Project} for an authenticated Docent
-	 *
-	 * @param id {@link int} The id of the {@link Project} to be backed
-	 * @param percentage {@link int} The percentage of backing the project receives
-	 * @param principal {@link Principal}
-	 */
 
 	/**
  	 * Add the hours of subscription to a {@link be.italent.model.Project} for an authenticated Student

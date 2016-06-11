@@ -143,7 +143,7 @@ public class ProjectRestController {
     }
 
     /**
-     * Retrieve a list with {@link Project}s for the currently authenticated user
+     * Retrieve a list with {@link Project}s created by the currently authenticated user
      *
      * @param principal {@link Principal}
      * @return {@link ResponseEntity} containing a list of {@link Project}s and a {@link HttpStatus}.OK
