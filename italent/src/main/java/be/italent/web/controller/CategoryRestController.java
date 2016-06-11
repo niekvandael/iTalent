@@ -55,6 +55,7 @@ public class CategoryRestController {
      * Delete a specific {@link Category}
      *
      * @param id {@link int} The id of the {@link Category} to be deleted
+     * @return {@link boolean} which tells if {@link Category} has been deleted
      */
     @Secured("Docent")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE, produces = "application/json")

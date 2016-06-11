@@ -13,14 +13,31 @@ public class CategoryServiceImpl implements CategoryService{
     @Autowired
     private CategoryRepo categoryRepo;
 
+	/**
+	 * Retrieve a list with {@link Category}s
+	 *
+	 * @return {@link List} containing {@link Category}s
+     */
     public List<Category> getAllCategories() {
         return categoryRepo.findAll();
     }
-    
+
+    /**
+	 * Create a {@link Category}
+	 *
+	 * @param category the {@link Category} to be saved
+	 * @return the saved {@link Category}
+     */
     public Category createCategory(Category category){
     	return categoryRepo.save(category);
     }
 
+	/**
+	 * Delete a specific {@link Category}
+	 *
+	 * @param id {@link int} The id of the {@link Category} to be deleted
+	 * @return {@link boolean} which tells if {@link Category} has been deleted
+     */
     public boolean deleteCategory(int id){
     	try {
     		Category category = new Category();

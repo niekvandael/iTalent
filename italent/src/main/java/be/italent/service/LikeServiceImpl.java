@@ -14,11 +14,17 @@ public class LikeServiceImpl implements LikeService{
     @Autowired
     private LikeRepo likeRepo;
 
+	/**
+	 *
+	 * Toggles the likes status of a {@link be.italent.model.Project} for an authenticated user
+	 *
+	 * @param projectId {@link int} The id of the {@link be.italent.model.Project} to be (un)liked
+	 * @param user the {@link User} that toggles the like
+	 * @return a {@link boolean} with the new liked value
+     */
 	@Override
 	public boolean toggleLike(int projectId, User user) {
-		//
-		// Create like object
-		//
+
 		Like l = new Like();
 		l.setUser(user);
 
@@ -26,11 +32,10 @@ public class LikeServiceImpl implements LikeService{
 		p.setProjectId(projectId);
 		
 		l.setProject(p);
-		
-		
-		//
-		// Test if object exists (if not: create new like)
-		//
+
+		/**
+		  * Test if object exists (if not: create new like)
+		  */
 		Like existingLike = likeRepo.getLikeByProject(l.getProject(), l.getUser());
 		
 		if(existingLike == null){

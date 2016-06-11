@@ -13,14 +13,31 @@ public class DomainServiceImpl implements DomainService{
     @Autowired
     private DomainRepo DomainRepo;
 
+	/**
+	 * Retrieve a list with {@link Domain}s
+	 *
+	 * @return {@link List} containing {@link Domain}s
+     */
     public List<Domain> getAllDomains() {
         return DomainRepo.findAll();
     }
-    
+
+    /**
+	 * Create a {@link Domain}
+	 *
+	 * @param Domain the {@link Domain} to be saved
+	 * @return the saved {@link Domain}
+     */
     public Domain createDomain(Domain Domain){
     	return DomainRepo.save(Domain);
     }
 
+	/**
+	 * Delete a specific {@link Domain}
+	 *
+	 * @param id {@link int} The id of the {@link Domain} to be deleted
+	 * @return {@link boolean} which tells if {@link Domain} has been deleted
+     */
     public boolean deleteDomain(int id){
     	try {
     		Domain Domain = new Domain();

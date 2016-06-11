@@ -27,7 +27,7 @@ public class LikeRestController {
 	 *
 	 * @param projectId {@link int} The id of the {@link be.italent.model.Project} to be (un)liked
 	 * @param principal {@link Principal}
-     * @return a {@link boolean} with the newliked value
+     * @return a {@link boolean} with the new liked value
      */
 	@Secured({"Docent", "Student"})
 	@RequestMapping(value = "/likeProject", method = RequestMethod.POST, produces="application/json")

@@ -14,6 +14,11 @@ public class DepartmentServiceImpl implements DepartmentService{
     @Autowired
     private DepartmentRepo departmentRepo;
 
+	/**
+	 * Retrieve a list with {@link Department}s
+	 *
+	 * @return {@link List} containing a list of {@link Department}s
+     */
 	@Override
 	public List<Department> getDepartments() {
 		return departmentRepo.findAll();
