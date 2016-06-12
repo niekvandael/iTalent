@@ -231,9 +231,7 @@
 
 <div class="row" style="margin-top: 150px;">
 	<div ng-if="authenticated"
-		class="project-block jumbotron col-md-8 col-md-offset-2">
-		<div class="project-block-label centerText">{{"views.detail.comments"
-			| translate}}</div>
+		class="col-md-8 col-md-offset-2">
 		<br />
 		<div ng-if="comments.length == 0">{{'views.detail.noComments' |
 			translate}}</div>
@@ -246,7 +244,6 @@
 					<td style="width: 100%">
 						<div class="comment-body">
 							<h4>{{ comment.user.firstname }} {{ comment.user.lastname }}</h4>
-							<div class="comment-author vcard"></div>
 							<div class="comment-meta commentmetadata">
 								<span>{{ comment.lastUpdate | date:'yyyy-MM-dd
 									HH:mm:ss'}}</span>
@@ -265,7 +262,7 @@
 			<br />
 		</div>
 		<div style="margin-left: 60px;">
-			<input required type="text" ng-model="comment"
+			<input required type="text" ng-model="comment" id="commentInput"
 				class="input-block col-xs-4 col-xs-offset-3 col-md-9 col-md-offset-0"
 				min="1" max="255"
 				placeholder="{{'views.detail.comment' | translate}}" />

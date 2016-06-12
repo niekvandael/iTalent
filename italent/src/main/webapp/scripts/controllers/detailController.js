@@ -76,6 +76,7 @@ angular.module('iTalentApp')
                  console.log('Success saving comment');
                  $scope.getComments();
                  $scope.comment = "";
+                 document.getElementById("commentInput").value = "";
              }, function(err) {
                  console.log('Error saving comment');
                  console.log(err);

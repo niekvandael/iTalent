@@ -241,7 +241,7 @@ ul li a i:hover {
     padding: 20px;
     position: relative;
     margin-left: 60px;
-    box-shadow: 0 0 1px #ddd;
+    box-shadow: 0 0 5px #ddd;
     font-size: 14px;
     color: #666;
     border-radius: 3px;
