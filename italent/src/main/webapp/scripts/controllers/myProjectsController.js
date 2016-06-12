@@ -61,7 +61,8 @@ angular.module('iTalentApp')
                 project.numberOfLikes++;
             }
             project.liked = !project.liked;
-            likeService.saveOrUpdate(project.projectid).then(function () {
+            
+            likeService.saveOrUpdate(project.projectId).then(function () {
                 $scope.message = "Likes updated";
             }, function (err) {
                 console.log('Error updating likes: ');
