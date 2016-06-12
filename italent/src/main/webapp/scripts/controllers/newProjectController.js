@@ -223,7 +223,7 @@ angular.module('iTalentApp')
         };
 
         $scope.resizeOnImageLoad = function (image, index) {
-            var width = 300;
+            var width = 600;
             var quality = 0.9; // 0: low, 1: high
 
             // create an off-screen canvas
