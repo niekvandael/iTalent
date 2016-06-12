@@ -52,8 +52,16 @@ insert into users (firstname, lastname, email, username, password, department_de
 insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Joris', 'Bleys', 'joris.bleys@pxl.be', 'joris', 'joris', 4, 2);
 insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Bookshop', 'Bookshop', 'bookshop@pxl.be', 'bookshop', 'bookshop', 4, 2);
 
+-- Domains
+insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Internationalisering', 15, 80);
+insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Seminaries', 30, 80);
+insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Levenslang leren en/of onderzoek en dienstverlening en/of ondernemerschap', 40, 80);
+insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Wetenschapspopularisering', 0, 40);
+insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Studentenparticipatie @ PXL', 0, 20);
+
+
 -- Projects
-insert into project (backing_pct, last_update, last_updated_by, status, duration, creation_date, is_public, description, short_description, title, user_user_id) values(100, '2016-04-23', 'Team1', 'A', 401760, '2016-06-01', true, 'Big Data wordt wel eens de olie van de 21e eeuw genoemd, maar om uit te groeien tot nieuwe rijke datasjeiks moeten we net als bij olie raffineren. We moeten Big Data omzetten in iets kostbaars. Jackie Janssen neemt ons mee in deze nieuwe, wondere wereld van Big Data', 'Big Data wordt wel eens de olie van de 21e eeuw genoemd, maar om uit te groeien tot nieuwe rijke datasjeiks moeten we net als bij olie raffineren. We moeten Big Data omzetten in iets kostbaars.', 'IT@Breakfast - 18 mei: voor alle 2de jaars - Topic: Big Data', 1);
+insert into project (backing_pct, last_update, last_updated_by, status, duration, creation_date, is_public, description, short_description, title, user_user_id, domain_domain_id) values(100, '2016-04-23', 'Team1', 'A', 401760, '2016-06-01', true, 'Big Data wordt wel eens de olie van de 21e eeuw genoemd, maar om uit te groeien tot nieuwe rijke datasjeiks moeten we net als bij olie raffineren. We moeten Big Data omzetten in iets kostbaars. Jackie Janssen neemt ons mee in deze nieuwe, wondere wereld van Big Data', 'Big Data wordt wel eens de olie van de 21e eeuw genoemd, maar om uit te groeien tot nieuwe rijke datasjeiks moeten we net als bij olie raffineren. We moeten Big Data omzetten in iets kostbaars.', 'IT@Breakfast - 18 mei: voor alle 2de jaars - Topic: Big Data', 1, 1);
 insert into project (backing_pct, last_update, last_updated_by, status, duration, creation_date, is_public, description, short_description, title, user_user_id) values(2, '2016-04-23', 'Team1', 'A', 270, '2016-06-01', false, 'Tijdens PXL Breekt uit, op woensdag 20 april, willen we samen met studenten Journalistiek op zoek gaan naar mogelijke verhalen in Big Data. De bedoeling is dat een aantal IT-studenten één of meerdere datasets met ruwe data vertalen naar een gestructureerd datarapport. Daarna gaan de studenten Journalistiek met dit rapport aan de slag om een verhaal te schrijven. Deze opdracht vindt plaats in een redactielokaal van Het Belang van Limburg van 08.30 u. tot 13.00 u. (schatting). We zijn op zoek naar een 3-tal tweedejaarsstudenten van de IT management track (of studenten die niet deelnemen aan het AppDev/SNB project). Geïnteresseerde studenten mogen zich kandidaat stellen door een e-mail te sturen naar Tristan.Fransen@pxl.be. Geselecteerde kandidaten worden z.s.m. op de hoogte gebracht. Collega Steven Palmaers kondigde eerder ook reeds een opdracht aan voor IT management-studenten om projectvoorstellen van studenten Journalistiek bij te wonen en te evalueren tijdens PXL Breekt uit op woensdag 20 april van 09.00 u. tot 13.00 u. Hier zoeken we nog 4 andere studenten die willen deelnemen.Uiteraard vallen hier I-Talent uren mee te verdienen, afhankelijk van de duur van de opdracht.', 'Tijdens PXL Breekt uit, op woensdag 20 april, willen we samen met studenten Journalistiek op zoek gaan naar mogelijke verhalen in Big Data.', 'PXL Breekt Uit: opdracht samen met studenten Journalistiek.', 2);
 insert into project (backing_pct, last_update, last_updated_by, status, duration, creation_date, is_public, description, short_description, title, user_user_id) values(50, '2016-04-23', 'Team1', 'A', 180, '2016-06-01', false, 'Volgende zaterdag (16 april 2016) is er opnieuw een CoderDojo Hasselt event. Ditmaal opnieuw op de PXL (Campus Vildersstraat), van 10u tot 13u (in de cafetaria). Jullie zijn liefst rond 9.30u ter plaatse.Hiermee kunnen jullie 4u voor I-Talent verdienen. Bedoeling is dat jullie kinderen leren programmeren, aan de hand van Scratch, App Inventor, Robomind / Lego Mindstorms, HTML en Minecraft.Wie wil deze sessie mee begeleiden?Als jullie mee willen komen helpen, geef dan even jullie naam in op https://docs.google.com/document/d/1Mon4xcGwK7e0MRkxHEPTDsFoimtRl0DssgT5k_YeJlE/editGraag ook een mailtje naar steven.palmaers@pxl.be', 'Volgende zaterdag (16 april 2016) is er opnieuw een CoderDojo Hasselt event.', 'CoderDojo Hasselt - 16 april 2016', 3);
 
@@ -88,13 +96,6 @@ insert into movie(last_update, last_updated_by, status, project_project_id, desc
 
 -- Prezis
 insert into prezi(last_update, last_updated_by, status, project_project_id, description, prezi_code) values('2016-01-01', 'Team1', 'A', 1, 'Big Data; an introduction', 'diuh1ui6vedi');
-
--- Domains
-insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Internationalisering', 15, 80);
-insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Seminaries', 30, 80);
-insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Levenslang leren en/of onderzoek en dienstverlening en/of ondernemerschap', 40, 80);
-insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Wetenschapspopularisering', 0, 40);
-insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Studentenparticipatie @ PXL', 0, 20);
 
 -- Project_categories
 insert into project_category(project_id, category_id) values (1,1);
@@ -142,3 +143,7 @@ insert into milestone(project_project_id, done, description, status, last_update
 insert into milestone(project_project_id, done, description, status, last_updated_by, last_update) values(1, false, 'Statistieken opbouwen', 'A', 'Team1', '2016-01-01');
 insert into milestone(project_project_id, done, description, status, last_updated_by, last_update) values(1, false, 'Resulaten beoordelen', 'A', 'Team1', '2016-01-01');
 insert into milestone(project_project_id, done, description, status, last_updated_by, last_update) values(1, false, 'Resulaten presenteren', 'A', 'Team1', '2016-01-01');
+
+-- online files
+insert into online_file(project_project_id, url, description, status, last_updated_by, last_update) values(1, 'http://www.sas.com/en_th/insights/big-data/what-is-big-data.html', 'Insights in big data', 'A', 'Team1', '2016-01-01');
+insert into online_file(project_project_id, url, description, status, last_updated_by, last_update) values(1, 'http://www.slideshare.net/BernardMarr/140228-big-data-slide-share', 'Slides by Bernard Marr', 'A', 'Team1', '2016-01-01');

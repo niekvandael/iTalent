@@ -1,83 +1,110 @@
-<div style="float:left">
-	
+<div style="float: left">
+
 	<!-- Docent edit button -->
 	<div ng-if="authenticated && role === 'Docent'">
-		<img ng-src="images/edit.png" type="button" style="cursor: pointer; width: 40px; margin-left: 100px;" ng-click="editProject(project.projectId)" />
+		<img ng-src="images/edit.png" type="button"
+			style="cursor: pointer; width: 40px; margin-left: 100px;"
+			ng-click="editProject(project.projectId)" />
 	</div>
-	
+
 	<!-- Docents support button -->
 	<div ng-if="authenticated && role === 'Docent'">
 		<div>
-		  <div ng-if="project.myBackingPct != 0">
-		  	<img ng-src="images/handshake-success.png" type="button" style="width: 50px; margin-left: 100px;" />
-		  	<strong>{{ project.myBackingPct }}%</strong>
-		  </div>
-		  
-		  <div ng-if="project.myBackingPct == 0">
-		  	<img ng-src="images/handshake.png" type="button" style="cursor: pointer; width: 50px; margin-left: 100px;" data-toggle="modal" data-target="#myModal" />
-		  </div>
-		  
-		  <!-- Modal -->
-		  <div class="modal fade" id="myModal" role="dialog">
-		    <div class="modal-dialog">
-		    
-		      <!-- Modal content-->
-		      <div class="modal-content">
-		        <div class="modal-header">
-		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		          <h4 class="modal-title">{{'views.messages.how_much_do_you_want_to_support' | translate}}</h4>
-		        </div>
-		        <div class="modal-body">
-		          	<input required type="number" ng-model="percentage" style="width:30%;" min="1" max="100" placeholder="{{'views.home.percentage' | translate}}"/>
-		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default btn-success" data-dismiss="modal" ng-click="saveSubscriberDocent(project.projectId, percentage)" ng-disabled="!percentage">{{'views.home.back' | translate}}</button>
-		          <button type="button" class="btn btn-default btn-danger" data-dismiss="modal">{{'views.messages.cancel' | translate}}</button>
-		        </div>
-		      </div>
-		      
-		    </div>
-		  </div>
+			<div ng-if="project.myBackingPct != 0">
+				<img ng-src="images/handshake-success.png" type="button"
+					style="width: 50px; margin-left: 100px;" /> <strong>{{
+					project.myBackingPct }}%</strong>
+			</div>
+
+			<div ng-if="project.myBackingPct == 0">
+				<img ng-src="images/handshake.png" type="button"
+					style="cursor: pointer; width: 50px; margin-left: 100px;"
+					data-toggle="modal" data-target="#myModal" />
+			</div>
+
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">{{'views.messages.how_much_do_you_want_to_support'
+								| translate}}</h4>
+						</div>
+						<div class="modal-body">
+							<input required type="number" ng-model="percentage"
+								style="width: 30%;" min="1" max="100"
+								placeholder="{{'views.home.percentage' | translate}}" />
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default btn-success"
+								data-dismiss="modal"
+								ng-click="saveSubscriberDocent(project.projectId, percentage)"
+								ng-disabled="!percentage">{{'views.home.back' |
+								translate}}</button>
+							<button type="button" class="btn btn-default btn-danger"
+								data-dismiss="modal">{{'views.messages.cancel' |
+								translate}}</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
 		</div>
 
 	</div>
-		
+
 	<!--  Students subscribe button -->
-	<div ng-if="authenticated && role === 'Student'" >
+	<div ng-if="authenticated && role === 'Student'">
 		<div ng-if="role === 'Student'">
-		<div>
-		  <div ng-if="project.mySubscribedHours != 0">
-		  	<img ng-src="images/handshake-success.png" type="button" style="width: 50px; margin-left: 100px;" />
-		  	<strong>{{ project.mySubscribedHours }} {{'views.detail.hours' | translate}}</strong>
-		  </div>
-		  
-		  <div ng-if="project.mySubscribedHours == 0 && project.canSubscribe">
-		  	<img ng-src="images/handshake.png" type="button" style="cursor: pointer; width: 50px; margin-left: 100px;" data-toggle="modal" data-target="#myModal" />
-		  </div>
-		  
-		  <!-- Modal -->
-		  <div class="modal fade" id="myModal" role="dialog">
-		    <div class="modal-dialog">
-		    
-		      <!-- Modal content-->
-		      <div class="modal-content">
-		        <div class="modal-header">
-		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		          <h4 class="modal-title">{{'views.messages.how_much_do_you_want_to_subscribe' | translate}}</h4>
-		          <h6 class="modal-title">{{'views.messages.teachers_can_change' | translate}}</h6>
-		        </div>
-		        <div class="modal-body">
-		          	<input required type="number" ng-model="hours" style="width:30%;" min="1" max="160" placeholder="{{'views.home.hours' | translate}}"/>
-		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default btn-success" data-dismiss="modal" ng-click="saveSubscriberStudent(project.projectId, hours)" ng-disabled="!hours">{{'views.home.subscribe' | translate}}</button>
-		          <button type="button" class="btn btn-default btn-danger" data-dismiss="modal">{{'views.messages.cancel' | translate}}</button>
-		        </div>
-		      </div>
-		      
-		    </div>
-		  </div>
-		</div>
+			<div>
+				<div ng-if="project.mySubscribedHours != 0">
+					<img ng-src="images/handshake-success.png" type="button"
+						style="width: 50px; margin-left: 100px;" /> <strong>{{
+						project.mySubscribedHours }} {{'views.detail.hours' | translate}}</strong>
+				</div>
+
+				<div ng-if="project.mySubscribedHours == 0 && project.canSubscribe">
+					<img ng-src="images/handshake.png" type="button"
+						style="cursor: pointer; width: 50px; margin-left: 100px;"
+						data-toggle="modal" data-target="#myModal" />
+				</div>
+
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" role="dialog">
+					<div class="modal-dialog">
+
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">{{'views.messages.how_much_do_you_want_to_subscribe'
+									| translate}}</h4>
+								<h6 class="modal-title">{{'views.messages.teachers_can_change'
+									| translate}}</h6>
+							</div>
+							<div class="modal-body">
+								<input required type="number" ng-model="hours"
+									style="width: 30%;" min="1" max="160"
+									placeholder="{{'views.home.hours' | translate}}" />
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default btn-success"
+									data-dismiss="modal"
+									ng-click="saveSubscriberStudent(project.projectId, hours)"
+									ng-disabled="!hours">{{'views.home.subscribe' |
+									translate}}</button>
+								<button type="button" class="btn btn-default btn-danger"
+									data-dismiss="modal">{{'views.messages.cancel' |
+									translate}}</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -87,181 +114,197 @@
 
 <div class="container">
 	<div class="project-block-title">{{ project.title }}</div>
-		<div style="float: right" ng-if="project.public">
-			<ul class="ulSocialMedia">
-				<li><a href="#" socialshare socialshare-provider="facebook"
-					socialshare-via="1102503169807746" socialshare-type="feed"
-					socialshare-text="{{ project.title }}"
-					socialshare-caption="{{ project.title }}"
-					socialshare-caption="{{ project.title }}"
-					socialshare-hashtags="pxl"
-					socialshare-url="{{ location }}/#/projects/{{ project.projectId }}"
-					socialshare-redirect-uri="{{ location }}/#/projects/{{ project.projectId }}">
-						<span class="fa-stack fa-2x"> <i class="fa fa-facebook"></i>
-					</span>
-				</a></li>
-				<li><a href="#" socialshare socialshare-provider="twitter"
-					socialshare-text="{{ project.title }}" socialshare-hashtags="pxl"
-					socialshare-url="{{ location }}/#/projects/{{ project.projectId }}">
-						<span class="fa-stack fa-2x"> <i class="fa fa-twitter"></i>
-					</span>
-				</a></li>
-				<li><a href="#" socialshare socialshare-provider="linkedin"
-					socialshare-text="{{ project.title }}" socialshare-hashtags="pxl"
-					socialshare-url="{{ location }}/#/projects/{{ project.projectId }}">
-						<span class="fa-stack fa-2x"> <i class="fa fa-linkedin"></i>
-					</span>
-				</a></li>
-				<li><a href="#" socialshare socialshare-provider="google"
-					socialshare-text="{{ project.title }}" socialshare-hashtags="pxl"
-					socialshare-url="{{ location }}/#/projects/{{ project.projectId }}">
-						<span class="fa-stack fa-2x"> <i class="fa fa-google-plus"></i>
-					</span>
-				</a></li>
-			</ul>
-		</div>
-		<div class="row">
+	<div class="row">
 		<div class="col-md-5" ng-if="project.pictures.length == 0">
 			<div class="project-block-media img-responsive img-rounded"></div>
 		</div>
 		<div class="col-md-5" ng-if="project.pictures.length != 0">
-			<uib-carousel active="active" interval="carouselInterval" no-wrap="noWrapSlides">
-				<uib-slide ng-repeat="picture in project.pictures" index="$index">
-			  		<div class="col-xs-12 col-md-12">
-					    <a href="#" class="thumbnail" >
-							<img class="carouselImage" ng-src="data:image/jpeg;base64, {{ picture.bytes }}" style="height: 250px" />
-					    </a>
-			  		</div>
- 					<div class="caption">
-						<strong>{{ picture.description }}</strong>
-					</div>
-				</uib-slide>
-			</uib-carousel>
+			<uib-carousel active="active" interval="carouselInterval"
+				no-wrap="noWrapSlides"> <uib-slide
+				ng-repeat="picture in project.pictures" index="$index">
+			<div class="col-xs-12 col-md-12">
+				<a href="#" class="thumbnail"> <img class="carouselImage"
+					ng-src="data:image/jpeg;base64, {{ picture.bytes }}"
+					style="height: 250px" />
+				</a>
+			</div>
+			<div class="caption">
+				<strong>{{ picture.description }}</strong>
+			</div>
+			</uib-slide> </uib-carousel>
 		</div>
 		<div class="col-md-7">
-			<div class="project-block-label">{{"views.detail.description" | translate}}</div>
-			<div class="project-block-long-description">{{ project.shortDescription }}</div>
-			<div class="project-block-label col-xs-4">{{"views.home.createdBy" | translate}}</div>
-			<div class="project-block-text col-xs-8">{{project.user.firstname + ' ' + project.user.lastname}}</div>
+			<div class="project-block-label">{{"views.detail.description"
+				|translate}}</div>
+			<div class="project-block-long-description">{{project.shortDescription
+				}}</div>
+			<div class="project-block-label col-xs-4">{{"views.detail.domain"
+				| translate}}:</div>
+			<div class="project-block-text col-xs-8">{{project.domain.name}}</div>
+			<div class="project-block-label col-xs-4">{{"views.home.createdBy"
+				| translate}}</div>
+			<div class="project-block-text col-xs-8">{{project.user.firstname
+				+ ' ' + project.user.lastname}}</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="row col-xs-offset-2">
-			<div ng-if="authenticated && project.liked" class="project-button glyphicon glyphicon-star col-xs-1"
-				 ng-click="likeClicked(project)"></div>
-			<div ng-if="authenticated && !project.liked" class="project-button glyphicon glyphicon-star-empty col-xs-1"
-				 ng-click="likeClicked(project)"></div>
-			<div ng-if="!authenticated" class="project-button glyphicon glyphicon-star col-xs-1"></div>
+			<div ng-if="authenticated && project.liked"
+				class="project-button glyphicon glyphicon-star col-xs-1"
+				ng-click="likeClicked(project)"></div>
+			<div ng-if="authenticated && !project.liked"
+				class="project-button glyphicon glyphicon-star-empty col-xs-1"
+				ng-click="likeClicked(project)"></div>
+			<div ng-if="!authenticated"
+				class="project-button glyphicon glyphicon-star col-xs-1"></div>
 			<div ng-if="project.numberOfLikes" class="likes-number col-xs-2">{{project.numberOfLikes}}</div>
 			<div ng-if="!project.numberOfLikes" class="likes-number col-xs-2">0</div>
 		</div>
 	</div>
 
 
-		
-		<div class="row" style="margin-top: 150px;">
-	  		<div class="col-xs-4 col-md-4" ng-repeat="movie in project.movies">
-			    <a href="#" class="thumbnail" >
-					<iframe width="100%" height="200" src="{{ movie.youTubeCode | youtubeEmbedUrl }}" allowfullscreen></iframe>
-					<div class="caption">
-						<strong>{{ movie.description }}</strong>
-					</div>
-			    </a>
-	  		</div>
-		</div>
-	
-	<table style="margin-top: 150px;">
-	<tr>
-		<td class="col-md-8" style="vertical-align: top;" >
-			<div>
-				<h3>{{"views.detail.description" | translate}}</h3>
-				<span>{{ project.description }}</span>
-				<div ng-show="project.prezis.length>0" style="margin-top: 10px;">
-					<div id="prezi-player"></div>
-				</div>
-		</div>
-			</div>
-		</td>
-	<td class="col-md-4" >
-		<div ng-if="project.milestones && project.milestones.length" >
-			<ul class="timeline">
-				<li ng-repeat="milestone in project.milestones" class="timeline-inverted">
-					<div class="timeline-badge info"><i class="glyphicon glyphicon-cog"></i></div>
-					<div class="timeline-panel">
-						<div class="timeline-heading">
-							<h4 class="timeline-title">{{milestone.description}}</h4>
-							<p>
-								<small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{milestone.lastUpdate | date:'yyyy-MM-dd HH:mm:ss'}}
-								</small>
-							</p>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		</td>
-		</tr>
-	</table>
-	
-	
-	</div>
-
-
-
-	<div class="row project-block col-md-8 col-md-offset-2" ng-if="project.onlineFiles && project.onlineFiles.length">
-		<div class="project-block-label centerText">{{"views.detail.onlineFiles" | translate}}</div>
-		<div ng-repeat="onlineFile in project.onlineFiles">
-			<div class="add-project-label-big col-xs-3 col-xs-offset-1">
-				<label>{{onlineFile.description | translate}}</label>
-			</div>
-			<div class="col-xs-4">
-				<a class="add-project-label-big" href="http://{{ onlineFile.url }}">{{ onlineFile.url }}</a>
-			</div>
-		</div>
-	</div>
 
 	<div class="row" style="margin-top: 150px;">
-		<div ng-if="authenticated" class="project-block jumbotron col-md-8 col-md-offset-2">
-			<div class="project-block-label centerText">{{"views.detail.comments" | translate}}</div>
-			<br/>
-			<div ng-if="comments.length == 0">{{'views.detail.noComments' | translate}}</div>
-			<div ng-repeat="comment in comments.slice().reverse()">
-				<table>
-					<tr style="vertical-align: top;">
-						<td><img src="/images/people.png" class="avatar avatar-80 photo" style="border-radius: 50%;" height="80" width="80" />
-						</td>
-						<td style="width:100%">
-							<div class="comment-body">
-								<h4>{{ comment.user.firstname }} {{ comment.user.lastname }}</h4>
-								<div class="comment-author vcard"></div>
-								<div class="comment-meta commentmetadata">
-									<span>{{ comment.lastUpdate | date:'yyyy-MM-dd HH:mm:ss'}}</span>
-								</div>
-								<div class="commentmetadata">{{ comment.message }}</div>
-							</div>
-						</td>
-						<td ng-if="role === 'Docent'">
-							<button ng-click="removeComment(comment)" class="btn btn-default"
-									title="{{'views.newProject.delete' | translate}}">
-								<i class="glyphicon glyphicon-trash"></i>
-							</button>
-						</td>
-					</tr>
-				</table>
-				<br/>
-			</div>
-			<div style="margin-left:60px;">
-				<input required type="text" ng-model="comment"
-					   class="input-block col-xs-4 col-xs-offset-3 col-md-9 col-md-offset-0" min="1" max="255"
-					   placeholder="{{'views.detail.comment' | translate}}"/>
-				<button
-						class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
-						ng-click="addComment(comment)"
-						ng-disabled="!comment">{{'views.detail.addComment' |
-					translate}}
-				</button>
-			</div>
-			<br/>
+		<div class="col-xs-4 col-md-4" ng-repeat="movie in project.movies">
+			<a href="#" class="thumbnail"> <iframe width="100%" height="200"
+					src="{{ movie.youTubeCode | youtubeEmbedUrl }}" allowfullscreen></iframe>
+				<div class="caption">
+					<strong>{{ movie.description }}</strong>
+				</div>
+			</a>
 		</div>
 	</div>
+
+	<table style="margin-top: 150px;">
+		<tr>
+			<td class="col-md-8" style="vertical-align: top;">
+				<div>
+					<h3>{{"views.detail.description" | translate}}</h3>
+					<span>{{ project.description }}</span>
+					<div ng-show="project.prezis.length>0" style="margin-top: 10px;">
+						<div id="prezi-player"></div>
+					</div>
+					<h2 style="margin-top: 50px;">{{"views.detail.seeAlso" |
+						translate}}</h2>
+					<ul style="margin-left: 15px;">
+						<li ng-repeat="onlineFile in project.onlineFiles"><a
+							href="http://{{onlineFile.url}}" target="_blank">{{
+								onlineFile.description }}</a></li>
+					</ul>
+				</div>
+			</td>
+
+			<td class="col-md-4">
+				<div ng-if="project.milestones && project.milestones.length">
+					<ul class="timeline">
+						<li ng-repeat="milestone in project.milestones"
+							class="timeline-inverted">
+							<div class="timeline-badge info">
+								<i class="glyphicon glyphicon-cog"></i>
+							</div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h4 class="timeline-title">{{milestone.description}}</h4>
+									<p>
+										<small class="text-muted"><i
+											class="glyphicon glyphicon-time"></i>{{milestone.lastUpdate |
+											date:'yyyy-MM-dd HH:mm:ss'}} </small>
+									</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+
+</div>
+
+
+<div class="row" style="margin-top: 150px;">
+	<div ng-if="authenticated"
+		class="project-block jumbotron col-md-8 col-md-offset-2">
+		<div class="project-block-label centerText">{{"views.detail.comments"
+			| translate}}</div>
+		<br />
+		<div ng-if="comments.length == 0">{{'views.detail.noComments' |
+			translate}}</div>
+		<div ng-repeat="comment in comments.slice().reverse()">
+			<table>
+				<tr style="vertical-align: top;">
+					<td><img src="/images/people.png"
+						class="avatar avatar-80 photo" style="border-radius: 50%;"
+						height="80" width="80" /></td>
+					<td style="width: 100%">
+						<div class="comment-body">
+							<h4>{{ comment.user.firstname }} {{ comment.user.lastname }}</h4>
+							<div class="comment-author vcard"></div>
+							<div class="comment-meta commentmetadata">
+								<span>{{ comment.lastUpdate | date:'yyyy-MM-dd
+									HH:mm:ss'}}</span>
+							</div>
+							<div class="commentmetadata">{{ comment.message }}</div>
+						</div>
+					</td>
+					<td ng-if="role === 'Docent'">
+						<button ng-click="removeComment(comment)" class="btn btn-default"
+							title="{{'views.newProject.delete' | translate}}">
+							<i class="glyphicon glyphicon-trash"></i>
+						</button>
+					</td>
+				</tr>
+			</table>
+			<br />
+		</div>
+		<div style="margin-left: 60px;">
+			<input required type="text" ng-model="comment"
+				class="input-block col-xs-4 col-xs-offset-3 col-md-9 col-md-offset-0"
+				min="1" max="255"
+				placeholder="{{'views.detail.comment' | translate}}" />
+			<button
+				class="btn btn-warning btn-warning-detail col-xs-2 col-xs-offset-1 col-md-2-"
+				ng-click="addComment(comment)" ng-disabled="!comment">{{'views.detail.addComment'
+				| translate}}</button>
+		</div>
+		<br />
+	</div>
+</div>
+<div style="text-align: center" >
+	<div ng-if="project.public">
+		<hr />
+		<ul class="ulSocialMedia"  style="width: 15%; margin: 0 auto;">
+			<li><a href="#" socialshare socialshare-provider="facebook"
+				socialshare-via="1102503169807746" socialshare-type="feed"
+				socialshare-text="{{ project.title }}"
+				socialshare-caption="{{ project.title }}"
+				socialshare-caption="{{ project.title }}" socialshare-hashtags="pxl"
+				socialshare-url="{{ location }}/#/projects/{{ project.projectId }}"
+				socialshare-redirect-uri="{{ location }}/#/projects/{{ project.projectId }}">
+					<span class="fa-stack fa-2x"> <i class="fa fa-facebook"></i>
+				</span>
+			</a></li>
+			<li><a href="#" socialshare socialshare-provider="twitter"
+				socialshare-text="{{ project.title }}" socialshare-hashtags="pxl"
+				socialshare-url="{{ location }}/#/projects/{{ project.projectId }}">
+					<span class="fa-stack fa-2x"> <i class="fa fa-twitter"></i>
+				</span>
+			</a></li>
+			<li><a href="#" socialshare socialshare-provider="linkedin"
+				socialshare-text="{{ project.title }}" socialshare-hashtags="pxl"
+				socialshare-url="{{ location }}/#/projects/{{ project.projectId }}">
+					<span class="fa-stack fa-2x"> <i class="fa fa-linkedin"></i>
+				</span>
+			</a></li>
+			<li><a href="#" socialshare socialshare-provider="google"
+				socialshare-text="{{ project.title }}" socialshare-hashtags="pxl"
+				socialshare-url="{{ location }}/#/projects/{{ project.projectId }}">
+					<span class="fa-stack fa-2x"> <i class="fa fa-google-plus"></i>
+				</span>
+			</a></li>
+		</ul>
+	</div>
+</div>
+
 </div>

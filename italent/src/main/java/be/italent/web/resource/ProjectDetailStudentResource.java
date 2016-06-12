@@ -32,4 +32,5 @@ public class ProjectDetailStudentResource extends ResourceSupport {
 	private boolean isPublic;
     private List<CategoryResource> categories;
     private int mySubscribedHours;
+    private DomainResource domain;
 }

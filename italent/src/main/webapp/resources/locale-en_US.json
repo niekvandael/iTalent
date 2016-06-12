@@ -109,5 +109,7 @@
   "views.detail.hours" : "hours",
   "views.messages.how_much_do_you_want_to_subscribe" : "For how much hours would you like to subscribe?",
   "views.messages.teachers_can_change" : "Teachers can always change your project hours",
-  "views.messages.concurrentEdit" : "The project was edited by someone else while you were editing, please try again."
+  "views.messages.concurrentEdit" : "The project was edited by someone else while you were editing, please try again.",
+  "views.detail.seeAlso" : "See also",
+  "views.detail.domain" : "Domain"
 }

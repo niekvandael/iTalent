@@ -29,4 +29,5 @@ public class ProjectDetailPublicResource extends ResourceSupport {
 	private List<OnlineFile> onlineFiles;
 	private boolean isPublic;
     private List<CategoryResource> categories;
+    private DomainResource domain;
 }

@@ -33,4 +33,5 @@ public class ProjectDetailDocentResource extends ResourceSupport {
 	private boolean isPublic;
     private List<CategoryResource> categories;
     private int myBackingPct;
+    private DomainResource domain;
 }
