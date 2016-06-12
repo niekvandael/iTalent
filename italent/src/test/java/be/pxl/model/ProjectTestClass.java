@@ -215,4 +215,81 @@ public class ProjectTestClass {
 	  // Assert
 	  Assert.assertEquals(true, project.isLiked());
   }
+  
+  @Test
+  public void test_liked_should_return_false_when_user_not_exists_in_liked_array() {
+	  // Arrange
+	  Project project = new Project();
+	  ArrayList<Like> likes = new ArrayList<Like>();
+	  
+	  Like like1 = new Like();
+	  User user1 = new User();
+	  user1.setUserId(5);
+	  
+	  like1.setUser(user1);
+	  likes.add(like1);
+	  project.setLikes(likes);
+	  
+	  // Act
+	  project.setLiked(4);
+	  
+	  // Assert
+	  Assert.assertEquals(false, project.isLiked());
+  }
+  
+  @Test
+  public void test_mySuscribed_hours_should_return_amount_of_hours() {
+	  // Arrange
+	  Project project = new Project();
+	  SubscriberStudent subscriberStudent1 = new SubscriberStudent();
+	  User user1 = new User();
+	  user1.setUserId(1);
+	  subscriberStudent1.setUser(user1);
+	  subscriberStudent1.setHours(100);
+	  
+	  SubscriberStudent subscriberStudent2 = new SubscriberStudent();
+	  User user2 = new User();
+	  user2.setUserId(2);
+	  subscriberStudent2.setUser(user2);
+	  subscriberStudent2.setHours(120);
+	  
+	  ArrayList<SubscriberStudent> students = new ArrayList<SubscriberStudent>();
+	  students.add(subscriberStudent1);
+	  students.add(subscriberStudent2);
+	  project.setSubscribersStudent(students);
+	  
+	  // Act
+	  project.setMySubscribedHours(2);
+	  
+	  // Assert
+	  Assert.assertEquals(120, project.getMySubscribedHours());
+  }
+  
+  @Test
+  public void test_mySuscribed_hours_should_return_0_if_not_registered() {
+	  // Arrange
+	  Project project = new Project();
+	  SubscriberStudent subscriberStudent1 = new SubscriberStudent();
+	  User user1 = new User();
+	  user1.setUserId(1);
+	  subscriberStudent1.setUser(user1);
+	  subscriberStudent1.setHours(100);
+	  
+	  SubscriberStudent subscriberStudent2 = new SubscriberStudent();
+	  User user2 = new User();
+	  user2.setUserId(2);
+	  subscriberStudent2.setUser(user2);
+	  subscriberStudent2.setHours(120);
+	  
+	  ArrayList<SubscriberStudent> students = new ArrayList<SubscriberStudent>();
+	  students.add(subscriberStudent1);
+	  students.add(subscriberStudent2);
+	  project.setSubscribersStudent(students);
+	  
+	  // Act
+	  project.setMySubscribedHours(5);
+	  
+	  // Assert
+	  Assert.assertEquals(0, project.getMySubscribedHours());
+  }
 } 
