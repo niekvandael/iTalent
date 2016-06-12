@@ -184,11 +184,11 @@
 					<div ng-show="project.prezis.length>0" style="margin-top: 10px;">
 						<div id="prezi-player"></div>
 					</div>
-					<h2 style="margin-top: 50px;">{{"views.detail.seeAlso" |
+					<h2 style="margin-top: 50px;" ng-if="project.onlineFiles.length">{{"views.detail.seeAlso" |
 						translate}}</h2>
 					<ul style="margin-left: 15px;">
 						<li ng-repeat="onlineFile in project.onlineFiles"><a
-							href="http://{{onlineFile.url}}" target="_blank">{{
+							href="{{onlineFile.url}}" target="_blank">{{
 								onlineFile.description }}</a></li>
 					</ul>
 				</div>
@@ -221,7 +221,6 @@
 
 
 </div>
-
 
 <div class="row" style="margin-top: 150px;">
 	<div ng-if="authenticated"
@@ -271,10 +270,19 @@
 		<br />
 	</div>
 </div>
-<div style="text-align: center" >
-	<div ng-if="project.public">
-		<hr />
-		<ul class="ulSocialMedia"  style="width: 15%; margin: 0 auto;">
+<hr/>
+<div style="text-align: center">{{'views.detail.forMoreInfoContact' | translate}}
+	<ul>
+		<li ng-repeat="subscriberDocent in project.subscribersDocent"> 
+			<a href="mailto:{{subscriberDocent.user.email}}">{{ subscriberDocent.user.lastname }}&nbsp;{{ subscriberDocent.user.firstname }}</a>
+		 </li>
+	</ul>
+</div>
+
+<div>
+	<hr />
+	<div ng-if="project.public" style="text-align: center;">
+		<ul class="ulSocialMedia" style="width:100%; margin:0 auto;">
 			<li><a href="#" socialshare socialshare-provider="facebook"
 				socialshare-via="1102503169807746" socialshare-type="feed"
 				socialshare-text="{{ project.title }}"

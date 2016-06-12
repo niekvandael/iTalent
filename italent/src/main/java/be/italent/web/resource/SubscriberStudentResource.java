@@ -9,4 +9,5 @@ import org.springframework.hateoas.ResourceSupport;
 public class SubscriberStudentResource extends ResourceSupport {
 	private int subscriberStudentId;
 	private int hours;
+	private UserResource user;
 }

@@ -33,4 +33,6 @@ public class ProjectDetailStudentResource extends ResourceSupport {
     private List<CategoryResource> categories;
     private int mySubscribedHours;
     private DomainResource domain;
+    private List<SubscriberDocentResource> subscribersDocent;
+    private List<SubscriberStudentResource> subscribersStudent;
 }
