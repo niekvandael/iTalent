@@ -180,7 +180,7 @@ public class Project extends AbstractITalentEntity implements Serializable {
 	}
 	
 	@Transient
-	private boolean canSubscribe = false;
+	public boolean canSubscribe = false;
 	
 	public void updateCanSubscribe(int currentUserId, int departmentId){
 		if (this.getWantedSeats()>this.getTakenSeats()){
@@ -208,9 +208,6 @@ public class Project extends AbstractITalentEntity implements Serializable {
 			if(wantedInMyDepartment > alreadyEnrolledInMyDepartment){
 				this.setCanSubscribe(true);
 			}
-		}
-		else{
-			return;
 		}
 	}
 	

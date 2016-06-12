@@ -1,11 +1,13 @@
 package be.pxl.model;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+import be.italent.model.Department;
 import be.italent.model.Like;
 import be.italent.model.Project;
 import be.italent.model.SubscriberDocent;
@@ -347,5 +349,262 @@ public class ProjectTestClass {
 	  
 	  // Assert
 	  Assert.assertEquals(0, project.getMyBackingPct());
+  }
+  
+  @Test
+  public void test_project_endate_should_equal_startdate_plus_duration() {
+	  // Arrange
+	  Project project = new Project();
+	  project.setStartDate(new Date());
+	  project.setDuration(1000);
+	 
+	  // Act
+	  project.getEndDate();
+
+	  // Assert
+	  Calendar cal = Calendar.getInstance();
+	  cal.setTime(project.getStartDate());
+	  cal.add(Calendar.MINUTE, 1000);
+
+	  Assert.assertEquals(cal.getTime(), project.getEndDate());
+  }
+  
+  @Test
+  public void test_project_endate_should_return_null_when_no_startDate() {
+	  // Arrange
+	  Project project = new Project();
+	  project.setStartDate(null);
+	  project.setDuration(1000);
+	 
+	  // Act
+	  project.getEndDate();
+
+	  // Assert
+	  Assert.assertEquals(null, project.getEndDate());
+  }
+  
+  @Test
+  public void test_number_of_likes_should_return_equal_array_size() {
+	  // Arrange
+	  Project project = new Project();
+	  ArrayList<Like> likes = new ArrayList<Like>();
+	  
+	  Like like1 = new Like();
+	  User user1 = new User();
+	  user1.setUserId(5);
+	  
+	  like1.setUser(user1);
+	  likes.add(like1);
+	  project.setLikes(likes);
+	  
+	  // Act
+	  project.getNumberOfLikes();
+	  
+	  // Assert
+	  Assert.assertEquals(1, project.getNumberOfLikes());
+  }
+  
+  @Test
+  public void test_number_of_likes_should_return_0_when_no_likes() {
+	  // Arrange
+	  Project project = new Project();
+	  
+	  // Act
+	  project.getNumberOfLikes();
+	  
+	  // Assert
+	  Assert.assertEquals(0, project.getNumberOfLikes());
+  }
+  
+  @Test
+  public void test_student_enroll_and_asked_should_return_true() {
+	  // Arrange
+	  Project project = new Project();
+	  
+	  // 1. add wanted subscribers
+	  ArrayList<WantedSubscriber> wanted = new ArrayList<WantedSubscriber>();
+	  WantedSubscriber wantedsubscriber1 = new WantedSubscriber();
+	  WantedSubscriber wantedsubscriber2 = new WantedSubscriber();
+	  wantedsubscriber1.setNumber(5);
+	  Department department1 = new Department();
+	  department1.setDepartmentId(1);
+	  wantedsubscriber1.setDepartment(department1);
+	  wantedsubscriber2.setNumber(7);
+	  Department department2 = new Department();
+	  department2.setDepartmentId(2);
+	  wantedsubscriber2.setDepartment(department2);
+	  wanted.add(wantedsubscriber1);
+	  wanted.add(wantedsubscriber2);
+	  project.setWantedSubscribers(wanted);
+	  
+	  // 2. add students
+	  SubscriberStudent subscriberStudent1 = new SubscriberStudent();
+	  User user1 = new User();
+	  user1.setUserId(1);
+	  user1.setDepartment(department1);
+	  subscriberStudent1.setUser(user1);
+	  subscriberStudent1.setHours(100);
+	  
+	  SubscriberStudent subscriberStudent2 = new SubscriberStudent();
+	  User user2 = new User();
+	  user2.setUserId(2);
+	  user2.setDepartment(department2);
+	  subscriberStudent2.setUser(user2);
+	  subscriberStudent2.setHours(120);
+	
+	  ArrayList<SubscriberStudent> students = new ArrayList<SubscriberStudent>();
+	  students.add(subscriberStudent1);
+	  students.add(subscriberStudent2);
+	  project.setSubscribersStudent(students);
+	  
+	  // Act
+	  project.updateCanSubscribe(9, 1);
+	  
+	  // Assert
+	  Assert.assertEquals(true, project.canSubscribe);
+  }
+
+  @Test
+  public void test_student_enroll_department_not_asked_should_return_false() {
+	  // Arrange
+	  Project project = new Project();
+	  
+	  // 1. add wanted subscribers
+	  ArrayList<WantedSubscriber> wanted = new ArrayList<WantedSubscriber>();
+	  WantedSubscriber wantedsubscriber1 = new WantedSubscriber();
+	  WantedSubscriber wantedsubscriber2 = new WantedSubscriber();
+	  wantedsubscriber1.setNumber(5);
+	  Department department1 = new Department();
+	  department1.setDepartmentId(1);
+	  wantedsubscriber1.setDepartment(department1);
+	  wantedsubscriber2.setNumber(7);
+	  Department department2 = new Department();
+	  department2.setDepartmentId(2);
+	  wantedsubscriber2.setDepartment(department2);
+	  wanted.add(wantedsubscriber1);
+	  wanted.add(wantedsubscriber2);
+	  project.setWantedSubscribers(wanted);
+	  
+	  // 2. add students
+	  SubscriberStudent subscriberStudent1 = new SubscriberStudent();
+	  User user1 = new User();
+	  user1.setUserId(1);
+	  user1.setDepartment(department1);
+	  subscriberStudent1.setUser(user1);
+	  subscriberStudent1.setHours(100);
+	  
+	  SubscriberStudent subscriberStudent2 = new SubscriberStudent();
+	  User user2 = new User();
+	  user2.setUserId(2);
+	  user2.setDepartment(department2);
+	  subscriberStudent2.setUser(user2);
+	  subscriberStudent2.setHours(120);
+	
+	  ArrayList<SubscriberStudent> students = new ArrayList<SubscriberStudent>();
+	  students.add(subscriberStudent1);
+	  students.add(subscriberStudent2);
+	  project.setSubscribersStudent(students);
+	  
+	  // Act
+	  project.updateCanSubscribe(9, 1);
+	  
+	  // Assert
+	  Assert.assertEquals(true, project.canSubscribe);
+  }
+
+  @Test
+  public void test_student_enroll_and_department_asked_but_full_should_return_false() {
+	  // Arrange
+	  Project project = new Project();
+	  
+	  // 1. add wanted subscribers
+	  ArrayList<WantedSubscriber> wanted = new ArrayList<WantedSubscriber>();
+	  WantedSubscriber wantedsubscriber1 = new WantedSubscriber();
+	  WantedSubscriber wantedsubscriber2 = new WantedSubscriber();
+	  wantedsubscriber1.setNumber(1);
+	  Department department1 = new Department();
+	  department1.setDepartmentId(1);
+	  wantedsubscriber1.setDepartment(department1);
+	  wantedsubscriber2.setNumber(7);
+	  Department department2 = new Department();
+	  department2.setDepartmentId(2);
+	  wantedsubscriber2.setDepartment(department2);
+	  wanted.add(wantedsubscriber1);
+	  wanted.add(wantedsubscriber2);
+	  project.setWantedSubscribers(wanted);
+	  
+	  // 2. add students
+	  SubscriberStudent subscriberStudent1 = new SubscriberStudent();
+	  User user1 = new User();
+	  user1.setUserId(1);
+	  user1.setDepartment(department1);
+	  subscriberStudent1.setUser(user1);
+	  subscriberStudent1.setHours(100);
+	  
+	  SubscriberStudent subscriberStudent2 = new SubscriberStudent();
+	  User user2 = new User();
+	  user2.setUserId(2);
+	  user2.setDepartment(department2);
+	  subscriberStudent2.setUser(user2);
+	  subscriberStudent2.setHours(120);
+	
+	  ArrayList<SubscriberStudent> students = new ArrayList<SubscriberStudent>();
+	  students.add(subscriberStudent1);
+	  students.add(subscriberStudent2);
+	  project.setSubscribersStudent(students);
+	  
+	  // Act
+	  project.updateCanSubscribe(9, 1);
+	  
+	  // Assert
+	  Assert.assertEquals(false, project.canSubscribe);
+  }
+  
+  @Test
+  public void test_student_enroll_but_already_enrolled_should_return_false() {
+	  // Arrange
+	  Project project = new Project();
+	  
+	  // 1. add wanted subscribers
+	  ArrayList<WantedSubscriber> wanted = new ArrayList<WantedSubscriber>();
+	  WantedSubscriber wantedsubscriber1 = new WantedSubscriber();
+	  WantedSubscriber wantedsubscriber2 = new WantedSubscriber();
+	  wantedsubscriber1.setNumber(1);
+	  Department department1 = new Department();
+	  department1.setDepartmentId(1);
+	  wantedsubscriber1.setDepartment(department1);
+	  wantedsubscriber2.setNumber(7);
+	  Department department2 = new Department();
+	  department2.setDepartmentId(2);
+	  wantedsubscriber2.setDepartment(department2);
+	  wanted.add(wantedsubscriber1);
+	  wanted.add(wantedsubscriber2);
+	  project.setWantedSubscribers(wanted);
+	  
+	  // 2. add students
+	  SubscriberStudent subscriberStudent1 = new SubscriberStudent();
+	  User user1 = new User();
+	  user1.setUserId(1);
+	  user1.setDepartment(department1);
+	  subscriberStudent1.setUser(user1);
+	  subscriberStudent1.setHours(100);
+	  
+	  SubscriberStudent subscriberStudent2 = new SubscriberStudent();
+	  User user2 = new User();
+	  user2.setUserId(2);
+	  user2.setDepartment(department2);
+	  subscriberStudent2.setUser(user2);
+	  subscriberStudent2.setHours(120);
+	
+	  ArrayList<SubscriberStudent> students = new ArrayList<SubscriberStudent>();
+	  students.add(subscriberStudent1);
+	  students.add(subscriberStudent2);
+	  project.setSubscribersStudent(students);
+	  
+	  // Act
+	  project.updateCanSubscribe(1, 1);
+	  
+	  // Assert
+	  Assert.assertEquals(false, project.canSubscribe);
   }
 } 
