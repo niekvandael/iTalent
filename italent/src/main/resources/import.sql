@@ -89,10 +89,10 @@ insert into picture(last_update, last_updated_by, status, project_project_id, de
 
 -- Movies
 insert into movie(last_update, last_updated_by, status, project_project_id, description, youtube_code) values('2016-01-01', 'Team1', 'A', 1, 'What is Big Data and how does it work?', 'TzxmjbL-i4Y');
-insert into movie(last_update, last_updated_by, status, project_project_id, description, youtube_code) values('2016-01-01', 'Team1', 'A', 1, 'Mike Posner - I Took A Pill In Ibiza (SeeB Remix)', 'u3VFzuUiTGw');
-insert into movie(last_update, last_updated_by, status, project_project_id, description, youtube_code) values('2016-01-01', 'Team1', 'A', 1, 'Jonas Blue - Fast Car ft. Dakota', '5yXQJBU8A28');
+insert into movie(last_update, last_updated_by, status, project_project_id, description, youtube_code) values('2016-01-01', 'Team1', 'A', 1, 'Explaining Big Data', '7D1CQ_LOizA');
+insert into movie(last_update, last_updated_by, status, project_project_id, description, youtube_code) values('2016-01-01', 'Team1', 'A', 1, 'BIG DATA', 'mqMFMgVnRO8');
 
-insert into movie(last_update, last_updated_by, status, project_project_id, description, youtube_code) values('2016-01-01', 'Team1', 'A', 2, 'Alan Walker - Faded', '60ItHLz5WEA');
+insert into movie(last_update, last_updated_by, status, project_project_id, description, youtube_code) values('2016-01-01', 'Team1', 'A', 2, 'PXL breekt uit', 'yRSuVHvyvBE');
 
 -- Prezis
 insert into prezi(last_update, last_updated_by, status, project_project_id, description, prezi_code) values('2016-01-01', 'Team1', 'A', 1, 'Big Data; an introduction', 'diuh1ui6vedi');
