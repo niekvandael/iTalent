@@ -151,6 +151,7 @@
 				| translate}}</div>
 			<div class="project-block-text col-xs-8">{{project.user.firstname
 				+ ' ' + project.user.lastname}}</div>
+			<div class="post-tag" ng-repeat="category in project.categories">{{ category.description }}</div>
 		</div>
 	</div>
 	<div class="row">
