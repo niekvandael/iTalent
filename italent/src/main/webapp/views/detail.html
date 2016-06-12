@@ -1,4 +1,4 @@
-<div style="float: left">
+<div style="float: left" class="small hidden-xs">
 
 	<!-- Docent edit button -->
 	<div ng-if="authenticated && role === 'Docent'">
@@ -111,7 +111,7 @@
 </div>
 
 <!-- Subsccribed students -->
-<div ng-if="authenticated" style="float:right; margin-right: 100px;">
+<div ng-if="authenticated" style="float:right; margin-right: 100px;" class="small hidden-xs">
 	<h3>{{"views.detail.team" |translate}}</h3>
 	<ul style="margin-left: 15px;">
 		<li ng-repeat="subscriberStudent in project.subscribersStudent"> {{ subscriberStudent.user.firstname }}&nbsp;{{ subscriberStudent.user.lastname }} </li>
