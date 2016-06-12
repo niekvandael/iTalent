@@ -116,7 +116,7 @@
     </div>
 
     <!-- Subsccribed students -->
-    <div ng-if="authenticated" style="float:right; margin-right: 100px;" class="small hidden-xs">
+    <div ng-if="authenticated && project.subscribersStudent && project.subscribersStudent.length" style="float:right; margin-right: 100px;" class="small hidden-xs">
         <h3>{{"views.detail.team" |translate}}</h3>
         <ul style="margin-left: 15px;">
             <li ng-repeat="subscriberStudent in project.subscribersStudent"> {{ subscriberStudent.user.firstname }}&nbsp;{{
@@ -151,8 +151,8 @@
             <div class="col-md-7">
                 <div class="project-block-label">{{"views.detail.description" |translate}}</div>
                 <div class="project-block-long-description">{{project.shortDescription }}</div>
-                <div class="project-block-label col-xs-4">{{"views.detail.domain" | translate}}:</div>
-                <div class="project-block-text col-xs-8">{{project.domain.name}}</div>
+                <div ng-if="project.domain.name" class="project-block-label col-xs-4">{{"views.detail.domain" | translate}}:</div>
+                <div ng-if="project.domain.name" class="project-block-text col-xs-8">{{project.domain.name}}</div>
                 <div class="project-block-label col-xs-4">{{"views.home.createdBy" | translate}}</div>
                 <div class="project-block-text col-xs-8">{{project.user.firstname + ' ' + project.user.lastname}}</div>
                 <div class="post-tag" ng-repeat="category in project.categories">{{ category.description }}</div>
