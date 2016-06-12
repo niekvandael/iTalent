@@ -1,24 +1,24 @@
 package be.italent.web.controller;
 
-import java.util.List;
-
+import be.italent.Italent;
 import be.italent.model.Category;
 import be.italent.service.CategoryService;
 import be.italent.web.resource.CategoryResource;
 import be.italent.web.resource.assembler.CategoryResourceAssembler;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/categories")
 public class CategoryRestController {
+    private static final Logger logger = LogManager.getLogger(Italent.class.getName());
 
     @Autowired
     private CategoryService categoryService;

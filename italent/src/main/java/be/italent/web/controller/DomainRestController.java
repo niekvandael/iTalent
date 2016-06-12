@@ -1,24 +1,23 @@
 package be.italent.web.controller;
 
-import java.util.List;
-
 import be.italent.model.Domain;
 import be.italent.service.DomainService;
 import be.italent.web.resource.DomainResource;
 import be.italent.web.resource.assembler.DomainResourceAssembler;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/domains")
 public class DomainRestController {
+    private static final Logger logger = LogManager.getLogger(DomainRestController.class.getName());
 
     @Autowired
     private DomainService DomainService;
@@ -42,6 +41,7 @@ public class DomainRestController {
     /**
      * Create a {@link Domain}
      * *
+     *
      * @param Domain the {@link Domain} to be saved
      * @return the saved {@link Domain}
      */

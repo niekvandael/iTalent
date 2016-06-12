@@ -1,9 +1,15 @@
 package be.italent.web.controller;
 
-import java.security.Principal;
-import java.util.Iterator;
-import java.util.List;
-
+import be.italent.model.Project;
+import be.italent.service.ProjectService;
+import be.italent.service.UserService;
+import be.italent.web.resource.ProjectListHomeResource;
+import be.italent.web.resource.ProjectMyLikedResource;
+import be.italent.web.resource.ProjectMySubscribedResource;
+import be.italent.web.resource.ProjectUserResource;
+import be.italent.web.resource.assembler.*;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,30 +18,16 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import be.italent.model.Project;
-import be.italent.service.ProjectService;
-import be.italent.service.UserService;
-import be.italent.web.resource.ProjectListHomeResource;
-import be.italent.web.resource.ProjectMyLikedResource;
-import be.italent.web.resource.ProjectMySubscribedResource;
-import be.italent.web.resource.ProjectUserResource;
-import be.italent.web.resource.assembler.ProjectDetailDocentResourceAssembler;
-import be.italent.web.resource.assembler.ProjectDetailPublicResourceAssembler;
-import be.italent.web.resource.assembler.ProjectDetailStudentResourceAssembler;
-import be.italent.web.resource.assembler.ProjectListHomeResourceAssembler;
-import be.italent.web.resource.assembler.ProjectMyLikedResourceAssembler;
-import be.italent.web.resource.assembler.ProjectMySubscribedResourceAssembler;
-import be.italent.web.resource.assembler.ProjectUserResourceAssembler;
+import java.security.Principal;
+import java.util.Iterator;
+import java.util.List;
 
 @RestController
 @RequestMapping("/projects")
 public class ProjectRestController {
+    private static final Logger logger = LogManager.getLogger(ProjectRestController.class.getName());
 
     private final static String DOCENT = "Docent";
     private final static String STUDENT = "Student";
@@ -72,16 +64,16 @@ public class ProjectRestController {
      */
     @RequestMapping(value = "/listHome", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<ProjectListHomeResource>> getHomeProjects(Authentication auth) {
-    	List<Project> projects = this.getProjectsForUser(auth);
-    	Iterator<Project> it = projects.iterator();
-    	
-    	while(it.hasNext()) {
-    	    Project proj = it.next();
-    		if(proj.isArchived()){
-    			it.remove();
-    		}
-    	}
-    	return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(projects), HttpStatus.OK);
+        List<Project> projects = this.getProjectsForUser(auth);
+        Iterator<Project> it = projects.iterator();
+
+        while (it.hasNext()) {
+            Project proj = it.next();
+            if (proj.isArchived()) {
+                it.remove();
+            }
+        }
+        return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(projects), HttpStatus.OK);
     }
 
     /**
@@ -92,16 +84,16 @@ public class ProjectRestController {
      */
     @RequestMapping(value = "/listHomeArchive", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<ProjectListHomeResource>> getArchivedProjects(Authentication auth) {
-    	List<Project> projects = this.getProjectsForUser(auth);
-    	Iterator<Project> it = projects.iterator();
-    	
-    	while(it.hasNext()) {
-    	    Project proj = it.next();
-    		if(!proj.isArchived()){
-    			it.remove();
-    		}
-    	}
-    	return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(projects), HttpStatus.OK);
+        List<Project> projects = this.getProjectsForUser(auth);
+        Iterator<Project> it = projects.iterator();
+
+        while (it.hasNext()) {
+            Project proj = it.next();
+            if (!proj.isArchived()) {
+                it.remove();
+            }
+        }
+        return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(projects), HttpStatus.OK);
     }
 
     /**
@@ -109,20 +101,19 @@ public class ProjectRestController {
      *
      * @param auth {@link Authentication}
      * @return {@link ResponseEntity} containing a list of {@link Project}s and a {@link HttpStatus}.OK
-     *
      */
     @RequestMapping(value = "/listHomeRunning", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<ProjectListHomeResource>> getRunningProjects(Authentication auth) {
-    	List<Project> projects = this.getProjectsForUser(auth);
-    	Iterator<Project> it = projects.iterator();
-    	
-    	while(it.hasNext()) {
-    	    Project proj = it.next();
-    		if(!proj.isRunning()){
-    			it.remove();
-    		}
-    	}
-    	return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(projects), HttpStatus.OK);
+        List<Project> projects = this.getProjectsForUser(auth);
+        Iterator<Project> it = projects.iterator();
+
+        while (it.hasNext()) {
+            Project proj = it.next();
+            if (!proj.isRunning()) {
+                it.remove();
+            }
+        }
+        return new ResponseEntity<>(projectListHomeResourceAssembler.toResources(projects), HttpStatus.OK);
     }
 
     /**
@@ -130,15 +121,14 @@ public class ProjectRestController {
      *
      * @param auth {@link Authentication}
      * @return {@link List} containing {@link Project}s
-     *
      */
-    private List<Project> getProjectsForUser(Authentication auth){
+    private List<Project> getProjectsForUser(Authentication auth) {
         if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))) {
-        	return projectService.getBackedProjects(userService.getUserByUsername(auth.getName()));
+            return projectService.getBackedProjects(userService.getUserByUsername(auth.getName()));
         } else if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(DOCENT))) {
             return projectService.getAllProjects(userService.getUserByUsername(auth.getName()));
         } else {
-        	return projectService.getPublicProjects();
+            return projectService.getPublicProjects();
         }
     }
 
@@ -176,14 +166,13 @@ public class ProjectRestController {
      */
     @Secured({"Student", "Docent"})
     @RequestMapping(value = "/mySubscribed", method = RequestMethod.GET, produces = "application/json")
-        public ResponseEntity<List<ProjectMySubscribedResource>> getMySubscribedProjects(Authentication auth) {
-    	
-    	if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))) {
-    		return new ResponseEntity<>(projectMySubscribedResourceAssembler.toResources(
+    public ResponseEntity<List<ProjectMySubscribedResource>> getMySubscribedProjects(Authentication auth) {
+
+        if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))) {
+            return new ResponseEntity<>(projectMySubscribedResourceAssembler.toResources(
                     projectService.getMySubscribedProjects(userService.getUserByUsername(auth.getName()))), HttpStatus.OK);
-        } 
-    	else { // if role = docent...
-        	return new ResponseEntity<>(projectMySubscribedResourceAssembler.toResources(
+        } else { // if role = docent...
+            return new ResponseEntity<>(projectMySubscribedResourceAssembler.toResources(
                     projectService.getMyBackedProjects(userService.getUserByUsername(auth.getName()))), HttpStatus.OK);
         }
     }
@@ -191,9 +180,8 @@ public class ProjectRestController {
     /**
      * Retrieve a {@link Project} by authentication
      *
-     * @param id {@link int} The id of the requested {@link Project}
+     * @param id        {@link int} The id of the requested {@link Project}
      * @param principal {@link Principal}
-     * @return {@link ResponseEntity} containing a list of {@link Project}s and a {@link HttpStatus}.OK
      * @return One of the following:
      * <p>
      * - {@link HttpStatus}.OK and the {@link Project} that was requested
@@ -222,42 +210,42 @@ public class ProjectRestController {
     /**
      * Retrieve a {@link Project} for editing
      *
-     * @param id {@link int} The id of the requested {@link Project}
+     * @param id        {@link int} The id of the requested {@link Project}
      * @param principal {@link Principal}
-     * @param auth {@link Authentication}
+     * @param auth      {@link Authentication}
      * @return the requested {@link Project}
      */
     @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET, produces = "application/json")
     public Project getEditProject(@PathVariable("id") final int id, Principal principal, Authentication auth) {
-    	Project project = projectService.getProjectById(id, userService.getUserByUsername(principal.getName()));
-    	
-    	//prevent request manipulation, students can only edit their own projects and only when there are no backers yet
-    	if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))){
-    		if(!project.getUser().getUsername().equals(principal.getName()) || project.getBackingPct()>0){
-    			return null;
-    		}
-    	}
-    	
-    	return project;
+        Project project = projectService.getProjectById(id, userService.getUserByUsername(principal.getName()));
+
+        //prevent request manipulation, students can only edit their own projects and only when there are no backers yet
+        if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))) {
+            if (!project.getUser().getUsername().equals(principal.getName()) || project.getBackingPct() > 0) {
+                return null;
+            }
+        }
+
+        return project;
     }
 
     /**
      * Create/save a {@link Project}
      *
-     * @param project the {@link Project} to be saved
+     * @param project   the {@link Project} to be saved
      * @param principal {@link Principal}
      * @return the saved {@link Project}
      */
     @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/save", method = RequestMethod.POST, produces = "application/json")
     public Project saveProject(@RequestBody Project project, Principal principal) {
-    	
-    	//prevent request manipulation, this method can only be used to save new projects
-    	if (project.getProjectId() > 0){
-    		return null;
-    	}
-    	
+
+        //prevent request manipulation, this method can only be used to save new projects
+        if (project.getProjectId() > 0) {
+            return null;
+        }
+
         project.setUser(userService.getUserByUsername(principal.getName()));
         return projectService.saveProject(project, principal.getName());
     }
@@ -265,61 +253,61 @@ public class ProjectRestController {
     /**
      * Update a specific {@link Project}
      *
-     * @param id {@link int} The id of the {@link Project} to be updated
-     * @param project {@link Project}
+     * @param id        {@link int} The id of the {@link Project} to be updated
+     * @param project   {@link Project}
      * @param principal {@link Principal}
-     * @param auth {@link Authentication}
+     * @param auth      {@link Authentication}
      * @return the updated {@link Project}
-     * @throws Exception 
+     * @throws Exception
      */
     @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/save/{id}", method = RequestMethod.PUT, produces = "application/json")
-    public Project updateProject(@PathVariable("id") final int id, @RequestBody Project project, Principal principal, Authentication auth){
-    	
-    	//prevent request manipulation, students can only edit their own projects and only when there are no backers yet
-    	if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))){
-    		if(!project.getUser().getUsername().equals(principal.getName()) || project.getBackingPct()>0){
-    			return null;
-    		}
-    	}
-    	
-    	//When a project was edited by someone else during this edit throw exception
-    	Project previousProject = projectService.getProjectById(project.getProjectId());
-    	if(!(previousProject.getLastUpdate().compareTo(project.getLastUpdate()) == 0)){
-    		project.setStatus("ConcurrentEdit");
-    		return project;
-    	}
-    	
-    	//when a subscriber is deleted after project is started reset start date...
-    	if (project.getStartDate()!=null && project.getWantedSeats()>project.getTakenSeats()){
-    		project.setStartDate(null);
-    	}
-    	
-    	//when a supporter is deleted or changed update backingpct
-    	project.updateBackingPct();
-    	
+    public Project updateProject(@PathVariable("id") final int id, @RequestBody Project project, Principal principal, Authentication auth) {
+
+        //prevent request manipulation, students can only edit their own projects and only when there are no backers yet
+        if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))) {
+            if (!project.getUser().getUsername().equals(principal.getName()) || project.getBackingPct() > 0) {
+                return null;
+            }
+        }
+
+        //When a project was edited by someone else during this edit throw exception
+        Project previousProject = projectService.getProjectById(project.getProjectId());
+        if (!(previousProject.getLastUpdate().compareTo(project.getLastUpdate()) == 0)) {
+            project.setStatus("ConcurrentEdit");
+            return project;
+        }
+
+        //when a subscriber is deleted after project is started reset start date...
+        if (project.getStartDate() != null && project.getWantedSeats() > project.getTakenSeats()) {
+            project.setStartDate(null);
+        }
+
+        //when a supporter is deleted or changed update backingpct
+        project.updateBackingPct();
+
         return projectService.saveProject(project, principal.getName());
     }
 
     /**
      * Delete a specific {@link Project}
      *
-     * @param id {@link int} The id of the {@link Project} to be deleted
+     * @param id        {@link int} The id of the {@link Project} to be deleted
      * @param principal {@link Principal}
-     * @param auth {@link Authentication}
+     * @param auth      {@link Authentication}
      */
     @Secured({DOCENT, STUDENT})
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST, produces = "application/json")
     public void deleteProject(@PathVariable("id") final int id, Principal principal, Authentication auth) {
-    	
-    	//prevent request manipulation, students can only delete their own projects and only when there are no backers yet
-    	Project project = projectService.getProjectById(id, userService.getUserByUsername(principal.getName()));
-    	if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))){
-    		if(!project.getUser().getUsername().equals(principal.getName()) || project.getBackingPct()>0){
-    			return;
-    		}
-    	}
-    	
+
+        //prevent request manipulation, students can only delete their own projects and only when there are no backers yet
+        Project project = projectService.getProjectById(id, userService.getUserByUsername(principal.getName()));
+        if (auth != null && auth.getAuthorities().contains(new SimpleGrantedAuthority(STUDENT))) {
+            if (!project.getUser().getUsername().equals(principal.getName()) || project.getBackingPct() > 0) {
+                return;
+            }
+        }
+
         projectService.deleteProject(id);
     }
 }
