@@ -292,4 +292,60 @@ public class ProjectTestClass {
 	  // Assert
 	  Assert.assertEquals(0, project.getMySubscribedHours());
   }
+  
+  @Test
+  public void test_myBackingPct_should_return_backingpct_of_user() {
+	  // Arrange
+	  Project project = new Project();
+	  SubscriberDocent subscriberDocent1 = new SubscriberDocent();
+	  User user1 = new User();
+	  user1.setUserId(1);
+	  subscriberDocent1.setUser(user1);
+	  subscriberDocent1.setBackingPct(90);
+	  
+	  SubscriberDocent subscriberDocent2 = new SubscriberDocent();
+	  User user2 = new User();
+	  user2.setUserId(2);
+	  subscriberDocent2.setUser(user2);
+	  subscriberDocent2.setBackingPct(50);
+	  
+	  ArrayList<SubscriberDocent> docents = new ArrayList<SubscriberDocent>();
+	  docents.add(subscriberDocent1);
+	  docents.add(subscriberDocent2);
+	  project.setSubscribersDocent(docents);
+	  
+	  // Act
+	  project.setMyBackingPct(2);
+	  
+	  // Assert
+	  Assert.assertEquals(50, project.getMyBackingPct());
+  }
+  
+  @Test
+  public void test_myBackingPct_should_return_0_if_not_backing() {
+	  // Arrange
+	  Project project = new Project();
+	  SubscriberDocent subscriberDocent1 = new SubscriberDocent();
+	  User user1 = new User();
+	  user1.setUserId(1);
+	  subscriberDocent1.setUser(user1);
+	  subscriberDocent1.setBackingPct(90);
+	  
+	  SubscriberDocent subscriberDocent2 = new SubscriberDocent();
+	  User user2 = new User();
+	  user2.setUserId(2);
+	  subscriberDocent2.setUser(user2);
+	  subscriberDocent2.setBackingPct(50);
+	  
+	  ArrayList<SubscriberDocent> docents = new ArrayList<SubscriberDocent>();
+	  docents.add(subscriberDocent1);
+	  docents.add(subscriberDocent2);
+	  project.setSubscribersDocent(docents);
+	  
+	  // Act
+	  project.setMyBackingPct(9);
+	  
+	  // Assert
+	  Assert.assertEquals(0, project.getMyBackingPct());
+  }
 } 
