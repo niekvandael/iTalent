@@ -174,7 +174,7 @@
         </div>
 
 
-        <div class="row" style="margin-top: 150px;">
+        <div ng-if="project.movies && project.movies.length" class="row" style="margin-top: 50px;">
             <div class="col-xs-4 col-md-4" ng-repeat="movie in project.movies">
                 <a href="#" class="thumbnail">
                     <iframe width="100%" height="200"
@@ -186,7 +186,7 @@
             </div>
         </div>
 
-        <table style="margin-top: 150px;">
+        <table style="margin-top: 50px;">
             <tr>
                 <td class="col-md-8" style="vertical-align: top;">
                     <div>
@@ -229,7 +229,7 @@
         </table>
     </div>
 
-    <div class="row" style="margin-top: 150px;">
+    <div class="row" style="margin-top: 50px;">
         <div ng-if="authenticated"
              class="col-md-8 col-md-offset-2">
             <br/>
