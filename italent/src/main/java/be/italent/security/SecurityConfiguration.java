@@ -52,16 +52,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.httpBasic()
-                    .and()
+        http
+                .httpBasic()
+                .and()
                 .authorizeRequests()
                 .antMatchers("/user", "/index.html", "/", "/projects/listHome", "/projects/{id}", "/categories", "/login").permitAll().anyRequest()
                 .authenticated()
-                    .and()
+                .and()
                 .csrf().csrfTokenRepository(csrfTokenRepository())
-                    .and()
+                .and()
                 .addFilterAfter(csrfHeaderFilter(), CsrfFilter.class);
     }
+
 
     private Filter csrfHeaderFilter() {
         return new OncePerRequestFilter() {

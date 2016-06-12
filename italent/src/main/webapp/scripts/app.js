@@ -67,4 +67,9 @@
         .config(function (tmhDynamicLocaleProvider) {
             tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
         })
+        .config(['$httpProvider',
+        function ($httpProvider) {
+            $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+        }
+    ]);
 })();

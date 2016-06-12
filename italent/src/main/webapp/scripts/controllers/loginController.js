@@ -2,6 +2,8 @@ angular.module('iTalentApp')
     .controller('loginController', ['$scope', '$rootScope', '$http', '$location', function ($scope, $rootScope, $http, $location) {
         // $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+        
+        
         $scope.loginSubmit = function () {
             
             /* Do authentication check */
