@@ -56,7 +56,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .httpBasic()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/user", "/index.html", "/", "/projects/listHome", "/projects/{id}", "/categories", "/login").permitAll().anyRequest()
+                .antMatchers("/user", "/index.html", "/", "/projects/listHome", "/projects/{id}", "/categories", "/login", "/solid-theme/*").permitAll().anyRequest()
                 .authenticated()
                 .and()
                 .csrf().csrfTokenRepository(csrfTokenRepository())
