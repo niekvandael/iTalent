@@ -13,7 +13,7 @@ angular.module('iTalentApp')
             projectService.get(projectId).then(function (project) {
                 $scope.project = project;
                 if ($scope.project.prezis.length > 0) {
-                    $scope.setupPreziPlayer();
+                    setupPreziPlayer();
                     $scope.loadingDone = true;
                 }
 
@@ -52,15 +52,6 @@ angular.module('iTalentApp')
                 })
             };
 
-            $scope.getComments = function () {
-                commentService.list(projectId).then(function (comments) {
-                    $scope.comments = comments;
-                }, function (err) {
-                    console.log('Error getting comments:');
-                    console.log(err);
-                });
-            };
-
             $scope.saveSubscriberDocent = function (id, percentage) {
                 subscriberDocentService.save(id, percentage).then(function () {
                     toastr.success($translate.instant('views.messages.success_support'), $translate.instant('views.messages.success'));
@@ -76,7 +67,7 @@ angular.module('iTalentApp')
             $scope.addComment = function (comment) {
                 commentService.save($scope.project.projectId, comment).then(function () {
                     console.log('Success saving comment');
-                    $scope.getComments();
+                    getComments();
                     $scope.comment = "";
                     document.getElementById("commentInput").value = "";
                 }, function (err) {
@@ -85,30 +76,40 @@ angular.module('iTalentApp')
                 })
             };
 
-            $scope.setupPreziPlayer = function () {
-                var player = new PreziPlayer('prezi-player', {
-                    preziId: $scope.project.prezis[0].preziCode,
-                    width: 540,
-                    height: 400,
-                    controls: true
-                });
-            };
-
-
-            if ($scope.authenticated) {
-                $scope.getComments();
-            }
             $scope.editProject = function (id) {
                 $location.path('/editProject/' + id);
             };
 
             $scope.removeComment = function (comment) {
                 commentService.remove(comment.commentId).then(function () {
-                    $scope.getComments();
+                    getComments();
                 }, function (err) {
                     console.log('Error deleting comment');
                     console.log(err);
                 })
 
             };
-        }]);
+
+            function getComments() {
+                commentService.list(projectId).then(function (comments) {
+                    $scope.comments = comments;
+                }, function (err) {
+                    console.log('Error getting comments:');
+                    console.log(err);
+                });
+            }
+
+            function setupPreziPlayer() {
+                var player = new PreziPlayer('prezi-player', {
+                    preziId: $scope.project.prezis[0].preziCode,
+                    width: 540,
+                    height: 400,
+                    controls: true
+                });
+            }
+
+            if ($scope.authenticated) {
+                getComments();
+            }
+        }]
+    );
