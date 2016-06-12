@@ -16,6 +16,7 @@ angular.module('iTalentApp')
                     setupPreziPlayer();
                     $scope.loadingDone = true;
                 }
+                $scope.loadingDone = true;
 
             }, function (err) {
                 console.log('Error getting project:');
