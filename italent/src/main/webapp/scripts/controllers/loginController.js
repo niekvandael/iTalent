@@ -1,9 +1,6 @@
 angular.module('iTalentApp')
-    .controller('loginController', ['$scope', '$rootScope', '$http', '$location', function ($scope, $rootScope, $http, $location) {
-        // $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+    .controller('loginController', ['$scope', '$rootScope', '$http', '$location', 'toastr', '$translate', function ($scope, $rootScope, $http, $location, toastr, $translate) {
 
-        
-        
         $scope.loginSubmit = function () {
             
             /* Do authentication check */
@@ -30,6 +27,8 @@ angular.module('iTalentApp')
                     }
                     callback && callback($rootScope.authenticated);
                 }, function() {
+                    toastr.error($translate.instant('views.messages.error_login'), $translate.instant('views.messages.fail'));
+                    $scope.credentials = {};
                     $rootScope.authenticated = false;
                     callback && callback(false);
                 });
