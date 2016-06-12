@@ -112,5 +112,6 @@
   "views.messages.concurrentEdit" : "The project was edited by someone else while you were editing, please try again.",
   "views.detail.seeAlso" : "See also",
   "views.detail.domain" : "Domain",
-  "views.detail.forMoreInfoContact" : "For more information:"
+  "views.detail.forMoreInfoContact" : "For more information:",
+  "views.detail.team" : "Team"
 }

@@ -112,6 +112,7 @@
   "views.messages.concurrentEdit" : "Het project werd aangepast door iemand anders terwijl u aan het editeren was, probeer het nogmaals.",
   "views.detail.seeAlso" : "Zie ook",
   "views.detail.domain" : "Domein",
-  "views.detail.forMoreInfoContact" : "Voor meer informatie:"
+  "views.detail.forMoreInfoContact" : "Voor meer informatie:",
+  "views.detail.team" : "Team"
 }
 

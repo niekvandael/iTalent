@@ -110,7 +110,13 @@
 
 </div>
 
-
+<!-- Subsccribed students -->
+<div ng-if="authenticated" style="float:right; margin-right: 100px;">
+	<h3>{{"views.detail.team" |translate}}</h3>
+	<ul style="margin-left: 15px;">
+		<li ng-repeat="subscriberStudent in project.subscribersStudent"> {{ subscriberStudent.user.firstname }}&nbsp;{{ subscriberStudent.user.lastname }} </li>
+	</ul>
+</div>
 
 <div class="container">
 	<div class="project-block-title">{{ project.title }}</div>
