@@ -1,5 +1,7 @@
 <div class="container">
-<div class="navbar navbar-default" ng-controller="headerController">
+<div class="header navbar_custom">
+
+<div class="navbar navbar-inverse" ng-controller="headerController">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-myProjects">
@@ -9,16 +11,16 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
-
-            <div class="collapse navbar-collapse" id="navbar-myProjects">
-                <ul class="nav navbar-nav" style="width:100%">
-                      <li style="width:33%;"  class="{{ active === 'myProjects' && 'activeSubItem' }}"><a href="" ng-click="showMyProjects()">{{"views.myProjects.myProjects" | translate}}</a></li>
-					  <li style="width:33%;"  class="{{ active === 'mySubscribedProjects' && 'activeSubItem' }}"><a href="" ng-click="showMySubscribedProjects()">{{"views.myProjects.subscribedProjects" | translate}}</a></li>
-					  <li style="width:33%;" class="{{ active === 'myLikedProjects' && 'activeSubItem' }}"><a href="" ng-click="showMyLikedProjects()">{{"views.myProjects.likedProjects" | translate}}</a></li>
-                </ul>
-            </div>
+	            <div class="collapse navbar-collapse" id="navbar-myProjects">
+	                <ul class="nav navbar-nav" style="width:100%">
+	                      <li style="width:33%;"  class="{{ active === 'myProjects' }}"><a href="" ng-click="showMyProjects()">{{"views.myProjects.myProjects" | translate}}</a></li>
+						  <li style="width:33%;"  class="{{ active === 'mySubscribedProjects'}}"><a href="" ng-click="showMySubscribedProjects()">{{"views.myProjects.subscribedProjects" | translate}}</a></li>
+						  <li style="width:33%;" class="{{ active === 'myLikedProjects'}}"><a href="" ng-click="showMyLikedProjects()">{{"views.myProjects.likedProjects" | translate}}</a></li>
+	                </ul>
+	            </div>
         </div>
     </div>
+</div>
 </div>
 <div class="container">
 	<div class="project-block" ng-repeat="project in projects | orderBy:'-numberOfLikes'">

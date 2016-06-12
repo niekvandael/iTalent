@@ -291,10 +291,6 @@ cite {
 	color:red;
 }
 
-.activeSubItem{
-	background-color: #F0F0F0;
-}
-
 .navbar_image{
 	padding-top: 0;
 	padding-left: 0;
@@ -467,4 +463,8 @@ cite {
 
 .timeline-body > p + p {
 	margin-top: 5px;
+}
+
+.page{
+	margin-top: 50px;
 }
