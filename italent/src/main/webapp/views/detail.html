@@ -120,23 +120,27 @@
 				</a></li>
 			</ul>
 		</div>
-	<div class="row">
+		<div class="row">
 		<div class="col-md-5" ng-if="project.pictures.length == 0">
 			<div class="project-block-media img-responsive img-rounded"></div>
 		</div>
 		<div class="col-md-5" ng-if="project.pictures.length != 0">
 			<uib-carousel active="active" interval="carouselInterval" no-wrap="noWrapSlides">
 				<uib-slide ng-repeat="picture in project.pictures" index="$index">
-					<img class="carouselImage" ng-src="data:image/jpeg;base64, {{ picture.bytes }}" style="height: 250px" />
-					<div class="carousel-caption">
-						<h4>{{ picture.description }}</h4>
+			  		<div class="col-xs-12 col-md-12">
+					    <a href="#" class="thumbnail" >
+							<img class="carouselImage" ng-src="data:image/jpeg;base64, {{ picture.bytes }}" style="height: 250px" />
+					    </a>
+			  		</div>
+ 					<div class="caption">
+						<strong>{{ picture.description }}</strong>
 					</div>
 				</uib-slide>
 			</uib-carousel>
 		</div>
 		<div class="col-md-7">
 			<div class="project-block-label">{{"views.detail.description" | translate}}</div>
-			<div class="project-block-long-description">{{ project.description }}</div>
+			<div class="project-block-long-description">{{ project.shortDescription }}</div>
 			<div class="project-block-label col-xs-4">{{"views.home.createdBy" | translate}}</div>
 			<div class="project-block-text col-xs-8">{{project.user.firstname + ' ' + project.user.lastname}}</div>
 		</div>
@@ -155,7 +159,7 @@
 
 
 		
-		<div class="row">
+		<div class="row" style="margin-top: 150px;">
 	  		<div class="col-xs-4 col-md-4" ng-repeat="movie in project.movies">
 			    <a href="#" class="thumbnail" >
 					<iframe width="100%" height="200" src="{{ movie.youTubeCode | youtubeEmbedUrl }}" allowfullscreen></iframe>
@@ -165,51 +169,44 @@
 			    </a>
 	  		</div>
 		</div>
-
-
-		
-		<!-- 
-		<div class="row">
-			<div class="col-xs-offset-1" ng-if="project.movies && project.movies.length">
-				<div class="project-block-label">{{"views.detail.movies" | translate}}</div>
-				<uib-carousel active="active" interval="carouselInterval" no-wrap="noWrapSlides">
-					<uib-slide ng-repeat="movie in project.movies" index="$index">
-						<iframe width="100%" height="400" src="{{ movie.youTubeCode | youtubeEmbedUrl }}"
-								allowfullscreen></iframe>
-						<div class="carousel-caption">
-							<h4>{{ movie.description }}</h4>
-						</div>
-					</uib-slide>
-				</uib-carousel>
-			</div>
-		</div>
-		
-		 -->
-		<div class="row">
-			<div ng-show="project.prezis.length>0" class="col-xs-offset-1">
-				<div class="project-block-label">Prezi</div>
-				<div id="prezi-player"></div>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-md-5" ng-if="project.milestones && project.milestones.length">
-		<div class="project-block-label col-xs-offset-5">{{"views.detail.milestones" | translate}}</div>
-		<ul class="timeline">
-			<li ng-repeat="milestone in project.milestones" class="timeline-inverted">
-				<div class="timeline-badge info"><i class="glyphicon glyphicon-cog"></i></div>
-				<div class="timeline-panel">
-					<div class="timeline-heading">
-						<h4 class="timeline-title">{{milestone.description}}</h4>
-						<p>
-							<small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{milestone.lastUpdate | date:'yyyy-MM-dd HH:mm:ss'}}
-							</small>
-						</p>
-					</div>
+	
+	<table style="margin-top: 150px;">
+	<tr>
+		<td class="col-md-8" style="vertical-align: top;" >
+			<div>
+				<h3>{{"views.detail.description" | translate}}</h3>
+				<span>{{ project.description }}</span>
+				<div ng-show="project.prezis.length>0" style="margin-top: 10px;">
+					<div id="prezi-player"></div>
 				</div>
-			</li>
-		</ul>
+		</div>
+			</div>
+		</td>
+	<td class="col-md-4" >
+		<div ng-if="project.milestones && project.milestones.length" >
+			<ul class="timeline">
+				<li ng-repeat="milestone in project.milestones" class="timeline-inverted">
+					<div class="timeline-badge info"><i class="glyphicon glyphicon-cog"></i></div>
+					<div class="timeline-panel">
+						<div class="timeline-heading">
+							<h4 class="timeline-title">{{milestone.description}}</h4>
+							<p>
+								<small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{milestone.lastUpdate | date:'yyyy-MM-dd HH:mm:ss'}}
+								</small>
+							</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		</td>
+		</tr>
+	</table>
+	
+	
 	</div>
+
+
 
 	<div class="row project-block col-md-8 col-md-offset-2" ng-if="project.onlineFiles && project.onlineFiles.length">
 		<div class="project-block-label centerText">{{"views.detail.onlineFiles" | translate}}</div>
@@ -223,7 +220,7 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="row" style="margin-top: 150px;">
 		<div ng-if="authenticated" class="project-block jumbotron col-md-8 col-md-offset-2">
 			<div class="project-block-label centerText">{{"views.detail.comments" | translate}}</div>
 			<br/>
@@ -253,7 +250,7 @@
 				</table>
 				<br/>
 			</div>
-			<div>
+			<div style="margin-left:60px;">
 				<input required type="text" ng-model="comment"
 					   class="input-block col-xs-4 col-xs-offset-3 col-md-9 col-md-offset-0" min="1" max="255"
 					   placeholder="{{'views.detail.comment' | translate}}"/>
@@ -267,5 +264,4 @@
 			<br/>
 		</div>
 	</div>
-
 </div>

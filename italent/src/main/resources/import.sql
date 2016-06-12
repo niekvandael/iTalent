@@ -135,3 +135,10 @@ insert into wanted_subscriber(department_department_id, project_project_id, numb
 insert into comment(user_user_id, project_project_id, message, status, last_updated_by, last_update, parent_comment_id) values(1, 1, 'Comment 1', 'A', 'Team1', '2016-01-01', -1);
 insert into comment(user_user_id, project_project_id, message, status, last_updated_by, last_update, parent_comment_id) values(1, 1, 'Comment 2', 'A', 'Team1', '2016-01-01', 1);
 insert into comment(user_user_id, project_project_id, message, status, last_updated_by, last_update, parent_comment_id) values(1, 2, 'Comment 1', 'A', 'Team1', '2016-01-01', -1);
+
+-- milestones
+insert into milestone(project_project_id, done, description, status, last_updated_by, last_update) values(1, false, 'Data verzamelen', 'A', 'Team1', '2016-01-01');
+insert into milestone(project_project_id, done, description, status, last_updated_by, last_update) values(1, false, 'Data analyseren', 'A', 'Team1', '2016-01-01');
+insert into milestone(project_project_id, done, description, status, last_updated_by, last_update) values(1, false, 'Statistieken opbouwen', 'A', 'Team1', '2016-01-01');
+insert into milestone(project_project_id, done, description, status, last_updated_by, last_update) values(1, false, 'Resulaten beoordelen', 'A', 'Team1', '2016-01-01');
+insert into milestone(project_project_id, done, description, status, last_updated_by, last_update) values(1, false, 'Resulaten presenteren', 'A', 'Team1', '2016-01-01');
