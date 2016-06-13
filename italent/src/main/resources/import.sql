@@ -146,7 +146,7 @@ insert into wanted_subscriber(department_department_id, project_project_id, numb
 insert into wanted_subscriber(department_department_id, project_project_id, number, status, last_updated_by, last_update) values(4, 7, 4, 'A', 'Team1', '2016-01-01');
 
 -- comments
-insert into comment(user_user_id, project_project_id, message, status, last_updated_by, last_update, parent_comment_id) values(1, 1, 'Mooi!, 'A', 'Team1', '2016-01-01', -1);
+insert into comment(user_user_id, project_project_id, message, status, last_updated_by, last_update, parent_comment_id) values(1, 1, 'Mooi!', 'A', 'Team1', '2016-01-01', -1);
 insert into comment(user_user_id, project_project_id, message, status, last_updated_by, last_update, parent_comment_id) values(1, 1, 'Goed initiatief!', 'A', 'Team1', '2016-01-01', 1);
 insert into comment(user_user_id, project_project_id, message, status, last_updated_by, last_update, parent_comment_id) values(1, 2, 'Ik denk erover na om mee te doen...', 'A', 'Team1', '2016-01-01', -1);
 insert into comment(user_user_id, project_project_id, message, status, last_updated_by, last_update, parent_comment_id) values(3, 7, 'Wil je ook een mobiele versie?', 'A', 'Team1', '2016-01-01', -1);

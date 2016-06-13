@@ -30,6 +30,7 @@ public class CommentServiceImpl implements CommentService {
         logger.info(Thread.currentThread().getStackTrace()[1].getMethodName() + " --- project: " + projectId);
 
         Comment comment = new Comment();
+        comment.setITalentEntity(user.getUsername());
         comment.setMessage(message);
 
         Project project = new Project();
