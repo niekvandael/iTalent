@@ -50,7 +50,7 @@ insert into users (firstname, lastname, email, username, password, department_de
 insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Tim', 'Dupont', 'tim.dupont@pxl.be', 'tim', 'pxlpxl', 4, 1);
 insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Bianca', 'Willems', 'bianca.willems@pxl.be', 'bianca', 'bianca', 4, 2);
 insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Joris', 'Bleys', 'joris.bleys@pxl.be', 'joris', 'joris', 4, 2);
-insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Bookshop', 'Bookshop', 'bookshop@pxl.be', 'bookshop', 'bookshop', 4, 2);
+insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Fienny', 'Bleys', 'bookshop@pxl.be', 'Fienny', 'bookshop', 4, 2);
 
 -- Domains
 insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Internationalisering', 15, 80);
