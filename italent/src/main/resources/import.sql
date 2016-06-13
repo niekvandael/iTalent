@@ -51,6 +51,7 @@ insert into users (firstname, lastname, email, username, password, department_de
 insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Bianca', 'Willems', 'bianca.willems@pxl.be', 'bianca', 'bianca', 4, 2);
 insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Joris', 'Bleys', 'joris.bleys@pxl.be', 'joris', 'joris', 4, 2);
 insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Fienny', 'Bleys', 'bookshop@pxl.be', 'Fienny', 'bookshop', 4, 2);
+insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Health', 'Student', 'healthStudent@pxl.be', 'healthStudent', 'pxlpxl', 3, 2);
 
 -- Domains
 insert into domain(last_update, last_updated_by, status, name, minimum_hours, maximum_hours) values('2016-01-01', 'Team1', 'A', 'Internationalisering', 15, 80);
@@ -72,12 +73,14 @@ insert into project (backing_pct, last_update, last_updated_by, status, duration
 
 -- Likes
 insert into likes(last_update, last_updated_by, status, user_user_id, project_project_id) values('2016-01-01', 'Team1', 'A', 1, 1);
-insert into likes(last_update, last_updated_by, status, user_user_id, project_project_id) values('2016-01-01', 'Team1', 'A', 1, 2);
+insert into likes(last_update, last_updated_by, status, user_user_id, project_project_id) values('2016-01-01', 'Team1', 'A', 1, 5);
 insert into likes(last_update, last_updated_by, status, user_user_id, project_project_id) values('2016-01-01', 'Team1', 'A', 2, 1);
-insert into likes(last_update, last_updated_by, status, user_user_id, project_project_id) values('2016-01-01', 'Team1', 'A', 4, 2);
-insert into likes(last_update, last_updated_by, status, user_user_id, project_project_id) values('2016-01-01', 'Team1', 'A', 5, 2);
+insert into likes(last_update, last_updated_by, status, user_user_id, project_project_id) values('2016-01-01', 'Team1', 'A', 4, 5);
+insert into likes(last_update, last_updated_by, status, user_user_id, project_project_id) values('2016-01-01', 'Team1', 'A', 5, 5);
 insert into likes(last_update, last_updated_by, status, user_user_id, project_project_id) values('2016-01-01', 'Team1', 'A', 5, 1);
 insert into likes(last_update, last_updated_by, status, user_user_id, project_project_id) values('2016-01-01', 'Team1', 'A', 5, 7);
+insert into likes(last_update, last_updated_by, status, user_user_id, project_project_id) values('2016-01-01', 'Team1', 'A', 1, 6);
+insert into likes(last_update, last_updated_by, status, user_user_id, project_project_id) values('2016-01-01', 'Team1', 'A', 2, 6);
 
 
 -- Pictures
