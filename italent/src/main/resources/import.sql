@@ -50,7 +50,7 @@ insert into users (firstname, lastname, email, username, password, department_de
 insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Tim', 'Dupont', 'tim.dupont@pxl.be', 'tim', 'pxlpxl', 4, 1);
 insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Bianca', 'Willems', 'bianca.willems@pxl.be', 'bianca', 'bianca', 4, 2);
 insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Joris', 'Bleys', 'joris.bleys@pxl.be', 'joris', 'joris', 4, 2);
-insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Fienny', 'Bleys', 'bookshop@pxl.be', 'Fienny', 'bookshop', 4, 2);
+insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Fienny', 'Brouns', 'fienny.brouns@pxl.be', 'fienny', 'bookshop', 4, 2);
 insert into users (firstname, lastname, email, username, password, department_department_id, role_role_id) values('Health', 'Student', 'healthStudent@pxl.be', 'healthStudent', 'pxlpxl', 3, 2);
 
 -- Domains
