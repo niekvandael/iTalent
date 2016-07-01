@@ -22,3 +22,12 @@ De back-end wordt ontwikkeld met JAVA, Hibernate en Spring, de front-end met Jav
 - Arjen Schuurman
 - Niek Vandael
 - Jesse Vranken
+- 
+## Screenshots
+![Alt text](https://raw.githubusercontent.com/niekvandael/iTalent/master/guest.png "Guest page")
+![Alt text](https://raw.githubusercontent.com/niekvandael/iTalent/master/search.png "Search page")
+![Alt text](https://raw.githubusercontent.com/niekvandael/iTalent/master/detail1.png "Detail screenshot 1")
+![Alt text](https://raw.githubusercontent.com/niekvandael/iTalent/master/detail2.png "Detail screenshot 2")
+![Alt text](https://raw.githubusercontent.com/niekvandael/iTalent/master/detail3.png "Detail screenshot 3")
+![Alt text](https://raw.githubusercontent.com/niekvandael/iTalent/master/edit.png "Edit page")
+![Alt text](https://raw.githubusercontent.com/niekvandael/iTalent/master/category.png "Category page")
